@@ -57,6 +57,7 @@
 \begin{itemize}
 \item Goal
 \item Application
+\item Definition
 \end{itemize}
 
 \subsection{Combinations}
@@ -74,6 +75,9 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 
 
 \section{Whether a training dataset is required}
+\begin{itemize}
+\item Mainly depends on whether the forecasting process includes meta-learner training.
+\end{itemize}
 
 \subsection{Combinations}
 
@@ -122,6 +126,10 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 
 
 \section{Data resampling for modeling}
+\begin{itemize}
+\item Combination forecasting may require a training data set generated using a holdout strategy, simulation techniques or other data generating methods such as GRATIS.
+\item Ensemble forecasting mainly extracts information from the original series. Data resampling is required for modeling in ensemble forecasting, such as bootstrap in bagging, re-weighting in boosting and data rolling for training dataset generation in stacking.
+\end{itemize}
 
 
 \section{Forecast method pool}
@@ -156,7 +164,8 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \section{Weight determination}
 \begin{itemize}
 \item Data base
-\item Information used
+\item Information used, such as individual forecasts, forecasts diversity, features, errors ...
+\item How to estimate combining weight, such as information criterion-based, regression-based estimation ...
 \item Weather to consider correlations in estimating combining weights
 \item Fixed weights VS time-varying weights
 \end{itemize}
