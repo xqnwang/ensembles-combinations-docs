@@ -62,16 +62,16 @@
 
 \subsection{Combinations}
 
-\cite{barnard1963new} first proposed an empirical justification of forecast combination by making a simple average of two forecasts in forecasting airline passenger numbers. It was observed that a simple average of two forecasts outperformed each of them. This was the first work to provide an analysis for the problem of point forecast combination.
+\cite{Barnard1963-xa} first proposed an empirical justification of forecast combination by making a simple average of two forecasts in forecasting airline passenger numbers. It was observed that a simple average of two forecasts outperformed each of them. This was the first work to provide an analysis for the problem of point forecast combination.
 
-\cite{bates1969combination} further explored more possibilities for forecast combination by extending the simple average to a weighted combination, which examined various weight determination methods yield from past errors (MSE). It is concluded that combining forecasts with some independent information improves forecast accuracy.
+\cite{Bates1969-yj} further explored more possibilities for forecast combination by extending the simple average to a weighted combination, which examined various weight determination methods yield from past errors (MSE). It is concluded that combining forecasts with some independent information improves forecast accuracy.
 % point forecast combination and density forecast combination
 
 \subsection{Ensembles}
 
-It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting, since the 1990s. \cite{lewis2005roots} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research.
+It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research.
 
-Ensemble forecasting, which aims at quantifying the forecast uncertainty and generating probability forecasts, achieved its practical implementation in weather forecasting as a response to the limitations of deterministic forecasting without taking account of the initial condition perturbations. \cite{leutbecher2008ensemble} discussed the sources of uncertainty in weather forecasting: uncertainties in the observations, used to initialise the predictions, and in the forecast models themselves.
+Ensemble forecasting, which aims at quantifying the forecast uncertainty and generating probability forecasts, achieved its practical implementation in weather forecasting as a response to the limitations of deterministic forecasting without taking account of the initial condition perturbations. \cite{Leutbecher2008-mc} discussed the sources of uncertainty in weather forecasting: uncertainties in the observations, used to initialise the predictions, and in the forecast models themselves.
 
 
 \section{Whether a training dataset is required}
@@ -81,48 +81,48 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 
 \subsection{Combinations}
 
-\cite{barnard1963new} provided the arithmetic mean of the two individual forecasts in the application of forecasting airline passenger data (not required).
+\cite{Barnard1963-xa} provided the arithmetic mean of the two individual forecasts in the application of forecasting airline passenger data (not required).
 
-\cite{bates1969combination} extended the simple average to a weighted combination which aims to give higher weight to better forecaster. Several ways of determining combining weights based on past errors are introduced for combining point forecasts (not required).
+\cite{Bates1969-yj} extended the simple average to a weighted combination which aims to give higher weight to better forecaster. Several ways of determining combining weights based on past errors are introduced for combining point forecasts (not required).
 
-\cite{newbold1974experience} examined various possibilities of combining three univariate time series forecasting methods (Box-Jenkins, Holt-Winters and stepwise autoregression) over a large collection of economic time series. Their results suggested that a combined forecast generally performs well if the weights calculated based on the relative precision of individual forecasts ignore the effects of correlations among errors (not required). \cite{winkler1983combination} further confirmed their conclusions (not required).
+\cite{Newbold1974-lp} examined various possibilities of combining three univariate time series forecasting methods (Box-Jenkins, Holt-Winters and stepwise autoregression) over a large collection of economic time series. Their results suggested that a combined forecast generally performs well if the weights calculated based on the relative precision of individual forecasts ignore the effects of correlations among errors (not required). \cite{Winkler1983-ra} further confirmed their conclusions (not required).
 
-\cite{granger1984improved} considered a linear combination of forecasts by performing a regression model having the actual value as the response variable and the individual forecasts as the explanatory variables. They determined combining weights through a constrained ordinary least squares (OLS) and demonstrated its superiority in fitting and out-of-sample forecasting (not required).
+\cite{Granger1984-na} considered a linear combination of forecasts by performing a regression model having the actual value as the response variable and the individual forecasts as the explanatory variables. They determined combining weights through a constrained ordinary least squares (OLS) and demonstrated its superiority in fitting and out-of-sample forecasting (not required).
 
-\cite{diebold1990use} developed a weight estimation technique by using Bayesian shrinkage techniques to incorporate prior information into unrestricted regression-based forecast combination (not required).
+\cite{Diebold1990-fk} developed a weight estimation technique by using Bayesian shrinkage techniques to incorporate prior information into unrestricted regression-based forecast combination (not required).
 
-\cite{hibon2005combine} proposed a criterion to chose individual methods and combinations using the smallest average sMAPE over validation periods and successfully applied this criterion on the data of the M3-competition (not required).
+\cite{Hibon2005-ok} proposed a criterion to chose individual methods and combinations using the smallest average sMAPE over validation periods and successfully applied this criterion on the data of the M3-competition (not required).
 
-\cite{collopy1992rule} provided one of the pioneering studies in combining forecasts using characteristics. They proposed a rule-based forecasting procedure to develop $99$ rules for forecast combination based on $18$ features obtained judgementally (not required).
+\cite{Collopy1992-ey} provided one of the pioneering studies in combining forecasts using characteristics. They proposed a rule-based forecasting procedure to develop $99$ rules for forecast combination based on $18$ features obtained judgementally (not required).
 
-\cite{vokurka1996automatic} proposed a rule-based expert forecasting system to automatically identify time series features and build a weighted combination of three individual methods (not required).
+\cite{Vokurka1996-ot} proposed a rule-based expert forecasting system to automatically identify time series features and build a weighted combination of three individual methods (not required).
 
-\cite{prudencio2004using} used machine learning techniques to define the best linear combination of methods. Specifically, they use the Multi-Layer Perceptron (MLP) network as the learner to associate the time series features and the combining weights for two individual methods (required for building MLP learner).
+\cite{Prudencio2004-ze} used machine learning techniques to define the best linear combination of methods. Specifically, they use the Multi-Layer Perceptron (MLP) network as the learner to associate the time series features and the combining weights for two individual methods (required for building MLP learner).
 
-\cite{lemke2010meta} created a feature pool describing both the time series and the pool of individual forecasting methods, and then applied different meta-learning approaches to improve forecasting performance using a ranking-based combination (required for building different meta-learning models).
+\cite{Lemke2010-wn} created a feature pool describing both the time series and the pool of individual forecasting methods, and then applied different meta-learning approaches to improve forecasting performance using a ranking-based combination (required for building different meta-learning models).
 
-\cite{andrawis2011forecast} carefully selected the individual forecasting models and combined them by simple average (not required).
+\cite{Andrawis2011-fm} carefully selected the individual forecasting models and combined them by simple average (not required).
 
-\cite{montero2020fforma} employed 42 time series features to estimate the optimal combination weights of nine forecasting methods based on extreme gradient boosting (required for training XGBoost using features and errors).
+\cite{Montero-Manso2020-tq} employed 42 time series features to estimate the optimal combination weights of nine forecasting methods based on extreme gradient boosting (required for training XGBoost using features and errors).
 
-\cite{kang2020gratis} proposed GeneRAting TIme Series with diverse and controllable characteristics (GRATIS) with the use of mixture autoregressive (MAR) models. GRATIS can be used as a tool for simulating a diverse set of time series data which serves as a training dataset for forecast combination (required).
+\cite{Kang2020-rl} proposed GeneRAting TIme Series with diverse and controllable characteristics (GRATIS) with the use of mixture autoregressive (MAR) models. GRATIS can be used as a tool for simulating a diverse set of time series data which serves as a training dataset for forecast combination (required).
 
-\cite{li2020forecasting} transformed time series into images and then extracted features from these images for forecast combination (required for training an XGBoost model to produce weights for individual methods).
+\cite{Li2020-od} transformed time series into images and then extracted features from these images for forecast combination (required for training an XGBoost model to produce weights for individual methods).
 
 
 \subsection{Ensembles}
 
-\cite{cordeiro2009forecasting} developed the Boost.EXPOS approach which forecasts time series by combining the use of exponential smoothing methods with the bootstrap resampling technique for time series data (not required).
+\cite{Cordeiro2009-wt} developed the Boost.EXPOS approach which forecasts time series by combining the use of exponential smoothing methods with the bootstrap resampling technique for time series data (not required).
 
-\cite{bergmeir2016bagging} presented a bagging exponential smoothing method which ensembles exponential smoothing models estimated on the bootstrapped series (not required).
+\cite{Bergmeir2016-ae} presented a bagging exponential smoothing method which ensembles exponential smoothing models estimated on the bootstrapped series (not required).
 
-\cite{petropoulos2018exploring} implemented six forecasting strategies, four of which focus on isolating each one of the three sources of uncertainty (data, parameter, and model uncertainty) to separately explore the benefits of bagging for time series forecasting for each one of them (not required).
+\cite{Petropoulos2018-fw} implemented six forecasting strategies, four of which focus on isolating each one of the three sources of uncertainty (data, parameter, and model uncertainty) to separately explore the benefits of bagging for time series forecasting for each one of them (not required).
 
-\cite{taieb2014boosting} proposed a forecasting strategy which adjusts autoregressive forecasts with a direct strategy using a boosting procedure at each horizon (not required).
+\cite{Taieb2014-yp} proposed a forecasting strategy which adjusts autoregressive forecasts with a direct strategy using a boosting procedure at each horizon (not required).
 
-\cite{barrow2016comparison} transformed a time series into a dataset. The dataset consists of several pairs of observations comprised of a lagged autoregressive (AR) realisation vector and a further realisation. A generic AdaBoost algorithm is applied in the dataset to obtain combined forecasts (not required).
+\cite{Barrow2016-wl} transformed a time series into a dataset. The dataset consists of several pairs of observations comprised of a lagged autoregressive (AR) realisation vector and a further realisation. A generic AdaBoost algorithm is applied in the dataset to obtain combined forecasts (not required).
 
-\cite{ribeiro2020ensemble} compared several models to explore the predictive capability of regression ensembles. They considered stacked generalization by training a meta-model which determines combining weights by using individual forecasts as an input set (a training dataset is created by the approach of leave-one-out cross-validation for training meta-model).
+\cite{Ribeiro2020-mj} compared several models to explore the predictive capability of regression ensembles. They considered stacked generalization by training a meta-model which determines combining weights by using individual forecasts as an input set (a training dataset is created by the approach of leave-one-out cross-validation for training meta-model).
 
 
 \section{Data resampling for modeling}
@@ -202,10 +202,11 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \end{itemize}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% References %%%%%%%%%%%%%%
 \bibliographystyle{agsm}
 \bibliography{paper-list.bib}
-
+\nocite{*}
 
 \end{document}
