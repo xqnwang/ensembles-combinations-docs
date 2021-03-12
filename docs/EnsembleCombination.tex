@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{lineno}
+\usepackage{bbm}
+\usepackage{xurl}
+\usepackage{verbatim}
+\usepackage{setspace}
+\usepackage{breakurl}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue}
+
+\usepackage{verbatim}
+%% R
+\newcommand{\pkg}[1]{{\normalfont\fontseries{b}\selectfont #1}}
+\let\proglang=\textsf
+\let\code=\texttt
+
+%% Reduce Bibliography space
+\usepackage{enumitem}
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\baselineskip = 7 mm
+\parskip = 2.5 mm
+
+
+\begin{document}
+
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
+
+\begin{center}
+{\bf\Large Ensembles and combinations: \\using multiple models to improve forecasts}
+\end{center}
+
+
+\bigskip
+
+
+% \newpage
+\spacingset{1.5} 
+
+\section{Simple Combination}
+
+The idea of combining forecasts is derived from the simple portfolio diversification argument, which is a risk management strategy with an obvious intuition: do not put all eggs into one basket. As early as 1963, \cite{Barnard1963-xa} provided an empirical justification of forecast combination by making a simple average of two forecasts and obtained smaller forecast errors than individual forecasts. \cite{Bates1969-yj} developed a general analysis and further explored more possibilities for forecast combination by extending a simple average to a weighted combination. It is often considered to be the seminal work on point forecast combination. Ensemble is a machine learning paradigm which, similar to combination, uses multiple models to solve the same problem. It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting, since the 1990s. An overview on ensemble forecasting with a focus on weather forecasting is given by \cite{Leutbecher2008-mc}. A genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research is provided in \cite{Lewis2005-hu}. Combinations and ensembles have been used successfully in the forecasting community to produce improved forecasts on average by combining multiple models.
+
+Considerable literature has accumulated over the years regarding the way in which individual models are combined. A unanimous conclusion is that simple combination schemes are hard to beat \citep{Clemen1989-fb,Stock2004-rq,Lichtendahl2020-ut}. More specifically, simple combination methods which ignore past information regarding the precision of individual forecasts and correlations between forecast errors work reasonably well relative to more sophisticated combination schemes \citep[see][]{Clemen1989-fb}. \cite{Timmermann2006-en} concisely summarized the reasons for this success by the importance of parameter estimation error---that is, simple combination schemes do not require estimating parameters such as combining weights based on forecast errors, thus avoiding parameter estimation error that often exists in the weighted combination.
+
+The vast majority of studies on combining multiple models has dealt with point forecasting, even though point forecasts generally provide insufficient information for decision making. The simple average based on equal weights is the most widely used combining method \citep[see][]{Bunn1985-vo,Clemen1986-pd,Stock2003-sp} and its advantages are summarized in \cite{Palm1992-im}. \cite{Clemen1989-fb} provided a review and annotated bibliography containing over two hundred articles regarding the combination of forecasts, and then addressed the issue that the arithmetic mean often dominates more refined forecast combination. This empirical fact has been first stated as the ``forecast combination puzzle" in \cite{Stock2004-rq}. \cite{Timmermann2006-en} pointed out that the good average performance of the simple average depends strongly on model instability and the ratio of forecast error variances associated with different forecasting models. Furthermore, some theoretical explanation of the forecast combination puzzle are offered in later studies \citep[see][]{Smith2009-wd,Claeskens2016-pv}. The simple average of individual forecasts is sensitive to some large outliers, so the median and the trimmed mean of the panel of forecasts have been suggested due to its advantage of being less affected by extreme values \citep[e.g.,][]{Chan1999-io,Stock2004-rq,Jose2008-vm,Genre2013-ut}.
+
+Compared to various refined combination approaches and advanced machine learning algorithms, simple combinations appear outdated and uncompetitive in the big data era. However, the results from the recent M4 competition \citep{Makridakis2020-hu} show that simple combinations can achieve fairly good forecasting performance and still be competitive. Specifically, a simple equal-weights combination achieved the third best performance for yearly time series \citep{Shaub2019-on} and a median combination of four models achieved sixth place for the point forecasts \citep{Petropoulos2020-fp}. Therefore, simple combinations provide a natural benchmark to measure the effectiveness of the newly proposed weight estimation algorithms \citep[e.g.,][]{Makridakis2000-he,Makridakis2020-hu,Montero-Manso2020-tq,Kang2020-rl,Wang2021-un}.
+
+There has been a growing interest in using combination methods for probabilistic forecasting. Probabilistic forecasts differ from point forecasts in the sense that there is an associated probability related to the reported values, providing more comprehensive information about uncertainties of the future load than single-valued forecasts. 
+
+%histories
+%theory and empirical work of simple combination
+%% Ref
+%% Is It Better to Average Probabilities or Quantiles?
+%% The opinion pool (and its citations)
+%% Combining probability distributions from experts in risk analysis
+%% Combining probability distributions: A critique and an annotated bibliography
+%three types and some basic combination methods
+%%(interval)Combining Prediction Intervals in the M4 Competition
+%%Combining Interval Forecasts.
+%%(quantile)Combining Probabilistic Load Forecasts
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% References %%%%%%%%%%%%%%
+\bibliographystyle{agsm}
+\bibliography{reference.bib}
+
+\end{document}
