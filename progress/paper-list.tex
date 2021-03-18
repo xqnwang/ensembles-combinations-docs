@@ -15,6 +15,7 @@
 \usepackage{verbatim}
 \usepackage{setspace}
 \usepackage{breakurl}
+\usepackage{verbatim}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -53,6 +54,15 @@
 % \newpage
 \spacingset{1.5} 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% Comment %%%%%%%%%%%%
+%%%%%%%%%%% Initial Structure %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+
 \section{Research beginnings}
 \begin{itemize}
 \item Goal
@@ -72,7 +82,6 @@
 It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research.
 
 Ensemble forecasting, which aims at quantifying the forecast uncertainty and generating probability forecasts, achieved its practical implementation in weather forecasting as a response to the limitations of deterministic forecasting without taking account of the initial condition perturbations. \cite{Leutbecher2008-mc} discussed the sources of uncertainty in weather forecasting: uncertainties in the observations, used to initialise the predictions, and in the forecast models themselves.
-
 
 \section{Whether a training dataset is required}
 \begin{itemize}
@@ -109,7 +118,6 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 
 \cite{Li2020-od} transformed time series into images and then extracted features from these images for forecast combination (required for training an XGBoost model to produce weights for individual methods).
 
-
 \subsection{Ensembles}
 
 \cite{Cordeiro2009-wt} developed the Boost.EXPOS approach which forecasts time series by combining the use of exponential smoothing methods with the bootstrap resampling technique for time series data (not required).
@@ -124,13 +132,11 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 
 \cite{Ribeiro2020-mj} compared several models to explore the predictive capability of regression ensembles. They considered stacked generalization by training a meta-model which determines combining weights by using individual forecasts as an input set (a training dataset is created by the approach of leave-one-out cross-validation for training meta-model).
 
-
 \section{Data resampling for modeling}
 \begin{itemize}
 \item Combination forecasting may require a training data set generated using a holdout strategy, simulation techniques or other data generating methods such as GRATIS.
 \item Ensemble forecasting mainly extracts information from the original series. Data resampling is required for modeling in ensemble forecasting, such as bootstrap in bagging, re-weighting in boosting and data rolling for training dataset generation in stacking.
 \end{itemize}
-
 
 \section{Forecast method pool}
 \begin{itemize}
@@ -139,13 +145,11 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \item Selection of individual forecasting models
 \end{itemize}
 
-
 \section{Forecasting structure}
 \begin{itemize}
 \item Parallel forecasting
 \item Sequential forecasting
 \end{itemize}
-
 
 \section{Main types of ensembles}
 \begin{itemize}
@@ -154,12 +158,10 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \item Stacking
 \end{itemize}
 
-
 \section{Simple aggregation methods}
 \begin{itemize}
 \item Such as mean, trimmed mean, median, trimmed median, ...
 \end{itemize}
-
 
 \section{Weight determination}
 \begin{itemize}
@@ -170,21 +172,17 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \item Fixed weights VS time-varying weights
 \end{itemize}
 
-
 \section{Uncertainty tackling}
 \begin{itemize}
 \item Three sources of uncertainty: model, parameter, and data uncertainty
 \end{itemize}
-
 
 \section{Contribution to forecast improvement}
 \begin{itemize}
 \item How much do combinations and ensembles contribute to the forecast improvement?
 \end{itemize}
 
-
 \section{Point forecasting}
-
 
 \section{Probabilistic forecasting}
 \begin{itemize}
@@ -194,12 +192,13 @@ Ensemble forecasting, which aims at quantifying the forecast uncertainty and gen
 \item Combining probability forecasts
 \end{itemize}
 
-
 \section{Forecast calibration}
 \begin{itemize}
 \item Perfectly calibrated, poorly calibrated (overconfident, underconfident)
 \item Overfit and overconfident forecasts
 \end{itemize}
+
+\end{comment}
 
 
 
