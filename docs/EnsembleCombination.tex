@@ -29,6 +29,9 @@
 \let\proglang=\textsf
 \let\code=\texttt
 
+%% Cite options
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
 %% Reduce Bibliography space
 \usepackage{enumitem}
 \bibpunct{(}{)}{;}{a}{,}{,}
@@ -56,50 +59,157 @@
 
 An increasing size of the toolbox of forecasting methods is available for decision makers. These methods, including statistical and econometric models, machine learning algorithms, and even judgemental forecasting \citep[see an encyclopedic overview by][]{petropoulos2020forecasting}, have their own specialities and are developed under different model specifications with assumptions on the Data Generation Process (DGP) or the associated error distributions. Given a pool of forecasting methods, how to best exploit information in the individual forecasts obtained from these methods?
 
-Several studies in the forecasting literature are devoted to identifying a single 'best model' for a given time series. Given a family of models, information criteria, such as the Akaike Information Criterion \citep[AIC,][]{akaike1998information} and the Bayesian Information Criterion \citep[BIC,][]{schwarz1978estimating}, are commonly used for model selection \citep[e.g.,][]{qi2001investigation,billah2005empirical,yang2005can}. More generally, cross-validation, in its various forms, such as the hold-out approach and the out-of-sample rolling scheme, has been used successfully to select the best forecast when multiple model families or model-free forecasts are considered \citep[e.g.,][]{kohavi1995study,poler2011forecasting,fildes2015simple,inoue2017rolling,talagala2018meta}. However, different criteria may lead to different results of forecast selections. \cite{Kourentzes2019-na} argued that model selection is a challenging task for two reasons: the sample, parameter and model uncertainty associated with identifying a single best forecast, and the ill-defined best forecast.
+Several studies in the forecasting literature are devoted to identifying a single `best model' for a given time series. Given a family of models, information criteria, such as the Akaike Information Criterion \citep[AIC,][]{akaike1998information} and the Bayesian Information Criterion \citep[BIC,][]{schwarz1978estimating}, are commonly used for model selection \citep[e.g.,][]{qi2001investigation,billah2005empirical,yang2005can}. More generally, cross-validation, in its various forms, such as the hold-out approach and the out-of-sample rolling scheme, has been used successfully to select the best forecast when multiple model families or model-free forecasts are considered \citep[e.g.,][]{kohavi1995study,poler2011forecasting,fildes2015simple,inoue2017rolling,talagala2018meta}. However, different criteria may lead to different results of forecast selections. \cite{Kourentzes2019-na} argued that model selection is a challenging task for two reasons: the sample, parameter and model uncertainty associated with identifying a single best forecast, and the ill-defined best forecast.
+
+{\color{red} (Modified to use multiple models instead of combination $\downarrow$.)}
 
 Given these challenges, alternatively \cite{Bates1969-yj} have suggested combining multiple forecasts. The idea of combining forecasts is derived from the simple portfolio diversification argument \citep{Timmermann2006-en}, which is a risk management strategy with an obvious intuition: do not put all eggs into one basket. Even though slightly earlier articles have provided empirical justification of the superiority of forecast combinations over individual forecasts \citep[e.g.,][]{Barnard1963-xa,crane1967two}, the work by \cite{Bates1969-yj} is often considered to be the seminal article on forecast combinations as they developed a general analysis and further explored more possibilities for forecast combinations by extending a simple average to a weighted combination. Furthermore, the idea of combining forecasts is also widely used in machine learning, referred to as forecast ensembles. Similar to combination, the ensemble is a machine learning paradigm using multiple models to solve the same problem. It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting \cite[see an overview by][]{Leutbecher2008-mc}, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research. 
 
 There are nearly five decades of empirical and theoretical investigations support that combining multiple forecasts often achieves improved forecasting performance on average than selecting a single individual forecast. Important early contributions in this area were summarized by \cite{Granger1989-gv}, \cite{Clemen1989-fb}, \cite{Palm1992-im}, and \cite{Timmermann2006-en}. \cite{Clemen1989-fb} surveyed over two hundred statistical literature on forecast combinations and provided a primary conclusion that forecasting accuracy can be substantially improved by combining multiple forecasts. \cite{Timmermann2006-en} summarized the benefits of forecast combinations into the fact that individual forecasts are obtained based on heterogeneous information sets, may be very differently affected by structural breaks and subject to misspecification bias of unknown form. They further concluded that forecast combinations are beneficial due to diversification gains. More recently, \cite{Atiya2020-ge} illustrated graphically why forecast combinations are superior.
 
+\section{Different ways of using multiple models}
+\begin{itemize}
+\item Combinations: A (usually linear) combination of forecasts from multiple models are used for one series. This includes combining point forecasts, quantile forecasts or full distributional forecasts. It covers simple averaging, weighted averaging, and sometimes combinations based on ML algorithms. e.g., FFORMA and related methods.
+\item Ensembles: Although ``ensembles" has been used in different ways in different literatures, we will use ``ensemble" to mean a mixture of the forecast distributions from multiple models. In many ways this is simpler than combinations as the relationship between the methods can be ignored. Need to discuss when they are equivalent.
+\item Boosting: Multiple models used for one series in sequence. Equivalent to hybrid forecasting where residuals from one method are modelled using a different method.
+\item Bagging: One or more models applied to multiple similar series, and then a combination or ensemble is taken. Bagging requires a method for generating multiple series. Some possibilities are STL-ETS and GRATIS.
+\item Stacking.
+\end{itemize}
 
-\section{Simple Combinations}
+Simple example to illustrate differences. Suppose we have one series and two methods: an ARIMA model and a CNN.
 
-Considerable literature has accumulated over the years regarding the way in which individual forecasts are combined. A unanimous conclusion is that simple combination schemes are hard to beat \citep{Clemen1989-fb,Stock2004-rq,Lichtendahl2020-ut}. More specifically, simple combination rules which ignore past information regarding the precision of individual forecasts and correlations between forecast errors work reasonably well relative to more sophisticated combination schemes \citep[see][]{Clemen1989-fb}. \cite{Lichtendahl2020-ut} attributed this phenomenon to a lower risk of simple combination methods resulting in bad forecasts than more refined combination methods. \cite{Timmermann2006-en} concisely summarized the reasons for the success of simple combinations by the importance of parameter estimation error---that is, simple combination schemes do not require estimating parameters such as combination weights based on forecast errors, thus avoiding parameter estimation error that often exists in the weighted combination.
+\begin{itemize}
+\item A combination would apply both to the same series and average the results. Unless we are only interested in point forecasting, the averaging would need to take account of the correlation between the forecast errors.
+\item An ensemble would apply both to the same series and generate forecast distributions from each. These would then be mixed (possibly with weighting) to form the final forecast distribution.
+\item Boosting would apply the ARIMA model to the series, and then apply the CNN to the residuals. The final forecasts would be the forecasts from the ARIMA model plus the forecasts from the CNN.
+\item Bagging would generate multiple series like the series of interest, and apply one of the methods to all the generated series. These could then be combined, or ensembled.
+\end{itemize}
 
-The vast majority of studies on combining multiple models has dealt with point forecasting, even though point forecasts generally provide insufficient information for decision making. The simple average of forecasts based on equal weights is the most widely used simple combination rule \citep[see][]{Bunn1985-vo,Clemen1986-pd,Stock2003-sp}. \cite{Makridakis1982-hb} reported the results of M forecasting competition and found that a simple average outperformed all individual methods. \cite{Clemen1989-fb} provided a review and annotated bibliography of the early work on the combination of forecasts, and then addressed the issue that the arithmetic means often dominate more refined forecast combinations. \cite{Makridakis1983-hg} shown that combining forecasts using simple average reduces the variability of accuracy and hence the risk associated with selecting the best forecast. \cite{Palm1992-im} concisely summarized the advantages of adopting a simple average into three points: (i) combination weights are equal and do not have to be estimated, (ii) a simple average significantly reduces variance and bias by averaging out individual bias in many cases, and (iii) a simple average should be considered when the uncertainty of weight estimation is taken into account. Furthermore, \cite{Timmermann2006-en} pointed out that the good average performance of the simple average depends strongly on model instability and the ratio of forecast error variances associated with different forecasting models.  
+\section{Point forecast combinations}
 
-More attention has been given to other options, including the median as well as trimmed means \citep[e.g.,][]{Chan1999-io,Stock2004-rq,Genre2013-ut,Jose2014-uh,Grushka-Cockayne2017-dj}, due to their robustness in the sense of being less affected by extreme forecasts than a simple average \citep{Lichtendahl2020-ut}. \cite{McNees1992-qc} found no significant difference between the mean and the trimmed mean, while the results of \cite{Stock2004-rq} support the mean. \cite{Jose2008-vm} studied the forecasting performance of the mean and median, as well as the trimmed and Winsorized means. Their results suggested that the trimmed and Winsorized means are appealing because of their simplicity and robust performance. \cite{Kourentzes2014-hs} compared empirically the mean, mode and median combination operators based on kernel density estimation, and found that the three operators deal with outlying extreme values differently, with the mean being the most sensitive and the mode operator the least. Based on these experimental results, they recommended further investigation of the use of the mode and median operators, which have been largely overlooked in relevant literature.
+\subsection{Simple combinations}
 
-Compared to various refined combination approaches and advanced machine learning algorithms, simple combinations seem to be outdated and uncompetitive in the big data era. However, the results from the recent M4 competition \citep{Makridakis2020-hu} show that simple combinations can achieve fairly good forecasting performance and still be competitive. Specifically, a simple equal-weights combination achieved the third best performance for yearly time series \citep{Shaub2019-on} and a median combination of four models achieved sixth place for the point forecasts \citep{Petropoulos2020-fp}. Therefore, simple combination rules provide a tough benchmark to measure the effectiveness of the newly proposed weight estimation algorithms \citep[e.g.,][]{Makridakis2000-he,Stock2004-rq,Makridakis2020-hu,Montero-Manso2020-tq,Kang2020-rl,Wang2021-un}.
+Considerable literature has accumulated over the years regarding the way in which individual forecasts are combined. A unanimous conclusion is that simple combination schemes are hard to beat \citep{Clemen1989-fb,Stock2004-rq,Lichtendahl2020-ut}. More specifically, simple combination rules which ignore past information regarding the precision of individual forecasts and correlations between forecast errors work reasonably well relative to more sophisticated combination schemes, as noted in \citeapos{Clemen1989-fb} survey. \cite{Lichtendahl2020-ut} attributed this phenomenon to a lower risk of simple combination methods resulting in bad forecasts than more refined combination methods. \cite{Timmermann2006-en} concisely summarized the reasons for the success of simple combinations by the importance of parameter estimation error---that is, simple combination schemes do not require estimating parameters such as combination weights based on forecast errors, thus avoiding parameter estimation error that often exists in the weighted combination.
 
+The vast majority of studies on combining multiple models has dealt with point forecasting, even though point forecasts generally provide insufficient information for decision making. The simple average of forecasts based on equal weights stands out as the most popular and surprisingly robust combination rule \citep[see][]{Bunn1985-vo,Clemen1986-pd,Stock2003-sp,Genre2013-ut}. \cite{Makridakis1982-hb} reported the results of M-competition, a forecasting competition involving $1001$ economic time series, and found that the simple average outperformed the individual techniques. \cite{Clemen1989-fb} provided an extensive bibliographical review of the early work on the combination of forecasts, and then addressed the issue that the arithmetic means often dominate more refined forecast combinations. \cite{Makridakis1983-hg} concluded empirically that the accuracy of combined forecasts is improved and the variability associated with the choice of methods is reduced, as the number of individual methods included in a simple average increases. \cite{Palm1992-im} concisely summarized the advantages of adopting a simple average into three points: (i) combination weights are equal and do not have to be estimated, (ii) a simple average significantly reduces variance and bias by averaging out individual bias in many cases, and (iii) a simple average should be considered when the uncertainty of weight estimation is taken into account. Furthermore, \cite{Timmermann2006-en} pointed out that the good average performance of the simple average depends strongly on model instability and the ratio of forecast error variances associated with different forecasting models.
 
-\section{Combination Weighting Schemes}
+More attention has been given to other options, including the median and mode, as well as trimmed means \citep[e.g.,][]{Chan1999-io,Stock2004-rq,Genre2013-ut,Jose2014-uh,Grushka-Cockayne2017-dj}, due to their robustness in the sense of being less affected by extreme forecasts than a simple average \citep{Lichtendahl2020-ut}. There is little consensus in the literature as to whether the mean or the median of individual forecasts performs better in terms of point forecasting \citep{Kolassa2011-ai}. Specifically, \cite{McNees1992-qc} found no significant difference between the mean and the median, while the results of \cite{Stock2004-rq} supported the mean and \cite{Agnew1985-dj} recommended the median. \cite{Jose2008-vm} studied the forecasting performance of the mean and median, as well as the trimmed and winsorized means. Their results suggested that the trimmed and winsorized means are appealing because of their simplicity and robust performance. \cite{Kourentzes2014-hs} compared empirically the mean, mode and median combination operators based on kernel density estimation, and found that the three operators deal with outlying extreme values differently, with the mean being the most sensitive and the mode operator the least. Based on these experimental results, they recommended further investigation of the use of the mode and median operators, which have been largely overlooked in relevant literature.
 
-\subsection{Regression-based combination}
-
-\subsection{Relative performance weights}
-%forecast error
-%information criterion
-
-\subsection{Criterion-based combination}
-
-\subsection{Combining by learning}
-%feature; diversity; similarity
-
-\subsection{Time-varying combination}
-
-\subsection{Nonlinear combination}
+Compared to various refined combination approaches and advanced machine learning algorithms, simple combinations seem to be outdated and uncompetitive in the big data era. However, the results from the recent M4 competition \citep{Makridakis2020-hu} show that simple combinations can achieve fairly good forecasting performance and still be competitive. Specifically, a simple equal-weights combination achieved the third best performance for yearly time series \citep{Shaub2019-on} and a median combination of four models achieved sixth place for the point forecasts \citep{Petropoulos2020-fp}. \cite{Genre2013-ut} encompassed a variety of combination methods in the case of forecasting GDP growth and the unemployment rate. They found that the simple average sets a high benchmark, with few of the combination schemes outperforming it. Therefore, simple combination rules have been consistently the choice of many researchers and provide a tough benchmark to measure the effectiveness of the newly proposed weight estimation algorithms \citep[e.g.,][]{Makridakis2000-he,Stock2004-rq,Makridakis2020-hu,Montero-Manso2020-tq,Kang2020-rl,Wang2021-un}.
 
 
-\section{Forecast Combination Puzzle}
+\subsection{Combination weighting schemes}
+
+% The success of combination highly depends on how well the combination weights can be determined \citep{De_Menezes2000-vd}, as well as the individual forecasts that are combined \citep[see more from][]{Kourentzes2019-na}.
+
+% The shape of the combined forecast error distribution \citep{De_Gooijer2006-eg}.
+
+Though the combined forecasts formed by simple combination rules are acceptable for illustrative and concise purposes, the accumulated evidence of the forecasting literature suggests assigning greater weights to the individual forecasts which contain lower errors. The issue to be addressed is how to best weight the different forecasts used for combination. The general point forecast combination problem can be defined as seeking a one-dimensional aggregator that reduces the information in an $N$-vector of individual forecasts, $\hat{\mathbf{y}}_{t+h, t}=\left(\hat{y}_{t+h, t, 1}, \hat{y}_{t+h, t .2}, \ldots, \hat{y}_{t+h, t, N}\right)^{\prime}$, to a combined point forecast $\tilde{y}_{t+h, t}=C\left(\hat{\mathbf{y}}_{t+h, t} ; \boldsymbol{w}_{t+h, t}\right)$, where $\boldsymbol{w}_{t+h, t}$ is an $N$-vector of combination weights. The general class of combination methods represented by the mapping, $C$, from $\hat{\mathbf{y}}_{t+h, t}$ to $y_{t+h}$, comprises linear, non-linear, and time-varying combinations. Below we discuss in detail the use of various combination weight schemes to determine combination weights.
+
+\subsubsection{Linear combinations}
+
+Typically, the combined forecast is commonly constructed as a linear combination of the individual forecasts. To this end a combined forecast of the linear form can be written as
+\begin{align}
+\label{eq:linear-combinations}
+\tilde{y}_{t+h, t}=\boldsymbol{w}_{t+h, t}^{\prime} \hat{\mathbf{y}}_{t+h, t},
+\end{align}
+where $\boldsymbol{w}_{t+h, t}=\left(w_{t+h, t, 1}, \ldots, w_{t+h, t, N}\right)^{\prime}$ is an $N$-vector of linear combination weights assigned to $N$ individual forecasts.
+
+{\bf{1. Optimal weights}}
+
+The seminal work of \cite{Bates1969-yj} proposed a method to find `optimal' weights by minimizing the variance of the combined forecast error, and discussed only the combination of pairs of forecasts. \cite{Newbold1974-lp} then extended the method to the combination of several forecasts. Specifically, assuming that individual forecasts are unbiased and their variance of errors is consistent over time, the combined forecast obtained by a linear combination will also be unbiased. Differentiating with respect to $\boldsymbol{w}_{t+h, t}$ and solving the first order condition, the variance of the combined forecast error is minimized by taking
+\begin{align}
+\label{eq:optimal-weights}
+\boldsymbol{w}_{t+h, t}=\frac{\Sigma_{t+h, t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \Sigma_{t+h, t}^{-1} \mathbf{1}},
+\end{align}
+where $\Sigma_{t+h, t}$ is the $N \times N$ covariance matrix of the lead $h$ forecast errors and $\mathbf{1}$ is the $N$-dimensional unit vector. Unfortunately, in practice, the elements of the covariance matrix $\Sigma_{t+h, t}$ are usually unknown and required to be properly estimated.
+
+It follows that if $\boldsymbol{w}_{t+h, t}$ is determined by Equation~\eqref{eq:optimal-weights}, one can find a combined forecast $\tilde{y}_{t+h, t}$ with no greater error variance than the minimum error variance of all individual forecasts. The fact was further demonstrated in detail in \cite{Timmermann2006-en} to illustrate the diversification gains offered by forecast combinations by simply considering the combination of two forecasts. Under Mean Squared Error (MSE) loss, \cite{Timmermann2006-en} characterized the general solution of the optimal linear combination weights given the joint Gaussian distribution of $y_{t+h}$ and $\hat{\mathbf{y}}_{t+h, t}$.
+
+The loss assumed in \cite{Bates1969-yj} and \cite{Newbold1974-lp} is quadratic and symmetric in the forecast error from the linear combination. \cite{Elliott2004-dz} examined forecast combinations under more general loss functions that account for asymmetries, and forecast error distributions with skew. They demonstrated that the optimal combination weights in a combination strongly depend on the degree of asymmetry in the loss function and skews in the underlying forecast error distribution. Subsequently, \cite{Patton2007-zo} demonstrated that the properties of optimal forecasts established under MSE loss are not generally robust under more general assumptions about the loss function. The properties of optimal forecasts were also generalized to consider asymmetric loss and nonlinear DGP.
+
+% Optimal weights (A weighted average of forecasts that minimizes the variance of the combined forecast error) -- Unknown covariance matrix -- Five practical methods (relative performance \& time-varying weights).
+
+{\bf{2. Performance-based weights}}
+
+Estimation errors of the optimal weights given by Equation~\eqref{eq:optimal-weights} tend to be particularly large due to difficulties in properly estimating the covariance matrix $\Sigma_{t+h, t}$. In consequence \cite{Bates1969-yj} and \cite{Newbold1974-lp} suggested treating the covariance matrix as a diagonal matrix, leading to the combination weights with the expression
+\begin{align}
+w_{t+h, t, i}=\frac{\left( \sum_{\tau=t-\nu}^{t} e_{\tau, \tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu}^{t} e_{\tau, \tau-h, j}^{2}\right)^{-1}},
+\end{align}
+where $e_{t+h, t, i}$ is the $h$-period forecast error at time $t$ from $i$th individual model. It is clear that the combination weights ignore correlations across individual forecasts and are inversely proportional to the corresponding MSE performance. \cite{Winkler1983-ra} provided extensive empirical results using the suggested procedures for estimating combination weights. Their results reconfirmed \citeapos{Newbold1974-lp} argument that correlations can be poorly estimated in practice and should be ignored in calculating combination weights.
+
+
+\cite{Stock1998-np}: Forecast pooling procedure
+
+\cite{Stock2004-rq}: Discounted MSFE forecasts
+
+\cite{Clark2010-jx}: MSE-weighted (application)
+%Burnham and Anderson (2002) provide an extensive discussion of combination weighting schemes that are based on information criteria, which Kolassa (2011) demonstrates to result in superior accuracy over selection by information criteria.
+\cite{Kolassa2011-ai}: Combining exponential smoothing forecasts using AIC, AICc, and BIC
+
+\cite{Genre2013-ut}: performance-based weighting
+
+\cite{Nowotarski2014-ev}: IRMSE averaging 
+
+\cite{Baumeister2015-ft}: Although the accuracy of the forecast combinations remains remarkably robust across alternative specifications, our results indicate that inverse MSPE weights based on recursive or rolling windows of past data generate less accurate forecasts than constant equal weights.
+
+\cite{Pawlikowski2020-hm}: utilizes several commonly used statistical models, which are weighted according to their performance on historical data.
+
+Rank-based combinations
+ 
+{\color{blue} ---------------------------------------------------------------------------------------------------------------}
+ 
+
+
+{\bf{3. Regression weights}}
+
+Least squares regression of \cite{Granger1984-jc}.
+
+
+\cite{Granger1984-jc} showed that the method of optimal weights \citep{Bates1969-yj,Newbold1974-lp} is equivalent to a least squares regression in which the constant is suppressed and the weights are constrained to sum to one.
+
+\cite{Genre2013-ut} 
+
+\cite{Conflitti2015-fq} Optimal combination of point forecasts and density forecasts (OLS)
+
+{\bf{4. Bayesian weights}}
+
+Bayesian techniques by \cite{Bunn1975-mg} and \cite{Clemen1993-ey}
+
+% gave strong support for ...
+
+
+
+\subsubsection{Nonlinear combinations}
+
+\subsubsection{Time-varying combinations}
+% The elements of the covariance matrix are usually unknown and will need to be estimated. This can be done by straightforward methods for estimating variances and covariances (refer to Chapter 2). It may also be desirable to regularly update the estimates of the covariance matrix so that these quantities reflect current forecasting performance. Newbold and Granger (1974) suggested several methods for doing this, and Montgomery, Johnson, and Gardiner (1990) investigate several of these methods. They report that a smoothing approach for updating the elements of the covariance matrix seems to work well in practice.
+
+% In practice, S is often not stationary, in which case it is estimated on the basis of a short history of forecasts and thus the method becomes an adaptive approach to combining forecasts. See \cite{De_Menezes2000-vd}.
+
+\subsubsection{Combining by learning}
+\begin{itemize}
+ \item Stacking: introduce stacking as a combination/aggregation method rather than a generalization of many ensemble methods in ML.
+ \item Regression-based combinations: a simple stacking.
+ \item Meta-learning that only takes individual forecasts as input.
+ \item Stacking extension: use other information in the meta-learner, such as feature and diversity (FFORMA).
+\end{itemize}
+
+\subsection{Forecast Combination Puzzle}
+{\color{red} (why don't weights work?)}
+
+\citep{De_Menezes2000-vd,Genre2013-ut,Post2019-lv,Chan2018-jl,Lichtendahl2020-ut,Kourentzes2019-na}
 % About "forecast combination puzzle"
 % This empirical fact has been first stated as the ``forecast combination puzzle" in \cite{Stock2004-rq}. Furthermore, some theoretical explanation of the forecast combination puzzle are offered in later studies \citep[see][]{Smith2009-wd,Claeskens2016-pv}.
 % 1. This puzzle was first noted by Clemen (1989), and was formally named the ‘‘forecast combination puzzle’’ by Stock and Watson (2004).
 % 2. In Makridakis et al., (1982, 1983), a simple average of six methods tended to be slightly more accurate than a weighted average of the same methods.
 
 
-\section{Probabilistic Forecast Combinations}
+\section{Probabilistic forecast combinations}
+\begin{itemize}
+\item Combining quantiles and prediction intervals.
+\item Combining distributions as in fable.
+\end{itemize}
 % About "simple probabilistic forecast combination"
 % 1. There has been a growing interest in using combination methods for probabilistic forecasting. Probabilistic forecasts differ from point forecasts in the sense that there is an associated probability related to the reported values, providing more comprehensive information about uncertainties of the future load than single-valued forecasts. 
 % 2. histories (theory and empirical work of simple combination)
@@ -114,7 +224,17 @@ Compared to various refined combination approaches and advanced machine learning
 %% - Combining Interval Forecasts.
 %% - (quantile)Combining Probabilistic Load Forecasts
 
+\section{Probabilistic ensembles}
+\begin{itemize}
+\item Meteorological ensembles.
+\item True ensembles in other areas (i.e., not papers that use the word "ensemble" but papers that use mixtures when forecasting).
+\item When is an ensemble equivalent to combination?
+\item When do point forecasts from an ensemble equal point forecasts from a combination?
+\end{itemize}
 
+\section{Boosting in forecasting}
+\section{Bagging in forecasting}
+\section{Stacking in forecasting}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
