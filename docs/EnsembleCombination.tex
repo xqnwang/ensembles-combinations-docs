@@ -39,6 +39,12 @@
 \baselineskip = 7 mm
 \parskip = 2.5 mm
 
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}%
+   {-3.25ex plus -1ex minus -0.2ex}%
+   {1.5ex plus 0.2ex}%
+   {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \begin{document}
 
@@ -115,29 +121,51 @@ Typically, the combined forecast is commonly constructed as a linear combination
 \end{align}
 where $\boldsymbol{w}_{t+h, t}=\left(w_{t+h, t, 1}, \ldots, w_{t+h, t, N}\right)^{\prime}$ is an $N$-vector of linear combination weights assigned to $N$ individual forecasts.
 
-{\bf{1. Optimal weights}}
+\paragraph{Optimal weights}
 
 The seminal work of \cite{Bates1969-yj} proposed a method to find `optimal' weights by minimizing the variance of the combined forecast error, and discussed only the combination of pairs of forecasts. \cite{Newbold1974-lp} then extended the method to the combination of several forecasts. Specifically, assuming that individual forecasts are unbiased and their variance of errors is consistent over time, the combined forecast obtained by a linear combination will also be unbiased. Differentiating with respect to $\boldsymbol{w}_{t+h, t}$ and solving the first order condition, the variance of the combined forecast error is minimized by taking
 \begin{align}
-\label{eq:optimal-weights}
+\label{eq:weight_opt}
 \boldsymbol{w}_{t+h, t}=\frac{\Sigma_{t+h, t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \Sigma_{t+h, t}^{-1} \mathbf{1}},
 \end{align}
 where $\Sigma_{t+h, t}$ is the $N \times N$ covariance matrix of the lead $h$ forecast errors and $\mathbf{1}$ is the $N$-dimensional unit vector. Unfortunately, in practice, the elements of the covariance matrix $\Sigma_{t+h, t}$ are usually unknown and required to be properly estimated.
 
-It follows that if $\boldsymbol{w}_{t+h, t}$ is determined by Equation~\eqref{eq:optimal-weights}, one can find a combined forecast $\tilde{y}_{t+h, t}$ with no greater error variance than the minimum error variance of all individual forecasts. The fact was further demonstrated in detail in \cite{Timmermann2006-en} to illustrate the diversification gains offered by forecast combinations by simply considering the combination of two forecasts. Under Mean Squared Error (MSE) loss, \cite{Timmermann2006-en} characterized the general solution of the optimal linear combination weights given the joint Gaussian distribution of $y_{t+h}$ and $\hat{\mathbf{y}}_{t+h, t}$.
+It follows that if $\boldsymbol{w}_{t+h, t}$ is determined by Equation~\eqref{eq:weight_opt}, one can find a combined forecast $\tilde{y}_{t+h, t}$ with no greater error variance than the minimum error variance of all individual forecasts. The fact was further demonstrated in detail in \cite{Timmermann2006-en} to illustrate the diversification gains offered by forecast combinations by simply considering the combination of two forecasts. Under Mean Squared Error (MSE) loss, \cite{Timmermann2006-en} characterized the general solution of the optimal linear combination weights given the joint Gaussian distribution of the outcome $y_{t+h}$ and forecasts $\hat{\mathbf{y}}_{t+h, t}$.
 
 The loss assumed in \cite{Bates1969-yj} and \cite{Newbold1974-lp} is quadratic and symmetric in the forecast error from the linear combination. \cite{Elliott2004-dz} examined forecast combinations under more general loss functions that account for asymmetries, and forecast error distributions with skew. They demonstrated that the optimal combination weights in a combination strongly depend on the degree of asymmetry in the loss function and skews in the underlying forecast error distribution. Subsequently, \cite{Patton2007-zo} demonstrated that the properties of optimal forecasts established under MSE loss are not generally robust under more general assumptions about the loss function. The properties of optimal forecasts were also generalized to consider asymmetric loss and nonlinear DGP.
 
 % Optimal weights (A weighted average of forecasts that minimizes the variance of the combined forecast error) -- Unknown covariance matrix -- Five practical methods (relative performance \& time-varying weights).
 
-{\bf{2. Performance-based weights}}
+\paragraph{Regression approach}
 
-Estimation errors of the optimal weights given by Equation~\eqref{eq:optimal-weights} tend to be particularly large due to difficulties in properly estimating the covariance matrix $\Sigma_{t+h, t}$. In consequence \cite{Bates1969-yj} and \cite{Newbold1974-lp} suggested treating the covariance matrix as a diagonal matrix, leading to the combination weights with the expression
+The seminal work by \cite{Granger1984-jc} provided an important impetus for approximating the optimal weights under a linear regression framework. They recommended the strategy that the combination weights are estimated by ordinary least squares (OLS) in regression models having the vector of past observations as the response variable and the matrix of past forecasts as the explanatory variables. Three alternative approaches involving various possible restrictions are considered
 \begin{align}
-w_{t+h, t, i}=\frac{\left( \sum_{\tau=t-\nu}^{t} e_{\tau, \tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu}^{t} e_{\tau, \tau-h, j}^{2}\right)^{-1}},
+&y_{t+h}=\boldsymbol{w}_{h}^{\prime} \hat{\mathbf{y}}_{t+h, t}+\varepsilon_{t+h}, \quad s.t. \quad \boldsymbol{w}_{h}^{\prime}\mathbf{1}=1, \label{eq:weight_gr1}\\
+&y_{t+h}=\boldsymbol{w}^{\prime} \hat{\mathbf{y}}_{t+h, t}+\varepsilon_{t+h},  \label{eq:weight_gr2}\\
+&y_{t+h}=\omega_{0h}+\boldsymbol{w}^{\prime} \hat{\mathbf{y}}_{t+h, t}+\varepsilon_{t+h}. \label{eq:weight_gr3}
 \end{align}
-where $e_{t+h, t, i}$ is the $h$-period forecast error at time $t$ from $i$th individual model. It is clear that the combination weights ignore correlations across individual forecasts and are inversely proportional to the corresponding MSE performance. \cite{Winkler1983-ra} provided extensive empirical results using the suggested procedures for estimating combination weights. Their results reconfirmed \citeapos{Newbold1974-lp} argument that correlations can be poorly estimated in practice and should be ignored in calculating combination weights.
+The constrained OLS estimation of the regression~\eqref{eq:weight_gr1} in which the constant is omitted and the weights are constrained to sum to one yields results identical to the optimal weights proposed by \cite{Bates1969-yj}. Furthermore, \cite{Granger1984-jc} suggested the unrestricted OLS regression~\eqref{eq:weight_gr3} which allows for a constant term and dose not impose the weights sum to one is superior to the popular optimal method regardless of whether the constituent forecasts are biased. However, \cite{De_Menezes2000-vd} put forward some consideration required when using the unrestricted regression, including the stationarity of the series being forecast, the possible presence of serial correlation in forecast errors \citep[see also][]{Diebold1988-sx,Edward_Coulson1993-db}, and the issue of multicollinearity.
 
+More generalizations of the combination regressions have been considered in the literature. \cite{Diebold1988-sx} exploited the serial correlation in least squares framework by characterizing the combined forecast errors as the autoregressive moving average (ARMA) processes, leading to improved combined forecasts. \cite{Gunter1992-go} and \cite{Aksu1992-lb} provided an empirical analysis to compare the performance of various combination strategies, including the simple average, the unrestricted OLS regression, the restricted OLS regression where the weights are restricted to sum to unity, and the nonnegativity restricted OLS regression where the weights are constrained to be nonnegative. The results revealed that constraining weights to be nonnegative  is at least as robust and accurate as the simple average and yields superiority over other combinations based on regression framework. \cite{Edward_Coulson1993-db} found that allowing a lagged dependent variable in forecast combination regressions can achieve improved performance. \cite{Conflitti2015-fq} addressed the problem of determining the optimal weights by imposing two constraints that the weights should be nonnegative and sum to one, which turns out to be a special case of a lasso regression.
+
+\cite{Diebold1987-go} explored the possibilities for time-varying parameters in regression-based combination approaches. Both deterministic and stochastic time-varying parameters are considered in the linear regression framework. Specifically, the combination weights are described as deterministic nonlinear (polynomial) functions of time or allowed to involve random variation. \cite{Deutsch1994-ob} allowed the combination weights to evolve immediately or smoothly using switching regression models and smooth transition regression models.
+
+\cite{Chan1999-io} examined a wide range of combination methods in a Monte Carlo experiment and a real-word dataset. Their results investigated the poor performance of OLS combinations when the number of forecasts to be combined is large and suggested alternative weight estimation methods, such as ridge regression and principal components forecast combination. \cite{Stock2004-rq} provided the details of principal component forecast combination, which entails forming a regression having the actual value as the response variable and the first few principal components reduced from several forecasts as the explanatory variables. This method reduces the number of weights that must be estimated in a regression framework. The superiority of the principal components regression over OLS combinations was also confirmed in \cite{Rapach2008-jh}.
+
+\paragraph{Performance-based weights}
+
+Estimation errors of the optimal weights given by Equation~\eqref{eq:weight_opt} tend to be particularly large due to difficulties in properly estimating the entire covariance matrix $\Sigma_{t+h, t}$, especially in situations with the large number of forecasts at hand. In consequence \cite{Bates1969-yj} and \cite{Newbold1974-lp} suggested dropping the covariance term from the weighting expressions and treating the covariance matrix as a diagonal matrix, leading to the combination weights with the expression
+\begin{align}
+w_{t+h, t, i}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau, \tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau, \tau-h, j}^{2}\right)^{-1}},
+\end{align}
+where $e_{t+h, t, i}$ is the $h$-period forecast error at time $t$ from $i$th individual model. It is clear that the combination weights are assigned on the sole basis of the historical performance of each individual model, ignoring correlations across forecasts. \cite{Winkler1983-ra} generalized the results in the sense of considering more time series, more forecasting models, and multiple horizons. Their findings reconfirmed \citeapos{Newbold1974-lp} argument that correlations can be poorly estimated in practice and should be ignored in calculating combination weights.
+
+
+weight the forecasts in inverse proportion to their current MSE.
+
+% the combination weights are inversely proportional to the corresponding MSE performance. 
+
+see \cite{Swanson2001-eg} for `Forecast Combination Using Akaike and Schwarz Information Criteria'.
 
 \cite{Stock1998-np}: Forecast pooling procedure
 
@@ -157,35 +185,25 @@ where $e_{t+h, t, i}$ is the $h$-period forecast error at time $t$ from $i$th in
 
 Rank-based combinations
  
-{\color{blue} ---------------------------------------------------------------------------------------------------------------}
- 
 
+\paragraph{Bayesian weights}
 
-{\bf{3. Regression weights}}
-
-Least squares regression of \cite{Granger1984-jc}.
-
-
-\cite{Granger1984-jc} showed that the method of optimal weights \citep{Bates1969-yj,Newbold1974-lp} is equivalent to a least squares regression in which the constant is suppressed and the weights are constrained to sum to one.
-
-\cite{Genre2013-ut} 
-
-\cite{Conflitti2015-fq} Optimal combination of point forecasts and density forecasts (OLS)
-
-{\bf{4. Bayesian weights}}
+see review by \cite{Cheng2015-tp}.
 
 Bayesian techniques by \cite{Bunn1975-mg} and \cite{Clemen1993-ey}
 
 % gave strong support for ...
 
+\paragraph{Time-varying combinations}
+\cite{Bates1969-yj} and \cite{Newbold1974-lp} also stress that the relative performance of different models can change over time. This suggests computing MSEs over rolling windows. (see \cite{Stock1998-np})
 
 
-\subsubsection{Nonlinear combinations}
-
-\subsubsection{Time-varying combinations}
 % The elements of the covariance matrix are usually unknown and will need to be estimated. This can be done by straightforward methods for estimating variances and covariances (refer to Chapter 2). It may also be desirable to regularly update the estimates of the covariance matrix so that these quantities reflect current forecasting performance. Newbold and Granger (1974) suggested several methods for doing this, and Montgomery, Johnson, and Gardiner (1990) investigate several of these methods. They report that a smoothing approach for updating the elements of the covariance matrix seems to work well in practice.
 
 % In practice, S is often not stationary, in which case it is estimated on the basis of a short history of forecasts and thus the method becomes an adaptive approach to combining forecasts. See \cite{De_Menezes2000-vd}.
+
+\subsubsection{Nonlinear combinations}
+
 
 \subsubsection{Combining by learning}
 \begin{itemize}
@@ -210,6 +228,10 @@ Bayesian techniques by \cite{Bunn1975-mg} and \cite{Clemen1993-ey}
 \item Combining quantiles and prediction intervals.
 \item Combining distributions as in fable.
 \end{itemize}
+
+\citep{Genest1990-sr,Nowotarski2015-xu,Conflitti2015-fq}
+
+
 % About "simple probabilistic forecast combination"
 % 1. There has been a growing interest in using combination methods for probabilistic forecasting. Probabilistic forecasts differ from point forecasts in the sense that there is an associated probability related to the reported values, providing more comprehensive information about uncertainties of the future load than single-valued forecasts. 
 % 2. histories (theory and empirical work of simple combination)
