@@ -146,11 +146,11 @@ The seminal work by \cite{Granger1984-jc} provided an important impetus for appr
 \end{align}
 The constrained OLS estimation of the regression~\eqref{eq:weight_gr1} in which the constant is omitted and the weights are constrained to sum to one yields results identical to the optimal weights proposed by \cite{Bates1969-yj}. Furthermore, \cite{Granger1984-jc} suggested the unrestricted OLS regression~\eqref{eq:weight_gr3} which allows for a constant term and dose not impose the weights sum to one is superior to the popular optimal method regardless of whether the constituent forecasts are biased. However, \cite{De_Menezes2000-vd} put forward some consideration required when using the unrestricted regression, including the stationarity of the series being forecast, the possible presence of serial correlation in forecast errors \citep[see also][]{Diebold1988-sx,Edward_Coulson1993-db}, and the issue of multicollinearity.
 
-More generalizations of the combination regressions have been considered in the literature. \cite{Diebold1988-sx} exploited the serial correlation in least squares framework by characterizing the combined forecast errors as the autoregressive moving average (ARMA) processes, leading to improved combined forecasts. \cite{Gunter1992-go} and \cite{Aksu1992-lb} provided an empirical analysis to compare the performance of various combination strategies, including the simple average, the unrestricted OLS regression, the restricted OLS regression where the weights are restricted to sum to unity, and the nonnegativity restricted OLS regression where the weights are constrained to be nonnegative. The results revealed that constraining weights to be nonnegative  is at least as robust and accurate as the simple average and yields superiority over other combinations based on regression framework. \cite{Edward_Coulson1993-db} found that allowing a lagged dependent variable in forecast combination regressions can achieve improved performance. \cite{Conflitti2015-fq} addressed the problem of determining the optimal weights by imposing two constraints that the weights should be nonnegative and sum to one, which turns out to be a special case of a lasso regression.
+More generalizations of the combination regressions have been considered in the literature. \cite{Diebold1988-sx} exploited the serial correlation in least squares framework by characterizing the combined forecast errors as the autoregressive moving average (ARMA) processes, leading to improved combined forecasts. \cite{Gunter1992-go} and \cite{Aksu1992-lb} provided an empirical analysis to compare the performance of various combination strategies, including the simple average, the unrestricted OLS regression, the restricted OLS regression where the weights are restricted to sum to unity, and the nonnegativity restricted OLS regression where the weights are constrained to be nonnegative. The results revealed that constraining weights to be nonnegative  is at least as robust and accurate as the simple average and yields superiority over other combinations based on regression framework. \cite{Edward_Coulson1993-db} found that allowing a lagged dependent variable in forecast combination regressions can achieve improved performance. \cite{Conflitti2015-fq} addressed the problem of determining the optimal weights by imposing two restrictions that the weights should be nonnegative and sum to one, which turns out to be a special case of a lasso regression.
 
-\cite{Diebold1987-go} explored the possibilities for time-varying parameters in regression-based combination approaches. Both deterministic and stochastic time-varying parameters are considered in the linear regression framework. Specifically, the combination weights are described as deterministic nonlinear (polynomial) functions of time or allowed to involve random variation. \cite{Deutsch1994-ob} allowed the combination weights to evolve immediately or smoothly using switching regression models and smooth transition regression models.
+The forecast combinations using changing weights are developed to consider various types of structual changes in the constituent forecasts in the relevant literature. For instance, \cite{Diebold1987-go} explored the possibilities for time-varying parameters in regression-based combination approaches. Both deterministic and stochastic time-varying parameters are considered in the linear regression framework. Specifically, the combination weights are described as deterministic nonlinear (polynomial) functions of time or allowed to involve random variation. \cite{Deutsch1994-ob} allowed the combination weights to evolve immediately or smoothly using switching regression models and smooth transition regression models.
 
-\cite{Chan1999-io} examined a wide range of combination methods in a Monte Carlo experiment and a real-word dataset. Their results investigated the poor performance of OLS combinations when the number of forecasts to be combined is large and suggested alternative weight estimation methods, such as ridge regression and principal components forecast combination. \cite{Stock2004-rq} provided the details of principal component forecast combination, which entails forming a regression having the actual value as the response variable and the first few principal components reduced from several forecasts as the explanatory variables. This method reduces the number of weights that must be estimated in a regression framework. The superiority of the principal components regression over OLS combinations was also confirmed in \cite{Rapach2008-jh}.
+Researchers have worked on dealing with a large number of forecasts in the regression framework to take advantages of many different models. \cite{Chan1999-io} examined a wide range of combination methods in a Monte Carlo experiment and a real-word dataset. Their results investigated the poor performance of OLS combinations when the number of forecasts to be combined is large and suggested alternative weight estimation methods, such as ridge regression and principal components forecast combination. \cite{Stock2004-rq} provided the details of principal component forecast combination, which entails forming a regression having the actual value as the response variable and the first few principal components reduced from several forecasts as the explanatory variables. This method reduces the number of weights that must be estimated in a regression framework. The superiority of the principal components regression over OLS combinations was also confirmed in \cite{Rapach2008-jh}.
 
 \paragraph{Performance-based weights}
 
@@ -160,8 +160,14 @@ w_{t+h, t, i}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau, \tau-h, i}^{2} \righ
 \end{align}
 where $e_{t+h, t, i}$ is the $h$-period forecast error at time $t$ from $i$th individual model. It is clear that the combination weights are assigned on the sole basis of the historical performance of each individual model, ignoring correlations across forecasts. \cite{Winkler1983-ra} generalized the results in the sense of considering more time series, more forecasting models, and multiple horizons. Their findings reconfirmed \citeapos{Newbold1974-lp} argument that correlations can be poorly estimated in practice and should be ignored in calculating combination weights.
 
+{\color{blue}-------------------------------------------------------------}
 
-weight the forecasts in inverse proportion to their current MSE.
+
+%weight the forecasts in inverse proportion to their current MSE.
+
+\cite{Bates1969-yj} and \cite{Newbold1974-lp} also stress that the relative performance of different models can change over time. This suggests computing MSEs over rolling windows. (see \cite{Stock1998-np})
+
+\cite{Stock2004-rq} and \cite{Timmermann2006-en} use the inverse mean square prediction error (MSPE) over a set of the most recent observations to compute model weights.
 
 % the combination weights are inversely proportional to the corresponding MSE performance. 
 
@@ -193,9 +199,6 @@ see review by \cite{Cheng2015-tp}.
 Bayesian techniques by \cite{Bunn1975-mg} and \cite{Clemen1993-ey}
 
 % gave strong support for ...
-
-\paragraph{Time-varying combinations}
-\cite{Bates1969-yj} and \cite{Newbold1974-lp} also stress that the relative performance of different models can change over time. This suggests computing MSEs over rolling windows. (see \cite{Stock1998-np})
 
 
 % The elements of the covariance matrix are usually unknown and will need to be estimated. This can be done by straightforward methods for estimating variances and covariances (refer to Chapter 2). It may also be desirable to regularly update the estimates of the covariance matrix so that these quantities reflect current forecasting performance. Newbold and Granger (1974) suggested several methods for doing this, and Montgomery, Johnson, and Gardiner (1990) investigate several of these methods. They report that a smoothing approach for updating the elements of the covariance matrix seems to work well in practice.
@@ -229,7 +232,7 @@ Bayesian techniques by \cite{Bunn1975-mg} and \cite{Clemen1993-ey}
 \item Combining distributions as in fable.
 \end{itemize}
 
-\citep{Genest1990-sr,Nowotarski2015-xu,Conflitti2015-fq}
+\citep{Genest1990-sr,Nowotarski2015-xu,Conflitti2015-fq,Billio2013-sg}
 
 
 % About "simple probabilistic forecast combination"
