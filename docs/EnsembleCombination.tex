@@ -72,7 +72,7 @@ Several studies in the forecasting literature are devoted to identifying a singl
 
 Given these challenges, alternatively \cite{Bates1969-yj} have suggested combining multiple forecasts. The idea of combining forecasts is derived from the simple portfolio diversification argument \citep{Timmermann2006-en}, which is a risk management strategy with an obvious intuition: do not put all eggs into one basket. Even though slightly earlier articles have provided empirical justification of the superiority of forecast combinations over individual forecasts \citep[e.g.,][]{Barnard1963-xa,crane1967two}, the work by \cite{Bates1969-yj} is often considered to be the seminal article on forecast combinations as they developed a general analysis and further explored more possibilities for forecast combinations by extending a simple average to a weighted combination. Furthermore, the idea of combining forecasts is also widely used in machine learning, referred to as forecast ensembles. Similar to combination, the ensemble is a machine learning paradigm using multiple models to solve the same problem. It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting \cite[see an overview by][]{Leutbecher2008-mc}, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research. 
 
-There are nearly five decades of empirical and theoretical investigations support that combining multiple forecasts often achieves improved forecasting performance on average than selecting a single individual forecast. Important early contributions in this area were summarized by \cite{Granger1989-gv}, \cite{Clemen1989-fb}, \cite{Palm1992-im}, and \cite{Timmermann2006-en}. \cite{Clemen1989-fb} surveyed over two hundred statistical literature on forecast combinations and provided a primary conclusion that forecasting accuracy could be substantially improved by combining multiple forecasts. \cite{Timmermann2006-en} summarized the benefits of forecast combinations into the fact that individual forecasts obtained based on heterogeneous information sets, may be very differently affected by structural breaks and subject to misspecification bias of unknown form. They further concluded that forecast combinations were beneficial due to diversification gains. More recently, \cite{Atiya2020-ge} illustrated graphically why forecast combinations were superior.
+There are nearly five decades of empirical and theoretical investigations support that combining multiple forecasts often achieves improved forecasting performance on average than selecting a single individual forecast. Important early contributions in this area were summarized by \cite{Granger1989-gv}, \cite{Clemen1989-fb}, \cite{Palm1992-im}, and \cite{Timmermann2006-en}. \cite{Clemen1989-fb} surveyed over two hundred statistical literature on forecast combinations and provided a primary conclusion that forecasting accuracy could be substantially improved by combining multiple forecasts. \cite{Timmermann2006-en} attributed the superiority of forecast combinations over a single model to the fact that individual forecasts obtained based on heterogeneous information sets, may be very differently affected by structural breaks and subject to misspecification bias of unknown form. They further concluded that forecast combinations were beneficial due to diversification gains. More recently, \cite{Atiya2020-ge} illustrated graphically why forecast combinations were superior.
 
 \section{Different ways of using multiple models}
 \begin{itemize}
@@ -127,7 +127,7 @@ where $\boldsymbol{w}_{t+h|t}=\left(w_{t+h|t, 1}, \ldots, w_{t+h|t, N}\right)^{\
 The seminal work of \cite{Bates1969-yj} proposed a method to find `optimal' weights by minimizing the variance of the combined forecast error, and discussed only the combination of pairs of forecasts. \cite{Newbold1974-lp} then extended the method to the combination of several forecasts. Specifically, assuming that individual forecasts are unbiased and their variance of errors is consistent over time, the combined forecast obtained by a linear combination will also be unbiased. Differentiating with respect to $\boldsymbol{w}_{t+h|t}$ and solving the first order condition, the variance of the combined forecast error is minimized by taking
 \begin{align}
 \label{eq:weight_opt}
-\boldsymbol{w}_{t+h|t}^{opt}=\frac{\boldsymbol{\Sigma}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \boldsymbol{\Sigma}_{t+h|t}^{-1} \mathbf{1}},
+\boldsymbol{w}_{t+h|t}^{\text{opt}}=\frac{\boldsymbol{\Sigma}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \boldsymbol{\Sigma}_{t+h|t}^{-1} \mathbf{1}},
 \end{align}
 where $\boldsymbol{\Sigma}_{t+h|t}$ is the $N \times N$ covariance matrix of the lead $h$ forecast errors and $\mathbf{1}$ is the $N$-dimensional unit vector. Unfortunately, in practice, the elements of the covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$ are usually unknown and required to be properly estimated.
 
@@ -159,13 +159,13 @@ Estimation errors in the optimal weights and a diverse set of regression-based w
 
 Let $\mathbf{e}_{t+h|t}=\mathbf{1} y_{t+h}-\hat{\mathbf{y}}_{t+h|t}$ be the $N$-vector of $h$-period forecast errors from the individual models, the five procedures suggested in \cite{Bates1969-yj} for estimating the combination weights when $\boldsymbol{\Sigma}_{t+h|t}$ is unknown, extended to the general case are as follows:
 \begin{align}
-&w_{t+h|t, i}^{bg1}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}. \label{eq:weight_bg1}\\
-&\boldsymbol{w}_{t+h|t}^{bg2}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \mathbf{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\nu^{-1} \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}. \label{eq:weight_bg2}\\
-&w_{t+h|t, i}^{bg3}=\alpha \hat{w}_{t+h-1|t-1, i} + (1-\alpha) \frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad 0<\alpha<1. \label{eq:weight_bg3}\\
-&w_{t+h|t, i}^{bg4}=\frac{\left( \sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \gamma \geq 1. \label{eq:weight_bg4}\\
-&\boldsymbol{w}_{t+h|t}^{bg5}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \mathbf{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\frac{\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}}{\sum_{\tau=1}^{t} \gamma^{\tau}} \quad \text{and} \quad \gamma \geq 1. \label{eq:weight_bg5}
+&w_{t+h|t, i}^{\text{bg1}}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}. \label{eq:weight_bg1}\\
+&\boldsymbol{w}_{t+h|t}^{\text{bg2}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \mathbf{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\nu^{-1} \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}. \label{eq:weight_bg2}\\
+&w_{t+h|t, i}^{\text{bg3}}=\alpha \hat{w}_{t+h-1|t-1, i} + (1-\alpha) \frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad 0<\alpha<1. \label{eq:weight_bg3}\\
+&w_{t+h|t, i}^{\text{bg4}}=\frac{\left( \sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \gamma \geq 1. \label{eq:weight_bg4}\\
+&\boldsymbol{w}_{t+h|t}^{\text{bg5}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\mathbf{1}}{\mathbf{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \mathbf{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\frac{\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}}{\sum_{\tau=1}^{t} \gamma^{\tau}} \quad \text{and} \quad \gamma \geq 1. \label{eq:weight_bg5}
 \end{align}
-These weighting schemes differ in the factors, as well as the choice of the parameters, $\nu$, $\alpha$, and $\gamma$. Correlations across forecast errors are either ignored by treating the covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$ as a diagonal matrix or estimated using rolling windows or exponential discounting. Some estimation schemes suggest computing or updating the relative performance of different models over rolling windows of the most recent $\nu$ observations, while others base the weights on exponential discounting with higher values of $\gamma$ giving larger weights to recent observations. In consequence, these weighting schemes are well adapted to allow the non-stationary relationship between the individual forecasting procedures over time \citep{Newbold1974-lp}, which, however, tends to increase the variance of the parameter estimates and works quite poorly provided that the DGP is truly covariance stationary \citep{Timmermann2006-en}.
+These weighting schemes differ in the factors, as well as the choice of the parameters, $\nu$, $\alpha$, and $\gamma$. Correlations across forecast errors are either ignored by treating the covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$ as a diagonal matrix or estimated using sample data points which, however, may lead to quite unstable estimates of $\boldsymbol{\Sigma}_{t+h|t}$ given highly correlated forecast errors. Some estimation schemes suggest computing or updating the relative performance of different models over rolling windows of the most recent $\nu$ observations, while others base the weights on exponential discounting with higher values of $\gamma$ giving larger weights to recent observations. In consequence, these weighting schemes are well adapted to allow the non-stationary relationship between the individual forecasting procedures over time \citep{Newbold1974-lp}, which, however, tends to increase the variance of the parameter estimates and works quite poorly provided that the DGP is truly covariance stationary \citep{Timmermann2006-en}.
 
 A broader set of combination weights based on the relative performance of individual forecasting techniques is developed and examined in a series of studies. \cite{Stock1998-np} generalized the rolling window scheme \eqref{eq:weight_bg1} in the sense that the weights on the individual forecasts were inversely proportional to the $k$th power of their MSE. The weights with $k=0$ correspond to assigning equal weights to all forecasts, while more weights are placed on the best performing models by considering $k \geq 1$. Other forms of forecast error measures, such as the Root Mean Squared Error (RMSE) and the symmetric Mean Absolute Percentage Error (sMAPE), are also considered to develop the performance-based combination weights \citep[e.g.,][]{Nowotarski2014-ev,Pawlikowski2020-hm}. Besides, a weighting scheme with the weights depending inversely on the exponentially discounted errors is proposed by \cite{Stock2004-rq} as an upgraded version of the scheme \eqref{eq:weight_bg4}, and encompassed in the sequent studies \citep[e.g.,][]{Clark2010-jx,Genre2013-ut} to achieve gains from combining forecasts. The pseudo out-of-sample performance used in these weighting schemes is commonly computed based on rolling or recursive (expanding) windows \citep[e.g.,][]{Stock1998-np,Clark2010-jx,Genre2013-ut}. It is natural to adopt rolling windows in estimating the weights to deal with the structural change. But the window length should not be too short without the estimates of the weights becoming too noisy \citep{Baumeister2015-ft}.
 % rolling windows (min(t-T+1, v)) \citep{Stock1998-np,Clark2010-jx,Genre2013-ut,Baumeister2015-ft,Pawlikowski2020-hm}
@@ -180,7 +180,7 @@ Information criteria, such as the Akaike Information Criterion \citep[AIC,][]{Ak
 One such common approach is using Akaike weights. Specifically, in light of the fact that AIC estimates the Kullback-Leibler distance \citep{Kullback1951-hl} between a model and the true DGP, differences in the AIC can be considered to weight different models, providing a measure of the evidence for each model relative to other constituent models. Given $N$ individual models, the Akaike weight of model $i$ can be derived by the following steps:
 \begin{align}
 &\Delta \mathrm{AIC}_{i}=\mathrm{AIC}_{i}-\min _{k \in \{1,2,\cdots,N\}} \mathrm{AIC}(k), \label{eq:diff_aic}\\
-&w_{i}=\frac{\exp (-0.5 \Delta \mathrm{AIC}_{i})}{\sum_{k=1}^{N} \exp \left(-0.5 \Delta \mathrm{AIC}_{k}\right)}. \label{eq:weight_aic}
+&w_{i}^{\text{aic}}=\frac{\exp (-0.5 \Delta \mathrm{AIC}_{i})}{\sum_{k=1}^{N} \exp \left(-0.5 \Delta \mathrm{AIC}_{k}\right)}. \label{eq:weight_aic}
 \end{align}
 Akaike weights calculated in this manner can be interpreted as the probability that a given model performs best at approximating the unknown DGP, given the model set and data \citep{Kolassa2011-ai}. Similar weights from AICc and BIC can be derived analogously to Equation~\eqref{eq:diff_aic}-\eqref{eq:weight_aic}.
 
@@ -188,19 +188,27 @@ The outstanding performance of weighted combinations based on information criter
 
 % the use of multiple temporal aggregation levels
 
-\paragraph{Bayesian weights}
+\paragraph{Bayesian approach}
 
-see review by \cite{Cheng2015-tp}.
+Some effort has been directed toward the use of Bayesian approaches to updating forecast combination weights in face of new information from various sources. Recall that obtaining reliable estimates of the covariance matrix $\boldsymbol{\Sigma}$ (the time and horizon subscripts are dropped for simplicity) of forecast errors with correlation being ignored or not, is a major challenge in the general case. With this in mind, \cite{Bunn1975-vz} suggested the idea of a Bayesian combination on the basis of the probability of  respective forecasting model performing the best on any given occasion. Considering the beta and the Dirichlet distributions arising as the conjugate priors for the binomial and multinomial processes respectively, the suggested non-parametric method performs well when there is relatively little past data by the way of attaching prior subjective probabilities to individual forecasts \citep{Bunn1985-vo,De_Menezes2000-vd}. \cite{Oller1978-wx} presented another way to involve subjective probability in a Bayesian method based on the self-scoring weights proportional to the evaluation of the expert's forecasting ability.
 
-\citep{Bunn1975-mg,Clemen1993-ey,Nowotarski2014-ev}.
+A different theme of research has also advocated the incorporation of prior information into the estimation of combination weights, but with the weights being shrunk toward some prior mean \citep{Newbold2002-wa}. Assuming that forecast errors are jointly normally distributed, \cite{Clemen1986-pd} developed a Bayesian approach with the conjugate prior for $\boldsymbol{\Sigma}$, represented by an inverted Wishart distribution with covariance matrix $\boldsymbol{\Sigma}_{0}$ and scalar degrees of freedom $\nu_{0}$.  Again we drop time and horizon subscripts for simplicity. If the last $n$ observations are used to estimate $\boldsymbol{\Sigma}$, the combination weights derived from the posterior distribution for $\boldsymbol{\Sigma}$ is
+\begin{align}
+\label{eq:weight_cw}
+\boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*-1}\mathbf{1}}{\mathbf{1}^{\prime} \boldsymbol{\Sigma}^{*-1} \mathbf{1}},
+\end{align}
+where the covariance matrix $\boldsymbol{\Sigma}^{*}=\left[\left(\nu_{0} \boldsymbol{\Sigma}_{0}^{-1}+n \hat{\boldsymbol{\Sigma}}^{-1}\right) /(\nu_{0}+n)\right]^{-1}$ and $\hat{\boldsymbol{\Sigma}}$ is the sample covariance matrix. The prior estimate $\boldsymbol{\Sigma}_{0}$ can be specified to allow correlations across forecast errors. The subsequent work by \cite{Diebold1990-fk} considered a normal regression-based combination $\mathbf{y}=\hat{\mathbf{y}} \boldsymbol{w}+\boldsymbol{\varepsilon}$, where $\boldsymbol{\varepsilon}$ is distributed as $N\left(\mathbf{0}, \boldsymbol{\sigma}^{2} \mathbf{I}\right)$, with the standard normal-gamma conjugate prior. The approach results in the estimated combination weights which can be considered as a matrix weighted average of those for the two polar cases, least squares and prior weights. Due to the fact that Bayesian approaches have been mostly employed to construct combinations of probability forecasts, we will elaborate on other methods of determining combination weights in a Bayesian context in the following Section \ref{sec:comb_prob}.
 
-%  Bayesian forecast combinations are being increasingly used in macroeconomics and finance to good effect.
-
+% \cite{Bunn1981-lk} `veridical' probabilities (probabilities that specific models represent the true process) 
+% \citep{Cheng2015-tp,Nowotarski2014-ev}.
 
 \subsubsection{Nonlinear combinations}
 
 
 \subsubsection{Combining by learning}
+
+% In contrast, some modern forecasting methods do not use an assumed data generating process to compute prediction intervals.
+
 \begin{itemize}
  \item Stacking: introduce stacking as a combination/aggregation method rather than a generalization of many ensemble methods in ML.
  \item Regression-based combinations: a simple stacking.
@@ -219,6 +227,8 @@ forecast pooling / optimal forecast groups / model selection
 {\color{red} (why don't weights work?)}
 
 \citep{Kang1986-kq,De_Menezes2000-vd,Genre2013-ut,Post2019-lv,Chan2018-jl,Lichtendahl2020-ut,Kourentzes2019-na}
+
+\cite{Diebold1990-fk} uses Bayesian shrinkage techniques to allow the incorporation of prior information into the estimation of combining weights; least squares and prior weights then emerge as polar cases for the posterior mean.
 % About "forecast combination puzzle"
 % This empirical fact has been first stated as the ``forecast combination puzzle" in \cite{Stock2004-rq}. Furthermore, some theoretical explanation of the forecast combination puzzle are offered in later studies \citep[see][]{Smith2009-wd,Claeskens2016-pv}.
 % 1. This puzzle was first noted by Clemen (1989), and was formally named the ‘‘forecast combination puzzle’’ by Stock and Watson (2004).
@@ -226,6 +236,7 @@ forecast pooling / optimal forecast groups / model selection
 
 
 \section{Probabilistic forecast combinations}
+\label{sec:comb_prob}
 \begin{itemize}
 \item Combining quantiles and prediction intervals.
 \item Combining distributions as in fable.
@@ -233,6 +244,11 @@ forecast pooling / optimal forecast groups / model selection
 
 \citep{Genest1990-sr,Nowotarski2015-xu,Conflitti2015-fq,Billio2013-sg}
 
+Bayesian analysis
+\citep{Winkler1968-uw,Clemen1999-mh}
+
+BMA
+\citep{Li2011-nw}
 
 % About "simple probabilistic forecast combination"
 % 1. There has been a growing interest in using combination methods for probabilistic forecasting. Probabilistic forecasts differ from point forecasts in the sense that there is an associated probability related to the reported values, providing more comprehensive information about uncertainties of the future load than single-valued forecasts. 
