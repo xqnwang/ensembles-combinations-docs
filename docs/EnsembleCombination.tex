@@ -109,7 +109,7 @@ Compared to various refined combination approaches and advanced machine learning
 Despite the fact that simple combination schemes can be intuitively implemented, the success of combination still highly depends on the choice of the model pool. If all component models are established in a very similar way based on the same, or highly overlapping set of information, forecast combination makes no sense and is not likely to be beneficial for the improvement of forecasting accuracy. \cite{Mannes2014-dl} and \cite{Lichtendahl2020-ut} emphasized two important issues concerning the performance of simple combination rules: one for the level of accuracy (or expertise) in the method pool and another for diversity among component models. Including component models with low accuracy is not likely to improve the combined forecasts. In addition, a high degree of diversity among component models facilitates the achievement of the best possible forecasting accuracy from their simple combinations \citep{Thomson2019-al}. In conclusion, simple, easy-to-use combination rules can provide good, and robust forecasting performance, especially when considering issues such as accuracy, and diversity of the method pool used for combining.
 
 
-\subsection{Combination weighting schemes}
+\subsection{Weighted combinations}
 \label{sec:combination_weighting_schemes}
 
 Though the combined forecasts formed by simple combination rules are acceptable for illustrative and concise purposes, the accumulated evidence of the forecasting literature suggests assigning greater weights to the individual forecasts which contain lower errors. The issue to be addressed is how to best weight the different forecasts used for combination. The general point forecast combination problem can be defined as seeking a one-dimensional aggregator that reduces the information up to time $t$ in an $N$-vector of $h$-step-ahead forecasts, $\hat{\mathbf{y}}_{t+h|t}=\left(\hat{y}_{t+h|t, 1}, \hat{y}_{t+h|t, 2}, \ldots, \hat{y}_{t+h|t, N}\right)^{\prime}$, to a single combined $h$-step-ahead forecast $\tilde{y}_{t+h|t}=C\left(\hat{\mathbf{y}}_{t+h|t} ; \boldsymbol{w}_{t+h|t}\right)$, where $\boldsymbol{w}_{t+h|t}$ is an $N$-vector of combination weights. The general class of combination methods represented by the mapping, $C$, from $\hat{\mathbf{y}}_{t+h|t}$ to $y_{t+h}$, comprises linear, nonlinear, and time-varying combinations. Below we discuss in detail the use of various weighting schemes to determine combination weights.
@@ -117,7 +117,7 @@ Though the combined forecasts formed by simple combination rules are acceptable 
 \subsubsection{Linear combinations}
 \label{sec:linear_combinations}
 
-Typically, the combined forecast is commonly constructed as a linear combination of the individual forecasts. To this end a combined forecast of the linear form can be written as
+Typically, the combined forecast is commonly constructed as a linear combination of the individual forecasts, which can be written as
 \begin{align}
 \label{eq:linear-combinations}
 \tilde{y}_{t+h|t}=\boldsymbol{w}_{t+h|t}^{\prime} \hat{\mathbf{y}}_{t+h|t},
