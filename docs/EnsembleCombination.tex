@@ -310,8 +310,6 @@ In combining probabilistic forecasts, it is important to pose issues such as cal
 
 {\color{red}
 \begin{itemize}
-  \item calibration, sharpness, and others (simple description)
-  \item goal of probabilistic forecasts. scoring rules (evaluation, the true pdf is unknown).
   \item the effect of combination on calibration and sharpness, e.g., well-calibrated forecasts are combined and then become poorly calibrated.
   \item When working with probabilistic forecasting, different from point forecasts (accuracy and diversity improve the accuracy), diversity hurt. So When relying on a crowd, eliciting point forecasts versus eliciting probabilities can significantly influence the type of aggregation one might choose to use (refer to FTP).
 \end{itemize}
@@ -319,9 +317,8 @@ In combining probabilistic forecasts, it is important to pose issues such as cal
 
 Decision makers mainly focus on the accuracy of combined point forecasts, while other issues such as calibration and sharpness need to be considered when working with the combination of probabilistic forecasts \citep{Gneiting2007-fr,Gneiting2007-ij,Lahiri2015-qq}. These issues help to evaluate the quality of probabilistic forecasts, and therefore contribute to the selection of combination strategies. Calibration concerns the statistical consistency between the probabilistic forecasts and the corresponding realizations, and thus serves as a joint property of forecasts and observations. In practice, a Probability Integral Transform (PIT) histogram is commonly employed informally as a diagnostic tool to assess the calibration of density forecasts, whether it is continuous \citep{Dawid1984-vp,Diebold1997-cr} or discrete \citep{Gneiting2013-hl}. A uniform histogram indicates a probabilistically calibrated forecast. Sharpness refers to the concentration of probabilistic forecasts, and thus serves as a property of forecasts only. The sharper a forecast is, the better it is. Sharpness can be easily comprehended when considering the form of PIs: the narrower the intervals, the sharper. In the case of density forecasts, sharpness can be assessed in terms of the associated central PIs. For more thorough definitions and diagnostic tools of calibration and sharpness, we refer to \cite{Gneiting2014-tz}.
 
-The goal of probabilistic forecasting is to maximize the sharpness of forecast distributions subject to calibration based on the available information set.
+According to \cite{Gneiting2007-fr}, the goal of probabilistic forecasting is to maximize the sharpness of forecast distributions subject to calibration based on the available information set. To this end, scoring rules that reward both calibration and sharpness are appealing in the sense of providing summary measures for the evaluation of combined probabilistic forecast, with a higher score indicating a better forecast. Considering a probabilistic forecast $F$, a proper scoring rule has the property that the expected score for an observation drawn from $G$ is maximized if $F=G$. It is strictly proper if the maximum is unique. \cite{Gneiting2007-ij} provided excellent reviews and discussions on a diverse collection of proper scoring rules for probabilistic forecasts in the form of distribution forecasts, as well as quantile and interval forecasts.
 
-A general role is ... Thus, we need proper rules to evaluate combined forecasts. (There is need to the evaluation that both considering ... or simultaneously). Introduce rules and strictly proper rules. These rules helps to evaluate the quality of combined probabilistic forecasts, and measure the effectiveness of this combined method
 
 
 
@@ -372,7 +369,7 @@ quantile crossing
 \subsubsection{Linear opinion pool}
 \label{sec:linear_opinion_pool}
 \begin{itemize}
-  \item linear opinion pool \citep{Genest1990-sr}---a convex combination
+  \item linear opinion pool \citep{Genest1990-sr}---a convex combination (This phenomenon is often referred to as ... in the literature; see, e.g.,...)
   \item trimmed opinion pools \citep{Jose2014-uh}---diversity hurt the average probability forecast
   \item generalized linear opinion pool
   \item logarithmic opinion pool \citep{Genest1986-zl}
