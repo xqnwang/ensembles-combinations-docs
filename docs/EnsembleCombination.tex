@@ -62,6 +62,7 @@
 % \newpage
 \spacingset{1.5}
 
+Remark. We take the forecasts to be combined essentially as given, and do not discuss in detail important issues around how the individual or component forecasts themselves should be produced.
 
 An increasing size of the toolbox of forecasting methods is available for decision makers. These methods, including statistical and econometric models, machine learning algorithms, and even judgemental forecasting \citep[see an encyclopedic overview by][]{petropoulos2020forecasting}, have their own specialties and are developed under different model specifications with assumptions on the Data Generation Process (DGP) or the associated error distributions. Given a pool of forecasting methods, how to best exploit information in the individual forecasts obtained from these methods?
 
@@ -299,7 +300,7 @@ In summary, forecasters are encouraged to analyze the data prior to identifying 
 
 Increasing attention has been shifted towards reporting probabilistic forecasts over future quantities or events of interest to provide decision makers with more insights than a single-valued or point forecast. For example, the recent Makridakis competitions, the M4 and the M5 Uncertainty competitions \citep{Makridakis2020-lz}, encouraged participants to provide probabilistic forecasts of different types as well as point forecasts. Probabilistic forecasts are appealing for (i) involving an associated probability related to the reported forecasts, (ii) enabling optimal decision making with an understanding of uncertainties and the resulting risks, and (iii) allowing an overall comparison of forecasts from different forecasting models. A brief survey of extensive applications of probabilistic forecasting is presented in \cite{Gneiting2014-tz}.
 
-It is well established that combination benefits forecasting accuracy in point forecasting context(for details, see Section \ref{sec:point_forecast_combinations}). The success of combination stems from the great use of a collection of point forecasts from diverse information sets and different types of forecasting models, as well as the mitigation of potential misspecifications derived from a single model. Likewise, several probabilistic forecasts are often available to decision makers. These forecasts may come from diverse sources such as distinct experts and models, and may still suffer from problems such as model misspecifications and poor estimation. Empirical studies suggest that the relative performance of different models often varies over time due to structural instabilities in the unknown DGP \citep[e.g.,][]{Billio2013-sg}. Thus, there has been a growing interest in bringing together probabilistic forecasting and forecast combination in order to integrate information from different sources, leading to probabilistic forecast combinations.
+It is well established that combination benefits forecasting accuracy in point forecasting context(for details, see Section \ref{sec:point_forecast_combinations}). The success of combination stems from the great use of a collection of point forecasts from diverse information sets and different types of forecasting models, as well as the mitigation of potential misspecifications derived from a single model. Likewise, several probabilistic forecasts are often available to decision makers. These forecasts may come from diverse sources such as distinct experts and models, and may be based on misspecified models, poor estimation or non-stationarities. Empirical studies suggest that the relative performance of different models often varies over time due to structural instabilities in the unknown DGP \citep[e.g.,][]{Billio2013-sg}. Thus, there has been a growing interest in bringing together probabilistic forecasting and forecast combination in order to integrate information from different sources, leading to probabilistic forecast combinations.
 
 Probabilistic forecasts involve three main forms, namely prediction intervals (PIs), quantiles, and probability forecasts (also known as density or distribution forecasts), with probability forecasts being the most complete form. PIs are often constructed using quantile forecasts and the endpoints can be interpreted as the specific quantiles of a forecast distribution. Specifically, the lower and upper endpoints of a central $(1-\alpha)\times 100\%$ PI can be defined via the quantiles at level $\alpha/2$ and $1-\alpha/2$. In addition, the quantile forecast obtained from a forecasting model is the inverse of the corresponding probability forecast represented by the Cumulative Distribution Function (CDF). Nevertheless, when individual forecasts from different models are combined, the combined quantile forecast and the combined probability forecast may not be equivalent. Simple examples of averaging quantiles and probabilities with equal weights are provided in \cite{Lichtendahl2013-rt}.
 
@@ -310,17 +311,53 @@ In combining probabilistic forecasts, it is important to pose issues such as cal
 
 Decision makers mainly focus on the accuracy of combined point forecasts, while other issues such as calibration and sharpness need to be considered when working with the combination of probabilistic forecasts \citep{Gneiting2007-fr,Gneiting2007-ij,Lahiri2015-qq}. These issues help to evaluate the quality of probabilistic forecasts, and therefore contribute to the selection of combination strategies. Calibration concerns the statistical consistency between the probabilistic forecasts and the corresponding realizations, and thus serves as a joint property of forecasts and observations. In practice, a Probability Integral Transform (PIT) histogram is commonly employed informally as a diagnostic tool to assess the calibration of density forecasts, whether it is continuous \citep{Dawid1984-vp,Diebold1997-cr} or discrete \citep{Gneiting2013-hl}. A uniform histogram indicates a probabilistically calibrated forecast. Sharpness refers to the concentration of probabilistic forecasts, and thus serves as a property of the forecasts only. The sharper a forecast is, the better it is. Sharpness can be easily comprehended when considering the form of PIs: the narrower the intervals, the sharper. In the case of density forecasts, sharpness can be assessed in terms of the associated central PIs. For more thorough definitions and diagnostic tools of calibration and sharpness, we refer to \cite{Gneiting2014-tz}.
 
-According to \cite{Gneiting2007-fr}, the goal of probabilistic forecasting is to maximize the sharpness of forecast distributions subject to calibration based on the available information set. In this light, scoring rules that reward both calibration and sharpness are appealing in the sense of providing summary measures for the evaluation of combined probabilistic forecast, with a higher score indicating a better forecast. Considering a probabilistic forecast $F$, a proper scoring rule has the property that the expected score for an observation drawn from $G$ is maximized if $F=G$. It is strictly proper if the maximum is unique. \cite{Gneiting2007-ij} provided excellent reviews and discussions on a diverse collection of proper scoring rules for probabilistic forecasts in the form of distribution forecasts, as well as quantile and interval forecasts.
+According to \cite{Gneiting2007-fr}, the intent of probabilistic forecasting is to \textit{maximize the sharpness of forecast distributions subject to calibration} based on the available information set. In this light, scoring rules that reward both calibration and sharpness are appealing in the sense of providing summary measures for the evaluation of combined probabilistic forecast, with a higher score indicating a better forecast. Considering a probabilistic forecast $F$, a proper scoring rule has the property that the expected score for an observation drawn from $G$ is maximized if $F=G$. It is strictly proper if the maximum is unique. \cite{Gneiting2007-ij} provided excellent reviews and discussions on a diverse collection of proper scoring rules for probabilistic forecasts in the form of distribution forecasts, as well as quantile and interval forecasts.
 
-The combination schemes for probabilistic forecasts have evolved from simple averaging \citep[e.g.,][]{OHagan2006-jk} to more sophisticated methods that consider time-varying combinations \citep[e.g.,][]{Billio2013-sg,McAlinn2019-kn}. Which type of combination strategy one might choose to use depends largely on the overall performance of combined forecasts in terms of accuracy, calibration, and sharpness, which is significantly different from the selection of point forecast combination schemes. For example, diversity among individual point forecasts benefits the combined point forecasts, while it may have a negative impact on the combined probability forecasts when considering linear pooling \citep[for a theoretical illustration and simulation study, see][]{Ranjan2010-jl}. Specifically, as the diversity among individual probability forecasts increases, the combined forecast becomes more spread out, and thus uncalibrated. To address this, averaging quantile forecasts rather than probability forecasts \citep{Lichtendahl2013-rt}, or applying interior trimming ahead of combination \citep{Jose2014-uh} is suggested to offer better calibrated combined forecasts.
-
+As we elaborate in Subsections \ref{sec:combining_probability_forecasts} and \ref{sec:combining_quantile_forecasts} below, the combination schemes for probabilistic forecasts have evolved from simple averaging \citep[e.g.,][]{OHagan2006-jk} to more sophisticated methods that consider time-varying combinations \citep[e.g.,][]{Billio2013-sg,McAlinn2019-kn}. Which type of combination strategy one might choose to use depends largely on the overall performance of combined forecasts in terms of accuracy, calibration, and sharpness, which is significantly different from the selection of point forecast combination schemes. For example, diversity among individual point forecasts benefits the combined point forecasts, while it may have a negative impact on the combined probability forecasts when considering linear pooling \citep[for a theoretical illustration and simulation study, see][]{Ranjan2010-jl}. Specifically, as the diversity among individual probability forecasts increases, the combined forecast becomes underconfident and lacks sharpness because of the spread driven by the disagreement on the mean of individual probability forecasts \citep{Wallis2005-yf,Lichtendahl2013-tk}. To address this, averaging quantile forecasts rather than probability forecasts \citep{Lichtendahl2013-rt}, or nonlinear pooling \citep{Ranjan2010-jl,Gneiting2013-hl} is preferable to linear pooling in terms of offering better calibrated combined density forecasts.
 % linear opinion pools are generally uncalibrated, even in the ideal case in which each individual source is calibrated \citep{Ranjan2010-jl}. this phenomenon is commonly referred to as the calibration problem \citep{Jose2014-uh}.
+
+\subsection{Combining probability forecasts}
+\label{sec:combining_probability_forecasts}
+
+%Density forecasting strives to predict the probability distribution of quantities in interest
+
+
+\subsubsection{Linear pools}
+\label{sec:linear_pools}
+\begin{itemize}
+  \item linear opinion pool \citep{Genest1990-sr}---a convex combination % (This phenomenon is often referred to as ... in the literature; see, e.g.,...). Refer to the second paragraph of \cite{Jose2014-uh} and the third paragraph of \cite{Ranjan2010-jl}. In the literature on combining experts’ subjective probability distributions, this is commonly referred to as the `linear opinion pool'. In practice, most aggregation techniques rely on a weighted linear combination of the individual probability forecasts, which is often referred to as a linear opinion pool, Substantial empirical evidence attests to the benefits of linear opinion pools, with successful applications ranging from ...
+  \item optimized combination weights and the properties \citep{Hall2007-lh}; about DGP \citep{Clements2011-ui}
+  \item logarithmic opinion pool \citep{Genest1986-zl}
+  \item trimmed opinion pools \citep{Jose2014-uh}---deliver better calibrated combined density forecasts
+  \item generalized linear opinion pool
+  \item testing the value of probability forecasts for
+  calibrated combining \citep{Lahiri2015-qq}
+\end{itemize}
+
+\subsubsection{Nonlinear pools}
+\label{sec:nonlinear_pools}
+
+such as the beta-transformed linear pool \citep{Ranjan2010-jl} and a test of its calibration \citep{Lahiri2015-qq}, the generalized and spread-adjusted pools \citep{Gneiting2013-hl}
+
+\subsubsection{Bayesian approach}
+\label{sec:bayesian_approach}
+
+\begin{itemize}
+  \item Bayesian model averaging \citep{Raftery1997-ij}. Need further consideration.
+\end{itemize}
+
+
+%\citep{Nowotarski2015-xu,Conflitti2015-fq,Billio2013-sg,Wallis2005-yf}
+
+%Bayesian analysis \citep{Winkler1968-uw,Clemen1999-mh}
+
+%BMA \citep{Li2011-nw}
 
 
 \subsection{Combining quantile forecasts}
 \label{sec:combining_quantile_forecasts}
 
-Include the literatures on combining intervals \citep[e.g.,][]{Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}
+Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}
 
 inevitably involve a loss of information compared
 with consideration of the `whole' density.
@@ -334,42 +371,6 @@ with consideration of the `whole' density.
 \end{itemize}
 
 quantile crossing
-
-\subsection{Combining probability forecasts}
-\label{sec:combining_probability_forecasts}
-
-%Density forecasting strives to predict the probability distribution of quantities in interest
-
-\citep[e.g.,][]{Genest1986-zl,Hall2007-lh,Ranjan2010-jl,Clements2011-ui,Lahiri2015-qq}
-
-\subsubsection{Linear opinion pool}
-\label{sec:linear_opinion_pool}
-\begin{itemize}
-  \item linear opinion pool \citep{Genest1990-sr}---a convex combination % (This phenomenon is often referred to as ... in the literature; see, e.g.,...). Refer to the second paragraph of \cite{Jose2014-uh} and the third paragraph of \cite{Ranjan2010-jl}. In the literature on combining experts’ subjective probability distributions, this is commonly referred to as the `linear opinion pool'. In practice, most aggregation techniques rely on a weighted linear combination of the individual probability forecasts, which is often referred to as a linear opinion pool, Substantial empirical evidence attests to the benefits of linear opinion pools, with successful applications ranging from ...
-  \item trimmed opinion pools \citep{Jose2014-uh}---diversity hurt the average probability forecast
-  \item generalized linear opinion pool
-  \item logarithmic opinion pool \citep{Genest1986-zl}
-\end{itemize}
-
-\subsubsection{Bayesian approach}
-\label{sec:bayesian_approach}
-
-\begin{itemize}
-  \item Bayesian model averaging \citep{Raftery1997-ij}
-\end{itemize}
-
-% Thus, a decision maker needs to consider issues such as calibration and overconfidence when selecting (specifying) the best combination method.
-
-%\citep{Nowotarski2015-xu,Conflitti2015-fq,Billio2013-sg,Wallis2005-yf}
-
-%Bayesian analysis \citep{Winkler1968-uw,Clemen1999-mh}
-
-%BMA \citep{Li2011-nw}
-
-%Although diversity benefits the average point forecast, it can negatively impact the average probability forecast (FTP).
-%Although diversity benefits the average point forecast, it can hurt the average probability forecast. As the crowd’s diversity (the variance in the individuals’ means or point forecasts) increases, the average probability forecast becomes more spread out, or underconfident \citep{Lichtendahl2013-rt}.
-
-% About "simple probabilistic forecast combination"
 
 % 2. histories (theory and empirical work of simple combination)
 %% References:
