@@ -1,4 +1,4 @@
-# Nonlinear combinations
+# Articles on nonlinear combinations
 
 
 
@@ -46,13 +46,19 @@ where $\bar{d}=\frac{1}{T} \sum_{t=1}^{T}\left(e_{1 t}^{2}-e_{2 t}^{2}\right)$ i
 
 ## References
 
-[^1]: Shi, S. and Liu, B. (1993), Nonlinear combination of forecasts with neural networks, in ‘Proceed- ings of 1993 International Conference on Neural Networks (IJCNN-93-Nagoya, Japan)’, Vol. 1, ieeexplore.ieee.org, pp. 959–962 vol.1.
-[^2]: Donaldson, R. G. and Kamstra, M. (1996), ‘Forecast combining with neural networks’, Journal of Forecasting .
+[^1]: Shi, S. and Liu, B. (1993), Nonlinear combination of forecasts with neural networks, in *Proceed- ings of 1993 International Conference on Neural Networks (IJCNN-93-Nagoya, Japan)*, Vol. 1, ieeexplore.ieee.org, pp. 959–962 vol.1.
 
-[^3]: Harrald, P. G. and Kamstra, M. (1997), ‘Evolving artificial neural networks to combine financial forecasts’, IEEE Transactions on Evolutionary Computation 1(1), 40–52.
-[^4]: Krasnopolsky, V. M. and Lin, Y. (2012), ‘A neural network nonlinear multimodel ensemble to improve precipitation forecasts over continental US’, Advances in Meteorology 2012.
-[^5]: Babikir, A. and Mwambi, H. (2016), ‘Evaluating the combined forecasts of the dynamic factor model and the artificial neural network model using linear and nonlinear combining methods’, Empirical Economics .
-[^6]: Freitas, P. S. A. and Rodrigues, A. J. L. (2006), ‘Model combination in neural-based forecasting’, European Journal of Operational Research 173(3), 801–814.
-[^7]: Adhikari, R. and Agrawal, R. (2012), A novel weighted ensemble technique for time series forecasting, in ‘Pacific-Asia Conference on Knowledge Discovery and Data Mining’, Springer, pp. 38–49.
-[^8]: Adhikari, R. (2015), ‘A mutual association based nonlinear ensemble mechanism for time series forecasting’, Applied Intelligence .
+[^2]: Donaldson, R. G. and Kamstra, M. (1996), *Forecast combining with neural networks*, Journal of Forecasting .
+
+[^3]: Harrald, P. G. and Kamstra, M. (1997), *Evolving artificial neural networks to combine financial forecasts*, IEEE Transactions on Evolutionary Computation 1(1), 40–52.
+
+[^4]: Krasnopolsky, V. M. and Lin, Y. (2012), *A neural network nonlinear multimodel ensemble to improve precipitation forecasts over continental US*, Advances in Meteorology 2012.
+
+[^5]: Babikir, A. and Mwambi, H. (2016), *Evaluating the combined forecasts of the dynamic factor model and the artificial neural network model using linear and nonlinear combining methods*, Empirical Economics .
+
+[^6]: Freitas, P. S. A. and Rodrigues, A. J. L. (2006), *Model combination in neural-based forecasting*, European Journal of Operational Research 173(3), 801–814.
+
+[^7]: Adhikari, R. and Agrawal, R. (2012), A novel weighted ensemble technique for time series forecasting, in *Pacific-Asia Conference on Knowledge Discovery and Data Mining*, Springer, pp. 38–49.
+
+[^8]: Adhikari, R. (2015), *A mutual association based nonlinear ensemble mechanism for time series forecasting*, Applied Intelligence .
 
