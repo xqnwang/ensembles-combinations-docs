@@ -5,9 +5,12 @@ date: "2021-06-01"
 output: 
   html_document:
     keep_md: true
+    number_sections: true
 ---
 
 
+
+# Intuition of calibration
 
 ## Probability Integral Transform (PIT)
 
@@ -40,9 +43,7 @@ Assume that $X$ is a discrete random variable such that $P\left(X=x_{i}\right)=p
 1. Generate a random number $U \sim \operatorname{Unif}(0,1)$;
 2. Determine the index $k$ using a *search* such that $\sum_{j=1}^{k-1} p_{j} \leq U<\sum_{j=1}^{k} p_{j}$, and return $X=x_{k}$.
 
-#### Example
-
-**Simulate a discrete random variable $X$ that follows the following distribution:**
+**Example.** Simulate a discrete random variable $X$ that follows the following distribution:
 
 
 | x_i| P(X=x_i)|
@@ -94,9 +95,7 @@ Assume that $X$ is a continuous random variable with cdf $F_X$. The algorithm pr
 
 Note that the algorithm works in general but is not always practical because of the difficulty in calculating $F_{X}^{-1}$.
 
-#### Example
-
-**Simulate an Exponential(1) random variable.**
+**Example.** Simulate an Exponential(1) random variable.
 
 $$
 \begin{aligned}
@@ -118,7 +117,7 @@ curve(dexp(x, rate = 1), 0, 6, lwd = 3, xlab = "", ylab = "", add = TRUE)
 
 ![](calibration_files/figure-html/ContinuousSimulation-1.png)<!-- -->
 
-### Calibration
+## Calibration
 
 - **Calibration** concerns the statistical consistency between the probabilistic forecasts and the corresponding realizations, and thus serves as a joint property of forecasts and observations.
 
