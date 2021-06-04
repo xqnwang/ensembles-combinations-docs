@@ -1,0 +1,50 @@
+---
+title: "Mixture and Convolution"
+author: "Xiaoqian Wang"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    keep_md: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Mixture and Convolution
+
+Let $X_{1}, \ldots, X_{N}$ denote random variables from the $N$ component distributions, $X_{i} \sim f_i$ for $(i=1,\ldots,N)$.
+
+- **A mixture distribution** has a density which is a weighted sum of a set of probability densities.
+
+$$
+f_{c}(x) = \sum_{i=1}^{N} w_{i} f_{i}(x).
+$$
+
+- **A convolution** gives a distribution of a random variable which is a sum of a set of random variables.
+
+$$
+f_w (x) = f_{x_1 + \ldots + x_N} (x) = (f_1*f_2*\ldots*f_N)(x).
+$$
+
+- An example: $X_1 \sim N(3700, 80)$ and $X_2 \sim N(3900, 120)$ with equal weights.
+
+```{r DiscreteExample, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=6}
+x <- seq(3200,4300,1)
+par(mfrow=c(2,1))
+plot(x, dnorm(x, 3700, 80), type = "l", col = "darkblue", lwd = 2,
+     ylim = c(0,0.006), ylab = "", main = "Convolution")
+lines(x, dnorm(x, 3900, 120), col = "darkred", lwd = 2)
+lines(x, dnorm(x, 3800, sqrt(5200)), col = "black", lwd = 3)
+plot(x, dnorm(x, 3700, 80), type = "l", col = "darkblue", lwd = 2, 
+     ylim = c(0,0.006), ylab = "", main = "Mixture")
+lines(x, dnorm(x, 3900, 120), col = "darkred", lwd = 2)
+lines(x, 0.5*dnorm(x, 3700, 80)+0.5*dnorm(x, 3900, 120), col = "black", lwd = 3)
+par(mfrow=c(1,1))
+```
+
+- The sum of two jointly normally distributed random variables, each with different means and variances, will still have a normal distribution.
+
+- A mixture density created as a mixture of two normal distributions with different means will have two peaks provided that the two means are far enough apart, showing that this distribution is radically different from a normal distribution.
+
