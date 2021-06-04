@@ -23,7 +23,7 @@ $$
 - **A convolution** gives a distribution of a random variable which is a sum of a set of random variables.
 
 $$
-f_w (x) = f_{x_1 + \ldots + x_N} (x) = (f_1*f_2*\ldots*f_N)(x).
+f_w (x) = f_{x_1 + \ldots + x_N} (x) = (f_1 \cdot f_2 \cdot \ldots \cdot f_N)(x).
 $$
 
 - An example: $X_1 \sim N(3700, 80)$ and $X_2 \sim N(3900, 120)$ with equal weights.
