@@ -393,12 +393,15 @@ The cumulative beta distribution is widely employed for recalibration purpose be
 \end{align}
 where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights that sum to one, and $B_{\alpha, \beta}$ is the cdf of the beta distribution with the shape parameters $\alpha > 0$ and $\beta > 0$. Full generality in Equation~\eqref{eq:blp} enables a asymmetric beta-transformation for the linear ensemble probability forecast. In its most simplistic case, the BLP approach nests the traditional linear pool, giving the restriction $\alpha = \beta = 1$. The beta-transformation tunes up a linear ensemble probability forecast if it is larger than $0.5$ and tunes it down otherwise when imposing the constraint $\alpha = \beta \geq 1$. The approach can be used to aggregate probability forecasts from both calibrated and uncalibrated sources. The estimates of the beta-transformation along with the mixture weights for linear pooling can be obtained by maximum likelihood, as suggested by \cite{Ranjan2010-jl}. A recent work by \cite{Lahiri2015-qq} proposed a simple test to evaluate probability forecasts and demonstrated the superiority of the BLP approach over the equally weighted approach with respect to calibration and sharpness.
 
-The essence of aforementioned nonlinear pooling methods is to take ingenious transformations that may be nonlinear to either the component forecasts or the linearly pooled forecast in order to restore calibration and sharpness. While \cite{Kapetanios2015-bb} generalized the literature by accommodating the dependence of the mixture weights on the variable one is trying to forecast, allowing the weights themselves to introduce the nonlinearities. To achieve improved calibration properties, \cite{Bassetti2018-qr} extended the BLP approach in Equation~\eqref{eq:blp} by introducing a finite or infinite beta mixture, which can also be interpreted as a general aggregation scheme of \cite{Kapetanios2015-bb}. The resulting predictive cdf is
+To achieve improved calibration properties, \cite{Bassetti2018-qr} extended the BLP approach in Equation~\eqref{eq:blp} by introducing a finite or infinite beta mixture. The resulting predictive cdf is
 \begin{align}
-\label{eq:blp}
+\label{eq:extendblp}
 \tilde{P}(y_{t+h}|I_{t}) = \sum_{k=1}^{K} \omega_{k} B_{\alpha_{k}, \beta_{k}}\left(\sum_{i=1}^{N} w_{t+h|t,ki} P_{i}(y_{t+h}|I_{t})\right),
 \end{align}
-where $\omega_{1}, \ldots, \omega_{K}$ denote beta mixture weights. The proposed approach allows one to treat the parameter $K$ as bounded or unbounded and it reduces to the BLP for $K=1$. A Bayesian inference approach is proposed to  achieve a compromise between parsimony and flexibility.
+where $\omega_{1}, \ldots, \omega_{K}$ denote beta mixture weights. The proposed approach allows one to treat the parameter $K$ as bounded or unbounded and it reduces to the BLP for $K=1$. A Bayesian inference approach is proposed to achieve a compromise between parsimony and flexibility.
+
+The essence of aforementioned nonlinear pooling methods is to take ingenious transformations that may be nonlinear to either the component forecasts or the linearly pooled forecast in order to restore calibration and sharpness. While \cite{Kapetanios2015-bb} generalized the literature by accommodating the dependence of the mixture weights on the variable one is trying to forecast, allowing the weights themselves to introduce the nonlinearities. The extended BLP approach in Equation~\eqref{eq:extendblp} can be interpreted in terms of the generalized aggregation scheme developed by \cite{Kapetanios2015-bb}
+
 
 % about DGP \citep{Clements2011-ui}
 %testing the value of probability forecasts for calibrated combining \citep{Lahiri2015-qq}
