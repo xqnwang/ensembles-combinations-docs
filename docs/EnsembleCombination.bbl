@@ -1,0 +1,972 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Adhikari}{2015}{Adhikari2015-bb}
+Adhikari, R.  \harvardyearleft 2015\harvardyearright , `A mutual association
+  based nonlinear ensemble mechanism for time series forecasting', {\em Applied
+  Intelligence} .
+
+\harvarditem{Adhikari \harvardand\ Agrawal}{2012}{Adhikari2012-ur}
+Adhikari, R. \harvardand\ Agrawal, R.  \harvardyearleft 2012\harvardyearright ,
+  A novel weighted ensemble technique for time series forecasting, {\em in}
+  `Pacific-Asia Conference on Knowledge Discovery and Data Mining', Springer,
+  pp.~38--49.
+
+\harvarditem{Agnew}{1985}{Agnew1985-dj}
+Agnew, C.~E.  \harvardyearleft 1985\harvardyearright , `Bayesian consensus
+  forecasts of macroeconomic variables', {\em Journal of Forecasting} {\bf
+  4}(4),~363--376.
+
+\harvarditem{Aiolfi \harvardand\ Timmermann}{2006}{Aiolfi2006-rh}
+Aiolfi, M. \harvardand\ Timmermann, A.  \harvardyearleft 2006\harvardyearright
+  , `Persistence in forecasting performance and conditional combination
+  strategies', {\em Journal of Econometrics} {\bf 135}(1),~31--53.
+
+\harvarditem{Akaike}{1974}{Akaike1974-ya}
+Akaike, H.  \harvardyearleft 1974\harvardyearright , `A new look at the
+  statistical model identification', {\em IEEE Transactions on Automatic
+  Control} {\bf 19}(6),~716--723.
+
+\harvarditem{Aksu \harvardand\ Gunter}{1992}{Aksu1992-lb}
+Aksu, C. \harvardand\ Gunter, S.~I.  \harvardyearleft 1992\harvardyearright ,
+  `An empirical analysis of the accuracy of {SA}, {OLS}, {ERLS} and {NRLS}
+  combination forecasts', {\em International Journal of Forecasting} {\bf
+  8}(1),~27--43.
+
+\harvarditem[Andrawis et~al.]{Andrawis, Atiya \harvardand\
+  El-Shishiny}{2011}{Andrawis2011-kb}
+Andrawis, R.~R., Atiya, A.~F. \harvardand\ El-Shishiny, H.  \harvardyearleft
+  2011\harvardyearright , `Combination of long term and short term forecasts,
+  with application to tourism demand forecasting', {\em International Journal
+  of Forecasting} {\bf 27}(3),~870--886.
+
+\harvarditem{Armstrong}{2001}{Armstrong2001-sj}
+Armstrong, J.~S.  \harvardyearleft 2001\harvardyearright , Combining forecasts,
+  {\em in} J.~S. Armstrong, ed., `Principles of Forecasting: A Handbook for
+  Researchers and Practitioners', Springer US, Boston, MA, pp.~417--439.
+
+\harvarditem{Atiya}{2020}{Atiya2020-ge}
+Atiya, A.~F.  \harvardyearleft 2020\harvardyearright , `Why does forecast
+  combination work so well?', {\em International Journal of Forecasting} {\bf
+  36}(1),~197--200.
+
+\harvarditem{Babikir \harvardand\ Mwambi}{2016}{Babikir2016-xz}
+Babikir, A. \harvardand\ Mwambi, H.  \harvardyearleft 2016\harvardyearright ,
+  `Evaluating the combined forecasts of the dynamic factor model and the
+  artificial neural network model using linear and nonlinear combining
+  methods', {\em Empirical Economics} .
+
+\harvarditem{Baran \harvardand\ Lerch}{2018}{Baran2018-nm}
+Baran, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
+  `Combining predictive distributions for the statistical post-processing of
+  ensemble forecasts', {\em International Journal of Forecasting} {\bf
+  34}(3),~477--496.
+
+\harvarditem{Barnard}{1963}{Barnard1963-xa}
+Barnard, G.~A.  \harvardyearleft 1963\harvardyearright , `New methods of
+  quality control', {\em Journal of the Royal Statistical Society. Series A}
+  {\bf 126}(2),~255.
+
+\harvarditem[Bassetti et~al.]{Bassetti, Casarin \harvardand\
+  Ravazzolo}{2018}{Bassetti2018-qr}
+Bassetti, F., Casarin, R. \harvardand\ Ravazzolo, F.  \harvardyearleft
+  2018\harvardyearright , `Bayesian nonparametric calibration and combination
+  of predictive distributions', {\em Journal of the American Statistical
+  Association} {\bf 113}(522),~675--685.
+
+\harvarditem[Bassetti et~al.]{Bassetti, Casarin \harvardand\
+  Ravazzolo}{2020}{Bassetti2020-uh}
+Bassetti, F., Casarin, R. \harvardand\ Ravazzolo, F.  \harvardyearleft
+  2020\harvardyearright , Density forecasting, {\em in} P.~Fuleky, ed.,
+  `Macroeconomic Forecasting in the Era of Big Data: Theory and Practice',
+  Springer International Publishing, Cham, pp.~465--494.
+
+\harvarditem{Batchelor \harvardand\ Dua}{1995}{Batchelor1995-ps}
+Batchelor, R. \harvardand\ Dua, P.  \harvardyearleft 1995\harvardyearright ,
+  `Forecaster diversity and the benefits of combining forecasts', {\em
+  Management Science} {\bf 41}(1),~68--75.
+
+\harvarditem{Bates \harvardand\ Granger}{1969}{Bates1969-yj}
+Bates, J.~M. \harvardand\ Granger, C. W.~J.  \harvardyearleft
+  1969\harvardyearright , `The combination of forecasts', {\em Journal of the
+  Operational Research Society} {\bf 20}(4),~451--468.
+
+\harvarditem{Baumeister \harvardand\ Kilian}{2015}{Baumeister2015-ft}
+Baumeister, C. \harvardand\ Kilian, L.  \harvardyearleft 2015\harvardyearright
+  , `Forecasting the real price of oil in a changing world: A forecast
+  combination approach', {\em Journal of Business \& Economic Statistics} {\bf
+  33}(3),~338--351.
+
+\harvarditem[Billah et~al.]{Billah, Hyndman \harvardand\
+  Koehler}{2005}{billah2005empirical}
+Billah, B., Hyndman, R.~J. \harvardand\ Koehler, A.~B.  \harvardyearleft
+  2005\harvardyearright , `Empirical information criteria for time series
+  forecasting model selection', {\em Journal of Statistical Computation and
+  Simulation} {\bf 75}(10),~831--840.
+
+\harvarditem[Billio et~al.]{Billio, Casarin, Ravazzolo \harvardand\ van
+  Dijk}{2013}{Billio2013-sg}
+Billio, M., Casarin, R., Ravazzolo, F. \harvardand\ van Dijk, H.~K.
+  \harvardyearleft 2013\harvardyearright , `Time-varying combinations of
+  predictive densities using nonlinear filtering', {\em Journal of
+  Econometrics} {\bf 177}(2),~213--232.
+
+\harvarditem{Blanc \harvardand\ Setzer}{2016}{Blanc2016-sn}
+Blanc, S.~M. \harvardand\ Setzer, T.  \harvardyearleft 2016\harvardyearright ,
+  `When to choose the simple average in forecast combination', {\em Journal of
+  Business Research} {\bf 69}(10),~3951--3962.
+
+\harvarditem[Brown et~al.]{Brown, Wyatt, Harris \harvardand\
+  Yao}{2005}{Brown2005-aa}
+Brown, G., Wyatt, J., Harris, R. \harvardand\ Yao, X.  \harvardyearleft
+  2005\harvardyearright , `Diversity creation methods: a survey and
+  categorisation', {\em Information Fusion} {\bf 6}(1),~5--20.
+
+\harvarditem{Budescu \harvardand\ Chen}{2015}{Budescu2015-tu}
+Budescu, D.~V. \harvardand\ Chen, E.  \harvardyearleft 2015\harvardyearright ,
+  `Identifying expertise to extract the wisdom of crowds', {\em Management
+  Science} .
+
+\harvarditem{Bunn}{1975}{Bunn1975-vz}
+Bunn, D.~W.  \harvardyearleft 1975\harvardyearright , `A {Bayesian} approach to
+  the linear combination of forecasts', {\em Journal of the Operational
+  Research Society} .
+
+\harvarditem{Bunn}{1985}{Bunn1985-vo}
+Bunn, D.~W.  \harvardyearleft 1985\harvardyearright , `Statistical efficiency
+  in the linear combination of forecasts', {\em International Journal of
+  Forecasting} {\bf 1}(2),~151--163.
+
+\harvarditem{Burnham \harvardand\ Anderson}{2002}{Burnham2002-us}
+Burnham, K.~P. \harvardand\ Anderson, D.~R.  \harvardyearleft
+  2002\harvardyearright , `Model selection and multi-model inference: A
+  practical information-theoretic approach (2nd ed.)', {\em Berlin, New York:
+  Springer} .
+
+\harvarditem{Chan \harvardand\ Pauwels}{2018}{Chan2018-jl}
+Chan, F. \harvardand\ Pauwels, L.~L.  \harvardyearleft 2018\harvardyearright ,
+  `Some theoretical results on forecast combinations', {\em International
+  Journal of Forecasting} {\bf 34}(1),~64--74.
+
+\harvarditem[Chan et~al.]{Chan, Stock \harvardand\ Watson}{1999}{Chan1999-io}
+Chan, Y.~L., Stock, J.~H. \harvardand\ Watson, M.~W.  \harvardyearleft
+  1999\harvardyearright , `A dynamic factor model framework for forecast
+  combination', {\em Spanish Economic Review} {\bf 1}(2),~91--121.
+
+\harvarditem[Claeskens et~al.]{Claeskens, Magnus, Vasnev \harvardand\
+  Wang}{2016}{Claeskens2016-pv}
+Claeskens, G., Magnus, J.~R., Vasnev, A.~L. \harvardand\ Wang, W.
+  \harvardyearleft 2016\harvardyearright , `The forecast combination puzzle: A
+  simple theoretical explanation', {\em International Journal of Forecasting}
+  {\bf 32}(3),~754--762.
+
+\harvarditem{Clark \harvardand\ McCracken}{2010}{Clark2010-jx}
+Clark, T.~E. \harvardand\ McCracken, M.~W.  \harvardyearleft
+  2010\harvardyearright , `Averaging forecasts from {VARs} with uncertain
+  instabilities', {\em Journal of Applied Econometrics} .
+
+\harvarditem{Clemen}{1989}{Clemen1989-fb}
+Clemen, R.~T.  \harvardyearleft 1989\harvardyearright , `Combining forecasts: A
+  review and annotated bibliography', {\em International Journal of
+  Forecasting} {\bf 5}(4),~559--583.
+
+\harvarditem{Clemen \harvardand\ Winkler}{1986}{Clemen1986-pd}
+Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  1986\harvardyearright , `Combining economic forecasts', {\em Journal of
+  Business \& Economic Statistics} {\bf 4}(1),~39--46.
+
+\harvarditem{Clemen \harvardand\ Winkler}{1999}{Clemen1999-mh}
+Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  1999\harvardyearright , `Combining probability distributions from experts in
+  risk analysis', {\em Risk Analysis} {\bf 19}(2),~187--203.
+
+\harvarditem{Collopy \harvardand\ Armstrong}{1992}{Collopy1992-ey}
+Collopy, F. \harvardand\ Armstrong, J.~S.  \harvardyearleft
+  1992\harvardyearright , `Rule-based forecasting: {Development} and validation
+  of an expert systems approach to combining time series extrapolations', {\em
+  Management Science} {\bf 38}(10),~1394--1414.
+
+\harvarditem[Conflitti et~al.]{Conflitti, De~Mol \harvardand\
+  Giannone}{2015}{Conflitti2015-fq}
+Conflitti, C., De~Mol, C. \harvardand\ Giannone, D.  \harvardyearleft
+  2015\harvardyearright , `Optimal combination of survey forecasts', {\em
+  International Journal of Forecasting} {\bf 31}(4),~1096--1103.
+
+\harvarditem{Crane \harvardand\ Crotty}{1967}{crane1967two}
+Crane, D.~B. \harvardand\ Crotty, J.~R.  \harvardyearleft 1967\harvardyearright
+  , `A two-stage forecasting model: Exponential smoothing and multiple
+  regression', {\em Management Science} {\bf 13}(8),~B--501.
+
+\harvarditem{Dawid}{1984}{Dawid1984-vp}
+Dawid, A.~P.  \harvardyearleft 1984\harvardyearright , `Present position and
+  potential developments: Some personal views: Statistical theory: The
+  prequential approach', {\em Journal of the Royal Statistical Society. Series
+  A} {\bf 147}(2),~278.
+
+\harvarditem[Dawid et~al.]{Dawid, DeGroot, Mortera, Cooke, French, Genest,
+  Schervish, Lindley, McConway \harvardand\ Winkler}{1995}{Dawid1995-jj}
+Dawid, A.~P., DeGroot, M.~H., Mortera, J., Cooke, R., French, S., Genest, C.,
+  Schervish, M.~J., Lindley, D.~V., McConway, K.~J. \harvardand\ Winkler, R.~L.
+   \harvardyearleft 1995\harvardyearright , `Coherent combination of experts'
+  opinions', {\em Test} {\bf 4}(2),~263--313.
+
+\harvarditem[De~Menezes et~al.]{De~Menezes, Bunn \harvardand\
+  Taylor}{2000}{De_Menezes2000-vd}
+De~Menezes, L.~M., Bunn, D.~W. \harvardand\ Taylor, J.~W.  \harvardyearleft
+  2000\harvardyearright , `Review of guidelines for the use of combined
+  forecasts', {\em European Journal of Operational Research} .
+
+\harvarditem[Deutsch et~al.]{Deutsch, Granger \harvardand\
+  Ter{\"a}svirta}{1994}{Deutsch1994-ob}
+Deutsch, M., Granger, C. W.~J. \harvardand\ Ter{\"a}svirta, T.
+  \harvardyearleft 1994\harvardyearright , `The combination of forecasts using
+  changing weights', {\em International Journal of Forecasting} {\bf
+  10}(1),~47--57.
+
+\harvarditem{Diebold}{1988}{Diebold1988-sx}
+Diebold, F.~X.  \harvardyearleft 1988\harvardyearright , `Serial correlation
+  and the combination of forecasts', {\em Journal of Business \& Economic
+  Statistics} {\bf 6}(1),~105--111.
+
+\harvarditem[Diebold et~al.]{Diebold, Gunther \harvardand\
+  Tay}{1997}{Diebold1997-cr}
+Diebold, F.~X., Gunther, T.~A. \harvardand\ Tay, A.~S.  \harvardyearleft
+  1997\harvardyearright , Evaluating density forecasts, Technical Report t0215,
+  National Bureau of Economic Research.
+
+\harvarditem{Diebold \harvardand\ Pauly}{1987}{Diebold1987-go}
+Diebold, F.~X. \harvardand\ Pauly, P.  \harvardyearleft 1987\harvardyearright ,
+  `Structural change and the combination of forecasts', {\em Journal of
+  Forecasting} {\bf 6}(1),~21--40.
+
+\harvarditem{Diebold \harvardand\ Pauly}{1990}{Diebold1990-fk}
+Diebold, F.~X. \harvardand\ Pauly, P.  \harvardyearleft 1990\harvardyearright ,
+  `The use of prior information in forecast combination', {\em International
+  Journal of Forecasting} {\bf 6}(4),~503--508.
+
+\harvarditem[Diks et~al.]{Diks, Panchenko \harvardand\ van
+  Dijk}{2011}{Diks2011-gj}
+Diks, C., Panchenko, V. \harvardand\ van Dijk, D.  \harvardyearleft
+  2011\harvardyearright , `Likelihood-based scoring rules for comparing density
+  forecasts in tails', {\em Journal of Econometrics} {\bf 163}(2),~215--230.
+
+\harvarditem{Donaldson \harvardand\ Kamstra}{1996}{Donaldson1996-um}
+Donaldson, R.~G. \harvardand\ Kamstra, M.  \harvardyearleft
+  1996\harvardyearright , `Forecast combining with neural networks', {\em
+  Journal of Forecasting} .
+
+\harvarditem[Donate et~al.]{Donate, Cortez, Sanchez \harvardand\
+  De~Miguel}{2013}{Donate2013-lq}
+Donate, J.~P., Cortez, P., Sanchez, G.~G. \harvardand\ De~Miguel, A.~S.
+  \harvardyearleft 2013\harvardyearright , `Time series forecasting using a
+  weighted cross-validation evolutionary artificial neural network ensemble',
+  {\em Neurocomputing} .
+
+\harvarditem{Draper}{1995}{Draper1995-cd}
+Draper, D.  \harvardyearleft 1995\harvardyearright , `Assessment and
+  propagation of model uncertainty', {\em Journal of the Royal Statistical
+  Society: Series B (Methodological)} {\bf 57}(1),~45--70.
+
+\harvarditem{Edward~Coulson \harvardand\ Robins}{1993}{Edward_Coulson1993-db}
+Edward~Coulson, N. \harvardand\ Robins, R.~P.  \harvardyearleft
+  1993\harvardyearright , `Forecast combination in a dynamic setting', {\em
+  Journal of Forecasting} {\bf 12}(1),~63--67.
+
+\harvarditem{Elliott}{2011}{Elliott2011-ab}
+Elliott, G.  \harvardyearleft 2011\harvardyearright , `Averaging and the
+  optimal combination of forecasts', {\em Manuscript, Department of Economics,
+  UCSD} .
+
+\harvarditem{Elliott \harvardand\ Timmermann}{2004}{Elliott2004-dz}
+Elliott, G. \harvardand\ Timmermann, A.  \harvardyearleft 2004\harvardyearright
+  , `Optimal forecast combinations under general loss functions and forecast
+  error distributions', {\em Journal of Econometrics} {\bf 122}(1),~47--79.
+
+\harvarditem{Fern{\'a}ndez-Villaverde \harvardand\ Francisco
+  Rubio-Ram{\i}rez}{2004}{Fernandez-Villaverde2004-pz}
+Fern{\'a}ndez-Villaverde, J. \harvardand\ Francisco Rubio-Ram{\i}rez, J.
+  \harvardyearleft 2004\harvardyearright , `Comparing dynamic equilibrium
+  models to data: a {Bayesian} approach', {\em Journal of Econometrics} {\bf
+  123}(1),~153--187.
+
+\harvarditem{Fildes \harvardand\ Petropoulos}{2015}{fildes2015simple}
+Fildes, R. \harvardand\ Petropoulos, F.  \harvardyearleft 2015\harvardyearright
+  , `Simple versus complex selection rules for forecasting many time series',
+  {\em Journal of Business Research} {\bf 68}(8),~1692--1701.
+
+\harvarditem{Fischer \harvardand\ Harvey}{1999}{Fischer1999-kz}
+Fischer, I. \harvardand\ Harvey, N.  \harvardyearleft 1999\harvardyearright ,
+  `Combining forecasts: What information do judges need to outperform the
+  simple average?', {\em International Journal of Forecasting} {\bf
+  15}(3),~227--246.
+
+\harvarditem{Freitas \harvardand\ Rodrigues}{2006}{Freitas2006-fn}
+Freitas, P. S.~A. \harvardand\ Rodrigues, A. J.~L.  \harvardyearleft
+  2006\harvardyearright , `Model combination in neural-based forecasting', {\em
+  European Journal of Operational Research} {\bf 173}(3),~801--814.
+
+\harvarditem[Gaba et~al.]{Gaba, Tsetlin \harvardand\
+  Winkler}{2017}{Gaba2017-om}
+Gaba, A., Tsetlin, I. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  2017\harvardyearright , `Combining interval forecasts', {\em Decision
+  Analysis} {\bf 14}(1),~1--20.
+
+\harvarditem[Garratt et~al.]{Garratt, Lee, Pesaran \harvardand\
+  Shin}{2003}{Garratt2003-kh}
+Garratt, A., Lee, K., Pesaran, M.~H. \harvardand\ Shin, Y.  \harvardyearleft
+  2003\harvardyearright , `Forecast uncertainties in macroeconomic modeling',
+  {\em Journal of the American Statistical Association} {\bf
+  98}(464),~829--838.
+
+\harvarditem[Gastinger et~al.]{Gastinger, Nicolas, Stepi{\'c}, Schmidt
+  \harvardand\ Sch{\"u}lke}{2021}{Gastinger2021-ey}
+Gastinger, J., Nicolas, S., Stepi{\'c}, D., Schmidt, M. \harvardand\
+  Sch{\"u}lke, A.  \harvardyearleft 2021\harvardyearright , `A study on
+  ensemble learning for time series forecasting and the need for
+  meta-learning'.
+
+\harvarditem[Genre et~al.]{Genre, Kenny, Meyler \harvardand\
+  Timmermann}{2013}{Genre2013-ut}
+Genre, V., Kenny, G., Meyler, A. \harvardand\ Timmermann, A.  \harvardyearleft
+  2013\harvardyearright , `Combining expert forecasts: Can anything beat the
+  simple average?', {\em International Journal of Forecasting} {\bf
+  29}(1),~108--121.
+
+\harvarditem{Geweke \harvardand\ Amisano}{2010}{Geweke2010-zn}
+Geweke, J. \harvardand\ Amisano, G.  \harvardyearleft 2010\harvardyearright ,
+  `Comparing and evaluating {Bayesian} predictive distributions of asset
+  returns', {\em International Journal of Forecasting} {\bf 26}(2),~216--230.
+
+\harvarditem{Geweke \harvardand\ Amisano}{2011}{Geweke2011-xk}
+Geweke, J. \harvardand\ Amisano, G.  \harvardyearleft 2011\harvardyearright ,
+  `Optimal prediction pools', {\em Journal of Econometrics} {\bf
+  164}(1),~130--141.
+
+\harvarditem[Gneiting et~al.]{Gneiting, Balabdaoui \harvardand\
+  Raftery}{2007}{Gneiting2007-fr}
+Gneiting, T., Balabdaoui, F. \harvardand\ Raftery, A.~E.  \harvardyearleft
+  2007\harvardyearright , `Probabilistic forecasts, calibration and sharpness',
+  {\em Journal of the Royal Statistical Society. Series B, Statistical
+  Methodology} {\bf 69}(2),~243--268.
+
+\harvarditem{Gneiting \harvardand\ Katzfuss}{2014}{Gneiting2014-tz}
+Gneiting, T. \harvardand\ Katzfuss, M.  \harvardyearleft 2014\harvardyearright
+  , `Probabilistic forecasting', {\em Annual Review of Statistics and Its
+  Application} {\bf 1}(1),~125--151.
+
+\harvarditem{Gneiting \harvardand\ Raftery}{2007}{Gneiting2007-ij}
+Gneiting, T. \harvardand\ Raftery, A.~E.  \harvardyearleft
+  2007\harvardyearright , `Strictly proper scoring rules, prediction, and
+  estimation', {\em Journal of the American Statistical Association} {\bf
+  102}(477),~359--378.
+
+\harvarditem{Gneiting \harvardand\ Ranjan}{2013}{Gneiting2013-hl}
+Gneiting, T. \harvardand\ Ranjan, R.  \harvardyearleft 2013\harvardyearright ,
+  `Combining predictive distributions', {\em Electronic Journal of Statistics}
+  {\bf 7},~1747--1782.
+
+\harvarditem{Graham}{1996}{Graham1996-qc}
+Graham, J.~R.  \harvardyearleft 1996\harvardyearright , `Is a group of
+  economists better than one? than none?', {\em Journal of Business} {\bf
+  69}(2),~193--232.
+
+\harvarditem{Granger}{1989}{Granger1989-gv}
+Granger, C. W.~J.  \harvardyearleft 1989\harvardyearright , `Invited review
+  combining forecasts---twenty years later', {\em Journal of Forecasting} {\bf
+  8}(3),~167--173.
+
+\harvarditem{Granger \harvardand\ Jeon}{2004}{Granger2004-sw}
+Granger, C. W.~J. \harvardand\ Jeon, Y.  \harvardyearleft 2004\harvardyearright
+  , `Thick modeling', {\em Economic Modelling} {\bf 21}(2),~323--343.
+
+\harvarditem{Granger \harvardand\ Ramanathan}{1984}{Granger1984-jc}
+Granger, C. W.~J. \harvardand\ Ramanathan, R.  \harvardyearleft
+  1984\harvardyearright , `Improved methods of combining forecasts', {\em
+  Journal of Forecasting} {\bf 3}(2),~197--204.
+
+\harvarditem{Grushka-Cockayne \harvardand\ Jose}{2020}{Grushka-Cockayne2020-qv}
+Grushka-Cockayne, Y. \harvardand\ Jose, V. R.~R.  \harvardyearleft
+  2020\harvardyearright , `Combining prediction intervals in the {M4}
+  competition', {\em International Journal of Forecasting} {\bf
+  36}(1),~178--185.
+
+\harvarditem[Grushka-Cockayne et~al.]{Grushka-Cockayne, Jose \harvardand\
+  Lichtendahl}{2017}{Grushka-Cockayne2017-dj}
+Grushka-Cockayne, Y., Jose, V. R.~R. \harvardand\ Lichtendahl, K.~C.
+  \harvardyearleft 2017\harvardyearright , `Ensembles of overfit and
+  overconfident forecasts', {\em Management Science} {\bf 63}(4),~1110--1130.
+
+\harvarditem{Gunter}{1992}{Gunter1992-go}
+Gunter, S.~I.  \harvardyearleft 1992\harvardyearright , `Nonnegativity
+  restricted least squares combinations', {\em International Journal of
+  Forecasting} {\bf 8}(1),~45--59.
+
+\harvarditem{Hall \harvardand\ Mitchell}{2007}{Hall2007-lh}
+Hall, S.~G. \harvardand\ Mitchell, J.  \harvardyearleft 2007\harvardyearright ,
+  `Combining density forecasts', {\em International Journal of Forecasting}
+  {\bf 23}(1),~1--13.
+
+\harvarditem{Harrald \harvardand\ Kamstra}{1997}{Harrald1997-gd}
+Harrald, P.~G. \harvardand\ Kamstra, M.  \harvardyearleft 1997\harvardyearright
+  , `Evolving artificial neural networks to combine financial forecasts', {\em
+  IEEE Transactions on Evolutionary Computation} {\bf 1}(1),~40--52.
+
+\harvarditem[Hoeting et~al.]{Hoeting, Madigan, Raftery \harvardand\
+  Volinsky}{1999}{Hoeting1999-qn}
+Hoeting, J.~A., Madigan, D., Raftery, A.~E. \harvardand\ Volinsky, C.~T.
+  \harvardyearleft 1999\harvardyearright , `Bayesian model averaging: a
+  tutorial', {\em Statistical Science} {\bf 14}(4),~382--417.
+
+\harvarditem{Hora}{2004}{Hora2004-fz}
+Hora, S.~C.  \harvardyearleft 2004\harvardyearright , `Probability judgments
+  for continuous quantities: Linear combinations and calibration', {\em
+  Management Science} {\bf 50}(5),~597--604.
+
+\harvarditem{Hsiao \harvardand\ Wan}{2014}{Hsiao2014-ug}
+Hsiao, C. \harvardand\ Wan, S.~K.  \harvardyearleft 2014\harvardyearright , `Is
+  there an optimal forecast combination?', {\em Journal of Econometrics} {\bf
+  178},~294--309.
+
+\harvarditem[Hyndman et~al.]{Hyndman, Kang, Montero-Manso, Talagala, Wang, Yang
+  \harvardand\ O’Hara-Wild}{2019}{rtsfeatures}
+Hyndman, R.~J., Kang, Y., Montero-Manso, P., Talagala, T.~S., Wang, E., Yang,
+  Y. \harvardand\ O’Hara-Wild, M.  \harvardyearleft 2019\harvardyearright ,
+  {\em tsfeatures: {Time Series Feature Extraction}}.
+\newblock R package version 1.0.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=tsfeatures}
+
+\harvarditem[Inoue et~al.]{Inoue, Jin \harvardand\
+  Rossi}{2017}{inoue2017rolling}
+Inoue, A., Jin, L. \harvardand\ Rossi, B.  \harvardyearleft
+  2017\harvardyearright , `Rolling window selection for out-of-sample
+  forecasting with time-varying parameters', {\em Journal of Econometrics} {\bf
+  196}(1),~55--67.
+
+\harvarditem[Jore et~al.]{Jore, Mitchell \harvardand\ Vahey}{2010}{Jore2010-yi}
+Jore, A.~S., Mitchell, J. \harvardand\ Vahey, S.~P.  \harvardyearleft
+  2010\harvardyearright , `Combining forecast densities from {VARs} with
+  uncertain instabilities', {\em Journal of Applied Economics} {\bf
+  25}(4),~621--634.
+
+\harvarditem[Jose et~al.]{Jose, Grushka-Cockayne \harvardand\
+  Lichtendahl}{2014}{Jose2014-uh}
+Jose, V. R.~R., Grushka-Cockayne, Y. \harvardand\ Lichtendahl, K.~C.
+  \harvardyearleft 2014\harvardyearright , `Trimmed opinion pools and the
+  crowd's calibration problem', {\em Management Science} {\bf 60}(2),~463--475.
+
+\harvarditem{Jose \harvardand\ Winkler}{2008}{Jose2008-vm}
+Jose, V. R.~R. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  2008\harvardyearright , `Simple robust averages of forecasts: Some empirical
+  results', {\em International Journal of Forecasting} {\bf 24}(1),~163--169.
+
+\harvarditem{Kang, Cao, Petropoulos \harvardand\ Li}{2020}{Kang2020-sv}
+Kang, Y., Cao, W., Petropoulos, F. \harvardand\ Li, F.  \harvardyearleft
+  2020\harvardyearright , `Forecast with forecasts: Diversity matters'.
+
+\harvarditem{Kang, Hyndman \harvardand\ Li}{2020}{Kang2020-rl}
+Kang, Y., Hyndman, R.~J. \harvardand\ Li, F.  \harvardyearleft
+  2020\harvardyearright , `{{GRATIS}}: {GeneRAting} {TIme} {Series} with
+  diverse and controllable characteristics', {\em Statistical Analysis and Data
+  Mining} {\bf 13}(4),~354--376.
+
+\harvarditem[Kang et~al.]{Kang, Hyndman \harvardand\
+  Smith-Miles}{2017}{Kang2017-wt}
+Kang, Y., Hyndman, R.~J. \harvardand\ Smith-Miles, K.  \harvardyearleft
+  2017\harvardyearright , `Visualising forecasting algorithm performance using
+  time series instance spaces', {\em International Journal of Forecasting} {\bf
+  33}(2),~345--358.
+
+\harvarditem{Kang, Spiliotis, Petropoulos, Athiniotis, Li \harvardand\
+  Assimakopoulos}{2020}{Kang2020-sa}
+Kang, Y., Spiliotis, E., Petropoulos, F., Athiniotis, N., Li, F. \harvardand\
+  Assimakopoulos, V.  \harvardyearleft 2020\harvardyearright , `D{\'e}j{\`a}
+  vu: A data-centric forecasting approach through time series
+  cross-similarity', {\em Journal of Business Research} .
+
+\harvarditem[Kapetanios et~al.]{Kapetanios, Mitchell, Price \harvardand\
+  Fawcett}{2015}{Kapetanios2015-bb}
+Kapetanios, G., Mitchell, J., Price, S. \harvardand\ Fawcett, N.
+  \harvardyearleft 2015\harvardyearright , `Generalised density forecast
+  combinations', {\em Journal of Econometrics} {\bf 188}(1),~150--165.
+
+\harvarditem{Kohavi}{1995}{Kohavi1995-zv}
+Kohavi, R.  \harvardyearleft 1995\harvardyearright , A study of
+  cross-validation and bootstrap for accuracy estimation and model selection,
+  {\em in} `Ijcai', Vol.~14, researchgate.net, pp.~1137--1145.
+
+\harvarditem{Kolassa}{2011}{Kolassa2011-ai}
+Kolassa, S.  \harvardyearleft 2011\harvardyearright , `Combining exponential
+  smoothing forecasts using akaike weights', {\em International Journal of
+  Forecasting} {\bf 27}(2),~238--251.
+
+\harvarditem{Koop \harvardand\ Potter}{2003}{Koop2003-nl}
+Koop, G.~M. \harvardand\ Potter, S.  \harvardyearleft 2003\harvardyearright ,
+  `Forecasting in large macroeconomic panels using {Bayesian} model averaging',
+  {\em SSRN Electronic Journal} .
+
+\harvarditem[Kourentzes et~al.]{Kourentzes, Barrow \harvardand\
+  Crone}{2014}{Kourentzes2014-hs}
+Kourentzes, N., Barrow, D.~K. \harvardand\ Crone, S.~F.  \harvardyearleft
+  2014\harvardyearright , `Neural network ensemble operators for time series
+  forecasting', {\em Expert Systems with Applications} {\bf 41}(9),~4235--4244.
+
+\harvarditem[Kourentzes et~al.]{Kourentzes, Barrow \harvardand\
+  Petropoulos}{2019}{Kourentzes2019-na}
+Kourentzes, N., Barrow, D. \harvardand\ Petropoulos, F.  \harvardyearleft
+  2019\harvardyearright , `Another look at forecast selection and combination:
+  Evidence from forecast pooling', {\em International Journal of Production
+  Economics} {\bf 209}(February 2018),~226--235.
+
+\harvarditem{Krasnopolsky \harvardand\ Lin}{2012}{Krasnopolsky2012-xu}
+Krasnopolsky, V.~M. \harvardand\ Lin, Y.  \harvardyearleft
+  2012\harvardyearright , `A neural network nonlinear multimodel ensemble to
+  improve precipitation forecasts over continental {US}', {\em Advances in
+  Meteorology} {\bf 2012}.
+
+\harvarditem{Kullback \harvardand\ Leibler}{1951}{Kullback1951-hl}
+Kullback, S. \harvardand\ Leibler, R.~A.  \harvardyearleft
+  1951\harvardyearright , `On information and sufficiency', {\em Annals of
+  Mathematical Statistics} .
+
+\harvarditem[Lahiri et~al.]{Lahiri, Peng \harvardand\
+  Zhao}{2015}{Lahiri2015-qq}
+Lahiri, K., Peng, H. \harvardand\ Zhao, Y.  \harvardyearleft
+  2015\harvardyearright , `Testing the value of probability forecasts for
+  calibrated combining', {\em International Journal of Forecasting} {\bf
+  31}(1),~113--129.
+
+\harvarditem{Larrick \harvardand\ Soll}{2006}{Larrick2006-sr}
+Larrick, R.~P. \harvardand\ Soll, J.~B.  \harvardyearleft 2006\harvardyearright
+  , `Intuitions about combining opinions: Misappreciation of the averaging
+  principle', {\em Management Science} .
+
+\harvarditem{Leamer}{1978}{Leamer1978-sp}
+Leamer, E.~E.  \harvardyearleft 1978\harvardyearright , {\em Specification
+  searches}, Wiley.
+
+\harvarditem{Lemke \harvardand\ Gabrys}{2010}{Lemke2010-wn}
+Lemke, C. \harvardand\ Gabrys, B.  \harvardyearleft 2010\harvardyearright ,
+  `Meta-learning for time series forecasting and forecast combination', {\em
+  Neurocomputing} {\bf 73}(10),~2006--2016.
+
+\harvarditem{Leutbecher \harvardand\ Palmer}{2008}{Leutbecher2008-mc}
+Leutbecher, M. \harvardand\ Palmer, T.~N.  \harvardyearleft
+  2008\harvardyearright , `Ensemble forecasting', {\em Journal of Computational
+  Physics} {\bf 227}(7),~3515--3539.
+
+\harvarditem{Lewis}{2005}{Lewis2005-hu}
+Lewis, J.~M.  \harvardyearleft 2005\harvardyearright , `Roots of ensemble
+  forecasting', {\em Monthly Weather Review} {\bf 133}(7),~1865--1885.
+
+\harvarditem[Li et~al.]{Li, Kang \harvardand\ Li}{2020}{Li2020-od}
+Li, X., Kang, Y. \harvardand\ Li, F.  \harvardyearleft 2020\harvardyearright ,
+  `Forecasting with time series imaging', {\em Expert Systems with
+  Applications} {\bf 160}(113680),~113680.
+
+\harvarditem[Lichtendahl et~al.]{Lichtendahl, Grushka-Cockayne \harvardand\
+  Winkler}{2013}{Lichtendahl2013-rt}
+Lichtendahl, Jr, K.~C., Grushka-Cockayne, Y. \harvardand\ Winkler, R.~L.
+  \harvardyearleft 2013\harvardyearright , `Is it better to average
+  probabilities or quantiles?', {\em Management Science} {\bf
+  59}(7),~1594--1611.
+
+\harvarditem{Lichtendahl \harvardand\ Winkler}{2020}{Lichtendahl2020-ut}
+Lichtendahl, K.~C. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  2020\harvardyearright , `Why do some combinations perform better than
+  others?', {\em International Journal of Forecasting} {\bf 36}(1),~142--149.
+
+\harvarditem[Makridakis et~al.]{Makridakis, Andersen, Carbone, Fildes, Hibon,
+  Lewandowski, Newton, Parzen \harvardand\ Winkler}{1982}{Makridakis1982-hb}
+Makridakis, S., Andersen, A., Carbone, R., Fildes, R., Hibon, M., Lewandowski,
+  R., Newton, J., Parzen, E. \harvardand\ Winkler, R.  \harvardyearleft
+  1982\harvardyearright , `The accuracy of extrapolation (time series) methods:
+  Results of a forecasting competition', {\em Journal of Forecasting} {\bf
+  1}(2),~111--153.
+
+\harvarditem{Makridakis \harvardand\ Hibon}{2000}{Makridakis2000-he}
+Makridakis, S. \harvardand\ Hibon, M.  \harvardyearleft 2000\harvardyearright ,
+  `The {M3-Competition}: results, conclusions and implications', {\em
+  International Journal of Forecasting} {\bf 16}(4),~451--476.
+
+\harvarditem{Makridakis, Spiliotis \harvardand\ Assimakopoulos}{2020{\em
+  a}}{Makridakis2020-hu}
+Makridakis, S., Spiliotis, E. \harvardand\ Assimakopoulos, V.  \harvardyearleft
+  2020{\em a}\harvardyearright , `The {M4} competition: 100,000 time series and
+  61 forecasting methods', {\em International Journal of Forecasting} {\bf
+  36}(1),~54--74.
+
+\harvarditem{Makridakis, Spiliotis \harvardand\ Assimakopoulos}{2020{\em
+  b}}{Makridakis2020-fn}
+Makridakis, S., Spiliotis, E. \harvardand\ Assimakopoulos, V.  \harvardyearleft
+  2020{\em b}\harvardyearright , `The {M5} accuracy competition: Results,
+  findings and conclusions', {\em International Journal of Forecasting} .
+
+\harvarditem{Makridakis, Spiliotis, Assimakopoulos, Chen, Gaba, Tsetlin
+  \harvardand\ Winkler}{2020}{Makridakis2020-lz}
+Makridakis, S., Spiliotis, E., Assimakopoulos, V., Chen, Z., Gaba, A., Tsetlin,
+  I. \harvardand\ Winkler, R.  \harvardyearleft 2020\harvardyearright , `The
+  {M5} {Uncertainty} competition: Results, findings and conclusions', {\em
+  International Journal of Forecasting} pp.~1--24.
+
+\harvarditem{Makridakis \harvardand\ Winkler}{1983}{Makridakis1983-hg}
+Makridakis, S. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  1983\harvardyearright , `Averages of forecasts: Some empirical results'.
+
+\harvarditem[Mannes et~al.]{Mannes, Soll \harvardand\
+  Larrick}{2014}{Mannes2014-dl}
+Mannes, A.~E., Soll, J.~B. \harvardand\ Larrick, R.~P.  \harvardyearleft
+  2014\harvardyearright , `The wisdom of select crowds', {\em Journal of
+  Personality and Social Psychology} {\bf 107}(2),~276--299.
+
+\harvarditem[Martin et~al.]{Martin, Loaiza-Maya, Frazier, Maneesoonthorn
+  \harvardand\ Hassan}{2020}{Martin2020-yi}
+Martin, G.~M., Loaiza-Maya, R., Frazier, D.~T., Maneesoonthorn, W. \harvardand\
+  Hassan, A.~R.  \harvardyearleft 2020\harvardyearright , `Optimal
+  probabilistic forecasts: When do they work?'.
+
+\harvarditem{McNees}{1992}{McNees1992-qc}
+McNees, S.~K.  \harvardyearleft 1992\harvardyearright , `The uses and abuses of
+  `consensus' forecasts', {\em Journal of Forecasting} {\bf 11}(8),~703--710.
+
+\harvarditem[Montero-Manso et~al.]{Montero-Manso, Athanasopoulos, Hyndman
+  \harvardand\ Talagala}{2020}{Montero-Manso2020-tq}
+Montero-Manso, P., Athanasopoulos, G., Hyndman, R.~J. \harvardand\ Talagala,
+  T.~S.  \harvardyearleft 2020\harvardyearright , `{FFORMA}: Feature-based
+  forecast model averaging', {\em International Journal of Forecasting} {\bf
+  36}(1),~86--92.
+
+\harvarditem[Moon et~al.]{Moon, Jung, Rew, Rho \harvardand\
+  Hwang}{2020}{Moon2020-ls}
+Moon, J., Jung, S., Rew, J., Rho, S. \harvardand\ Hwang, E.  \harvardyearleft
+  2020\harvardyearright , `Combination of short-term load forecasting models
+  based on a stacking ensemble approach', {\em Energy and Buildings} {\bf
+  216},~109921.
+
+\harvarditem{Newbold \harvardand\ Granger}{1974}{Newbold1974-lp}
+Newbold, P. \harvardand\ Granger, C. W.~J.  \harvardyearleft
+  1974\harvardyearright , `Experience with forecasting univariate time series
+  and the combination of forecasts', {\em Journal of the Royal Statistical
+  Society. Series A} {\bf 137}(2),~131.
+
+\harvarditem{Newbold \harvardand\ Harvey}{2002}{Newbold2002-wa}
+Newbold, P. \harvardand\ Harvey, D.~I.  \harvardyearleft 2002\harvardyearright
+  , `Forecast combination and encompassing', {\em A companion to economic
+  forecasting} .
+
+\harvarditem[Nowotarski et~al.]{Nowotarski, Raviv, Tr{\"u}ck \harvardand\
+  Weron}{2014}{Nowotarski2014-ev}
+Nowotarski, J., Raviv, E., Tr{\"u}ck, S. \harvardand\ Weron, R.
+  \harvardyearleft 2014\harvardyearright , `An empirical comparison of
+  alternative schemes for combining electricity spot price forecasts', {\em
+  Energy Economics} {\bf 46},~395--412.
+
+\harvarditem[O'Hagan et~al.]{O'Hagan, Buck, Daneshkhah, Richard~Eiser,
+  Garthwaite, Jenkinson, Oakley \harvardand\ Rakow}{2006}{OHagan2006-jk}
+O'Hagan, A., Buck, C.~E., Daneshkhah, A., Richard~Eiser, J., Garthwaite, P.~H.,
+  Jenkinson, D.~J., Oakley, J.~E. \harvardand\ Rakow, T.  \harvardyearleft
+  2006\harvardyearright , {\em Uncertain Judgements: Eliciting Experts'
+  Probabilities}, John Wiley \& Sons.
+
+\harvarditem{{\"O}ller}{1978}{Oller1978-wx}
+{\"O}ller, L.-E.  \harvardyearleft 1978\harvardyearright , `A method for
+  pooling forecasts', {\em Journal of the Operational Research Society} {\bf
+  29}(1),~55--63.
+
+\harvarditem[Opschoor et~al.]{Opschoor, van Dijk \harvardand\ van~der
+  Wel}{2017}{Opschoor2017-yu}
+Opschoor, A., van Dijk, D. \harvardand\ van~der Wel, M.  \harvardyearleft
+  2017\harvardyearright , `Combining density forecasts using focused scoring
+  rules', {\em Journal of Applied Economics} {\bf 32}(7),~1298--1313.
+
+\harvarditem{Palm \harvardand\ Zellner}{1992}{Palm1992-im}
+Palm, F.~C. \harvardand\ Zellner, A.  \harvardyearleft 1992\harvardyearright ,
+  `To combine or not to combine? issues of combining forecasts', {\em Journal
+  of Forecasting} {\bf 11}(8),~687--701.
+
+\harvarditem{Park \harvardand\ Budescu}{2015}{Park2015-zn}
+Park, S. \harvardand\ Budescu, D.~V.  \harvardyearleft 2015\harvardyearright ,
+  `Aggregating multiple probability intervals to improve calibration', {\em
+  Judgment and Decision Making} {\bf 10}(2),~130.
+
+\harvarditem{Patton \harvardand\ Timmermann}{2007}{Patton2007-zo}
+Patton, A.~J. \harvardand\ Timmermann, A.  \harvardyearleft
+  2007\harvardyearright , `Properties of optimal forecasts under asymmetric
+  loss and nonlinearity', {\em Journal of Econometrics} {\bf 140}(2),~884--918.
+
+\harvarditem[Pauwels et~al.]{Pauwels, Radchenko \harvardand\
+  Vasnev}{2020}{Pauwels2020-zl}
+Pauwels, L.~L., Radchenko, P. \harvardand\ Vasnev, A.~L.  \harvardyearleft
+  2020\harvardyearright , Higher moment constraints for predictive density
+  combination.
+
+\harvarditem{Pauwels \harvardand\ Vasnev}{2016}{Pauwels2016-ci}
+Pauwels, L.~L. \harvardand\ Vasnev, A.~L.  \harvardyearleft
+  2016\harvardyearright , `A note on the estimation of optimal weights for
+  density forecast combinations', {\em International Journal of Forecasting}
+  {\bf 32}(2),~391--397.
+
+\harvarditem{Pawlikowski \harvardand\ Chorowska}{2020}{Pawlikowski2020-hm}
+Pawlikowski, M. \harvardand\ Chorowska, A.  \harvardyearleft
+  2020\harvardyearright , `Weighted ensemble of statistical models', {\em
+  International Journal of Forecasting} {\bf 36}(1),~93--97.
+
+\harvarditem[Petropoulos et~al.]{Petropoulos, Apiletti, Assimakopoulos, Babai,
+  Barrow, Bergmeir, Bessa, Boylan, Browell, Carnevale, Castle, Cirillo,
+  Clements, Cordeiro, Oliveira, Baets, Dokumentov, Fiszeder, Franses,
+  Gilliland, Gönül, Goodwin, Grossi, Grushka-Cockayne, Guidolin, Guidolin,
+  Gunter, Guo, Guseo, Harvey, Hendry, Hollyman, Januschowski, Jeon, Jose, Kang,
+  Koehler, Kolassa, Kourentzes, Leva, Li, Litsiou, Makridakis, Martinez,
+  Meeran, Modis, Nikolopoulos, Önkal, Paccagnini, Panapakidis, Pavía, Pedio,
+  Pedregal, Pinson, Ramos, Rapach, Reade, Rostami-Tabar, Rubaszek, Sermpinis,
+  Shang, Spiliotis, Syntetos, Talagala, Talagala, Tashman, Thomakos,
+  Thorarinsdottir, Todini, Arenas, Wang, Winkler, Yusupova \harvardand\
+  Ziel}{2020}{petropoulos2020forecasting}
+Petropoulos, F., Apiletti, D., Assimakopoulos, V., Babai, M.~Z., Barrow, D.~K.,
+  Bergmeir, C., Bessa, R.~J., Boylan, J.~E., Browell, J., Carnevale, C.,
+  Castle, J.~L., Cirillo, P., Clements, M.~P., Cordeiro, C., Oliveira, F.
+  L.~C., Baets, S.~D., Dokumentov, A., Fiszeder, P., Franses, P.~H., Gilliland,
+  M., Gönül, M.~S., Goodwin, P., Grossi, L., Grushka-Cockayne, Y., Guidolin,
+  M., Guidolin, M., Gunter, U., Guo, X., Guseo, R., Harvey, N., Hendry, D.~F.,
+  Hollyman, R., Januschowski, T., Jeon, J., Jose, V. R.~R., Kang, Y., Koehler,
+  A.~B., Kolassa, S., Kourentzes, N., Leva, S., Li, F., Litsiou, K.,
+  Makridakis, S., Martinez, A.~B., Meeran, S., Modis, T., Nikolopoulos, K.,
+  Önkal, D., Paccagnini, A., Panapakidis, I., Pavía, J.~M., Pedio, M.,
+  Pedregal, D.~J., Pinson, P., Ramos, P., Rapach, D.~E., Reade, J.~J.,
+  Rostami-Tabar, B., Rubaszek, M., Sermpinis, G., Shang, H.~L., Spiliotis, E.,
+  Syntetos, A.~A., Talagala, P.~D., Talagala, T.~S., Tashman, L., Thomakos, D.,
+  Thorarinsdottir, T., Todini, E., Arenas, J. R.~T., Wang, X., Winkler, R.~L.,
+  Yusupova, A. \harvardand\ Ziel, F.  \harvardyearleft 2020\harvardyearright ,
+  `Forecasting: theory and practice'.
+
+\harvarditem{Petropoulos, Hyndman \harvardand\
+  Bergmeir}{2018}{Petropoulos2018-fw}
+Petropoulos, F., Hyndman, R.~J. \harvardand\ Bergmeir, C.  \harvardyearleft
+  2018\harvardyearright , `Exploring the sources of uncertainty: {Why} does
+  bagging for time series forecasting work?', {\em European Journal of
+  Operational Research} {\bf 268}(2),~545--554.
+
+\harvarditem{Petropoulos, Kourentzes, Nikolopoulos \harvardand\
+  Siemsen}{2018}{Petropoulos2018-ad}
+Petropoulos, F., Kourentzes, N., Nikolopoulos, K. \harvardand\ Siemsen, E.
+  \harvardyearleft 2018\harvardyearright , `Judgmental selection of forecasting
+  models', {\em Journal of Operations Management} {\bf 60},~34--46.
+
+\harvarditem[Petropoulos et~al.]{Petropoulos, Makridakis, Assimakopoulos
+  \harvardand\ Nikolopoulos}{2014}{Petropoulos2014-uy}
+Petropoulos, F., Makridakis, S., Assimakopoulos, V. \harvardand\ Nikolopoulos,
+  K.  \harvardyearleft 2014\harvardyearright , `'horses for courses' in demand
+  forecasting', {\em European Journal of Operational Research} {\bf
+  237}(1),~152--163.
+
+\harvarditem{Petropoulos \harvardand\ Svetunkov}{2020}{Petropoulos2020-fp}
+Petropoulos, F. \harvardand\ Svetunkov, I.  \harvardyearleft
+  2020\harvardyearright , `A simple combination of univariate models', {\em
+  International Journal of Forecasting} {\bf 36}(1),~110--115.
+
+\harvarditem{Poler \harvardand\ Mula}{2011}{poler2011forecasting}
+Poler, R. \harvardand\ Mula, J.  \harvardyearleft 2011\harvardyearright ,
+  `Forecasting model selection through out-of-sample rolling horizon weighted
+  errors', {\em Expert Systems with Applications} {\bf 38}(12),~14778--14785.
+
+\harvarditem[Poncela et~al.]{Poncela, Rodr{\'\i}guez, S{\'a}nchez-Mangas
+  \harvardand\ Senra}{2011}{Poncela2011-vz}
+Poncela, P., Rodr{\'\i}guez, J., S{\'a}nchez-Mangas, R. \harvardand\ Senra, E.
+  \harvardyearleft 2011\harvardyearright , `Forecast combination through
+  dimension reduction techniques', {\em International Journal of Forecasting}
+  {\bf 27}(2),~224--237.
+
+\harvarditem{Qi \harvardand\ Zhang}{2001}{qi2001investigation}
+Qi, M. \harvardand\ Zhang, G.~P.  \harvardyearleft 2001\harvardyearright , `An
+  investigation of model selection criteria for neural network time series
+  forecasting', {\em European Journal of Operational Research} {\bf
+  132}(3),~666--680.
+
+\harvarditem[Raftery et~al.]{Raftery, Gneiting, Balabdaoui \harvardand\
+  Polakowski}{2005}{Raftery2005-vu}
+Raftery, A.~E., Gneiting, T., Balabdaoui, F. \harvardand\ Polakowski, M.
+  \harvardyearleft 2005\harvardyearright , `Using {Bayesian} model averaging to
+  calibrate forecast ensembles', {\em Monthly Weather Review} {\bf
+  133}(5),~1155--1174.
+
+\harvarditem[Raftery et~al.]{Raftery, K{\'a}rn{\'y} \harvardand\
+  Ettler}{2010}{Raftery2010-qe}
+Raftery, A.~E., K{\'a}rn{\'y}, M. \harvardand\ Ettler, P.  \harvardyearleft
+  2010\harvardyearright , `Online prediction under model uncertainty via
+  dynamic model averaging: Application to a cold rolling mill', {\em
+  Technometrics} {\bf 52}(1),~52--66.
+
+\harvarditem[Raftery et~al.]{Raftery, Madigan \harvardand\
+  Hoeting}{1997}{Raftery1997-ij}
+Raftery, A.~E., Madigan, D. \harvardand\ Hoeting, J.~A.  \harvardyearleft
+  1997\harvardyearright , `Bayesian model averaging for linear regression
+  models', {\em Journal of the American Statistical Association} {\bf
+  92}(437),~179--191.
+
+\harvarditem{Ranjan \harvardand\ Gneiting}{2010}{Ranjan2010-jl}
+Ranjan, R. \harvardand\ Gneiting, T.  \harvardyearleft 2010\harvardyearright ,
+  `Combining probability forecasts', {\em Journal of the Royal Statistical
+  Society: Series B (Statistical Methodology)} {\bf 72}(1),~71--91.
+
+\harvarditem{Rapach \harvardand\ Strauss}{2008}{Rapach2008-jh}
+Rapach, D.~E. \harvardand\ Strauss, J.~K.  \harvardyearleft
+  2008\harvardyearright , `Forecasting {US} employment growth using forecast
+  combining methods', {\em Journal of Forecasting} {\bf 27}(1),~75--93.
+
+\harvarditem[Ribeiro et~al.]{Ribeiro, Mariani \harvardand\
+  Coelho}{2019}{Ribeiro2019-wk}
+Ribeiro, G.~T., Mariani, V.~C. \harvardand\ Coelho, L. d.~S.  \harvardyearleft
+  2019\harvardyearright , `Enhanced ensemble structures using wavelet neural
+  networks applied to short-term load forecasting', {\em Engineering
+  Applications of Artificial Intelligence} {\bf 82},~272--281.
+
+\harvarditem{Ribeiro \harvardand\ dos Santos~Coelho}{2020}{Ribeiro2020-mj}
+Ribeiro, M. H. D.~M. \harvardand\ dos Santos~Coelho, L.  \harvardyearleft
+  2020\harvardyearright , `Ensemble approach based on bagging, boosting and
+  stacking for short-term prediction in agribusiness time series', {\em Applied
+  Soft Computing} {\bf 86},~105837.
+
+\harvarditem{Schwarz}{1978}{Schwarz1978-cz}
+Schwarz, G.  \harvardyearleft 1978\harvardyearright , `Estimating the dimension
+  of a model', {\em Annals of Statistics} {\bf 6}(2),~461--464.
+
+\harvarditem[Semenoglou et~al.]{Semenoglou, Spiliotis, Makridakis \harvardand\
+  Assimakopoulos}{2020}{Semenoglou2020-xx}
+Semenoglou, A.-A., Spiliotis, E., Makridakis, S. \harvardand\ Assimakopoulos,
+  V.  \harvardyearleft 2020\harvardyearright , `Investigating the accuracy of
+  cross-learning time series forecasting methods', {\em International Journal
+  of Forecasting} .
+
+\harvarditem{Shaub}{2019}{Shaub2019-on}
+Shaub, D.  \harvardyearleft 2019\harvardyearright , `Fast and accurate yearly
+  time series forecasting with forecast combinations', {\em International
+  Journal of Forecasting} .
+
+\harvarditem{Shi \harvardand\ Liu}{1993}{Shanming_Shi1993-uk}
+Shi, S. \harvardand\ Liu, B.  \harvardyearleft 1993\harvardyearright ,
+  Nonlinear combination of forecasts with neural networks, {\em in}
+  `Proceedings of 1993 International Conference on Neural Networks
+  ({IJCNN-93-Nagoya}, Japan)', Vol.~1, ieeexplore.ieee.org, pp.~959--962 vol.1.
+
+\harvarditem[Shi et~al.]{Shi, Da~Xu \harvardand\ Liu}{1999}{Ming_Shi1999-vs}
+Shi, S.~M., Da~Xu, L. \harvardand\ Liu, B.  \harvardyearleft
+  1999\harvardyearright , `Improving the accuracy of nonlinear combined
+  forecasting using neural networks', {\em Expert Systems with Applications}
+  {\bf 16}(1),~49--54.
+
+\harvarditem{Smith \harvardand\ Wallis}{2009}{Smith2009-wd}
+Smith, J. \harvardand\ Wallis, K.~F.  \harvardyearleft 2009\harvardyearright ,
+  `A simple explanation of the forecast combination puzzle', {\em Oxford
+  Bulletin of Economics and Statistics} {\bf 71}(3),~331--355.
+
+\harvarditem{Stock \harvardand\ Watson}{1998}{Stock1998-np}
+Stock, J.~H. \harvardand\ Watson, M.~W.  \harvardyearleft 1998\harvardyearright
+  , A comparison of linear and nonlinear univariate models for forecasting
+  macroeconomic time series, Technical Report w6607, National Bureau of
+  Economic Research.
+
+\harvarditem{Stock \harvardand\ Watson}{2003}{Stock2003-sp}
+Stock, J.~H. \harvardand\ Watson, M.~W.  \harvardyearleft 2003\harvardyearright
+  , `How did leading indicator forecasts perform during the 2001 recession?',
+  {\em FRB Richmond Economic Quarterly} {\bf 89}(3),~71--90.
+
+\harvarditem{Stock \harvardand\ Watson}{2004}{Stock2004-rq}
+Stock, J.~H. \harvardand\ Watson, M.~W.  \harvardyearleft 2004\harvardyearright
+  , `Combination forecasts of output growth in a seven-country data set', {\em
+  Journal of Forecasting} {\bf 23}(6),~405--430.
+
+\harvarditem{Stone}{1961}{Stone1961-zd}
+Stone, M.  \harvardyearleft 1961\harvardyearright , `The opinion pool', {\em
+  Annals of Mathematical Statistics} {\bf 32}(4),~1339--1342.
+
+\harvarditem{Sugiura}{1978}{Sugiura1978-xm}
+Sugiura, N.  \harvardyearleft 1978\harvardyearright , `Further analysts of the
+  data by akaike's information criterion and the finite corrections: Further
+  analysts of the data by akaike's', {\em Communications in Statistics-Theory
+  and Methods} .
+
+\harvarditem[Talagala et~al.]{Talagala, Hyndman \harvardand\
+  Athanasopoulos}{2018}{talagala2018meta}
+Talagala, T.~S., Hyndman, R.~J. \harvardand\ Athanasopoulos, G.
+  \harvardyearleft 2018\harvardyearright , `Meta-learning how to forecast time
+  series', {\em Monash Econometrics and Business Statistics Working Papers}
+  {\bf 6},~18.
+
+\harvarditem{Terui \harvardand\ van Dijk}{2002}{Terui2002-df}
+Terui, N. \harvardand\ van Dijk, H.~K.  \harvardyearleft 2002\harvardyearright
+  , `Combined forecasts from linear and nonlinear time series models', {\em
+  International Journal of Forecasting} {\bf 18}(3),~421--438.
+
+\harvarditem[Thomson et~al.]{Thomson, Pollock, {\"O}nkal \harvardand\
+  G{\"o}n{\"u}l}{2019}{Thomson2019-al}
+Thomson, M.~E., Pollock, A.~C., {\"O}nkal, D. \harvardand\ G{\"o}n{\"u}l, M.~S.
+   \harvardyearleft 2019\harvardyearright , `Combining forecasts: Performance
+  and coherence', {\em International Journal of Forecasting} {\bf
+  35}(2),~474--484.
+
+\harvarditem{Timmermann}{2006}{Timmermann2006-en}
+Timmermann, A.  \harvardyearleft 2006\harvardyearright , Chapter 4 forecast
+  combinations, {\em in} G.~Elliott, C.~W.~J. Granger \harvardand\
+  A.~Timmermann, eds, `Handbook of Economic Forecasting', Vol.~1, Elsevier,
+  pp.~135--196.
+
+\harvarditem[Turner et~al.]{Turner, Steyvers, Merkle, Budescu \harvardand\
+  Wallsten}{2014}{Turner2014-za}
+Turner, B.~M., Steyvers, M., Merkle, E.~C., Budescu, D.~V. \harvardand\
+  Wallsten, T.~S.  \harvardyearleft 2014\harvardyearright , `Forecast
+  aggregation via recalibration', {\em Machine Learning} {\bf 95}(3),~261--289.
+
+\harvarditem{Wallis}{2005}{Wallis2005-yf}
+Wallis, K.~F.  \harvardyearleft 2005\harvardyearright , `Combining density and
+  interval forecasts: A modest proposal', {\em Oxford Bulletin of Economics and
+  Statistics} {\bf 67}(s1),~983--994.
+
+\harvarditem[Wang et~al.]{Wang, Kang, Petropoulos \harvardand\
+  Li}{2021}{Wang2021-un}
+Wang, X., Kang, Y., Petropoulos, F. \harvardand\ Li, F.  \harvardyearleft
+  2021\harvardyearright , `The uncertainty estimation of feature-based forecast
+  combinations', {\em Journal of the Operational Research Society} .
+
+\harvarditem[Wang et~al.]{Wang, Smith-Miles \harvardand\
+  Hyndman}{2009}{Wang2009-hs}
+Wang, X., Smith-Miles, K. \harvardand\ Hyndman, R.~J.  \harvardyearleft
+  2009\harvardyearright , `Rule induction for forecasting method selection:
+  Meta-learning the characteristics of univariate time series', {\em
+  Neurocomputing} {\bf 72}(10),~2581--2594.
+
+\harvarditem{Winkler \harvardand\ Makridakis}{1983}{Winkler1983-ra}
+Winkler, R.~L. \harvardand\ Makridakis, S.  \harvardyearleft
+  1983\harvardyearright , `The combination of forecasts', {\em Journal of the
+  Royal Statistical Society. Series A} {\bf 146}(2),~150.
+
+\harvarditem{Wolpert}{1992}{Wolpert1992-if}
+Wolpert, D.~H.  \harvardyearleft 1992\harvardyearright , `Stacked
+  generalization', {\em Elsevier Oceanography Series} {\bf 87545}(505),~1--57.
+
+\harvarditem{Wright}{2008}{Wright2008-bs}
+Wright, J.~H.  \harvardyearleft 2008\harvardyearright , `Bayesian model
+  averaging and exchange rate forecasts', {\em Journal of Econometrics} {\bf
+  146}(2),~329--341.
+
+\harvarditem{Yang}{2005}{yang2005can}
+Yang, Y.  \harvardyearleft 2005\harvardyearright , `Can the strengths of aic
+  and bic be shared? a conflict between model indentification and regression
+  estimation', {\em Biometrika} {\bf 92}(4),~937--950.
+
+\harvarditem{Yao \harvardand\ Islam}{2008}{Yao2008-or}
+Yao, X. \harvardand\ Islam, M.~M.  \harvardyearleft 2008\harvardyearright ,
+  `Evolving artificial neural network ensembles', {\em IEEE Computational
+  Intelligence Magazine} {\bf 3}(1),~31--42.
+
+\harvarditem{Zhao \harvardand\ Feng}{2020}{Zhao2020-ep}
+Zhao, S. \harvardand\ Feng, Y.  \harvardyearleft 2020\harvardyearright ,
+  `{{For2For}}: Learning to forecast from forecasts'.
+
+\harvarditem{Zhou}{2012}{Zhou2012-cy}
+Zhou, Z.-H.  \harvardyearleft 2012\harvardyearright , `Ensemble methods:
+  foundations and algorithms'.
+
+\harvarditem[Zhou et~al.]{Zhou, Wu \harvardand\ Tang}{2002}{Zhou2002-cg}
+Zhou, Z.-H., Wu, J. \harvardand\ Tang, W.  \harvardyearleft
+  2002\harvardyearright , `Ensembling neural networks: Many could be better
+  than all', {\em Artificial Intelligence} {\bf 137}(1),~239--263.
+
+\end{thebibliography}
