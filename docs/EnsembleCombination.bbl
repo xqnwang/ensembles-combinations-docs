@@ -1,5 +1,12 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Aastveit et~al.]{Aastveit, Mitchell, Ravazzolo \harvardand\ van
+  Dijk}{2018}{Aastveit2018-lf}
+Aastveit, K.~A., Mitchell, J., Ravazzolo, F. \harvardand\ van Dijk, H.~K.
+  \harvardyearleft 2018\harvardyearright , The evolution of forecast density
+  combinations in economics, Technical Report TI 2018-069/III, Tinbergen
+  Institute Discussion Paper.
+
 \harvarditem{Adhikari}{2015}{Adhikari2015-bb}
 Adhikari, R.  \harvardyearleft 2015\harvardyearright , `A mutual association
   based nonlinear ensemble mechanism for time series forecasting', {\em Applied
@@ -498,6 +505,10 @@ Kolassa, S.  \harvardyearleft 2011\harvardyearright , `Combining exponential
   smoothing forecasts using akaike weights', {\em International Journal of
   Forecasting} {\bf 27}(2),~238--251.
 
+\harvarditem{Koop}{2003}{Koop-2003bayesian}
+Koop, G.  \harvardyearleft 2003\harvardyearright , {\em Bayesian Econometrics},
+  Wiley.
+
 \harvarditem{Koop \harvardand\ Potter}{2003}{Koop2003-nl}
 Koop, G.~M. \harvardand\ Potter, S.  \harvardyearleft 2003\harvardyearright ,
   `Forecasting in large macroeconomic panels using {Bayesian} model averaging',
@@ -640,6 +651,11 @@ Moon, J., Jung, S., Rew, J., Rho, S. \harvardand\ Hwang, E.  \harvardyearleft
   2020\harvardyearright , `Combination of short-term load forecasting models
   based on a stacking ensemble approach', {\em Energy and Buildings} {\bf
   216},~109921.
+
+\harvarditem{Moral-Benito}{2015}{Moral-Benito2015-zh}
+Moral-Benito, E.  \harvardyearleft 2015\harvardyearright , `Model averaging in
+  economics: An overview', {\em Journal of Economic Surveys} {\bf
+  29}(1),~46--75.
 
 \harvarditem{Newbold \harvardand\ Granger}{1974}{Newbold1974-lp}
 Newbold, P. \harvardand\ Granger, C. W.~J.  \harvardyearleft
