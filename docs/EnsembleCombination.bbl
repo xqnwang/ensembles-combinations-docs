@@ -407,6 +407,10 @@ Gunter, S.~I.  \harvardyearleft 1992\harvardyearright , `Nonnegativity
   restricted least squares combinations', {\em International Journal of
   Forecasting} {\bf 8}(1),~45--59.
 
+\harvarditem{Hall \harvardand\ Mitchell}{2004}{Hall2004-tm}
+Hall, S.~G. \harvardand\ Mitchell, J.  \harvardyearleft 2004\harvardyearright ,
+  `Density forecast combination'.
+
 \harvarditem{Hall \harvardand\ Mitchell}{2007}{Hall2007-lh}
 Hall, S.~G. \harvardand\ Mitchell, J.  \harvardyearleft 2007\harvardyearright ,
   `Combining density forecasts', {\em International Journal of Forecasting}
@@ -464,6 +468,11 @@ Jose, V. R.~R., Grushka-Cockayne, Y. \harvardand\ Lichtendahl, K.~C.
 Jose, V. R.~R. \harvardand\ Winkler, R.~L.  \harvardyearleft
   2008\harvardyearright , `Simple robust averages of forecasts: Some empirical
   results', {\em International Journal of Forecasting} {\bf 24}(1),~163--169.
+
+\harvarditem{Jouini \harvardand\ Clemen}{1996}{Jouini1996-fe}
+Jouini, M.~N. \harvardand\ Clemen, R.~T.  \harvardyearleft
+  1996\harvardyearright , `Copula models for aggregating expert opinions', {\em
+  Operations Research} {\bf 44}(3),~444--457.
 
 \harvarditem{Kang, Cao, Petropoulos \harvardand\ Li}{2020}{Kang2020-sv}
 Kang, Y., Cao, W., Petropoulos, F. \harvardand\ Li, F.  \harvardyearleft
@@ -656,6 +665,14 @@ Moon, J., Jung, S., Rew, J., Rho, S. \harvardand\ Hwang, E.  \harvardyearleft
 Moral-Benito, E.  \harvardyearleft 2015\harvardyearright , `Model averaging in
   economics: An overview', {\em Journal of Economic Surveys} {\bf
   29}(1),~46--75.
+
+\harvarditem{Morris}{1974}{Morris1974-yh}
+Morris, P.~A.  \harvardyearleft 1974\harvardyearright , `Decision analysis
+  expert use', {\em Management Science} .
+
+\harvarditem{Morris}{1977}{Morris1977-xl}
+Morris, P.~A.  \harvardyearleft 1977\harvardyearright , `Combining expert
+  judgments: A bayesian approach', {\em Management Science} .
 
 \harvarditem{Newbold \harvardand\ Granger}{1974}{Newbold1974-lp}
 Newbold, P. \harvardand\ Granger, C. W.~J.  \harvardyearleft
@@ -947,6 +964,21 @@ Wang, X., Smith-Miles, K. \harvardand\ Hyndman, R.~J.  \harvardyearleft
   2009\harvardyearright , `Rule induction for forecasting method selection:
   Meta-learning the characteristics of univariate time series', {\em
   Neurocomputing} {\bf 72}(10),~2581--2594.
+
+\harvarditem{Wilson}{2017}{Wilson2017-ct}
+Wilson, K.~J.  \harvardyearleft 2017\harvardyearright , `An investigation of
+  dependence in expert judgement studies with multiple experts', {\em
+  International Journal of Forecasting} {\bf 33}(1),~325--336.
+
+\harvarditem{Winkler}{1968}{Winkler1968-uw}
+Winkler, R.~L.  \harvardyearleft 1968\harvardyearright , `The consensus of
+  subjective probability distributions', {\em Management Science} {\bf
+  15}(2),~B--61--B--75.
+
+\harvarditem{Winkler}{1981}{Winkler1981-bn}
+Winkler, R.~L.  \harvardyearleft 1981\harvardyearright , `Combining probability
+  distributions from dependent information sources', {\em Management Science}
+  {\bf 27}(4),~479--488.
 
 \harvarditem{Winkler \harvardand\ Makridakis}{1983}{Winkler1983-ra}
 Winkler, R.~L. \harvardand\ Makridakis, S.  \harvardyearleft
