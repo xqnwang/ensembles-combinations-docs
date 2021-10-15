@@ -406,7 +406,7 @@ The essence of aforementioned nonlinear pooling methods is to perform ingenious 
 
 The majority of the mathematical approaches to aggregating multiple probability forecasts in the literature assume that the individual probability forecasts are independent, thus neglecting correlations between these individual components, such as the pooling methods mentioned above. The assumption, however, is questionable in practice because component forecasts may share common training, overlapping information, same data, and similar forecasting methods. Thus, some sort of dependence among individual probability forecasts would not be surprising; see, e.g., \cite{Wilson2017-ct} for a pinpoint of possible correlations within an expert judgement study. Such dependence may have a serious impact on aggregated distributions and therefore should be incorporated in the aggregation methods.
 
-Most of the aggregation methods accounting for correlations among components involve the application of Bayes' Theorem that utilizes both prior information and sample information, dating back at least to the pioneering work of \cite{Winkler1968-uw}.
+Most of the aggregation methods accounting for dependence among components involve the application of Bayes' Theorem that utilizes both prior information and sample information, dating back at least to the pioneering work of \cite{Winkler1968-uw}.
 %Bayesian approach has received attention in the context of constructing ensembles of probability forecasts, dating back at least to the pioneering work of \cite{Winkler1968-uw}.
 Early work in this vein focused on a Bayesian paradigm developed by \cite{Morris1974-yh,Morris1977-xl} in which a decision maker views competing density forecasts from various sources simply as data and updates his/her prior distribution via Bayes' Theorem. The problem of eliciting the posterior (or aggregated) density forecast is therefore broken down into the problem of specifying the prior distribution and assessing the form of the joint density, or likelihood, derived from competing densities. A prior density belonging to the natural-conjugate family of distributions helps to render the Bayesian approach tractable \citep[e.g.,][]{Winkler1968-uw}. While the Bayesian approach is theoretically elegant, it presents the most taxing difficulties in delicately specifying the likelihood function, which requires consideration of the bias and precision of the individual densities as well as their dependence \citep{Hall2004-tm}.
 
@@ -419,9 +419,9 @@ Following \cite{Winkler1981-bn}, \cite{Palm1992-im} extended the method to allow
 Bayesian Model Averaging (BMA) provides an alternative means of weighting individual probability forecasts in the light of their posterior probabilities. BMA offers a conceptually elegant and logically coherent solution to the issue of accounting for model uncertainty \citep[see, e.g.,][]{Leamer1978-sp,Draper1995-cd,Raftery1997-ij,Garratt2003-kh}. Under this approach, the posterior probability forecast is computed by mixing a set of individual probability forecasts, $p_{i}(y_{t+h}|I_{t})=p(y_{t+h}|I_{t},M_{i})$, from model $M_{i}$, and given as
 \begin{align}
 \label{eq:BMA}
-\tilde{P}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} P(M_{i}|I_{t})p(y_{t+h}|I_{t},M_{i}),
+\tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} P(M_{i}|I_{t})p(y_{t+h}|I_{t},M_{i}),
 \end{align}
-where $P(M_{i}|I_{t})$ is the posterior probability of model $M_{i}$. The decision makers update the prior probability of model $M_{i}$ being the true model, $P(M_{i})$, to compute the posterior probability
+where $P(M_{i}|I_{t})$ is the posterior probability of model $M_{i}$. The decision makers update the prior probability of model $M_{i}$ being the true model, $P(M_{i})$, via Bayes' Theorem to compute the posterior probability
 \begin{align}
 \label{eq:post_prob}
 P(M_{i}|I_{t}) & = \frac{P(M_{i})P(I_{t}|M_{i})}{\sum_{i=1}^{N} P(M_{i})P(I_{t}|M_{i})},
@@ -439,24 +439,6 @@ While theoretically attractive, BMA suffers from three major challenges when imp
 
 One drawback of the BMA approach is the implicit assumption that the true model is included in the model space to be considered \citep{Wright2008-bs}. Under this assumption, when the sample size tends to infinity, the posterior probabilities converge to zero, except for one which converges to unity. Thus, BMA reduces to model selection for a large sample size, with the best model (which is the true model if that exists, but is still well defined if none of the models is in fact true) receiving a weight very close to one; see \cite{Geweke2010-zn} for an empirical demonstration. In this regard, the ensemble forecast derived from BMA may be misspecified when the model space is incomplete (i.e. all models under consideration are incorrect), arising the issue of model incompleteness. While optimal weights defined in Equation~\eqref{eq:weight_klic} do not suffer from these issues because the weights need not converge to zero or unity regardless of whether the component models are correct or not. The other obstacle may be related to the fixed probabilities assigned to component models, as documented in \cite{Aastveit2018-lf}. The uncertainty of the weights is ignored in this case, leading to unstable ensemble forecasts in a forecasting environment characterized with large instability and structural changes in the forecast performance of the individual models. These two shortcomings motivate one line of research concerning flexible ensembles allowing for time-varying weights and accommodating model incompleteness; see \cite{Aastveit2018-lf} for a summary of the related findings.
 
-\begin{itemize}
-  \item About Bayesian methods
-  \begin{itemize}
-    \item Opening paragraphs: intuition, the use of conjugate families of distributions, etc.
-    \item Other Bayesian methods, such as flexible Bayesian approach and copula approach.
-  \end{itemize}
-  \item About quantile forecasts: ensemble or combination?
-  \begin{itemize}
-    \item Ensemble: mix forecast distributions.
-    \item Combination: average forecast variables assuming normally distributed.
-    \item Quantile forecast is the inverse of the cdf.
-    \item Simple methods: simple average, median, envelope, trimming, etc.
-    \item Sophisticated methods.
-  \end{itemize}
-\end{itemize}
-
-
-
 %\citep{Nowotarski2015-xu,Conflitti2015-fq,Billio2013-sg,Wallis2005-yf}
 
 %Bayesian analysis \citep{Winkler1968-uw,Clemen1999-mh}
@@ -466,6 +448,7 @@ One drawback of the BMA approach is the implicit assumption that the true model 
 \subsubsection{Meteorological ensembles}
 \label{sec:meteorological_ensembles}
 
+`Ensemble' has been used in meteorology literature in a disparate way from other forecasting activities. Instead of mixing the individual forecast densities from multiple models as some aggregation, such as linear pooling in Section \ref{sec:linear_pooling}, an ensemble density is constructed from a set of point forecasts of the same weather quantity of interest, based on perturbed initial atmospheric states \citep[e.g.,][]{Maqsood2004-pe,Gneiting2005-yn} and/or different model formulation \citep[e.g.,][]{Buizza1999-st,Buizza2005-wf}. In this light, an ensemble forecast is commonly used to estimate the forecast density of a weather quantity, thereby giving an indication of two major sources of forecast uncertainty \citep{Lorenz1963-yn,Weigel2008-vy,Baran2014-tm}: (i) uncertainty in initial conditions due to the chaotic nature of atmosphere, and (ii) model uncertainty arising from definitely imperfect numerical models. However, it has been demonstrated that such a ensemble forecast typically are uncalibrated, with a tendency for the realizations frequently falling outside of the range of the ensemble \citep{Buizza2005-wf,Sloughter2010-ae}. Various post-processing approaches, such as BMA and ensemble model output statistics (EMOS) models, were introduced accordingly to create calibrated ensemble density forecasts \citep[e.g.,][]{Baran2014-tm,Sloughter2010-ae,Schefzik2017-hg}.
 
 \subsection{Probabilistic forecast combinations}
 \label{sec:probabilistic_forecast_combinations}

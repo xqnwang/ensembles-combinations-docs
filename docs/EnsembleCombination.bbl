@@ -62,6 +62,11 @@ Babikir, A. \harvardand\ Mwambi, H.  \harvardyearleft 2016\harvardyearright ,
   artificial neural network model using linear and nonlinear combining
   methods', {\em Empirical Economics} .
 
+\harvarditem{Baran}{2014}{Baran2014-tm}
+Baran, S.  \harvardyearleft 2014\harvardyearright , `Probabilistic wind speed
+  forecasting using bayesian model averaging with truncated normal components',
+  {\em Computational statistics \& data analysis} {\bf 75},~227--238.
+
 \harvarditem{Baran \harvardand\ Lerch}{2018}{Baran2018-nm}
 Baran, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
   `Combining predictive distributions for the statistical post-processing of
@@ -132,6 +137,20 @@ Brown, G., Wyatt, J., Harris, R. \harvardand\ Yao, X.  \harvardyearleft
 Budescu, D.~V. \harvardand\ Chen, E.  \harvardyearleft 2015\harvardyearright ,
   `Identifying expertise to extract the wisdom of crowds', {\em Management
   Science} .
+
+\harvarditem[Buizza et~al.]{Buizza, Houtekamer, Pellerin, Toth, Zhu
+  \harvardand\ Wei}{2005}{Buizza2005-wf}
+Buizza, R., Houtekamer, P.~L., Pellerin, G., Toth, Z., Zhu, Y. \harvardand\
+  Wei, M.  \harvardyearleft 2005\harvardyearright , `A comparison of the
+  {ECMWF}, {MSC}, and {NCEP} global ensemble prediction systems', {\em Monthly
+  Weather Review} {\bf 133}(5),~1076--1097.
+
+\harvarditem[Buizza et~al.]{Buizza, Milleer \harvardand\
+  Palmer}{1999}{Buizza1999-st}
+Buizza, R., Milleer, M. \harvardand\ Palmer, T.~N.  \harvardyearleft
+  1999\harvardyearright , `Stochastic representation of model uncertainties in
+  the {ECMWF} ensemble prediction system', {\em Quarterly Journal of the Royal
+  Meteorological Society} {\bf 125}(560),~2887--2908.
 
 \harvarditem{Bunn}{1975}{Bunn1975-vz}
 Bunn, D.~W.  \harvardyearleft 1975\harvardyearright , `A {Bayesian} approach to
@@ -359,6 +378,11 @@ Gneiting, T., Balabdaoui, F. \harvardand\ Raftery, A.~E.  \harvardyearleft
 Gneiting, T. \harvardand\ Katzfuss, M.  \harvardyearleft 2014\harvardyearright
   , `Probabilistic forecasting', {\em Annual Review of Statistics and Its
   Application} {\bf 1}(1),~125--151.
+
+\harvarditem{Gneiting \harvardand\ Raftery}{2005}{Gneiting2005-yn}
+Gneiting, T. \harvardand\ Raftery, A.~E.  \harvardyearleft
+  2005\harvardyearright , `Weather forecasting with ensemble methods', {\em
+  Science} {\bf 310}(5746),~248--249.
 
 \harvarditem{Gneiting \harvardand\ Raftery}{2007}{Gneiting2007-ij}
 Gneiting, T. \harvardand\ Raftery, A.~E.  \harvardyearleft
@@ -594,6 +618,10 @@ Lichtendahl, K.~C. \harvardand\ Winkler, R.~L.  \harvardyearleft
   2020\harvardyearright , `Why do some combinations perform better than
   others?', {\em International Journal of Forecasting} {\bf 36}(1),~142--149.
 
+\harvarditem{Lorenz}{1963}{Lorenz1963-yn}
+Lorenz, E.~N.  \harvardyearleft 1963\harvardyearright , `Deterministic
+  nonperiodic flow', {\em J. Atmos. Sci.} {\bf 20}(2),~130--141.
+
 \harvarditem[Makridakis et~al.]{Makridakis, Andersen, Carbone, Fildes, Hibon,
   Lewandowski, Newton, Parzen \harvardand\ Winkler}{1982}{Makridakis1982-hb}
 Makridakis, S., Andersen, A., Carbone, R., Fildes, R., Hibon, M., Lewandowski,
@@ -636,6 +664,12 @@ Makridakis, S. \harvardand\ Winkler, R.~L.  \harvardyearleft
 Mannes, A.~E., Soll, J.~B. \harvardand\ Larrick, R.~P.  \harvardyearleft
   2014\harvardyearright , `The wisdom of select crowds', {\em Journal of
   Personality and Social Psychology} {\bf 107}(2),~276--299.
+
+\harvarditem[Maqsood et~al.]{Maqsood, Khan \harvardand\
+  Abraham}{2004}{Maqsood2004-pe}
+Maqsood, I., Khan, M.~R. \harvardand\ Abraham, A.  \harvardyearleft
+  2004\harvardyearright , `An ensemble of neural networks for weather
+  forecasting', {\em Neural Computing \& Applications} {\bf 13}(2),~112--122.
 
 \harvarditem[Martin et~al.]{Martin, Loaiza-Maya, Frazier, Maneesoonthorn
   \harvardand\ Hassan}{2020}{Martin2020-yi}
@@ -857,6 +891,12 @@ Ribeiro, M. H. D.~M. \harvardand\ dos Santos~Coelho, L.  \harvardyearleft
   stacking for short-term prediction in agribusiness time series', {\em Applied
   Soft Computing} {\bf 86},~105837.
 
+\harvarditem{Schefzik}{2017}{Schefzik2017-hg}
+Schefzik, R.  \harvardyearleft 2017\harvardyearright , `Ensemble calibration
+  with preserved correlations: unifying and comparing ensemble copula coupling
+  and member‐by‐member postprocessing', {\em Quarterly Journal of the Royal
+  Meteorological Society} {\bf 143}(703),~999--1008.
+
 \harvarditem{Schwarz}{1978}{Schwarz1978-cz}
 Schwarz, G.  \harvardyearleft 1978\harvardyearright , `Estimating the dimension
   of a model', {\em Annals of Statistics} {\bf 6}(2),~461--464.
@@ -884,6 +924,13 @@ Shi, S.~M., Da~Xu, L. \harvardand\ Liu, B.  \harvardyearleft
   1999\harvardyearright , `Improving the accuracy of nonlinear combined
   forecasting using neural networks', {\em Expert Systems with Applications}
   {\bf 16}(1),~49--54.
+
+\harvarditem[Sloughter et~al.]{Sloughter, Gneiting \harvardand\
+  Raftery}{2010}{Sloughter2010-ae}
+Sloughter, J.~M., Gneiting, T. \harvardand\ Raftery, A.~E.  \harvardyearleft
+  2010\harvardyearright , `Probabilistic wind speed forecasting using ensembles
+  and bayesian model averaging', {\em Journal of the American Statistical
+  Association} {\bf 105}(489),~25--35.
 
 \harvarditem{Smith \harvardand\ Wallis}{2009}{Smith2009-wd}
 Smith, J. \harvardand\ Wallis, K.~F.  \harvardyearleft 2009\harvardyearright ,
@@ -964,6 +1011,13 @@ Wang, X., Smith-Miles, K. \harvardand\ Hyndman, R.~J.  \harvardyearleft
   2009\harvardyearright , `Rule induction for forecasting method selection:
   Meta-learning the characteristics of univariate time series', {\em
   Neurocomputing} {\bf 72}(10),~2581--2594.
+
+\harvarditem[Weigel et~al.]{Weigel, Liniger \harvardand\
+  Appenzeller}{2008}{Weigel2008-vy}
+Weigel, A.~P., Liniger, M.~A. \harvardand\ Appenzeller, C.  \harvardyearleft
+  2008\harvardyearright , `Can multi-model combination really enhance the
+  prediction skill of probabilistic ensemble forecasts?', {\em Quarterly
+  Journal of the Royal Meteorological Society} {\bf 134}(630),~241--260.
 
 \harvarditem{Wilson}{2017}{Wilson2017-ct}
 Wilson, K.~J.  \harvardyearleft 2017\harvardyearright , `An investigation of
