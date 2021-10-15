@@ -1,0 +1,73 @@
+---
+title: "Bayesian Methods"
+date: "`r Sys.Date()`"
+author: Xiaoqian Wang
+output:
+  rmdformats::robobook:
+    toc_depth: 2
+    self_contained: true
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bayesian model averaging
+
+The ensemble (posterior) probability forecast is computed by mixing a set of individual probability forecasts, and given as
+\begin{align}
+\label{eq:BMA}
+\tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} P(M_{i}|I_{t})p(y_{t+h}|I_{t},M_{i}),
+\end{align}
+where $P(M_{i}|I_{t})$ is the **posterior probability** of model $M_{i}$ obtained by application of Bayes' theorem
+\begin{align}
+\label{eq:post_prob}
+P(M_{i}|I_{t}) & = \frac{P(M_{i})P(I_{t}|M_{i})}{\sum_{i=1}^{N} P(M_{i})P(I_{t}|M_{i})}.
+\end{align}
+
+- BMA can be viewed as a **linear pooling** of individual probability forecasts weighted by their posterior model probabilities.
+
+- Bayes' Theorem is applied to derive the ensemble weights.
+
+- The weight of model $M_{i}$ indicates the probability that model $M_{i}$ is the best under the KLIC measure distance and shows how well the model fits the observations.
+
+- The weights characterized by posterior probabilities **do not account for correlations** among individual probability forecasts.
+
+## Other Bayesian methods
+
+Another stream of available research views competing density forecasts from various sources simply as **data** and updates the DM's prior distribution via Bayes' Theorem, which is commonly used in the context of **judgmental** forecasting.
+
+The final aggregated density forecast is **directly** computed by means of Bayes' Theorem:
+\begin{align}
+\tilde{p}(y_{t+h}|I_{t}) \propto p(y_{t+h}) f_{N}(p_{1}, \ldots , p_{N}|y_{t+h}),
+\end{align}
+where $p(y_{t+h})$ is the DM's prior probability density, and $f_{N}(p_{1}, \ldots , p_{N}|y_{t+h})$ is the **likelihood function** for the individuals' densities ($N$-dimensional probability distribution).
+
+A **noninformative prior** is often adopted because:
+
+- it is reasonable to assume for the aggregation problem that everything the DM knows is also incorporated into the individuals' densities.
+- or the DM's knowledge can be regarded as an additional individual forecast.
+
+The assessment of the **likelihood function** $f_{N}$ is a crucial but complicated task because it requires consideration of the bias and precision of the individual densities as well as their dependence.
+
+- Assuming that the $N$-dimensional vector of individuals' **forecast errors** has a multivariate normal distribution with a zero mean vector (focusing on unbiased forecasts), then the likelihood function is specified as the pdf of the $N$-vector of individuals' means.
+  - The dependence among individual densities is captured using the correlation between individuals’ forecast errors.
+  - When the covariance matrix $\boldsymbol{\Sigma}$ of forecast errors is **known**, the posterior (combined) forecast density is **normally distributed** with mean $\tilde{\mu} = \mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu} / \mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \mathbf{1}$ and variance $\tilde{\sigma}^{2} = 1/\mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \mathbf{1}$. The mean of the posterior density can be interpreted as the ML estimator.
+  - When $\boldsymbol{\Sigma}$ is **unknown**, the posterior (combined) forecast density is a **student-t distribution**. Bayes' theorem is applied for the second time to approximate $\boldsymbol{\Sigma}$ by using past estimation errors as a prior.
+
+- Alternatively, the likelihood function is specified as the joint distribution in terms of the $N$ **marginal distributions** and a **copula**.
+  - The dependence among individual densities is captured using a copula-based joint distribution, defined more generally than correlation between individuals’ forecast errors.
+  - This allows the consideration of more general multivariate distributions than the normal.
+
+## Summary
+
+- Two different forecast density aggregation strategies.
+- BMA does not account for correlations among individual probability forecasts. $\longrightarrow$ ensemble/pooling.
+- The second strategy involves the bias and precision of the individual densities, as well as their dependence. $\longrightarrow$ combination.
+
+
+
