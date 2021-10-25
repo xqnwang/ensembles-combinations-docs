@@ -298,7 +298,7 @@ Probabilistic forecasts involve three main forms, namely prediction intervals (P
 
 It is well established that combining multiple models benefits forecasting accuracy in point forecasting context (for details, see Section \ref{sec:point_forecasts}). The success of the combination stems from the great use of a collection of point forecasts from diverse information sets and different types of forecasting models, as well as the mitigation of potential misspecifications derived from a single model. Likewise, several probabilistic forecasts are often available to decision makers. These forecasts may come from diverse sources such as distinct experts and models, and may be based on misspecified models, poor estimation or non-stationarities. Moreover, empirical studies suggest that the relative performance of different models often varies over time due to structural instabilities in the unknown DGP \citep[e.g.,][]{Billio2013-sg}. Thus, there has been a growing interest in bringing together multiple forecasting models to produce better probabilistic forecasts specializing in integrating information from different sources.
 
-We identify two different ways of using multiple models in the context of time series forecasting, \textit{ensemble} and \textit{combination}. Although `ensemble' has been used in different ways in different literatures, we use `ensemble' to mean a mixture of the forecast distributions from multiple models, ignoring correlations between distributions. While combination is a more sophisticated way of using multiple models to generate the final forecast in the general forecasting community. It involves averaging the forecast distributions, taking account of correlations between individual distributions. The characteristics of the mixed and averaged forecasts are different, with the exception of the means. Therefore, the produced point forecasts from an ensemble are equal to that from a combination when the point forecast is interpreted as the mean of the forecast distribution (as is commonly assumed). This is why we do not distinguish between ensembles and combinations of point forecasts in Section \ref{sec:point_forecasts}.
+We identify two different ways of using multiple models in the context of time series forecasting, \textit{ensemble} and \textit{combination}, which, nevertheless, are often used interchangeably in the literature. Although `ensemble' has been used in different literatures with different meanings, we will always use `ensemble' to refer to a mixture of the forecast distributions from multiple models, ignoring correlations between distributions. While `combination' will be used in order to refer to a more sophisticated way of using multiple models to generate the final forecast in the general forecasting community. It involves averaging the forecast distributions, taking account of correlations between individual distributions. The characteristics of the mixed and averaged forecasts with the same weights assigned are different, with the exception of the means. Therefore, the produced point forecast from an ensemble is equal to that from a combination when the point forecast is interpreted as the mean of the forecast distribution (as is commonly assumed). This is why we do not distinguish between ensembles and combinations of point forecasts in Section \ref{sec:point_forecasts}.
 
 This section is organized as follows. Section \ref{sec:principles_of_probabilistic_forecasts} poses pivotal issues such as calibration and sharpness when assessing the quality of aggregated forecasts, providing guidance for the selection of strategies for using multiple models. The history and evolution of ensemble and combination methods for probabilistic forecasts, together with their potential and benefits, are illustrated in Sections \ref{sec:probabilistic_forecast_ensembles} and \ref{sec:probabilistic_forecast_combinations}.
 
@@ -444,8 +444,15 @@ Recently, the community of weather forecasting is starting to explore the potent
 \end{itemize}
 }
 
-\subsubsection{Bayesian approach}
-\label{sec:bayesian_approach}
+\subsubsection{Combining probability forecasts}
+\label{sec:combining_probability_forecasts}
+
+%Density forecasting strives to predict the probability distribution of quantities in interest
+
+% refer to \cite{Winkler1981-bn} (page 2 paragraph 2-3) for dependence between distributions.
+
+\paragraph{Bayesian approach}
+
 % Bayesian approaches naturally lend themselves to density combination schemes.
 
 The majority of the mathematical approaches to aggregating multiple probability forecasts in the literature assume that the individual probability forecasts are independent, thus neglecting correlations between these individual components, such as the pooling methods mentioned above. The assumption, however, is questionable in practice because component forecasts may share common training, overlapping information, same data, and similar forecasting methods. Thus, some sort of dependence among individual probability forecasts would not be surprising; see, e.g., \cite{Wilson2017-ct} for a pinpoint of possible correlations within an expert judgement study. Such dependence may have a serious impact on aggregated distributions and therefore should be incorporated in the aggregation methods.
@@ -457,13 +464,6 @@ Early work in this vein focused on a Bayesian paradigm developed by \cite{Morris
 An extensive body of literature supports the use of the correlation between individuals' forecast errors in an effort to represent the dependence among individual densities. A prominent work by \cite{Winkler1981-bn} restricted the focus to individual models with unbiased forecasts. Assessing the likelihood as a multivariate normal distribution, \cite{Winkler1981-bn} derived tractable expressions for the posterior forecast density, a normal distribution with mean $\tilde{\mu} = \mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu} / \mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \mathbf{1}$ and variance $\tilde{\sigma}^{2} = 1/\mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} \mathbf{1}$, where $\mathbf{1}$ is an $N$-dimensional unit vector, $\boldsymbol{\mu}$ is an $N$-vector of individuals' mean, and $\boldsymbol{\Sigma}$ is a known covariance matrix of forecast errors. See \cite{Hall2004-tm} for the discussion of the covariance matrix estimation. The mean of the posterior forecast density is essentially a linear combination of the individuals' means with weights $\mathbf{1}^{\prime} \boldsymbol{\Sigma}^{-1} / \mathbf{1}^{\prime} \boldsymbol{\Sigma} \mathbf{1}$ identical to the optimal weights proposed by \cite{Bates1969-yj} and the weights derived from the constrained regression proposed by \cite{Granger1984-jc}, while the latter two approaches do not require normality. When the covariance matrix is unknown but has an inverted Wishart prior, the posterior forecast density is also presented in \cite{Winkler1981-bn}.
 
 Following \cite{Winkler1981-bn}, \cite{Palm1992-im} extended the method to allow for biased individual forecasts, providing a complete solution to the forecast aggregation problem that takes into account the joint distribution of forecast errors from the individual models. Unlike the aforementioned studies in which dependence among individuals is purely defined using the correlation between individuals' forecast errors, \cite{Jouini1996-fe} encoded the dependence into the copula and constructed a copula-based joint distribution accordingly in the Bayesian aggregation framework. The procedure is designed to be suitable for the the individual forecasts with arbitrary distributions. The recent study by \cite{Wilson2017-ct} compared the Bayesian aggregation methods, developed by \cite{Winkler1981-bn} and \cite{Jouini1996-fe}, and the pooling methods in an expert judgement application.
-
-\subsubsection{Combining probability forecasts}
-\label{sec:combining_probability_forecasts}
-
-%Density forecasting strives to predict the probability distribution of quantities in interest
-
-% refer to \cite{Winkler1981-bn} (page 2 paragraph 2-3) for dependence between distributions.
 
 \subsubsection{Combining quantile forecasts}
 \label{sec:combining_quantile_forecasts}
@@ -482,17 +482,10 @@ with consideration of the `whole' density.
 
 quantile crossing
 
-% 2. histories (theory and empirical work of simple combination)
-%% References:
-%% - Is It Better to Average Probabilities or Quantiles?
-%% - The opinion pool (and its citations)
-%% - Combining probability distributions from experts in risk analysis
-%% - Combining probability distributions: A critique and an annotated bibliography
-% 3. three types and some basic combination methods
-%% References:
 %% - (interval)Combining Prediction Intervals in the M4 Competition
 %% - Combining Interval Forecasts.
 %% - (quantile)Combining Probabilistic Load Forecasts
+
 
 \section{Boosting in forecasting}
 \label{sec:boosting}
