@@ -51,6 +51,12 @@ Armstrong, J.~S.  \harvardyearleft 2001\harvardyearright , Combining forecasts,
   {\em in} J.~S. Armstrong, ed., `Principles of Forecasting: A Handbook for
   Researchers and Practitioners', Springer US, Boston, MA, pp.~417--439.
 
+\harvarditem{Atger}{2003}{Atger2003-lx}
+Atger, F.  \harvardyearleft 2003\harvardyearright , `Spatial and interannual
+  variability of the reliability of ensemble-based probabilistic forecasts:
+  Consequences for calibration', {\em Monthly Weather Review} {\bf
+  131}(8),~1509--1523.
+
 \harvarditem{Atiya}{2020}{Atiya2020-ge}
 Atiya, A.~F.  \harvardyearleft 2020\harvardyearright , `Why does forecast
   combination work so well?', {\em International Journal of Forecasting} {\bf
@@ -65,7 +71,7 @@ Babikir, A. \harvardand\ Mwambi, H.  \harvardyearleft 2016\harvardyearright ,
 \harvarditem{Baran}{2014}{Baran2014-tm}
 Baran, S.  \harvardyearleft 2014\harvardyearright , `Probabilistic wind speed
   forecasting using bayesian model averaging with truncated normal components',
-  {\em Computational statistics \& data analysis} {\bf 75},~227--238.
+  {\em Computational Statistics \& Data Analysis} {\bf 75},~227--238.
 
 \harvarditem{Baran \harvardand\ Lerch}{2018}{Baran2018-nm}
 Baran, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
@@ -102,11 +108,24 @@ Bates, J.~M. \harvardand\ Granger, C. W.~J.  \harvardyearleft
   1969\harvardyearright , `The combination of forecasts', {\em Journal of the
   Operational Research Society} {\bf 20}(4),~451--468.
 
+\harvarditem[Bauer et~al.]{Bauer, Thorpe \harvardand\
+  Brunet}{2015}{Bauer2015-dg}
+Bauer, P., Thorpe, A. \harvardand\ Brunet, G.  \harvardyearleft
+  2015\harvardyearright , `The quiet revolution of numerical weather
+  prediction', {\em Nature} {\bf 525}(7567),~47--55.
+
 \harvarditem{Baumeister \harvardand\ Kilian}{2015}{Baumeister2015-ft}
 Baumeister, C. \harvardand\ Kilian, L.  \harvardyearleft 2015\harvardyearright
   , `Forecasting the real price of oil in a changing world: A forecast
   combination approach', {\em Journal of Business \& Economic Statistics} {\bf
   33}(3),~338--351.
+
+\harvarditem[Benjamin et~al.]{Benjamin, Brown, Brunet, Lynch, Saito
+  \harvardand\ Schlatter}{2019}{Benjamin2019-zp}
+Benjamin, S.~G., Brown, J.~M., Brunet, G., Lynch, P., Saito, K. \harvardand\
+  Schlatter, T.~W.  \harvardyearleft 2019\harvardyearright , `100 years of
+  progress in forecasting and {NWP} applications', {\em Meteorological
+  Monographs} {\bf 59},~13--1.
 
 \harvarditem[Billah et~al.]{Billah, Hyndman \harvardand\
   Koehler}{2005}{billah2005empirical}
@@ -126,6 +145,11 @@ Billio, M., Casarin, R., Ravazzolo, F. \harvardand\ van Dijk, H.~K.
 Blanc, S.~M. \harvardand\ Setzer, T.  \harvardyearleft 2016\harvardyearright ,
   `When to choose the simple average in forecast combination', {\em Journal of
   Business Research} {\bf 69}(10),~3951--3962.
+
+\harvarditem{Blanc \harvardand\ Setzer}{2020}{Blanc2020-pg}
+Blanc, S.~M. \harvardand\ Setzer, T.  \harvardyearleft 2020\harvardyearright ,
+  `{Bias--Variance} {Trade-Off} and shrinkage of weights in forecast
+  combination', {\em Management Science} {\bf 66}(12),~5720--5737.
 
 \harvarditem[Brown et~al.]{Brown, Wyatt, Harris \harvardand\
   Yao}{2005}{Brown2005-aa}
@@ -241,6 +265,13 @@ De~Menezes, L.~M., Bunn, D.~W. \harvardand\ Taylor, J.~W.  \harvardyearleft
   2000\harvardyearright , `Review of guidelines for the use of combined
   forecasts', {\em European Journal of Operational Research} .
 
+\harvarditem[Delle~Monache et~al.]{Delle~Monache, Eckel, Rife, Nagarajan
+  \harvardand\ Searight}{2013}{Delle_Monache2013-os}
+Delle~Monache, L., Eckel, F.~A., Rife, D.~L., Nagarajan, B. \harvardand\
+  Searight, K.  \harvardyearleft 2013\harvardyearright , `Probabilistic weather
+  prediction with an analog ensemble', {\em Monthly Weather Review} {\bf
+  141}(10),~3498--3516.
+
 \harvarditem[Deutsch et~al.]{Deutsch, Granger \harvardand\
   Ter{\"a}svirta}{1994}{Deutsch1994-ob}
 Deutsch, M., Granger, C. W.~J. \harvardand\ Ter{\"a}svirta, T.
@@ -291,6 +322,17 @@ Donate, J.~P., Cortez, P., Sanchez, G.~G. \harvardand\ De~Miguel, A.~S.
 Draper, D.  \harvardyearleft 1995\harvardyearright , `Assessment and
   propagation of model uncertainty', {\em Journal of the Royal Statistical
   Society: Series B (Methodological)} {\bf 57}(1),~45--70.
+
+\harvarditem{Dueben \harvardand\ Bauer}{2018}{Dueben2018-ln}
+Dueben, P.~D. \harvardand\ Bauer, P.  \harvardyearleft 2018\harvardyearright ,
+  `Challenges and design choices for global weather and climate models based on
+  machine learning', {\em Geoscientific model development} {\bf
+  11}(10),~3999--4009.
+
+\harvarditem[Dueben et~al.]{Dueben, Bauer \harvardand\
+  Adams}{2021}{Dueben2021-fe}
+Dueben, P.~D., Bauer, P. \harvardand\ Adams, S.  \harvardyearleft
+  2021\harvardyearright , `Deep learning to improve weather predictions'.
 
 \harvarditem{Edward~Coulson \harvardand\ Robins}{1993}{Edward_Coulson1993-db}
 Edward~Coulson, N. \harvardand\ Robins, R.~P.  \harvardyearleft
@@ -390,6 +432,13 @@ Gneiting, T. \harvardand\ Raftery, A.~E.  \harvardyearleft
   estimation', {\em Journal of the American Statistical Association} {\bf
   102}(477),~359--378.
 
+\harvarditem[Gneiting et~al.]{Gneiting, Raftery, Westveld \harvardand\
+  Goldman}{2005}{Gneiting2005-ua}
+Gneiting, T., Raftery, A.~E., Westveld, A.~H. \harvardand\ Goldman, T.
+  \harvardyearleft 2005\harvardyearright , `Calibrated probabilistic
+  forecasting using ensemble model output statistics and minimum {CRPS}
+  estimation', {\em Monthly Weather Review} {\bf 133}(5),~1098--1118.
+
 \harvarditem{Gneiting \harvardand\ Ranjan}{2013}{Gneiting2013-hl}
 Gneiting, T. \harvardand\ Ranjan, R.  \harvardyearleft 2013\harvardyearright ,
   `Combining predictive distributions', {\em Electronic Journal of Statistics}
@@ -413,6 +462,14 @@ Granger, C. W.~J. \harvardand\ Jeon, Y.  \harvardyearleft 2004\harvardyearright
 Granger, C. W.~J. \harvardand\ Ramanathan, R.  \harvardyearleft
   1984\harvardyearright , `Improved methods of combining forecasts', {\em
   Journal of Forecasting} {\bf 3}(2),~197--204.
+
+\harvarditem[Gr{\"o}nquist et~al.]{Gr{\"o}nquist, Yao, Ben-Nun, Dryden, Dueben,
+  Li \harvardand\ Hoefler}{2021}{Gronquist2021-no}
+Gr{\"o}nquist, P., Yao, C., Ben-Nun, T., Dryden, N., Dueben, P., Li, S.
+  \harvardand\ Hoefler, T.  \harvardyearleft 2021\harvardyearright , `Deep
+  learning for post-processing ensemble weather forecasts', {\em Philosophical
+  Transactions. Series A, Mathematical, physical, and engineering sciences}
+  {\bf 379}(2194),~20200092.
 
 \harvarditem{Grushka-Cockayne \harvardand\ Jose}{2020}{Grushka-Cockayne2020-qv}
 Grushka-Cockayne, Y. \harvardand\ Jose, V. R.~R.  \harvardyearleft
@@ -623,6 +680,11 @@ Lorenz, E.~N.  \harvardyearleft 1963\harvardyearright , `Deterministic
   nonperiodic flow', {\em Journal of Atmospheric Sciences} {\bf
   20}(2),~130--141.
 
+\harvarditem{Ma \harvardand\ Fildes}{2021}{Ma2021-np}
+Ma, S. \harvardand\ Fildes, R.  \harvardyearleft 2021\harvardyearright ,
+  `Retail sales forecasting with meta-learning', {\em European Journal of
+  Operational Research} {\bf 288}(1),~111--128.
+
 \harvarditem[Makridakis et~al.]{Makridakis, Andersen, Carbone, Fildes, Hibon,
   Lewandowski, Newton, Parzen \harvardand\ Winkler}{1982}{Makridakis1982-hb}
 Makridakis, S., Andersen, A., Carbone, R., Fildes, R., Hibon, M., Lewandowski,
@@ -677,6 +739,11 @@ Maqsood, I., Khan, M.~R. \harvardand\ Abraham, A.  \harvardyearleft
 Martin, G.~M., Loaiza-Maya, R., Frazier, D.~T., Maneesoonthorn, W. \harvardand\
   Hassan, A.~R.  \harvardyearleft 2020\harvardyearright , `Optimal
   probabilistic forecasts: When do they work?'.
+
+\harvarditem{Mass}{2003}{Mass2003-bc}
+Mass, C.~F.  \harvardyearleft 2003\harvardyearright , `{IFPS} and the future of
+  the national weather service', {\em Weather and Forecasting} {\bf
+  18}(1),~75--79.
 
 \harvarditem{McNees}{1992}{McNees1992-qc}
 McNees, S.~K.  \harvardyearleft 1992\harvardyearright , `The uses and abuses of
@@ -848,11 +915,24 @@ Qi, M. \harvardand\ Zhang, G.~P.  \harvardyearleft 2001\harvardyearright , `An
   forecasting', {\em European Journal of Operational Research} {\bf
   132}(3),~666--680.
 
+\harvarditem[Radchenko et~al.]{Radchenko, Vasnev \harvardand\
+  Wang}{2021}{Radchenko2021-cw}
+Radchenko, P., Vasnev, A.~L. \harvardand\ Wang, W.  \harvardyearleft
+  2021\harvardyearright , `Too similar to combine? {On} negative weights in
+  forecast combination', {\em International Journal of Forecasting} .
+
 \harvarditem[Raftery et~al.]{Raftery, Gneiting, Balabdaoui \harvardand\
-  Polakowski}{2005}{Raftery2005-vu}
+  Polakowski}{2005{\em a}}{Raftery2005-vu}
 Raftery, A.~E., Gneiting, T., Balabdaoui, F. \harvardand\ Polakowski, M.
-  \harvardyearleft 2005\harvardyearright , `Using {Bayesian} model averaging to
-  calibrate forecast ensembles', {\em Monthly Weather Review} {\bf
+  \harvardyearleft 2005{\em a}\harvardyearright , `Using {Bayesian} model
+  averaging to calibrate forecast ensembles', {\em Monthly Weather Review} {\bf
+  133}(5),~1155--1174.
+
+\harvarditem[Raftery et~al.]{Raftery, Gneiting, Balabdaoui \harvardand\
+  Polakowski}{2005{\em b}}{Raftery2005-xi}
+Raftery, A.~E., Gneiting, T., Balabdaoui, F. \harvardand\ Polakowski, M.
+  \harvardyearleft 2005{\em b}\harvardyearright , `Using bayesian model
+  averaging to calibrate forecast ensembles', {\em Monthly Weather Review} {\bf
   133}(5),~1155--1174.
 
 \harvarditem[Raftery et~al.]{Raftery, K{\'a}rn{\'y} \harvardand\
@@ -879,6 +959,17 @@ Rapach, D.~E. \harvardand\ Strauss, J.~K.  \harvardyearleft
   2008\harvardyearright , `Forecasting {US} employment growth using forecast
   combining methods', {\em Journal of Forecasting} {\bf 27}(1),~75--93.
 
+\harvarditem{Rasp \harvardand\ Lerch}{2018}{Rasp2018-zu}
+Rasp, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
+  `Neural networks for postprocessing ensemble weather forecasts', {\em Monthly
+  Weather Review} {\bf 146}(11),~3885--3900.
+
+\harvarditem{Rasp \harvardand\ Thuerey}{2021}{Rasp2021-az}
+Rasp, S. \harvardand\ Thuerey, N.  \harvardyearleft 2021\harvardyearright ,
+  `Data‐driven medium‐range weather prediction with a resnet pretrained on
+  climate simulations: A new model for {WeatherBench}', {\em Journal of
+  Advances in Modeling Earth Systems} {\bf 13}(2).
+
 \harvarditem[Ribeiro et~al.]{Ribeiro, Mariani \harvardand\
   Coelho}{2019}{Ribeiro2019-wk}
 Ribeiro, G.~T., Mariani, V.~C. \harvardand\ Coelho, L. d.~S.  \harvardyearleft
@@ -892,11 +983,22 @@ Ribeiro, M. H. D.~M. \harvardand\ dos Santos~Coelho, L.  \harvardyearleft
   stacking for short-term prediction in agribusiness time series', {\em Applied
   Soft Computing} {\bf 86},~105837.
 
-\harvarditem{Schefzik}{2017}{Schefzik2017-hg}
-Schefzik, R.  \harvardyearleft 2017\harvardyearright , `Ensemble calibration
-  with preserved correlations: unifying and comparing ensemble copula coupling
-  and member‐by‐member postprocessing', {\em Quarterly Journal of the Royal
-  Meteorological Society} {\bf 143}(703),~999--1008.
+\harvarditem{Scher}{2018}{Scher2018-of}
+Scher, S.  \harvardyearleft 2018\harvardyearright , `Toward data‐driven
+  weather and climate forecasting: Approximating a simple general circulation
+  model with deep learning', {\em Geophysical Research Letters} {\bf
+  45}(22),~12,616--12,622.
+
+\harvarditem{Scher \harvardand\ Messori}{2018}{Scher2018-dm}
+Scher, S. \harvardand\ Messori, G.  \harvardyearleft 2018\harvardyearright ,
+  `Predicting weather forecast uncertainty with machine learning', {\em
+  Quarterly Journal of the Royal Meteorological Society} {\bf
+  144}(717),~2830--2841.
+
+\harvarditem{Scher \harvardand\ Messori}{2021}{Scher2021-ee}
+Scher, S. \harvardand\ Messori, G.  \harvardyearleft 2021\harvardyearright ,
+  `Ensemble methods for neural network‐based weather forecasts', {\em Journal
+  of Advances in Modeling Earth Systems} {\bf 13}(2).
 
 \harvarditem{Schwarz}{1978}{Schwarz1978-cz}
 Schwarz, G.  \harvardyearleft 1978\harvardyearright , `Estimating the dimension
@@ -964,6 +1066,13 @@ Sugiura, N.  \harvardyearleft 1978\harvardyearright , `Further analysts of the
   analysts of the data by akaike's', {\em Communications in Statistics-Theory
   and Methods} .
 
+\harvarditem[Taillardat et~al.]{Taillardat, Foug{\`e}res, Naveau \harvardand\
+  Mestre}{2019}{Taillardat2019-ni}
+Taillardat, M., Foug{\`e}res, A.-L., Naveau, P. \harvardand\ Mestre, O.
+  \harvardyearleft 2019\harvardyearright , `{Forest-Based} and semiparametric
+  methods for the postprocessing of rainfall ensemble forecasting', {\em
+  Weather and Forecasting} {\bf 34}(3),~617--634.
+
 \harvarditem[Talagala et~al.]{Talagala, Hyndman \harvardand\
   Athanasopoulos}{2018}{talagala2018meta}
 Talagala, T.~S., Hyndman, R.~J. \harvardand\ Athanasopoulos, G.
@@ -994,6 +1103,19 @@ Timmermann, A.  \harvardyearleft 2006\harvardyearright , Chapter 4 forecast
 Turner, B.~M., Steyvers, M., Merkle, E.~C., Budescu, D.~V. \harvardand\
   Wallsten, T.~S.  \harvardyearleft 2014\harvardyearright , `Forecast
   aggregation via recalibration', {\em Machine Learning} {\bf 95}(3),~261--289.
+
+\harvarditem[Vannitsem et~al.]{Vannitsem, Bremnes, Demaeyer, Evans, Flowerdew,
+  Hemri, Lerch, Roberts, Theis, Atencia, Ben~Bouall{\`e}gue, Bhend, Dabernig,
+  De~Cruz, Hieta, Mestre, Moret, Plenkovi{\'c}, Schmeits, Taillardat, Van~den
+  Bergh, Van~Schaeybroeck, Whan \harvardand\ Ylhaisi}{2021}{Vannitsem2021-bg}
+Vannitsem, S., Bremnes, J.~B., Demaeyer, J., Evans, G.~R., Flowerdew, J.,
+  Hemri, S., Lerch, S., Roberts, N., Theis, S., Atencia, A.,
+  Ben~Bouall{\`e}gue, Z., Bhend, J., Dabernig, M., De~Cruz, L., Hieta, L.,
+  Mestre, O., Moret, L., Plenkovi{\'c}, I.~O., Schmeits, M., Taillardat, M.,
+  Van~den Bergh, J., Van~Schaeybroeck, B., Whan, K. \harvardand\ Ylhaisi, J.
+  \harvardyearleft 2021\harvardyearright , `Statistical postprocessing for
+  weather forecasts: Review, challenges, and avenues in a big data world', {\em
+  Bulletin of the American Meteorological Society} {\bf 102}(3),~E681--E699.
 
 \harvarditem{Wallis}{2005}{Wallis2005-yf}
 Wallis, K.~F.  \harvardyearleft 2005\harvardyearright , `Combining density and
