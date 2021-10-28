@@ -219,10 +219,20 @@ Clemen, R.~T.  \harvardyearleft 1989\harvardyearright , `Combining forecasts: A
   review and annotated bibliography', {\em International Journal of
   Forecasting} {\bf 5}(4),~559--583.
 
+\harvarditem{Clemen \harvardand\ Winkler}{1985}{Clemen1985-kx}
+Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  1985\harvardyearright , `Limits for the precision and value of information
+  from dependent sources', {\em Operations Research} {\bf 33}(2),~427--442.
+
 \harvarditem{Clemen \harvardand\ Winkler}{1986}{Clemen1986-pd}
 Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
   1986\harvardyearright , `Combining economic forecasts', {\em Journal of
   Business \& Economic Statistics} {\bf 4}(1),~39--46.
+
+\harvarditem{Clemen \harvardand\ Winkler}{1993}{Clemen1993-ty}
+Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  1993\harvardyearright , `Aggregating point estimates: A flexible modeling
+  approach', {\em Management Science} {\bf 39}(4),~501--515.
 
 \harvarditem{Clemen \harvardand\ Winkler}{1999}{Clemen1999-mh}
 Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
@@ -391,6 +401,11 @@ Gastinger, J., Nicolas, S., Stepi{\'c}, D., Schmidt, M. \harvardand\
   Sch{\"u}lke, A.  \harvardyearleft 2021\harvardyearright , `A study on
   ensemble learning for time series forecasting and the need for
   meta-learning'.
+
+\harvarditem{Genest \harvardand\ Schervish}{1985}{Genest1985-bu}
+Genest, C. \harvardand\ Schervish, M.~J.  \harvardyearleft
+  1985\harvardyearright , `Modeling expert judgments for bayesian updating',
+  {\em Annals of Statistics} {\bf 13}(3),~1198--1212.
 
 \harvarditem[Genre et~al.]{Genre, Kenny, Meyler \harvardand\
   Timmermann}{2013}{Genre2013-ut}
@@ -745,6 +760,18 @@ Mass, C.~F.  \harvardyearleft 2003\harvardyearright , `{IFPS} and the future of
   the national weather service', {\em Weather and Forecasting} {\bf
   18}(1),~75--79.
 
+\harvarditem[McAlinn et~al.]{McAlinn, Aastveit, Nakajima \harvardand\
+  West}{2020}{McAlinn2020-qq}
+McAlinn, K., Aastveit, K.~A., Nakajima, J. \harvardand\ West, M.
+  \harvardyearleft 2020\harvardyearright , `Multivariate bayesian predictive
+  synthesis in macroeconomic forecasting', {\em Journal of the American
+  Statistical Association} {\bf 115}(531),~1092--1110.
+
+\harvarditem{McAlinn \harvardand\ West}{2019}{McAlinn2019-kn}
+McAlinn, K. \harvardand\ West, M.  \harvardyearleft 2019\harvardyearright ,
+  `Dynamic {Bayesian} predictive synthesis in time series forecasting', {\em
+  Journal of Econometrics} {\bf 210}(1),~155--169.
+
 \harvarditem{McNees}{1992}{McNees1992-qc}
 McNees, S.~K.  \harvardyearleft 1992\harvardyearright , `The uses and abuses of
   `consensus' forecasts', {\em Journal of Forecasting} {\bf 11}(8),~703--710.
@@ -854,7 +881,7 @@ Pawlikowski, M. \harvardand\ Chorowska, A.  \harvardyearleft
   Pedregal, Pinson, Ramos, Rapach, Reade, Rostami-Tabar, Rubaszek, Sermpinis,
   Shang, Spiliotis, Syntetos, Talagala, Talagala, Tashman, Thomakos,
   Thorarinsdottir, Todini, Arenas, Wang, Winkler, Yusupova \harvardand\
-  Ziel}{2020}{petropoulos2020forecasting}
+  Ziel}{2020}{Petropoulos2020-ft}
 Petropoulos, F., Apiletti, D., Assimakopoulos, V., Babai, M.~Z., Barrow, D.~K.,
   Bergmeir, C., Bessa, R.~J., Boylan, J.~E., Browell, J., Carnevale, C.,
   Castle, J.~L., Cirillo, P., Clements, M.~P., Cordeiro, C., Oliveira, F.
@@ -1141,6 +1168,16 @@ Weigel, A.~P., Liniger, M.~A. \harvardand\ Appenzeller, C.  \harvardyearleft
   2008\harvardyearright , `Can multi-model combination really enhance the
   prediction skill of probabilistic ensemble forecasts?', {\em Quarterly
   Journal of the Royal Meteorological Society} {\bf 134}(630),~241--260.
+
+\harvarditem{West}{1992}{West1992-gr}
+West, M.  \harvardyearleft 1992\harvardyearright , `Modelling agent forecast
+  distributions', {\em Journal of the Royal Statistical Society: Series B
+  (Methodological)} {\bf 54}(2),~553--567.
+
+\harvarditem{West \harvardand\ Crosse}{1992}{West1992-qy}
+West, M. \harvardand\ Crosse, J.  \harvardyearleft 1992\harvardyearright ,
+  `Modelling probabilistic agent opinion', {\em Journal of the Royal
+  Statistical Society: Series B (Methodological)} {\bf 54}(1),~285--299.
 
 \harvarditem{Wilson}{2017}{Wilson2017-ct}
 Wilson, K.~J.  \harvardyearleft 2017\harvardyearright , `An investigation of
