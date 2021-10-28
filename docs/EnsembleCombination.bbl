@@ -192,6 +192,12 @@ Burnham, K.~P. \harvardand\ Anderson, D.~R.  \harvardyearleft
   practical information-theoretic approach (2nd ed.)', {\em Berlin, New York:
   Springer} .
 
+\harvarditem[Casarin et~al.]{Casarin, Grassi, Ravazzolo \harvardand\ van
+  Dijk}{2015}{Casarin2015-ql}
+Casarin, R., Grassi, S., Ravazzolo, F. \harvardand\ van Dijk, H.~K.
+  \harvardyearleft 2015\harvardyearright , Parallel sequential monte carlo for
+  efficient density combination: The {DeCo} {MATLAB} toolbox.
+
 \harvarditem{Chan \harvardand\ Pauwels}{2018}{Chan2018-jl}
 Chan, F. \harvardand\ Pauwels, L.~L.  \harvardyearleft 2018\harvardyearright ,
   `Some theoretical results on forecast combinations', {\em International
