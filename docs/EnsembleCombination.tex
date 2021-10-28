@@ -471,24 +471,23 @@ One line of research has considered specifying the likelihood as a joint distrib
 
 \cite{Jouini1996-fe} took a different perspective and looked at the likelihood function derived form a copula-based joint distribution, in which dependence among individual densities was encoded into the copula. The procedure is appealing in the sense of being able to deal with individual forecasts with arbitrary distributions. A recent study by \cite{Wilson2017-ct} gave an expert judgement study to assess the practical significance of the individuals' dependency by comparing the Bayesian combination methods, developed by \cite{Winkler1981-bn} and \cite{Jouini1996-fe}, and common pooling methods.
 
-A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize in a setting where biases and miscalibration of individual densities and, critically, dependencies among them are time-varying. In this light, the state-of-the-art density combination method of \cite{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to explicitly recognize dynamic biases, miscalibration, and dependencies via time-varying priors in time series forecasting context. Specifically, they developed a time-varying (non-convex/nonlinear) combination of forecast densities by considering a dynamic linear regression for the synthesis function, which forms a class of dynamic latent factor models. Their results in a macroeconomic forecasting study showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
+A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize in a setting where biases and miscalibration of individual densities and, critically, dependencies among them are time-varying. In this light, the state-of-the-art density combination method of \cite{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to explicitly recognize dynamic biases, miscalibration, and dependencies via time-varying priors in time series forecasting context. Specifically, they developed a time-varying (non-convex/nonlinear) combination of forecast densities by defining synthesis functions with dynamic linear regressions, which forms a class of dynamic latent factor models. Their results in a macroeconomic forecasting study showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
+
+% \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
+% we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
 
 \paragraph{Density combinations in fable}
-**************************
 
-\cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
-
-we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
-
-5. Combining distributions as in fable
-
-**************************
-
-density forecast combinations, albeit using the Bayesian approach of Billio et al. (2013) considered in section 3 below, where the combination weights are tuned to depend on the history of the models’ past profitability.
-
-present a summary of a forecast density combination approach with time-varying learning weights and an allowance for model incompleteness, as recently developed in a series of papers; see Billio et al. (2013), Casarin et al. (2015), Aastveit et al. (2018) and Basturk et al. (2018).
-
-For general forms of the weight and combination densities, it is usually not known how to evaluate these densities numerically. It is, for instance, not known how to generate draws directly from the weight distribution and the combined predictive density model. In this situation one can make use of representation results, due to Billio et al. (2013), which state that the density combination model can be written as a nonlinear state space model.
+The \proglang{R} package \pkg{fable} \citep{rfable} provides a simple and straightforward strategy, which is the same as calculating the distribution of sum of random variables, to combine multiple probability distributions. We drop the time and horizon subscripts for simplicity and use, for example, $N(Y|\mu, \sigma^{2})$ to denote the density distribution of $Y$ when $Y \sim N(\mu, \sigma^{2})$. Suppose now the individuals provide normal density forecasts, $p(Y_{i}) = N(Y_{i}|\mu_{i}, \sigma_{i}^{2})$, for the random variable $Y$ of interest, $i=1,\ldots,N$. In the event that the individual variables are jointly normally distributed, the weighted average of these individual variables is still normally distributed. The combined density forecast, therefore, is given by
+\begin{align}
+p(\tilde{Y}) = p\left(\sum_{i}^{N} w_{i} Y_{i}\right) = N(\tilde{Y}|\tilde{\mu}, \tilde{\sigma}^{2}),
+\end{align}
+where
+\begin{align}
+& \tilde{\mu} =\sum_{i=1}^{N} w_{i} \mu_{i}, \nonumber \\
+& \tilde{\sigma}^{2} = \sum_{i=1}^{N} w_{i}^{2} \sigma_{i}^{2}+2 \sum_{1 \leq i} \sum_{<j \leq N} w_{i} w_{j} \rho_{i j} \sigma_{i} \sigma_{j}, \nonumber
+\end{align}
+$w_{i}$ is the weight assigned to the $ith$ individual density, and $\rho_{i j}$ is the pairwise correlation estimated using individual forecast errors. The strategy, therefore, has high requirements for the length of training data in order to better estimate $\rho_{i j}$. Briefly, the strategy involves averaging the forecast densities from multiple models, taking account of correlations among individual density forecasts. Provided with same aggregation weights, it arrives at a combined density forecast with characteristics different from linear pooling approach in Equation~\eqref{eq:linear_pool}, with the exception of the mean.
 
 \subsubsection{Quantile forecast combinations}
 \label{sec:quantile_forecast_combinations}
