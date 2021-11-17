@@ -1,0 +1,276 @@
+---
+title: "Bayesian Predictive Synthesis"
+date: "`r Sys.Date()`"
+author: Xiaoqian Wang
+output:
+  rmdformats::readthedown:
+    toc_depth: 3
+    self_contained: true
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+McAlinn, Kenichiro, and [Mike West](http://www2.stat.duke.edu/~mw/index.html). "Dynamic Bayesian predictive synthesis in time series forecasting." *Journal of econometrics* 210.1 (2019): 155-169.
+
+Mike West's Talk at [EBEB 2016 13th Brazilian Meeting on Bayesian Statistics](https://www.youtube.com/watch?v=oBYoPtEHzTE&list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&index=6)
+
+[Matlab code and data](http://www2.stat.duke.edu/~mw/mwsoftware/BPS/index.html)
+
+
+## Notation
+
+Predictions:
+$$
+\begin{aligned}
+h_{j}(y) &=p\left(y \mid \mathcal{M}_{j}\right), j=1: J \\
+H_{J} &=\left\{h_{j}(\cdot), j=1: J\right\}
+\end{aligned}
+$$
+
+Model set/space
+$$
+\mathcal{M} \in\left\{\mathcal{M}_{j}, j=1: J\right\}
+$$
+
+Scalar/one time point: $y=\mathbf{y}_{t}$
+
+
+## How else do?
+
+### 1. Mixtures/pooling
+
+$$
+p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j} h_{j}(y)
+$$
+
+- $\omega_{j}$: Parameters to "optimize" vs. BMA.
+
+- Looks like BMA but it isn't.
+
+- They treat weights not as posterior model probabilities but as tuning parameters.
+
+- With respect to particular loss functions, maybe it's one-step ahead forecasting or multi-step ahead forecasting. They optimize these weights and at a time series, they can do this repeatedly linking the optimization over time or just at each time point doing it again.
+
+- e.g. [Hall \& Mitchell IJF 07; Geweke \& Amisano JE 11; Billio, Casarin, Ravazzola \& van Dijk, JE 13; Fawcett BoE et al 13; and more ...]
+
+### 2. Outcome dependent model mixture
+
+$$
+p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j}(y) h_{j}(y)
+$$
+
+- $\omega_{j}(y)$: the weights depend on the outcome.
+
+- Outcome-dependent density pooling.
+
+- A generalization of the traditional linear opinion pool using constant weights.
+
+- e.g. [Kapetanios, Mitchell, Price \& Fawcett, J Econometrics, 2015]
+
+### 3. Density combinations constructed via Bayes' Theorem
+
+The final aggregated density forecast is **directly** computed by means of **Bayes’ Theorem**:
+$$
+p\left(y \mid H_{J}\right) \propto p(y) p\left(H_{J} \mid y\right)
+$$
+
+- A noninformative prior.
+
+- Specification of the **likelihood function**.
+  - forecast errors
+  - joint distribution in terms of the **marginal distributions** and a **copula**.
+  
+- However, Likelihood function is too hard to specify.
+
+- e.g. [Winkler (1981); Palm and Zellner (1992); Jouini and Clemen (1996)]
+
+
+## Subjective Bayesian forecasting
+
+### Where do forecasts come from?
+
+$$
+h_{j}(y)=p\left(y \mid \mathcal{M}_{j}\right)
+$$
+
+- From $J$ external models, systems, forecasters ("experts" or "agents").
+
+- $30+$ year literature: combining, synthesizing expert/agent "opinion"... with foundations, theory.
+  - economics, meteorology, reliability, management science, etc
+  - 2016+: Crowd-sourced forecasting
+  - e.g. [D.V. Lindley, $1980 / 90$ s; Crosse \& MW 92, MW 84,92]
+
+### How they do?
+
+Forecasts: 
+$$
+\left.\begin{array}{c}
+h_{1}(y) \\
+h_{2}(y) \\
+\vdots \\
+h_{J}(y)
+\end{array}\right]=H_{J}
+$$
+
+- Provide information $H_{J}$ (data) to an observant Bayesian (a set of distributions).
+
+- Prior $\pi(y)$ or $p(y)$.
+
+- **What is posterior $\pi\left(y \mid H_{J}\right)$ or $p(y \mid H_{J})$ ?**
+
+- **Not** going to write down a likelihood function for $H_{J}$ given $y$ and do Bayes' theorem (too hard).
+
+#### BPS: Updating by integration
+
+BPS: Bayesian Predictive Synthesis
+
+Density combinations constructed via integration
+
+**1. General rule**
+
+The posterior is constrained to have this form under some assumptions
+
+[e.g. Lindley, early-mid 80s; Genest \& Schervish 85; Crosse \& MW 92; MW 91,92]
+
+$$
+\pi\left(y \mid H_{J}\right)=\int_{\mathbf{x}} \alpha(y \mid \mathbf{x}) \prod_{j=1: J} h_{j}\left(x_{j}\right) d \mathbf{x}.
+$$
+
+- Derived from $p\left(y \mid H_{J}\right)=\int_{\mathbf{x}} p\left(y, \mathbf{x} \mid H_{J}\right) d \mathbf{x}=\int_{\mathbf{x}} p\left(y \mid \mathbf{x}\right) p\left(\mathbf{x} \mid H_{J}\right) d \mathbf{x}$. Refer to [Billio et al. (2013)](https://www.sciencedirect.com/science/article/pii/S0304407613000869?casa_token=hPG3SbogSW0AAAAA:WaupQ-5XVyblY8wTMOLg_HYM8uU7vr3K32ONbgvMbtIVFayZt_53MMb-5AP4Dhqbo7_FC6SRTA) and [Aastveit et al., (2018)](https://oxfordre.com/economics/view/10.1093/acrefore/9780190625979.001.0001/acrefore-9780190625979-e-381) for fundamental density combination equation.
+
+- $\mathbf{x}$ is a vector of $J$ latent variables (dummy variables in the integral are latent variables),  $\mathbf{x}$ is also called latent agent states and model agents.
+
+- So, this is **Bayesian learning not constructed by multiplying a likelihood by a prior, but by integration**, by expanding the conversation to include this set of latent variables.
+
+- Setting $\alpha(y \mid \mathbf{x})$ is not straightforward, and is the **focus**.
+
+**2. What does $\alpha(y \mid \mathbf{x})$ mean?** (interpretation)
+
+- Think about the purely hypothetical anchor that each forecast $j$ is precise, i.e. $h_{j}(y)=\delta_{x_{j}}(y)$ (the delta Dirac function), then $\alpha(y \mid \mathbf{x})$ is the **posterior** on this extreme purely hypothetical anchor. Then the views of the relationships between these model agents can be infused into this function.
+
+**3. Some assumptions** (take the expectation of the above equation over $H_{J}$)
+
+- Consistent with prior: $\pi(y)=\int \alpha(y \mid \mathbf{x}) m(\mathbf{x}) d \mathbf{x}$.
+
+- Prior view of forecasters/models: $m(\mathbf{x})=E\left[\prod_{j=1: J} h_{j}\left(x_{j}\right)\right]$.
+  - This defines what the DM expects the product of these densities look like and that's where we can infuse dependencies.
+  - Biases, calibration, relative expertise/accuracy, dependencies.
+  
+- **Subset of possible posteriors - consistent with partial specification$\{\pi(y), m(\mathbf{x})\}$**.
+  - $\alpha(y \mid \mathbf{x})$ is also called *calibration function / synthesis function*.
+
+
+## Examples
+
+For details, refer to [Johnson & West (2018)](https://arxiv.org/pdf/1803.01984).
+
+$$
+\pi\left(y \mid H_{J}\right)=\int_{\mathbf{x}} \alpha(y \mid \mathbf{x}) \prod_{j=1: J} h_{j}\left(x_{j}\right) d \mathbf{x}
+$$
+
+### Example 1: Linear pooling
+
+$$
+\begin{array}{l}
+\alpha(y \mid \mathbf{x})=\alpha_{0}(\mathbf{x}) \pi_0(y)+\sum_{j=1: J} \alpha_{j} \delta_{x_{j}}(y
+) \\
+\pi\left(y \mid H_{J}\right)=a_{0} \pi_0(y)+\sum_{j=1: J} a_{j} h_{j}(y)
+\end{array}
+$$
+
+- Constant weights.
+
+- Linear mixing/pooling; BMA.
+
+### Example 2: Outcome-dependent linear pooling
+
+$$
+\begin{array}{l}
+\alpha(y \mid \mathbf{x})=\alpha_{0}(\mathbf{x}) \pi_0(y)+\sum_{j=1: J} \alpha_{j}\left(x_{j}\right) \delta_{x_{j}}(y) \\
+\pi\left(y \mid H_{J}\right)=a_{0} \pi_0(y)+\sum_{j=1: J} a_{j} p_{j}(y)
+\end{array}
+$$
+
+- Recalibrated forecasts: $p_{j}(y)=\alpha_{j}(y) h_{j}(y) / a_{j}$, $p_{j}(y)$ is recalibrated version of $h_{j}(y)$.
+  
+- This covers the outcome-dependent model mixing.
+  - define/interpret outcome-dependent weights
+  - explicit framework for (re-)calibration
+  
+- The recalibration is being applied to each $h_{j}(y)$ **separately** and there is nothing in that posterior formula that incorporates anything about relationships among these models.
+
+### Example 3: Dependencies considered
+
+$$
+\begin{array}{l}
+\alpha(y \mid \mathbf{x})=\alpha_{0}(\mathbf{x}) \pi_0(y)+\sum_{j=1: J} \alpha_{j}(\mathbf{x}) \delta_{x_{j}}(y) \\
+\pi\left(y \mid H_{J}\right)=a_{0} \pi_0(y)+\sum_{j=1: J} a_{j}\left(y\right) h_{j}\left(y\right)
+\end{array}
+$$
+
+- Recalibrations:  $a_{j}\left(y\right)=\int \alpha_{j}\left(y, \mathbf{x}_{-j}\right) \prod_{i \neq j} h_{i}\left(x_{i}\right) d x_{i}$.
+
+- The recalibration is being applied based on the **whole** set of densities.
+
+- Natural dependencies from $m(\mathbf{x})$ in mixing weights $\&$ recalibration.
+
+- Many choices of calibration functions (probabilities) $\alpha_{j}(\mathbf{x})$ ... with inherent constraints.
+
+### Example 4: Normal case
+
+- Considering that the implied joint prior $\alpha(y \mid \mathbf{x}) m(\mathbf{x})$ is multivariate normal, $p(y)=N(y \mid f, q)$ and  $m(\mathbf{x})=N(\mathbf{x} \mid \boldsymbol{m}, \boldsymbol{M})$. Suppose a case in which $(y, \mathbf{x})$ is jointly normal with margins $p(y)$ and $m(\mathbf{x})$. The full joint normal for $(y, \mathbf{x})$ is completed with a covariance vector $\boldsymbol{r}=C(\mathbf{x}, y)=\left(r_{1}, \ldots, r_{J}\right)^{\prime}$.
+  - The **conditional $\alpha(y \mid \mathbf{x})$** is then normal with $E(y \mid \mathbf{x})=f+\sum_{j=1: J} \theta_{j}\left(x_{j}-m_{j}\right)$ and $V(y \mid \mathbf{x})=v$ given by $v=q-\sum_{j=1: J} r_{j} \theta_{j}$ where the $\theta_{j}$ are the elements of the $J$-vector $\boldsymbol{M}^{-1} \boldsymbol{r}$ ([derivation](https://stats.stackexchange.com/questions/30588/deriving-the-conditional-distributions-of-a-multivariate-normal-distribution)).
+
+- Given this normal conditional density, if agent densities have mean and variance $\left(h_{j}, H_{j}\right)$ for $j=1:J$.
+  - The posterior $\pi(y \mid H_{J})$ has mean $E(y \mid \mathcal{H})=f+\sum_{j=1: j} \theta_{j}\left(x_{j}-m_{j}\right)$ and variance $V(y \mid \mathcal{H})=v+\sum_{j=1: j} \theta_{j}^{2} H_{j}$.
+
+- Thus, the posterior effectively corrects for quantified **biases** in location and **scale** for each agent, while also now incorporating the quantified views of cross-agent **dependencies** implicitly through the implied **regression coefficients $\theta_{j}$**.
+
+- Rewrite the calibration density $\alpha(y \mid \mathbf{x})$ as
+$$
+\alpha(y \mid \boldsymbol{x})=N\left(y \mid \boldsymbol{F}^{\prime} \boldsymbol{\theta}, v\right) \quad \text{with} \quad \boldsymbol{F}=\left(1, \boldsymbol{x}^{\prime}\right)^{\prime} \quad \text{and} \quad \boldsymbol{\theta}=\left(\theta_{0}, \theta_{1}, \ldots, \theta_{J}\right)^{\prime}.
+$$
+
+
+## Time series forecasting
+
+### Dynamic extension of BPS
+
+$$
+p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \equiv p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, \mathcal{H}_{t}\right)=\int \alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right) \prod_{j=1: J} h_{t j}\left(x_{t j}\right) d x_{t j}
+$$
+
+### DLM for BPS calibration
+
+Considering normal calibration function
+$$
+\alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right)=N\left(y_{t} \mid \boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}, v_{t}\right) \quad \text { with } \quad \boldsymbol{F}_{t}=\left(1, \boldsymbol{x}_{t}^{\prime}\right)^{\prime} \quad \text { and } \quad \boldsymbol{\theta}_{t}=\left(\theta_{t 0}, \theta_{t 1}, \ldots, \theta_{t J}\right)^{\prime}.
+$$
+
+The BPS conjugate DLM (dynamic linear model) form (a special case of general state space models)
+$$
+\begin{array}{ll}
+y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, & v_{t} \sim N\left(0, v_{t}\right), \qquad \text{observation equation} \\
+\boldsymbol{\theta}_{t}=\boldsymbol{\theta}_{t-1}+\boldsymbol{\omega}_{t}, & \boldsymbol{\omega}_{t} \sim N\left(0, v_{t} \boldsymbol{W}_{t}\right) \qquad \text{evolution equation}
+\end{array}
+$$
+In the dynamic BPS setting, restricting the dynamic regression coefficients would be technically challenging and is not considered in this paper.
+
+### MCMC for dynamic BPS
+
+#### Summary
+
+Generating the MCMC samples from the target posterior $p\left(\boldsymbol{x}_{1: T}, \boldsymbol{\Phi}_{1: T} \mid y_{1: T}, \mathcal{H}_{1: T}\right)$, then forecasting from time $T$ onward.
+
+- For posterior analysis, $\mathcal{D}$ is interested in computing the posterior for the **full** set of both past latent agent states and dynamic parameters $\left\{\boldsymbol{x}_{1: T}, \boldsymbol{\Phi}_{1: T}\right\}$, rather than restricting attention to forward filtering to update posteriors for current values $\left\{\boldsymbol{x}_{T}, \boldsymbol{\Phi}_{T}\right\}$.
+
+- Inferences on the former provide insights into the nature of dependencies among the agents, as well as individual forecast characteristics.
+
+
