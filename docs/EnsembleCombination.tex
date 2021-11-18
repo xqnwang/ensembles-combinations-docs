@@ -437,12 +437,6 @@ Recently, the community of weather forecasting is starting to explore the potent
 
 \subsection{Probabilistic forecast combinations}
 \label{sec:probabilistic_forecast_combinations}
-{\color{red}
-\begin{itemize}
-\item Combining quantiles and prediction intervals.
-\item Combining distributions as in fable.
-\end{itemize}
-}
 
 \subsubsection{Density forecast combinations}
 \label{sec:density_forecast_combinations}
@@ -452,13 +446,11 @@ Recently, the community of weather forecasting is starting to explore the potent
 
 % Posterior inference on dependencies among agents is of special interest; the questions of inter-dependence and potential redundancy in forecast value are hard and open questions in all approaches to aggregation.
 
-Ensemble approaches, elaborated in Section \ref{sec:probabilistic_forecast_ensembles}, pool/mix multiple probability forecasts with equal weights, weights evaluated using various scoring rules, or posterior probabilities sequentially updated via Bayes' Theorem. They inherently assume that the component density forecasts are independent, thereby neglecting correlations among them. The assumption, however, is questionable in practice because the forecasts derived from different sources are likely to share the same data, overlapping information, similar forecasting models, and common training process. Thus, some sort of dependence among individual probability forecasts would not be surprising. Such dependence could have a serious impact on the aggregated distributions, but no attention has been paid to such dependence in the ensemble literature.
+Ensemble approaches, elaborated in Section \ref{sec:probabilistic_forecast_ensembles}, pool/mix multiple density forecasts with equal weights, weights evaluated using various scoring rules, or posterior probabilities sequentially updated via Bayes' Theorem. They inherently neglect correlations among the component density forecasts. Forecasts derived from different sources, nevertheless, are likely to share the same data, overlapping information, similar forecasting models, and common training process. Thus, some sort of dependence among individual probability forecasts would not be surprising and such dependence could have a serious impact on the aggregated distributions. In this section, we proceed by reviewing the alternative class of aggregation techniques to ensembles, henceforth referred to as \textit{combinations}, in which dependence among component density forecasts can be incorporated. The major feature that makes the combination of individual densities difficult manifestly lies in how to model the dependence typically occurs among these individuals to achieve good performance.
 
-We proceed by reviewing the alternative class of aggregation techniques to ensembles, henceforth referred to as \textit{combinations}, in which dependence among component density forecasts can be incorporated. The major feature that makes the combination of individual densities difficult manifestly lies in how to model the dependence typically occurs among these individuals to achieve good performance.
+The extensive literature on the combination of density forecasts has, for the most part, been driven from a foundational Bayesian perspective and originated in agent opinion analysis theory free from the time series context, dating back at least to the pioneering work of \cite{Winkler1968-uw}. We remark that, in ensemble techniques, the contribution of each individual density to the final aggregated density is measured explicitly via weights, whereas it is not specified by a specific form in Bayesian combination techniques.
 
-\paragraph{Density combinations from a Bayesian perspective}
-
-The extensive literature on the combination of probability forecasts has, for the most part, been based on a foundational Bayesian perspective and originated in agent opinion analysis theory free from the time series context, dating back at least to the pioneering work of \cite{Winkler1968-uw}. We remark that, in ensemble techniques, the contribution of each individual density to the final aggregated density is measured explicitly via weights, whereas it is not specified by a specific form in Bayesian combination techniques.
+\paragraph{Density combinations constructed via Bayes' Theorem}
 
 Early work in the Bayesian vein focused on a Bayesian paradigm developed by \cite{Morris1974-yh,Morris1977-xl} in which a decision maker views available density forecasts from various sources simply as data and updates his/her prior distribution by means of Bayes' Theorem. The posterior density of $y_{t+h}$ is then
 \begin{align}
@@ -473,23 +465,14 @@ One line of research has considered specifying the likelihood as a joint distrib
 
 \cite{Jouini1996-fe} took a different perspective and looked at the likelihood function derived form a copula-based joint distribution, in which dependence among individual densities was encoded into the copula. The procedure is appealing in the sense of being able to deal with individual forecasts with arbitrary distributions. A recent study by \cite{Wilson2017-ct} gave an expert judgement study to assess the practical significance of the individuals' dependency by comparing the Bayesian combination methods, developed by \cite{Winkler1981-bn} and \cite{Jouini1996-fe}, and common pooling methods.
 
-A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize in a setting where biases and miscalibration of individual densities and, critically, dependencies among them are time-varying. In this light, the state-of-the-art density combination method of \cite{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to explicitly recognize dynamic biases, miscalibration, and dependencies via time-varying priors in time series forecasting context. Specifically, they developed a time-varying (non-convex/nonlinear) combination of forecast densities by defining synthesis functions with dynamic linear regressions, which forms a class of dynamic latent factor models. Their results in a macroeconomic forecasting study showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA ensemble techniques in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
+\paragraph{Density combinations constructed via integration}
+
+A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize especially in a setting where biases and miscalibration of individual densities and, critically, dependencies among them are time-varying. In this light, the state-of-the-art density combination method of \cite{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to sequential forecasting in time series.
+
+Instead of constructing Bayesian combinations by multiplying a likelihood by a prior, the dynamic BPS method follows a subclass of Bayesian updating rules, i.e. updating by integration, in the form of latent factor models. Information about biases, miscalibration, and dependencies among the individual densities then can be incorporated directly through specification of synthesis function. Specifically, \cite{McAlinn2019-kn} developed a time-varying (non-convex/nonlinear) combination of forecast densities by defining a normally distributed synthesis function with dynamic linear model. MCMC methods are required for this posterior analysis. Their results of forecasting a quarterly series of inflation rate showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA ensemble techniques in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
 
 % \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
 % we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
-
-\paragraph{Density combinations by averaging random variables}
-
-The \proglang{R} package \pkg{fable} \citep{rfable} provides a simple and straightforward strategy, which is the same as calculating the distribution of the average of random variables, to combine multiple probability distributions. We drop the time and horizon subscripts for simplicity and use, for example, $N(Y|\mu, \sigma^{2})$ to denote the density distribution of $Y$ when $Y \sim N(\mu, \sigma^{2})$. Suppose now the individuals provide normal density forecasts, $p(Y_{i}) = N(Y_{i}|\mu_{i}, \sigma_{i}^{2})$, for the random variable $Y$ of interest, $i=1,\ldots,N$. In the event that the individual variables are jointly normally distributed, the weighted average of these individual variables is still normally distributed. The combined density forecast, therefore, is given by
-\begin{align}
-p(\tilde{Y}) = p\left(\sum_{i}^{N} w_{i} Y_{i}\right) = N(\tilde{Y}|\tilde{\mu}, \tilde{\sigma}^{2}),
-\end{align}
-where
-\begin{align}
-\tilde{\mu} =\sum_{i=1}^{N} w_{i} \mu_{i}, \quad 
-\tilde{\sigma}^{2} = \sum_{i=1}^{N} w_{i}^{2} \sigma_{i}^{2}+2 \sum_{1 \leq i} \sum_{<j \leq N} w_{i} w_{j} \rho_{i j} \sigma_{i} \sigma_{j}, \nonumber
-\end{align}
-$w_{i}$ is the weight assigned to the $ith$ individual density, and $\rho_{i j}$ is the pairwise correlation estimated using individual forecast errors. Consequently, the strategy involves averaging the forecast densities from multiple models, taking account of correlations among individual density forecasts. The strategy, noticeably, is limited to normally distributed individual densities and has high requirements for the length of training data in order to better estimate $\rho_{i j}$. Provided with same aggregation weights, it arrives at a combined density forecast with characteristics different from linear pooling approach in Equation~\eqref{eq:linear_pool}, with the exception of the mean.
 
 \subsubsection{Quantile forecast combinations}
 \label{sec:quantile_forecast_combinations}

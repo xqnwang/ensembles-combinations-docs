@@ -841,14 +841,6 @@ O'Hagan, A., Buck, C.~E., Daneshkhah, A., Richard~Eiser, J., Garthwaite, P.~H.,
   2006\harvardyearright , {\em Uncertain Judgements: Eliciting Experts'
   Probabilities}, John Wiley \& Sons.
 
-\harvarditem[O'Hara-Wild et~al.]{O'Hara-Wild, Hyndman, Wang, Caceres, Hensel
-  \harvardand\ Hyndman}{2021}{rfable}
-O'Hara-Wild, M., Hyndman, R.~J., Wang, E., Caceres, G., Hensel, T.-G.
-  \harvardand\ Hyndman, T.  \harvardyearleft 2021\harvardyearright , {\em
-  fable: {Forecasting Models for Tidy Time Series}}.
-\newblock R package version 0.3.1.
-\newline\harvardurl{https://CRAN.R-project.org/package=fable}
-
 \harvarditem{{\"O}ller}{1978}{Oller1978-wx}
 {\"O}ller, L.-E.  \harvardyearleft 1978\harvardyearright , `A method for
   pooling forecasts', {\em Journal of the Operational Research Society} {\bf
