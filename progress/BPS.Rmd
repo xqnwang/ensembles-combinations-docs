@@ -17,11 +17,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-McAlinn, Kenichiro, and [Mike West](http://www2.stat.duke.edu/~mw/index.html). "Dynamic Bayesian predictive synthesis in time series forecasting." *Journal of econometrics* 210.1 (2019): 155-169.
-
-Mike West's Talk at [EBEB 2016 13th Brazilian Meeting on Bayesian Statistics](https://www.youtube.com/watch?v=oBYoPtEHzTE&list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&index=6)
-
-[Matlab code and data](http://www2.stat.duke.edu/~mw/mwsoftware/BPS/index.html)
+> Kenichiro McAlinn, and [Mike West](http://www2.stat.duke.edu/~mw/index.html). "Dynamic Bayesian predictive synthesis in time series forecasting." *Journal of econometrics* 210.1 (2019): 155-169.
+>
+> Mike West's Talk at [EBEB 2016 13th Brazilian Meeting on Bayesian Statistics](https://www.youtube.com/watch?v=oBYoPtEHzTE&list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&index=6)
+>
+> [Matlab code and data](http://www2.stat.duke.edu/~mw/mwsoftware/BPS/index.html)
 
 
 ## Notation
@@ -66,11 +66,13 @@ $$
 p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j}(y) h_{j}(y)
 $$
 
-- $\omega_{j}(y)$: the weights depend on the outcome.
+- $\omega_{j}(y)$: the mixture weights depend on the variable one is trying to forecast.
 
 - Outcome-dependent density pooling.
 
 - A generalization of the traditional linear opinion pool using constant weights.
+ 
+- Sieve estimation methods are used to minimize the predictive loss function of the generalized density pooling.
 
 - e.g. [Kapetanios, Mitchell, Price \& Fawcett, J Econometrics, 2015]
 
@@ -121,11 +123,11 @@ $$
 
 - Provide information $H_{J}$ (data) to an observant Bayesian (a set of distributions).
 
-- Prior $\pi(y)$ or $p(y)$.
+- Prior $\pi(y)$.
 
-- **What is posterior $\pi\left(y \mid H_{J}\right)$ or $p(y \mid H_{J})$ ?**
+- **What is posterior $\pi\left(y \mid H_{J}\right)$?**
 
-- **Not** going to write down a likelihood function for $H_{J}$ given $y$ and do Bayes' theorem (too hard).
+- **Not** going to write down a likelihood function for $H_{J}$ given $y$ and do Bayes' Theorem (too hard).
 
 #### BPS: Updating by integration
 
@@ -244,8 +246,9 @@ $$
 ### Dynamic extension of BPS
 
 $$
-p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \equiv p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, \mathcal{H}_{t}\right)=\int \alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right) \prod_{j=1: J} h_{t j}\left(x_{t j}\right) d x_{t j}
+p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \equiv p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, \mathcal{H}_{t}\right)=\int \alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right) \prod_{j=1: J} h_{t j}\left(x_{t j}\right) d x_{t j},
 $$
+where $\boldsymbol{\Phi}_{t}=\left(\boldsymbol{\theta}_{t}, v_{t}\right)$ are the DLM parameters.
 
 ### DLM for BPS calibration
 
@@ -261,7 +264,7 @@ y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, & v_{t} \sim N\
 \boldsymbol{\theta}_{t}=\boldsymbol{\theta}_{t-1}+\boldsymbol{\omega}_{t}, & \boldsymbol{\omega}_{t} \sim N\left(0, v_{t} \boldsymbol{W}_{t}\right) \qquad \text{evolution equation}
 \end{array}
 $$
-In the dynamic BPS setting, restricting the dynamic regression coefficients would be technically challenging and is not considered in this paper.
+In the dynamic BPS setting, **restricting the dynamic regression coefficients** would be technically challenging and is **not** considered in this paper.
 
 ### MCMC for dynamic BPS
 
@@ -272,5 +275,111 @@ Generating the MCMC samples from the target posterior $p\left(\boldsymbol{x}_{1:
 - For posterior analysis, $\mathcal{D}$ is interested in computing the posterior for the **full** set of both past latent agent states and dynamic parameters $\left\{\boldsymbol{x}_{1: T}, \boldsymbol{\Phi}_{1: T}\right\}$, rather than restricting attention to forward filtering to update posteriors for current values $\left\{\boldsymbol{x}_{T}, \boldsymbol{\Phi}_{T}\right\}$.
 
 - Inferences on the former provide insights into the nature of dependencies among the agents, as well as individual forecast characteristics.
+
+#### Details of MCMC computations
+
+**Note**: Only considering 1-step head forecasting here, and multi-step ahead forecasting are handled by considering multiple BPS models **in parallel** for different forecast horizons. Direct BPS VS. Customized BPS.
+
+The full MCMC analysis is performed anew at each time point as time evolves and new data are observed.
+
+The agent forecasts are T distributions $T_{n_{t j}}\left(h_{t j}, H_{t j}\right)$, non-standard T distributions with mean, scale, and degrees of freedom.
+
+- The T distribution can be interpreted as a mixture of normal random variables. Specifically, let $W$ have inverse-gamma distribution $\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)$, and define the conditional distribution $X \mid W = w \sim N(0, w)$. Then the unconditional distribution of $X$ is the $t$ distribution with $\nu$ degrees of freedom ([derivation summary](https://www.statlect.com/probability-distributions/student-t-distribution)).
+
+> 1. **Initial prior:** $\boldsymbol{\theta}_{0}|v_{0} \sim N\left(\boldsymbol{m}_{0}, \boldsymbol{C}_{0} v_{0} / s_{0}\right)$, $1 / v_{0} \sim G\left(n_{0} / 2, n_{0} s_{0} / 2\right)$, and discount factors $(\beta, \delta)$.
+>
+> 2. **Initialization:** Generate $\boldsymbol{F}_{t}=\left(1, x_{t 1}, \ldots, x_{t J}\right)^{\prime}$ from the agent forecast distributions, $x_{t j} \sim h_{t j}\left(x_{t j}\right)$ independently for all $t=1: T$ and $j=1: J$.
+>
+> 3. <span style="color:orange">**For each MCMC iterate:**</span>
+>       + **Sampling BPS DLM parameters $\boldsymbol{\Phi}_{1: T}$ via FFBS**.
+>          * <span style="color:red">For t=1:T</span>
+>          * Prior for time t
+>          $$
+>          \begin{aligned}
+>          \boldsymbol{\theta}_{t} \mid v_{t}, \boldsymbol{x}_{1: t-1}, y_{1: t-1} & \sim N\left(\boldsymbol{m}_{t-1}, \boldsymbol{R}_{t} v_{t} / s_{t-1}\right) \quad \text { with } \quad \boldsymbol{R}_{t}=\boldsymbol{C}_{t-1} / \delta \\
+>          v_{t}^{-1} \mid \boldsymbol{x}_{1: t-1}, y_{1: t-1} & \sim G\left(\beta n_{t-1} / 2, \beta n_{t-1} s_{t-1} / 2\right)
+>          \end{aligned}
+>          $$
+>          * 1-step predictive distribution for time t: $y_{t} \mid \boldsymbol{x}_{1: t}, y_{1: t-1} \sim T_{\beta n_{t-1}}\left(f_{t}, q_{t}\right)$ where $f_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{m}_{t-1}$ and $q_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{R}_{t} \boldsymbol{F}_{t}+s_{t-1}$
+>          * Compute forecast error and adaptive vector
+>          * Filtering update to posterior for time t
+>          $$
+>          \begin{aligned}
+>          \boldsymbol{\theta}_{t} \mid v_{t}, \boldsymbol{x}_{1: t}, y_{1: t} & \sim N\left(\boldsymbol{m}_{t}, \boldsymbol{C}_{t} v_{t} / s_{t}\right) \\
+>          v_{t}^{-1} \mid \boldsymbol{x}_{1: t}, y_{1: t} & \sim G\left(n_{t} / 2, n_{t} s_{t} / 2\right)
+>          \end{aligned}
+>          $$
+>          * <span style="color:red">End (perform one-step filtering updates to compute and save the sequence of sufficient statistics for the posteriors $p\left(\boldsymbol{\Phi}_{t} \mid y_{1: t}, \boldsymbol{x}_{1: t}\right)$ at each t)</span>
+>          * Derive statistics for $p\left(\boldsymbol{\Phi}_{T+1} \mid y_{1: T}, \boldsymbol{x}_{1: T}\right)$
+>          * Sample $v_{t}$ and $\boldsymbol{\theta}_{t}$ at time T
+>          * <span style="color:blue">For t=T-1:1</span>
+>          * Simulate $v_{t}$ via $v_{t}^{-1}=\beta v_{t+1}^{-1}+\gamma_{t}$ where $\gamma_{t}$ is an independent draw from $\gamma_{t} \sim G\left((1-\beta) n_{t} / 2, n_{t} s_{t} / 2\right)$
+>          * Simulate $\boldsymbol{\theta}_{t}$ from the conditional normal posterior $p\left(\boldsymbol{\theta}_{t} \mid \boldsymbol{\theta}_{t+1}, v_{t}, \boldsymbol{x}_{1: T}, y_{1: T}\right)$ with mean vector $\boldsymbol{m}_{t}+\delta\left(\boldsymbol{\theta}_{t+1}-\boldsymbol{m}_{t}\right)$ and variance matrix $\boldsymbol{C}_{t}(1-\delta)\left(v_{t} / s_{t}\right)$
+>          * <span style="color:blue">End (generate samples from $p\left(\boldsymbol{\Phi}_{t} \mid y_{1: t}, \boldsymbol{x}_{1: t}\right)$ at each t)</span>
+>       + **Sampling the latent agent states $\boldsymbol{x}_{1: T}$**.
+>          * $p\left(\boldsymbol{x}_{t} \mid \boldsymbol{\Phi}_{t}, y_{t}, \mathcal{H}_{t}\right) \propto N\left(y_{t} \mid \boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}, v_{t}\right) \prod_{j=1 . J} h_{t j}\left(x_{t j}\right) \quad \text {where} \quad \boldsymbol{F}_{t}=\left(1, x_{t 1}, x_{t 2}, \ldots, x_{t J}\right)^{\prime}$
+> 
+> <span style="color:orange">End (return posterior samples of $\boldsymbol{x}_{1: T}$ and $\boldsymbol{\Phi}_{1: T}$, and forecast statistics for $p\left(\boldsymbol{\Phi}_{T+1} \mid y_{1: T}, \boldsymbol{x}_{1: T}\right)$ at T+1).</span>
+> 
+> <span style="color:green">For i=1:mcmc_iter</span>
+> 
+> 4. Sampling $\boldsymbol{x}_{T+1}$.
+> 
+> 5. Computing combined mean, variance of 1-step predictive distribution, forecast error, and log score.
+>
+> <span style="color:green">End</span>
+> 
+> 6. Calculate average MSFE and log score.
+
+
+## Application
+
+### Data
+
+One series: US quarterly inflation rate (1963/Q1–2011/Q4)
+
+- 1961/Q1-1977/Q1 (train 4 models);
+
+- 1977/Q2-1989/Q4 (train & combine);
+
+- 1990/Q1-2014/Q4 (forecasting and compare).
+
+### Component models
+
+$J=4$ autoregressive models (factor and lag)
+
+### Prior specifications
+
+In the dynamic BPS models for forecast horizons $k=1$:
+
+- $\boldsymbol{\theta}_{0} \mid v_{0} \sim N\left(\boldsymbol{m}_{0},\left(v_{0} / s_{0}\right) \boldsymbol{I}\right.$, with $\boldsymbol{m}_{0}=\left(0, \mathbf{1}^{\prime} / J\right)^{\prime}$.
+
+- $1 / v_{0} \sim G\left(n_{0} / 2, n_{0} s_{0} / 2\right)$ with $n_{0}=10, s_{0}=0.002$.
+
+- $(\beta, \delta)=(0.95,0.99)$.
+
+### Evaluation metric
+
+Point forecasts: Mean Squared Forecast Error (MSFE)
+
+Density forecasts: Log Predictive Density Ratios (LPDR)
+$$
+\operatorname{LPDR}_{1: t}(k)=\sum_{i=1: t} \log \left\{p_{s}\left(y_{t+k} \mid y_{1: t}\right) / p_{\mathrm{BPS}}\left(y_{t+k} \mid y_{1: t}\right)\right\}
+$$
+
+### Benchmark aggregation strategies
+
+- BMA
+
+- Linp (equally-weighted linear pool)
+
+- LogP (equally-weighted logrithmic pool)
+
+- DeCo (time-varying combinations)
+
+### Results
+
+
+
 
 

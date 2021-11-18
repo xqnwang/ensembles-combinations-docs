@@ -7,7 +7,7 @@
 
         <meta name="author" content="Xiaoqian Wang" />
     
-        <meta name="date" content="2021-11-17" />
+        <meta name="date" content="2021-11-18" />
     
     <title>Bayesian Predictive Synthesis</title>
 
@@ -150,11 +150,20 @@
       <li><a href="#dlm-for-bps-calibration">DLM for BPS calibration</a></li>
       <li><a href="#mcmc-for-dynamic-bps">MCMC for dynamic BPS</a></li>
       </ul></li>
+      <li><a href="#application">Application</a>
+      <ul>
+      <li><a href="#data">Data</a></li>
+      <li><a href="#component-models">Component models</a></li>
+      <li><a href="#prior-specifications">Prior specifications</a></li>
+      <li><a href="#evaluation-metric">Evaluation metric</a></li>
+      <li><a href="#benchmark-aggregation-strategies">Benchmark aggregation strategies</a></li>
+      <li><a href="#results">Results</a></li>
+      </ul></li>
       </ul>
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> Xiaoqian Wang</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-11-17</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-11-18</p>
           </div>
    </div>
      
@@ -164,9 +173,11 @@
    
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
 <div id="main">
-<p>McAlinn, Kenichiro, and <a href="http://www2.stat.duke.edu/~mw/index.html">Mike West</a>. “Dynamic Bayesian predictive synthesis in time series forecasting.” <em>Journal of econometrics</em> 210.1 (2019): 155-169.</p>
+<blockquote>
+<p>Kenichiro McAlinn, and <a href="http://www2.stat.duke.edu/~mw/index.html">Mike West</a>. “Dynamic Bayesian predictive synthesis in time series forecasting.” <em>Journal of econometrics</em> 210.1 (2019): 155-169.</p>
 <p>Mike West’s Talk at <a href="https://www.youtube.com/watch?v=oBYoPtEHzTE&amp;list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&amp;index=6">EBEB 2016 13th Brazilian Meeting on Bayesian Statistics</a></p>
 <p><a href="http://www2.stat.duke.edu/~mw/mwsoftware/BPS/index.html">Matlab code and data</a></p>
+</blockquote>
 <div id="notation" class="section level2">
 <h2>Notation</h2>
 <p>Predictions: <span class="math display">\[
@@ -201,9 +212,10 @@ p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j} h_{j}(y)
 p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j}(y) h_{j}(y)
 \]</span></p>
 <ul>
-<li><p><span class="math inline">\(\omega_{j}(y)\)</span>: the weights depend on the outcome.</p></li>
+<li><p><span class="math inline">\(\omega_{j}(y)\)</span>: the mixture weights depend on the variable one is trying to forecast.</p></li>
 <li><p>Outcome-dependent density pooling.</p></li>
 <li><p>A generalization of the traditional linear opinion pool using constant weights.</p></li>
+<li><p>Sieve estimation methods are used to minimize the predictive loss function of the generalized density pooling.</p></li>
 <li><p>e.g. [Kapetanios, Mitchell, Price &amp; Fawcett, J Econometrics, 2015]</p></li>
 </ul>
 </div>
@@ -253,9 +265,9 @@ h_{J}(y)
 \]</span></p>
 <ul>
 <li><p>Provide information <span class="math inline">\(H_{J}\)</span> (data) to an observant Bayesian (a set of distributions).</p></li>
-<li><p>Prior <span class="math inline">\(\pi(y)\)</span> or <span class="math inline">\(p(y)\)</span>.</p></li>
-<li><p><strong>What is posterior <span class="math inline">\(\pi\left(y \mid H_{J}\right)\)</span> or <span class="math inline">\(p(y \mid H_{J})\)</span> ?</strong></p></li>
-<li><p><strong>Not</strong> going to write down a likelihood function for <span class="math inline">\(H_{J}\)</span> given <span class="math inline">\(y\)</span> and do Bayes’ theorem (too hard).</p></li>
+<li><p>Prior <span class="math inline">\(\pi(y)\)</span>.</p></li>
+<li><p><strong>What is posterior <span class="math inline">\(\pi\left(y \mid H_{J}\right)\)</span>?</strong></p></li>
+<li><p><strong>Not</strong> going to write down a likelihood function for <span class="math inline">\(H_{J}\)</span> given <span class="math inline">\(y\)</span> and do Bayes’ Theorem (too hard).</p></li>
 </ul>
 <div id="bps-updating-by-integration" class="section level4">
 <h4>BPS: Updating by integration</h4>
@@ -369,8 +381,8 @@ h_{J}(y)
 <div id="dynamic-extension-of-bps" class="section level3">
 <h3>Dynamic extension of BPS</h3>
 <p><span class="math display">\[
-p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \equiv p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, \mathcal{H}_{t}\right)=\int \alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right) \prod_{j=1: J} h_{t j}\left(x_{t j}\right) d x_{t j}
-\]</span></p>
+p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \equiv p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, \mathcal{H}_{t}\right)=\int \alpha_{t}\left(y_{t} \mid \boldsymbol{x}_{t}, \boldsymbol{\Phi}_{t}\right) \prod_{j=1: J} h_{t j}\left(x_{t j}\right) d x_{t j},
+\]</span> where <span class="math inline">\(\boldsymbol{\Phi}_{t}=\left(\boldsymbol{\theta}_{t}, v_{t}\right)\)</span> are the DLM parameters.</p>
 </div>
 <div id="dlm-for-bps-calibration" class="section level3">
 <h3>DLM for BPS calibration</h3>
@@ -382,7 +394,7 @@ p\left(y_{t} \mid \boldsymbol{\Phi}_{t}, y_{1: t-1}, \mathcal{H}_{1: t}\right) \
 y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, &amp; v_{t} \sim N\left(0, v_{t}\right), \qquad \text{observation equation} \\
 \boldsymbol{\theta}_{t}=\boldsymbol{\theta}_{t-1}+\boldsymbol{\omega}_{t}, &amp; \boldsymbol{\omega}_{t} \sim N\left(0, v_{t} \boldsymbol{W}_{t}\right) \qquad \text{evolution equation}
 \end{array}
-\]</span> In the dynamic BPS setting, restricting the dynamic regression coefficients would be technically challenging and is not considered in this paper.</p>
+\]</span> In the dynamic BPS setting, <strong>restricting the dynamic regression coefficients</strong> would be technically challenging and is <strong>not</strong> considered in this paper.</p>
 </div>
 <div id="mcmc-for-dynamic-bps" class="section level3">
 <h3>MCMC for dynamic BPS</h3>
@@ -394,6 +406,107 @@ y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, &amp; v_{t} \si
 <li><p>Inferences on the former provide insights into the nature of dependencies among the agents, as well as individual forecast characteristics.</p></li>
 </ul>
 </div>
+<div id="details-of-mcmc-computations" class="section level4">
+<h4>Details of MCMC computations</h4>
+<p><strong>Note</strong>: Only considering 1-step head forecasting here, and multi-step ahead forecasting are handled by considering multiple BPS models <strong>in parallel</strong> for different forecast horizons. Direct BPS VS. Customized BPS.</p>
+<p>The full MCMC analysis is performed anew at each time point as time evolves and new data are observed.</p>
+<p>The agent forecasts are T distributions <span class="math inline">\(T_{n_{t j}}\left(h_{t j}, H_{t j}\right)\)</span>, non-standard T distributions with mean, scale, and degrees of freedom.</p>
+<ul>
+<li>The T distribution can be interpreted as a mixture of normal random variables. Specifically, let <span class="math inline">\(W\)</span> have inverse-gamma distribution <span class="math inline">\(\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)\)</span>, and define the conditional distribution <span class="math inline">\(X \mid W = w \sim N(0, w)\)</span>. Then the unconditional distribution of <span class="math inline">\(X\)</span> is the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(\nu\)</span> degrees of freedom (<a href="https://www.statlect.com/probability-distributions/student-t-distribution">derivation summary</a>).</li>
+</ul>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><p><strong>Initial prior:</strong> <span class="math inline">\(\boldsymbol{\theta}_{0}|v_{0} \sim N\left(\boldsymbol{m}_{0}, \boldsymbol{C}_{0} v_{0} / s_{0}\right)\)</span>, <span class="math inline">\(1 / v_{0} \sim G\left(n_{0} / 2, n_{0} s_{0} / 2\right)\)</span>, and discount factors <span class="math inline">\((\beta, \delta)\)</span>.</p></li>
+<li><p><strong>Initialization:</strong> Generate <span class="math inline">\(\boldsymbol{F}_{t}=\left(1, x_{t 1}, \ldots, x_{t J}\right)^{\prime}\)</span> from the agent forecast distributions, <span class="math inline">\(x_{t j} \sim h_{t j}\left(x_{t j}\right)\)</span> independently for all <span class="math inline">\(t=1: T\)</span> and <span class="math inline">\(j=1: J\)</span>.</p></li>
+<li><p><span style="color:orange"><strong>For each MCMC iterate:</strong></span></p>
+<ul>
+<li><strong>Sampling BPS DLM parameters <span class="math inline">\(\boldsymbol{\Phi}_{1: T}\)</span> via FFBS</strong>.
+<ul>
+<li><span style="color:red">For t=1:T</span></li>
+<li>Prior for time t <span class="math display">\[
+ \begin{aligned}
+ \boldsymbol{\theta}_{t} \mid v_{t}, \boldsymbol{x}_{1: t-1}, y_{1: t-1} &amp; \sim N\left(\boldsymbol{m}_{t-1}, \boldsymbol{R}_{t} v_{t} / s_{t-1}\right) \quad \text { with } \quad \boldsymbol{R}_{t}=\boldsymbol{C}_{t-1} / \delta \\
+ v_{t}^{-1} \mid \boldsymbol{x}_{1: t-1}, y_{1: t-1} &amp; \sim G\left(\beta n_{t-1} / 2, \beta n_{t-1} s_{t-1} / 2\right)
+ \end{aligned}
+ \]</span></li>
+<li>1-step predictive distribution for time t: <span class="math inline">\(y_{t} \mid \boldsymbol{x}_{1: t}, y_{1: t-1} \sim T_{\beta n_{t-1}}\left(f_{t}, q_{t}\right)\)</span> where <span class="math inline">\(f_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{m}_{t-1}\)</span> and <span class="math inline">\(q_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{R}_{t} \boldsymbol{F}_{t}+s_{t-1}\)</span></li>
+<li>Compute forecast error and adaptive vector</li>
+<li>Filtering update to posterior for time t <span class="math display">\[
+ \begin{aligned}
+ \boldsymbol{\theta}_{t} \mid v_{t}, \boldsymbol{x}_{1: t}, y_{1: t} &amp; \sim N\left(\boldsymbol{m}_{t}, \boldsymbol{C}_{t} v_{t} / s_{t}\right) \\
+ v_{t}^{-1} \mid \boldsymbol{x}_{1: t}, y_{1: t} &amp; \sim G\left(n_{t} / 2, n_{t} s_{t} / 2\right)
+ \end{aligned}
+ \]</span></li>
+<li><span style="color:red">End (perform one-step filtering updates to compute and save the sequence of sufficient statistics for the posteriors <span class="math inline">\(p\left(\boldsymbol{\Phi}_{t} \mid y_{1: t}, \boldsymbol{x}_{1: t}\right)\)</span> at each t)</span></li>
+<li>Derive statistics for <span class="math inline">\(p\left(\boldsymbol{\Phi}_{T+1} \mid y_{1: T}, \boldsymbol{x}_{1: T}\right)\)</span></li>
+<li>Sample <span class="math inline">\(v_{t}\)</span> and <span class="math inline">\(\boldsymbol{\theta}_{t}\)</span> at time T</li>
+<li><span style="color:blue">For t=T-1:1</span></li>
+<li>Simulate <span class="math inline">\(v_{t}\)</span> via <span class="math inline">\(v_{t}^{-1}=\beta v_{t+1}^{-1}+\gamma_{t}\)</span> where <span class="math inline">\(\gamma_{t}\)</span> is an independent draw from <span class="math inline">\(\gamma_{t} \sim G\left((1-\beta) n_{t} / 2, n_{t} s_{t} / 2\right)\)</span></li>
+<li>Simulate <span class="math inline">\(\boldsymbol{\theta}_{t}\)</span> from the conditional normal posterior <span class="math inline">\(p\left(\boldsymbol{\theta}_{t} \mid \boldsymbol{\theta}_{t+1}, v_{t}, \boldsymbol{x}_{1: T}, y_{1: T}\right)\)</span> with mean vector <span class="math inline">\(\boldsymbol{m}_{t}+\delta\left(\boldsymbol{\theta}_{t+1}-\boldsymbol{m}_{t}\right)\)</span> and variance matrix <span class="math inline">\(\boldsymbol{C}_{t}(1-\delta)\left(v_{t} / s_{t}\right)\)</span></li>
+<li><span style="color:blue">End (generate samples from <span class="math inline">\(p\left(\boldsymbol{\Phi}_{t} \mid y_{1: t}, \boldsymbol{x}_{1: t}\right)\)</span> at each t)</span></li>
+</ul></li>
+<li><strong>Sampling the latent agent states <span class="math inline">\(\boldsymbol{x}_{1: T}\)</span></strong>.
+<ul>
+<li><span class="math inline">\(p\left(\boldsymbol{x}_{t} \mid \boldsymbol{\Phi}_{t}, y_{t}, \mathcal{H}_{t}\right) \propto N\left(y_{t} \mid \boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}, v_{t}\right) \prod_{j=1 . J} h_{t j}\left(x_{t j}\right) \quad \text {where} \quad \boldsymbol{F}_{t}=\left(1, x_{t 1}, x_{t 2}, \ldots, x_{t J}\right)^{\prime}\)</span></li>
+</ul></li>
+</ul></li>
+</ol>
+<p><span style="color:orange">End (return posterior samples of <span class="math inline">\(\boldsymbol{x}_{1: T}\)</span> and <span class="math inline">\(\boldsymbol{\Phi}_{1: T}\)</span>, and forecast statistics for <span class="math inline">\(p\left(\boldsymbol{\Phi}_{T+1} \mid y_{1: T}, \boldsymbol{x}_{1: T}\right)\)</span> at T+1).</span></p>
+<p><span style="color:green">For i=1:mcmc_iter</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Sampling <span class="math inline">\(\boldsymbol{x}_{T+1}\)</span>.</p></li>
+<li><p>Computing combined mean, variance of 1-step predictive distribution, forecast error, and log score.</p></li>
+</ol>
+<p><span style="color:green">End</span></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Calculate average MSFE and log score.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="application" class="section level2">
+<h2>Application</h2>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>One series: US quarterly inflation rate (1963/Q1–2011/Q4)</p>
+<ul>
+<li><p>1961/Q1-1977/Q1 (train 4 models);</p></li>
+<li><p>1977/Q2-1989/Q4 (train &amp; combine);</p></li>
+<li><p>1990/Q1-2014/Q4 (forecasting and compare).</p></li>
+</ul>
+</div>
+<div id="component-models" class="section level3">
+<h3>Component models</h3>
+<p><span class="math inline">\(J=4\)</span> autoregressive models (factor and lag)</p>
+</div>
+<div id="prior-specifications" class="section level3">
+<h3>Prior specifications</h3>
+<p>In the dynamic BPS models for forecast horizons <span class="math inline">\(k=1\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(\boldsymbol{\theta}_{0} \mid v_{0} \sim N\left(\boldsymbol{m}_{0},\left(v_{0} / s_{0}\right) \boldsymbol{I}\right.\)</span>, with <span class="math inline">\(\boldsymbol{m}_{0}=\left(0, \mathbf{1}^{\prime} / J\right)^{\prime}\)</span>.</p></li>
+<li><p><span class="math inline">\(1 / v_{0} \sim G\left(n_{0} / 2, n_{0} s_{0} / 2\right)\)</span> with <span class="math inline">\(n_{0}=10, s_{0}=0.002\)</span>.</p></li>
+<li><p><span class="math inline">\((\beta, \delta)=(0.95,0.99)\)</span>.</p></li>
+</ul>
+</div>
+<div id="evaluation-metric" class="section level3">
+<h3>Evaluation metric</h3>
+<p>Point forecasts: Mean Squared Forecast Error (MSFE)</p>
+<p>Density forecasts: Log Predictive Density Ratios (LPDR) <span class="math display">\[
+\operatorname{LPDR}_{1: t}(k)=\sum_{i=1: t} \log \left\{p_{s}\left(y_{t+k} \mid y_{1: t}\right) / p_{\mathrm{BPS}}\left(y_{t+k} \mid y_{1: t}\right)\right\}
+\]</span></p>
+</div>
+<div id="benchmark-aggregation-strategies" class="section level3">
+<h3>Benchmark aggregation strategies</h3>
+<ul>
+<li><p>BMA</p></li>
+<li><p>Linp (equally-weighted linear pool)</p></li>
+<li><p>LogP (equally-weighted logrithmic pool)</p></li>
+<li><p>DeCo (time-varying combinations)</p></li>
+</ul>
+</div>
+<div id="results" class="section level3">
+<h3>Results</h3>
 </div>
 </div>
 </div>
