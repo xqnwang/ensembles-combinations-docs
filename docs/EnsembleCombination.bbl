@@ -524,6 +524,11 @@ Harrald, P.~G. \harvardand\ Kamstra, M.  \harvardyearleft 1997\harvardyearright
   , `Evolving artificial neural networks to combine financial forecasts', {\em
   IEEE Transactions on Evolutionary Computation} {\bf 1}(1),~40--52.
 
+\harvarditem{Henderson \harvardand\ Fulcher}{2021}{Henderson2021-gl}
+Henderson, T. \harvardand\ Fulcher, B.~D.  \harvardyearleft
+  2021\harvardyearright , `An empirical evaluation of {Time-Series} feature
+  sets', {\em arXiv [cs.LG]} .
+
 \harvarditem[Hoeting et~al.]{Hoeting, Madigan, Raftery \harvardand\
   Volinsky}{1999}{Hoeting1999-qn}
 Hoeting, J.~A., Madigan, D., Raftery, A.~E. \harvardand\ Volinsky, C.~T.
@@ -756,11 +761,12 @@ Maqsood, I., Khan, M.~R. \harvardand\ Abraham, A.  \harvardyearleft
   2004\harvardyearright , `An ensemble of neural networks for weather
   forecasting', {\em Neural Computing \& Applications} {\bf 13}(2),~112--122.
 
-\harvarditem[Martin et~al.]{Martin, Loaiza-Maya, Frazier, Maneesoonthorn
-  \harvardand\ Hassan}{2020}{Martin2020-yi}
-Martin, G.~M., Loaiza-Maya, R., Frazier, D.~T., Maneesoonthorn, W. \harvardand\
-  Hassan, A.~R.  \harvardyearleft 2020\harvardyearright , `Optimal
-  probabilistic forecasts: When do they work?'.
+\harvarditem[Martin et~al.]{Martin, Loaiza-Maya, Maneesoonthorn, Frazier
+  \harvardand\ Ram{\'\i}rez-Hassan}{2021}{Martin2020-yi}
+Martin, G.~M., Loaiza-Maya, R., Maneesoonthorn, W., Frazier, D.~T. \harvardand\
+  Ram{\'\i}rez-Hassan, A.  \harvardyearleft 2021\harvardyearright , `Optimal
+  probabilistic forecasts: When do they work?', {\em International Journal of
+  Forecasting} .
 
 \harvarditem{Mass}{2003}{Mass2003-bc}
 Mass, C.~F.  \harvardyearleft 2003\harvardyearright , `{IFPS} and the future of
