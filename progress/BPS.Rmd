@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-> Kenichiro McAlinn, and [Mike West](http://www2.stat.duke.edu/~mw/index.html). "Dynamic Bayesian predictive synthesis in time series forecasting." *Journal of econometrics* 210.1 (2019): 155-169.
+> Kenichiro McAlinn, and [Mike West](http://www2.stat.duke.edu/~mw/index.html). "Dynamic Bayesian predictive synthesis in time series forecasting." *Journal of Econometrics* 210.1 (2019): 155-169.
 >
 > Mike West's Talk at [EBEB 2016 13th Brazilian Meeting on Bayesian Statistics](https://www.youtube.com/watch?v=oBYoPtEHzTE&list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&index=6)
 >
@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Notation
 
-Predictions:
+Forecasts:
 $$
 \begin{aligned}
 h_{j}(y) &=p\left(y \mid \mathcal{M}_{j}\right), j=1: J \\
@@ -44,7 +44,7 @@ Scalar/one time point: $y=\mathbf{y}_{t}$
 
 ## How else do?
 
-### 1. Mixtures/pooling
+### 1. Linear mixtures/pooling
 
 $$
 p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j} h_{j}(y)
@@ -58,7 +58,7 @@ $$
 
 - With respect to particular loss functions, maybe it's one-step ahead forecasting or multi-step ahead forecasting. They optimize these weights and at a time series, they can do this repeatedly linking the optimization over time or just at each time point doing it again.
 
-- e.g. [Hall \& Mitchell IJF 07; Geweke \& Amisano JE 11; Billio, Casarin, Ravazzola \& van Dijk, JE 13; Fawcett BoE et al 13; and more ...]
+- e.g. [Hall \& Mitchell IJF 2007; Geweke \& Amisano JOE 2011; Billio, Casarin, Ravazzola \& van Dijk, JOE 2013; Fawcett BoE et al 2013; and more ...]
 
 ### 2. Outcome dependent model mixture
 
@@ -70,13 +70,22 @@ $$
 
 - Outcome-dependent density pooling.
 
-- A generalization of the traditional linear opinion pool using constant weights.
+- A generalization of the traditional linear pool using constant weights.
  
 - Sieve estimation methods are used to minimize the predictive loss function of the generalized density pooling.
 
-- e.g. [Kapetanios, Mitchell, Price \& Fawcett, J Econometrics, 2015]
+- e.g. [Kapetanios, Mitchell, Price \& Fawcett, JOE, 2015]
 
-### 3. Density combinations constructed via Bayes' Theorem
+### 3. Nonlinear pooling
+
+$$
+p\left(y \mid H_{J}\right)=g^{-1}\left(\sum_{j=1: J} \omega_{j} g\left(h_{j}(y)\right)\right) \\
+p\left(y \mid H_{J}\right)=g\left(\sum_{j=1: J} \omega_{j} h_{j}(y)\right)
+$$
+
+- The essence is to perform ingenious transformations that may be nonlinear to either the component forecasts or the linearly pooled forecasts in order to restore calibration and sharpness.
+
+### 4. Density combinations constructed via Bayes' Theorem
 
 The final aggregated density forecast is **directly** computed by means of **Bayes’ Theorem**:
 $$
@@ -89,7 +98,7 @@ $$
   - forecast errors
   - joint distribution in terms of the **marginal distributions** and a **copula**.
   
-- However, Likelihood function is too hard to specify.
+- However, likelihood function is too hard to specify.
 
 - e.g. [Winkler (1981); Palm and Zellner (1992); Jouini and Clemen (1996)]
 
@@ -284,7 +293,7 @@ The full MCMC analysis is performed anew at each time point as time evolves and 
 
 The agent forecasts are T distributions $T_{n_{t j}}\left(h_{t j}, H_{t j}\right)$, non-standard T distributions with mean, scale, and degrees of freedom.
 
-- The T distribution can be interpreted as a mixture of normal random variables. Specifically, let $W$ have inverse-gamma distribution $\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)$, and define the conditional distribution $X \mid W = w \sim N(0, w)$. Then the unconditional distribution of $X$ is the $t$ distribution with $\nu$ degrees of freedom ([derivation summary](https://www.statlect.com/probability-distributions/student-t-distribution)).
+- The T distribution can be interpreted as a mixture of normal random variables. Specifically, let $W$ have inverse-gamma distribution $\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)$, and define the conditional distribution $X \mid W = w \sim N(0, w)$. Then the unconditional distribution of $X$ is the T distribution with $\nu$ degrees of freedom ([derivation summary](https://www.statlect.com/probability-distributions/student-t-distribution)).
 
 > 1. **Initial prior:** $\boldsymbol{\theta}_{0}|v_{0} \sim N\left(\boldsymbol{m}_{0}, \boldsymbol{C}_{0} v_{0} / s_{0}\right)$, $1 / v_{0} \sim G\left(n_{0} / 2, n_{0} s_{0} / 2\right)$, and discount factors $(\beta, \delta)$.
 >
@@ -377,7 +386,13 @@ $$
 
 - DeCo (time-varying combinations)
 
-### Results
+
+## Summary
+
+- Dynamic BPS is a different approach from density combinations constructed via Bayes’ Theorem. Bayesian learning not constructed by multiplying a likelihood by a prior, but by integration.
+
+- Dependencies among individual density forecasts are involved and updated in the inference of $\Phi_{T+1}$ and not explicitly formulated.
+
 
 
 

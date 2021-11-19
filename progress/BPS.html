@@ -7,7 +7,7 @@
 
         <meta name="author" content="Xiaoqian Wang" />
     
-        <meta name="date" content="2021-11-18" />
+        <meta name="date" content="2021-11-19" />
     
     <title>Bayesian Predictive Synthesis</title>
 
@@ -128,9 +128,10 @@
       <li><a href="#notation">Notation</a></li>
       <li><a href="#how-else-do">How else do?</a>
       <ul>
-      <li><a href="#mixturespooling">1. Mixtures/pooling</a></li>
+      <li><a href="#linear-mixturespooling">1. Linear mixtures/pooling</a></li>
       <li><a href="#outcome-dependent-model-mixture">2. Outcome dependent model mixture</a></li>
-      <li><a href="#density-combinations-constructed-via-bayes-theorem">3. Density combinations constructed via Bayes’ Theorem</a></li>
+      <li><a href="#nonlinear-pooling">3. Nonlinear pooling</a></li>
+      <li><a href="#density-combinations-constructed-via-bayes-theorem">4. Density combinations constructed via Bayes’ Theorem</a></li>
       </ul></li>
       <li><a href="#subjective-bayesian-forecasting">Subjective Bayesian forecasting</a>
       <ul>
@@ -157,13 +158,13 @@
       <li><a href="#prior-specifications">Prior specifications</a></li>
       <li><a href="#evaluation-metric">Evaluation metric</a></li>
       <li><a href="#benchmark-aggregation-strategies">Benchmark aggregation strategies</a></li>
-      <li><a href="#results">Results</a></li>
       </ul></li>
+      <li><a href="#summary-1">Summary</a></li>
       </ul>
     </div>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> Xiaoqian Wang</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-11-18</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2021-11-19</p>
           </div>
    </div>
      
@@ -174,13 +175,13 @@
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
 <div id="main">
 <blockquote>
-<p>Kenichiro McAlinn, and <a href="http://www2.stat.duke.edu/~mw/index.html">Mike West</a>. “Dynamic Bayesian predictive synthesis in time series forecasting.” <em>Journal of econometrics</em> 210.1 (2019): 155-169.</p>
+<p>Kenichiro McAlinn, and <a href="http://www2.stat.duke.edu/~mw/index.html">Mike West</a>. “Dynamic Bayesian predictive synthesis in time series forecasting.” <em>Journal of Econometrics</em> 210.1 (2019): 155-169.</p>
 <p>Mike West’s Talk at <a href="https://www.youtube.com/watch?v=oBYoPtEHzTE&amp;list=PL3T2Ppt4bgDJBiGZlan-qNY6PsLOGXdAB&amp;index=6">EBEB 2016 13th Brazilian Meeting on Bayesian Statistics</a></p>
 <p><a href="http://www2.stat.duke.edu/~mw/mwsoftware/BPS/index.html">Matlab code and data</a></p>
 </blockquote>
 <div id="notation" class="section level2">
 <h2>Notation</h2>
-<p>Predictions: <span class="math display">\[
+<p>Forecasts: <span class="math display">\[
 \begin{aligned}
 h_{j}(y) &amp;=p\left(y \mid \mathcal{M}_{j}\right), j=1: J \\
 H_{J} &amp;=\left\{h_{j}(\cdot), j=1: J\right\}
@@ -193,8 +194,8 @@ H_{J} &amp;=\left\{h_{j}(\cdot), j=1: J\right\}
 </div>
 <div id="how-else-do" class="section level2">
 <h2>How else do?</h2>
-<div id="mixturespooling" class="section level3">
-<h3>1. Mixtures/pooling</h3>
+<div id="linear-mixturespooling" class="section level3">
+<h3>1. Linear mixtures/pooling</h3>
 <p><span class="math display">\[
 p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j} h_{j}(y)
 \]</span></p>
@@ -203,7 +204,7 @@ p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j} h_{j}(y)
 <li><p>Looks like BMA but it isn’t.</p></li>
 <li><p>They treat weights not as posterior model probabilities but as tuning parameters.</p></li>
 <li><p>With respect to particular loss functions, maybe it’s one-step ahead forecasting or multi-step ahead forecasting. They optimize these weights and at a time series, they can do this repeatedly linking the optimization over time or just at each time point doing it again.</p></li>
-<li><p>e.g. [Hall &amp; Mitchell IJF 07; Geweke &amp; Amisano JE 11; Billio, Casarin, Ravazzola &amp; van Dijk, JE 13; Fawcett BoE et al 13; and more …]</p></li>
+<li><p>e.g. [Hall &amp; Mitchell IJF 2007; Geweke &amp; Amisano JOE 2011; Billio, Casarin, Ravazzola &amp; van Dijk, JOE 2013; Fawcett BoE et al 2013; and more …]</p></li>
 </ul>
 </div>
 <div id="outcome-dependent-model-mixture" class="section level3">
@@ -214,13 +215,23 @@ p\left(y \mid H_{J}\right)=\sum_{j=1: J} \omega_{j}(y) h_{j}(y)
 <ul>
 <li><p><span class="math inline">\(\omega_{j}(y)\)</span>: the mixture weights depend on the variable one is trying to forecast.</p></li>
 <li><p>Outcome-dependent density pooling.</p></li>
-<li><p>A generalization of the traditional linear opinion pool using constant weights.</p></li>
+<li><p>A generalization of the traditional linear pool using constant weights.</p></li>
 <li><p>Sieve estimation methods are used to minimize the predictive loss function of the generalized density pooling.</p></li>
-<li><p>e.g. [Kapetanios, Mitchell, Price &amp; Fawcett, J Econometrics, 2015]</p></li>
+<li><p>e.g. [Kapetanios, Mitchell, Price &amp; Fawcett, JOE, 2015]</p></li>
+</ul>
+</div>
+<div id="nonlinear-pooling" class="section level3">
+<h3>3. Nonlinear pooling</h3>
+<p><span class="math display">\[
+p\left(y \mid H_{J}\right)=g^{-1}\left(\sum_{j=1: J} \omega_{j} g\left(h_{j}(y)\right)\right) \\
+p\left(y \mid H_{J}\right)=g\left(\sum_{j=1: J} \omega_{j} h_{j}(y)\right)
+\]</span></p>
+<ul>
+<li>The essence is to perform ingenious transformations that may be nonlinear to either the component forecasts or the linearly pooled forecasts in order to restore calibration and sharpness.</li>
 </ul>
 </div>
 <div id="density-combinations-constructed-via-bayes-theorem" class="section level3">
-<h3>3. Density combinations constructed via Bayes’ Theorem</h3>
+<h3>4. Density combinations constructed via Bayes’ Theorem</h3>
 <p>The final aggregated density forecast is <strong>directly</strong> computed by means of <strong>Bayes’ Theorem</strong>: <span class="math display">\[
 p\left(y \mid H_{J}\right) \propto p(y) p\left(H_{J} \mid y\right)
 \]</span></p>
@@ -231,7 +242,7 @@ p\left(y \mid H_{J}\right) \propto p(y) p\left(H_{J} \mid y\right)
 <li>forecast errors</li>
 <li>joint distribution in terms of the <strong>marginal distributions</strong> and a <strong>copula</strong>.</li>
 </ul></li>
-<li><p>However, Likelihood function is too hard to specify.</p></li>
+<li><p>However, likelihood function is too hard to specify.</p></li>
 <li><p>e.g. [Winkler (1981); Palm and Zellner (1992); Jouini and Clemen (1996)]</p></li>
 </ul>
 </div>
@@ -412,7 +423,7 @@ y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, &amp; v_{t} \si
 <p>The full MCMC analysis is performed anew at each time point as time evolves and new data are observed.</p>
 <p>The agent forecasts are T distributions <span class="math inline">\(T_{n_{t j}}\left(h_{t j}, H_{t j}\right)\)</span>, non-standard T distributions with mean, scale, and degrees of freedom.</p>
 <ul>
-<li>The T distribution can be interpreted as a mixture of normal random variables. Specifically, let <span class="math inline">\(W\)</span> have inverse-gamma distribution <span class="math inline">\(\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)\)</span>, and define the conditional distribution <span class="math inline">\(X \mid W = w \sim N(0, w)\)</span>. Then the unconditional distribution of <span class="math inline">\(X\)</span> is the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(\nu\)</span> degrees of freedom (<a href="https://www.statlect.com/probability-distributions/student-t-distribution">derivation summary</a>).</li>
+<li>The T distribution can be interpreted as a mixture of normal random variables. Specifically, let <span class="math inline">\(W\)</span> have inverse-gamma distribution <span class="math inline">\(\text{InvGam}\left(\dfrac{\nu}{2}, \dfrac{\nu}{2} \right)\)</span>, and define the conditional distribution <span class="math inline">\(X \mid W = w \sim N(0, w)\)</span>. Then the unconditional distribution of <span class="math inline">\(X\)</span> is the T distribution with <span class="math inline">\(\nu\)</span> degrees of freedom (<a href="https://www.statlect.com/probability-distributions/student-t-distribution">derivation summary</a>).</li>
 </ul>
 <blockquote>
 <ol style="list-style-type: decimal">
@@ -505,9 +516,13 @@ y_{t}=\boldsymbol{F}_{t}^{\prime} \boldsymbol{\theta}_{t}+v_{t}, &amp; v_{t} \si
 <li><p>DeCo (time-varying combinations)</p></li>
 </ul>
 </div>
-<div id="results" class="section level3">
-<h3>Results</h3>
 </div>
+<div id="summary-1" class="section level2">
+<h2>Summary</h2>
+<ul>
+<li><p>Dynamic BPS is a different approach from density combinations constructed via Bayes’ Theorem. Bayesian learning not constructed by multiplying a likelihood by a prior, but by integration.</p></li>
+<li><p>Dependencies among individual density forecasts are involved and updated in the inference of <span class="math inline">\(\Phi_{T+1}\)</span> and not explicitly formulated.</p></li>
+</ul>
 </div>
 </div>
 
