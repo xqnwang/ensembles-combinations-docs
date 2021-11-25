@@ -1,0 +1,237 @@
+---
+title: "Quantile Forecast Combinations"
+date: "`r Sys.Date()`"
+author: Xiaoqian Wang
+output:
+  rmdformats::readthedown:
+    toc_depth: 3
+    self_contained: true
+    thumbnails: false
+    lightbox: true
+    gallery: false
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Quantiles vs. distributions
+
+- Quantile forecasts provide a discrete set of quantiles of the forecast distribution and, inevitably, involve a loss of information compared with consideration of the whole distribution.
+
+- Compared with probability forecast combinations, combinations of quantiles pose new issues:
+  1. The associated loss function used to combine quantiles is typically no longer continuous and differentiable ([Timmermann, 2006](#reference));
+  2. The combined quantiles may be nonmonotonic, thus leading to the issue of quantile crossing ([Kim et al., 2021](#reference)).
+
+
+## Quantile averaging (Vincentization)
+
+[Lichtendahl et al. (2013, Management Science); Busetti (2017, Oxford Bulletin of Economics and Statistics)](#reference)
+
+Is it better to average probabilities or quantiles?
+
+### Defination
+
+Considering the fact that a quantile forecast collected from a model is the **inverse** of the corresponding probability forecast defined as the cumulative distribution function (cdf).
+
+Let $p_{i}(y_{t+h|t})$ be probability forecast for a scalar variable $y_t$ and denote by $P_{i}(t+h|t)$ the corresponding cdfs, for $i = 1,2,\ldots ,N$. For a set of non-negative weights $w_i$ such that $\sum_{i=1}^{N} w_{i}=1$, the combined distribution defined by quantile averaging is given by
+$$
+Q(\tau) = \tilde{P}^{-1}(\tau) = \sum_{i=1}^{N}w_iP_{i}^{-1}(\tau), \quad 0<\tau \leq 1
+$$
+where $P_{i}^{-1}(\tau)=\inf \left\{y: P_{i}(y) \geq \tau\right\}$ are the **quantile functions** of the individual forecast distributions. 
+
+Quantile averaging, also known as Vincentization ([Ratcliff, 1979; Thomas and Ross, 1980](#reference)), is a simple and intuitive approach.
+
+- It involves averaging the quantiles of the individual distributions. 
+
+- It is horizontal averaging rather than vertical averaging of the individuals' cdfs ([Lichtendahl et al., 2013](#reference)).
+
+- **It provides an alternative way for aggregating probability forecasts.**
+
+### Properties
+
+[Ratcliff, 1979; Thomas and Ross, 1980; Busetti, 2017; Kim et al., 2021](#reference)
+
+- When considering individual distributions belonging to the **same** [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family), quantile averaging is **shape-preserving**. The distribution derived from quantile averaging is a **closed operation** given simply by averaging the parameters of the individual distributions.
+  - This can be seen as **either a pro or a con** of quantile averaging, depending on the application one has in mind.
+
+- When not available in closed form, the distribution derived from quantile averaging can be obtained by numerical approximation as the derivative of the inverse of the quantile function.
+
+### Comparison with linear pooling
+
+**Assume that individual forecast distributions belong to the same location-scale family:**
+
+- **Linear pooling** in general can be **multimodal** distribution.
+  - $\tilde{\mu}=\sum_{i=1}^{N} w_{i} \mu_{i}$ and
+$\tilde{\sigma}^{2}=\sum_{i=1}^{N} w_{i} \sigma_{i}^{2}+\sum_{i=1}^{N} w_{i}\left(\mu_{i}-\tilde{\mu}\right)^{2}$.
+
+- **Quantile averaging** is shape-preserving and would result in a **unimodal** distribution.
+  - $\tilde{\mu}=\sum_{i=1}^{N} w_{i} \mu_{i}$ and
+$\tilde{\sigma}^{2}=\sum_{i=1}^{N} w_{i} \sigma_{i}^{2}$.
+
+
+- Quantile averaging has the **same mean** but **lower variance** than linear pooling.
+
+- Thus, when individuals **disagree on the location**, the average quantile forecast will tend to be more overconfident (or less underconfident) than the linear pooling.
+
+[Lichtendahl et al. (2013)](#reference) focus on **simple average (equal weights)** both for linear pooling and quantile averaging.
+
+- The average quantile forecast and the linear pooling forecast have the same mean: the simple average of the individuals' means.
+
+- The average quantile forecast is always sharper (has lower variance) than the linear pooling forecast.
+
+- Even when the linear pooling forecast is overconfident, the shape of the average quantile forecast still offers the possibility of a better forecast.
+
+[Busetti (2017)](#reference) focuses on the influence of bias in the individual forecasts. Considering inverse MSE weights and log-score weights, Busetti shows that quantile average seems overall preferable as it maintains similar properties irrespectively of the bias.
+
+
+## Quantile combinations
+
+Given a set of quantile forecasts $q_{t+h|t, 1}, \ldots, q_{t+h|t, N}$, quantile forecast combinations can be given by
+$$
+\tilde{q}_{t+h|t}=\sum_{i=1}^{N} w_{i} q_{t+h|t, i}
+$$
+with a set of non-negative weight $w_{i}$ such that $\sum_{i=1}^{N} w_{i}=1$.
+
+### Simple methods
+
+#### Simple combination heuristics
+
+Simple methods considered in the literature on combining interval forecasts ([Park et al., 2015; Gaba et al., 2017; Grushka-Cockayne and Jose, 2020](#reference)). Extending these to quantile combinations, given a set of level-$\tau$ quantile forecasts $\boldsymbol{q} = \left\{q_{t+h|t, 1}, \ldots, q_{t+h|t, N}\right\}$,
+
+1. Simple average
+   - averaging quantiles $\tilde{q}_{t+h|t} = (1/N)\sum_{i=1}^{N}q_{t+h|t, i}$
+  
+2. Median ([Petropoulos and Svetunkov, 2020](#reference))
+   - median of quantiles $\tilde{q}_{t+h|t} = \text{median}(\boldsymbol{q})$
+    - address possible outliers that can easily skew the average.
+
+3. Envelope
+   - address the issue of overconfidence by providing the widest possible resulted interval.
+
+$$
+\tilde{q}_{t+h|t}=\left\{\begin{array}{ll}
+\max \left(\boldsymbol{q}\right) & \tau>0.5 \\
+\text{median}\left(\boldsymbol{q}\right) & \tau=0.5 \\
+\min \left(\boldsymbol{q}\right) & \tau<0.5
+\end{array}\right.
+$$
+
+4. Interior trimming
+   - asymmetric trimming
+   - address the possibility of overconfidence in the simple average of forecasts
+  
+$$
+\tilde{q}_{t+h|t}\left(\tau\right)=\left\{\begin{array}{ll}
+[1 /(N-k)] \sum_{i=k+1}^{N} q_{t+h|t, [i]} & \tau>0.5 \\
+(1/N)\sum_{i=1}^{N}q_{t+h|t, i} & \tau=0.5 \\
+[1 /(N-k)] \sum_{i=1}^{N-k} q_{t+h|t, [i]} & \tau<0.5
+\end{array}\right.
+$$
+where $k$ is the number of trimmed forecasts, and $q_{t+h|t, [i]}$ is the $i$th order statistic of $\boldsymbol{q}$.
+
+5. Exterior trimming
+   - asymmetric trimming
+   - address the possibility of underconfidence in the simple average of forecasts.
+
+$$
+\tilde{q}_{t+h|t}\left(\tau\right)=\left\{\begin{array}{ll}
+[1 /(N-k)] \sum_{i=1}^{N-k} q_{t+h|t, [i]} & \tau>0.5 \\
+(1/N)\sum_{i=1}^{N}q_{t+h|t, i} & \tau=0.5 \\
+[1 /(N-k)] \sum_{i=k+1}^{N} q_{t+h|t, [i]} & \tau<0.5
+\end{array}\right.
+$$
+
+6. Probability averaging of endpoints and simple averaging of midpoints (PM)
+   - combine aspects of probability averaging (PA) and simple average.
+   - assume the individual forecasts are based on **normal** cdfs。
+   - For prediction intervals:
+     - PA: $(1 / N) \sum_{i=1}^{N} P_{i}\left(L_{PA}\right)=1-(1 / N) \sum_{i=1}^{N} P_{i}\left(U_{PA}\right)=\tau / 2$
+     - shift the PA interval so it is centered at the midpoint of the simple average interval.
+      - the width and midpoint of the PM interval are $W_{PA}=U_{PA}-L_{P A} \text { and } M_{PM}=\left(L_{SA}+U_{SA}\right) / 2$.
+   - Extension for quantiles:
+     - PA: $(1 / N) \sum_{i=1}^{N} P_{i}\left(q_{PA}\right)=\tau$
+     - shift the PA quantiles so its level-$0.5$ quantile is equal to that derived from simple average method. 
+
+#### Sorting quantiles across quantile levels
+
+Sorting all quantiles across both base models and quantile levels (benchmarks in [Wang et al., 2018](#reference)).
+
+With each base model producing $M$ quantiles, a total of $N \times M$ quantiles can be observed  by $N$ forecasting models. The set of $M$ quantile levels is given as $\mathcal{T} \subseteq [0,1]$ and $\tau \in \mathcal{T}$.
+ 
+Obtain a new sequence $\boldsymbol{S}_{t+h|t} = \left\{S_{t+h|t,j}, j=[1,N \times M]\right\}$ by sorting $N \times M$ quantiles observed by $N$ models and $M$ quantile levels by ascending order.
+
+Then the level-$\tau$ ($\tau = \mathcal{T}_{[i]}$) quantile is estimated as follows:
+
+1. Naive sorting
+
+$$
+\tilde{q}_{t+h|t}(\tau)=S_{t+h|t, 1+(i-1) N}
+$$
+
+2. Median sorting
+
+$$
+\tilde{q}_{t+h|t}(\tau)=S_{t+h|t, 1+(i-1) N+[N / 2]}
+$$
+
+#### Summary
+
+- These methods are limited to those that can be applied when no information is available regarding the historical performances of the individual forecasts. Thus, these methods are not dynamic and do not involve learning.
+
+- When available, past performance information enables the use of unequal weighting combinations; however, we note that simple combination methods have been shown to be robust in many settings.
+
+### Weight determination
+
+- For each base model, a single weight $w_{i}$ is allocated, and it is shared over all quantile levels $\mathcal{T}$.
+
+- For each base model and each quantile level $\tau$, a separate weight $w_{i}^{\tau}$ is allocated.
+
+- For each quantile level $\tau$, a separate weight $w_{i}^{\tau, \nu}$ is allocated to the estimate of a quantile level $\nu \in \mathcal{T}$ output by each base model.
+
+- The weights that do not depend on feature values of the input data so that the weights are globally shared across all inputs.
+
+- The weights are allowed to vary based on the feature values.
+
+## Transformation prior to combination
+
+Based on the individual quantile forecasts, we can transform a series of quantiles into a continuous density curve prior to combination.
+
+Algorithms such as kernel density estimation (KDE) can be used as a bridge between quantile forecast and density forecast, see for example [Zhang et al. (2020)](#reference).
+
+
+## Quantile crossing
+
+- Integrate the combination models for individual quantiles into one model with more constraints to avoid quantile crossing.
+
+- Conduct naive rearrangement after all combined quantiles are obtained.
+
+## Summary
+
+
+## Reference {#reference}
+
+- Busetti, F. (2017). Quantile aggregation of density forecasts. Oxford Bulletin of Economics and Statistics, 79(4), 495-512.
+
+- Gaba, A., Tsetlin, I., & Winkler, R. L. (2017). Combining interval forecasts. Decision Analysis, 14(1), 1-20.
+
+- Grushka-Cockayne, Y., & Jose, V. R. R. (2020). Combining prediction intervals in the M4 competition. International Journal of Forecasting, 36(1), 178-185.
+
+- Kim, T., Fakoor, R., Mueller, J., Tibshirani, R. J., & Smola, A. J. (2021). Deep quantile aggregation. arXiv preprint arXiv:2103.00083.
+
+- Lichtendahl Jr, K. C., Grushka-Cockayne, Y., & Winkler, R. L. (2013). Is it better to average probabilities or quantiles?. Management Science, 59(7), 1594-1611.
+
+- Park, S., & Budescu, D. V. (2015). Aggregating multiple probability intervals to improve calibration. Judgment and Decision Making, 10(2), 130.
+
+- Petropoulos, F., & Svetunkov, I. (2020). A simple combination of univariate models. International Journal of Forecasting, 36(1), 110-115.
+
+- Ratcliff, R. (1979). Group reaction time distributions and an analysis of distribution statistics. Psychological Bulletin, 86(3), 446.
+
+- Thomas, E. A., & Ross, B. H. (1980). On appropriate procedures for combining probability distributions within the same family. Journal of Mathematical Psychology, 21(2), 136-152.
+
+- Timmermann, A. (2006), Chapter 4 forecast combinations, in G. Elliott, C. W. J. Granger and A. Timmermann, eds, Handbook of Economic Forecasting, Vol. 1, Elsevier, pp. 135–196.
+
+- Wang, Y., Zhang, N., Tan, Y., Hong, T., Kirschen, D. S., & Kang, C. (2018). Combining probabilistic load forecasts. IEEE Transactions on Smart Grid, 10(4), 3664-3674.
+
+- Zhang, S., Wang, Y., Zhang, Y., Wang, D., & Zhang, N. (2020). Load probability density forecasting by transforming and combining quantile forecasts. Applied Energy, 277, 115600.
