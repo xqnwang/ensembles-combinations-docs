@@ -339,7 +339,7 @@ On the other hand, \cite{Hora2004-fz} demonstrated, both from theoretical and em
 
 In principle, probability forecasts can be recalibrated before or after the pooling to correct for miscalibration \citep{Turner2014-za}. However, it is challenging to appraise the degree of miscalibration, which may vary considerably among different forecasts and over time, and therefore to recalibrate accordingly. Some effort has been directed toward the development of alternative ensemble methods to address the calibration issue. For example, \cite{Jose2014-uh} suggested the `trimmed opinion pool', which intended to trim away some individual forecasts from a linear opinion pool before the mixture of the component forecasts. Specifically, exterior trimming that trims away forecasts with low or high means or cdf values serves as a way to address underconfidence by decreasing the variance. Conversely, interior trimming that trims away forecasts with moderate means or cdf values is suggested to mitigate overconfidence via increasing the variance. The improvement on forecasting performance offered by trimming was confirmed by \cite{Grushka-Cockayne2017-dj} at a more foundational level. Some researchers prefer to nonlinear alternatives, including generalized linear pool, the spread-adjusted linear pool, and the beta-transformed linear pool, in terms of delivering better calibrated ensemble probability forecasts; these are discussed in Section \ref{sec:nonlinear_pooling}. Instead of mixing probability forecasts mentioned above, \cite{Lichtendahl2013-rt} recommended to average quantile forecasts (see Section \ref{sec:quantile_forecast_combinations}) based on the supportive results both theoretically and empirically.
 
-The key practical issue determining the success (or failure) of a linear pooling is how the weights for the individual probability forecasts in the finite mixture should be estimated. Most simply, equal weights are worthy of consideration. They are easy to understand and implement, commonly yielding robust and stable outcomes. For reviews, see, e.g., \cite{Wallis2005-yf} and \cite{OHagan2006-jk}. A leading example is the Survey of Professional Forecasters (SPF) in the US, which publishes the mixed probability forecasts (in the form of histograms) for inflation and GDP growth using equal weights. As experience of combining point forecasts has taught us, the equally weighted approach often turns out to be hard to beat. An important reason is that it avoids parameter estimation error that often existed in weighted approaches; see Section \ref{sec:forecast_combination_puzzle} for more details and illustrations.
+The key practical issue determining the success (or failure) of a linear pooling is how the weights for the individual probability forecasts in the finite mixture should be estimated. Most simply, equal weights are worthy of consideration, while determining optimal weights is particularly challenging in the case of probability forecasts with little historical data available. Linear pooling with equal weights is easy to understand and implement, commonly yielding robust and stable outcomes. For reviews, see, e.g., \cite{Wallis2005-yf} and \cite{OHagan2006-jk}. A leading example is the Survey of Professional Forecasters (SPF) in the US, which publishes the mixed probability forecasts (in the form of histograms) for inflation and GDP growth using equal weights. As experience of combining point forecasts has taught us, the equally weighted approach often turns out to be hard to beat. An important reason is that it avoids parameter estimation error that often existed in weighted approaches; see Section \ref{sec:forecast_combination_puzzle} for more details and illustrations.
 
 Motivated by the optimal weights in combining point forecasts in the sense of minimizing the MSE loss, \cite{Hall2007-lh} proposed a practical way to achieve the most `optimal' ensemble of probability forecasts. Specifically, \cite{Hall2007-lh} identified the set of optimal weights by minimizing the Kullback–Leibler Information Criterion (KLIC) distance between the ensemble probability forecast $\tilde{p}(y_{\tau+h}|I_{\tau})$ and the true (but unknown) probability distribution $f(y_{\tau+h})$ ($\tau=1,\ldots,t$). The KLIC distance is defined as
 \begin{align}
@@ -431,23 +431,61 @@ Recently, the community of weather forecasting is starting to explore the potent
 \subsubsection{Quantile forecast combinations}
 \label{sec:quantile_forecast_combinations}
 
-Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}
-
-inevitably involve a loss of information compared
-with consideration of the `whole' density.
-
-\paragraph{Simple combination heuristics}
+Quantile averaging (Vincentization): the general form (inverse)
 \begin{itemize}
-  \item Six heuristics \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv} proposed for combining intervals.
-  \item Generalize these heuristics to the combination of quantile forecasts.
-  \item Limitations and the selection of heuristics in different forecasting problems.
+  \item Definition and formula. Averaging quantile functions of the individual forecast distributions. Assume the whole cdfs are known and need to compute the entire quantile function.
+  \item Differences between quantile averaging and linear pooling.
+  \begin{itemize}
+    \item Horizontal averaging rather than vertical averaging.
+    \item Under location-scale family \citep[properties,][]{Ratcliff1979-cb,Thomas1980-lp}
+    \begin{itemize}
+      \item Theorem about parameters (mean and variance): given simply by averaging the parameters of the individual distributions (such as normal, Logistic, Cauchy, etc).
+      \item Disagree on the location, Shape-preserving \citep[only family,][]{Kim2021-wa}, Sharpness.
+      \item Give a normal example and comparison (modal). Sometimes, it seems desirable for the ensemble model to retain normality.
+      \item This can be seen as either a pro or a con.
+    \end{itemize}
+    \item When not available in closed form, the distribution derived from quantile averaging can be obtained by numerical approximation as the derivative of the inverse of the quantile function.
+    \item Recent studies (two).
+    \begin{itemize}
+      \item \cite{Lichtendahl2013-rt} focus on simple averaging and quantile averaging is overall preferable. Because shoulders, shape and tail. Even when the linear pooling forecast is overconfident, the shape of the average quantile forecast still offers the possibility of a better forecast. Other three recommendations. This study suggests that a generalized-average
+      quantile forecast, with its additional flexibility, may offer further improvements.
+      \item \cite{Busetti2017-ox} mainly focuses on equal weights in simulations and empirical application. Equal weights and log score weights are considered under Gaussianity of the individual distributions, focusing on biases and the choice of weights. Quantile averaging is particularly useful for combining forecast distributions with large differences in location.
+      \item Empirical evidence suggests it performs well in practice.
+      \item \cite{Grushka-Cockayne2017-eg} tailor weights to reflect the relative importance of certain reported quantiles.
+      %(Grushka-Cockayne et al. (2017b) extend the notion of bracketing to probability forecasts and demonstrate how the recommended aggregation mechanism is impacted by the existence of bracketing among the forecasters’ quantiles. Grushka-Cockayne et al. (2017b) encourage the use of quantile scoring rules. Focusing on evaluating the performance of the aggregate forecast, they suggest that the score of a crowd’s combined quantile should be better than that of a randomly selected forecaster’s quantile only when the forecasters’ quantiles bracket the realization. If a score satisfies this condition, we say it is sensitive to bracketing. Grushka-Cockayne et al. (2017b) link quantile scoring rules to business profit-sharing situations. For forecasting continuous quantities, forecasts could be elicited by asking for an expert’s quantile (or fractile) forecast rather than a probability forecast (FTP P91).)
+    \end{itemize}
+  \end{itemize}
+  \item Ways of choosing weights that give us some optimal properties???
 \end{itemize}
 
-quantile crossing
+% find ... useful for aggregation purposes.
 
-%% - (interval)Combining Prediction Intervals in the M4 Competition
-%% - Combining Interval Forecasts.
-%% - (quantile)Combining Probabilistic Load Forecasts
+Discrete set of quantiles: special case. Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA is also quantile averaging.
+
+Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though.
+
+Level-dependent weights. The importance of allowing for level-dependent weights in a linear combination of quantiles. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models)
+
+Transformation prior to combination. They assume that the continuous distribution function was smooth.
+
+Quantile crossing issue
+\begin{itemize}
+  \item will not happen when consider quantile averaging given full distribution or constant weights.
+  \item when will happen? for example we have different weights attached to different quantiles.
+  \item only need a paragraph about when it was going to happen or when it's not going to happen. When it happens, just a sentence or two and what people do.
+\end{itemize}
+
+Interval combinations. Intervals are usually constructed from two quantiles. Not always, but they usually are.
+\begin{itemize}
+  \item Combining Prediction Intervals in the M4 Competition.
+  \item Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}.
+  \item Simple combination heuristics.
+  \begin{itemize}
+    \item Six heuristics \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv} proposed for combining intervals.
+    \item Generalize these heuristics to the combination of quantile forecasts.
+    \item Limitations and the selection of heuristics in different forecasting problems.
+  \end{itemize}
+\end{itemize}
 
 \subsection{Probabilistic forecast combinations}
 \label{sec:probabilistic_forecast_combinations}

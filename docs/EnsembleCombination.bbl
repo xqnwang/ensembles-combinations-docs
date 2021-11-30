@@ -192,6 +192,11 @@ Burnham, K.~P. \harvardand\ Anderson, D.~R.  \harvardyearleft
   practical information-theoretic approach (2nd ed.)', {\em Berlin, New York:
   Springer} .
 
+\harvarditem{Busetti}{2017}{Busetti2017-ox}
+Busetti, F.  \harvardyearleft 2017\harvardyearright , `Quantile aggregation of
+  density forecasts', {\em Oxford Bulletin of Economics and Statistics} {\bf
+  79}(4),~495--512.
+
 \harvarditem{Chan \harvardand\ Pauwels}{2018}{Chan2018-jl}
 Chan, F. \harvardand\ Pauwels, L.~L.  \harvardyearleft 2018\harvardyearright ,
   `Some theoretical results on forecast combinations', {\em International
@@ -499,11 +504,18 @@ Grushka-Cockayne, Y. \harvardand\ Jose, V. R.~R.  \harvardyearleft
   competition', {\em International Journal of Forecasting} {\bf
   36}(1),~178--185.
 
-\harvarditem[Grushka-Cockayne et~al.]{Grushka-Cockayne, Jose \harvardand\
-  Lichtendahl}{2017}{Grushka-Cockayne2017-dj}
-Grushka-Cockayne, Y., Jose, V. R.~R. \harvardand\ Lichtendahl, K.~C.
+\harvarditem{Grushka-Cockayne, Jose \harvardand\
+  Lichtendahl~Jr}{2017}{Grushka-Cockayne2017-dj}
+Grushka-Cockayne, Y., Jose, V. R.~R. \harvardand\ Lichtendahl~Jr, K.~C.
   \harvardyearleft 2017\harvardyearright , `Ensembles of overfit and
   overconfident forecasts', {\em Management Science} {\bf 63}(4),~1110--1130.
+
+\harvarditem{Grushka-Cockayne, Lichtendahl, Jose \harvardand\
+  Winkler}{2017}{Grushka-Cockayne2017-eg}
+Grushka-Cockayne, Y., Lichtendahl, K.~C., Jose, V. R.~R. \harvardand\ Winkler,
+  R.~L.  \harvardyearleft 2017\harvardyearright , `Quantile evaluation,
+  sensitivity to bracketing, and sharing business payoffs', {\em Operations
+  Research} {\bf 65}(3),~712--728.
 
 \harvarditem{Gunter}{1992}{Gunter1992-go}
 Gunter, S.~I.  \harvardyearleft 1992\harvardyearright , `Nonnegativity
@@ -567,8 +579,8 @@ Jore, A.~S., Mitchell, J. \harvardand\ Vahey, S.~P.  \harvardyearleft
   25}(4),~621--634.
 
 \harvarditem[Jose et~al.]{Jose, Grushka-Cockayne \harvardand\
-  Lichtendahl}{2014}{Jose2014-uh}
-Jose, V. R.~R., Grushka-Cockayne, Y. \harvardand\ Lichtendahl, K.~C.
+  Lichtendahl~Jr}{2014}{Jose2014-uh}
+Jose, V. R.~R., Grushka-Cockayne, Y. \harvardand\ Lichtendahl~Jr, K.~C.
   \harvardyearleft 2014\harvardyearright , `Trimmed opinion pools and the
   crowd's calibration problem', {\em Management Science} {\bf 60}(2),~463--475.
 
@@ -611,6 +623,11 @@ Kang, Y., Spiliotis, E., Petropoulos, F., Athiniotis, N., Li, F. \harvardand\
 Kapetanios, G., Mitchell, J., Price, S. \harvardand\ Fawcett, N.
   \harvardyearleft 2015\harvardyearright , `Generalised density forecast
   combinations', {\em Journal of Econometrics} {\bf 188}(1),~150--165.
+
+\harvarditem[Kim et~al.]{Kim, Fakoor, Mueller, Tibshirani \harvardand\
+  Smola}{2021}{Kim2021-wa}
+Kim, T., Fakoor, R., Mueller, J., Tibshirani, R.~J. \harvardand\ Smola, A.~J.
+  \harvardyearleft 2021\harvardyearright , `Deep quantile aggregation'.
 
 \harvarditem{Kohavi}{1995}{Kohavi1995-zv}
 Kohavi, R.  \harvardyearleft 1995\harvardyearright , A study of
@@ -690,15 +707,15 @@ Li, X., Kang, Y. \harvardand\ Li, F.  \harvardyearleft 2020\harvardyearright ,
   `Forecasting with time series imaging', {\em Expert Systems with
   Applications} {\bf 160}(113680),~113680.
 
-\harvarditem[Lichtendahl et~al.]{Lichtendahl, Grushka-Cockayne \harvardand\
-  Winkler}{2013}{Lichtendahl2013-rt}
-Lichtendahl, Jr, K.~C., Grushka-Cockayne, Y. \harvardand\ Winkler, R.~L.
+\harvarditem[Lichtendahl~Jr et~al.]{Lichtendahl~Jr, Grushka-Cockayne
+  \harvardand\ Winkler}{2013}{Lichtendahl2013-rt}
+Lichtendahl~Jr, K.~C., Grushka-Cockayne, Y. \harvardand\ Winkler, R.~L.
   \harvardyearleft 2013\harvardyearright , `Is it better to average
   probabilities or quantiles?', {\em Management Science} {\bf
   59}(7),~1594--1611.
 
-\harvarditem{Lichtendahl \harvardand\ Winkler}{2020}{Lichtendahl2020-ut}
-Lichtendahl, K.~C. \harvardand\ Winkler, R.~L.  \harvardyearleft
+\harvarditem{Lichtendahl~Jr \harvardand\ Winkler}{2020}{Lichtendahl2020-ut}
+Lichtendahl~Jr, K.~C. \harvardand\ Winkler, R.~L.  \harvardyearleft
   2020\harvardyearright , `Why do some combinations perform better than
   others?', {\em International Journal of Forecasting} {\bf 36}(1),~142--149.
 
@@ -1010,6 +1027,11 @@ Rasp, S. \harvardand\ Thuerey, N.  \harvardyearleft 2021\harvardyearright ,
   climate simulations: A new model for {WeatherBench}', {\em Journal of
   Advances in Modeling Earth Systems} {\bf 13}(2).
 
+\harvarditem{Ratcliff}{1979}{Ratcliff1979-cb}
+Ratcliff, R.  \harvardyearleft 1979\harvardyearright , `Group reaction time
+  distributions and an analysis of distribution statistics', {\em Psychological
+  Bulletin} {\bf 86}(3),~446--461.
+
 \harvarditem[Ribeiro et~al.]{Ribeiro, Mariani \harvardand\
   Coelho}{2019}{Ribeiro2019-wk}
 Ribeiro, G.~T., Mariani, V.~C. \harvardand\ Coelho, L. d.~S.  \harvardyearleft
@@ -1124,6 +1146,12 @@ Talagala, T.~S., Hyndman, R.~J. \harvardand\ Athanasopoulos, G.
 Terui, N. \harvardand\ van Dijk, H.~K.  \harvardyearleft 2002\harvardyearright
   , `Combined forecasts from linear and nonlinear time series models', {\em
   International Journal of Forecasting} {\bf 18}(3),~421--438.
+
+\harvarditem{Thomas \harvardand\ Ross}{1980}{Thomas1980-lp}
+Thomas, E. A.~C. \harvardand\ Ross, B.~H.  \harvardyearleft
+  1980\harvardyearright , `On appropriate procedures for combining probability
+  distributions within the same family', {\em Journal of Mathematical
+  Psychology} {\bf 21}(2),~136--152.
 
 \harvarditem[Thomson et~al.]{Thomson, Pollock, {\"O}nkal \harvardand\
   G{\"o}n{\"u}l}{2019}{Thomson2019-al}
