@@ -428,6 +428,27 @@ Nonetheless, it has been demonstrated that the raw ensemble forecasts typically 
 
 Recently, the community of weather forecasting is starting to explore the potentials of machine learning techniques, especially in the context of ensemble forecasting, in the sense of including arbitrary predictors and accounting for nonlinear dynamics of the Earth system that are not captured by numerical models \citep{Dueben2021-fe}. One use of machine learning techniques is to complement ensemble NWP \citep[numerical weather prediction, see, e.g.,][for a summary of its revolution]{Bauer2015-dg,Benjamin2019-zp} forecasts using an additive postprocessing step for correction of ensemble bias and spread \citep{Rasp2018-zu,Scher2018-dm,Gronquist2021-no}. Machine learning techniques, such as neural networks, have also been used as data-driven forecast tools, alternative to NWP models which are based on the physical laws governing the atmosphere, to generate base forecasts, leading to gains in computational efficiency regarding creating ensemble forecasts with much large ensemble sizes than the ones available today \citep{Dueben2018-ln,Scher2018-of,Rasp2021-az,Scher2021-ee}.
 
+\subsubsection{Quantile forecast combinations}
+\label{sec:quantile_forecast_combinations}
+
+Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}
+
+inevitably involve a loss of information compared
+with consideration of the `whole' density.
+
+\paragraph{Simple combination heuristics}
+\begin{itemize}
+  \item Six heuristics \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv} proposed for combining intervals.
+  \item Generalize these heuristics to the combination of quantile forecasts.
+  \item Limitations and the selection of heuristics in different forecasting problems.
+\end{itemize}
+
+quantile crossing
+
+%% - (interval)Combining Prediction Intervals in the M4 Competition
+%% - Combining Interval Forecasts.
+%% - (quantile)Combining Probabilistic Load Forecasts
+
 \subsection{Probabilistic forecast combinations}
 \label{sec:probabilistic_forecast_combinations}
 
@@ -475,32 +496,10 @@ with $\boldsymbol{F}_{t+h}=\left(1, \boldsymbol{x}_{t+h}^{\prime}\right)^{\prime
 &y_{t+h}=\boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}+\nu_{t+h}, \quad \nu_{t+h} \sim N\left(0, v_{t+h}\right), \nonumber \\
 &\boldsymbol{\theta}_{t+h}=\boldsymbol{\theta}_{t+h-1}+\boldsymbol{\omega}_{t+h}, \quad \boldsymbol{\omega}_{t+h} \sim N\left(\boldsymbol{0}, v_{t+h} \boldsymbol{W}_{t+h}\right) \nonumber
 \end{align}
-where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random walk with innovations variance matrix $v_{t+h} \boldsymbol{W}_{t+h}$, and $v_{t+h}$ identifies the residual variance in forecasting $y_{t+h}$ given past information and the set of agent forecast distributions. It is suggested to customize BPS models specific to the forecast horizon in consideration of the reality that a forecasting model may present completely different forecast performance in different forecast horizons. MCMC methods are required for this posterior analysis. Their results of forecasting a quarterly series of inflation rate showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA ensemble techniques in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
+where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random walk with innovations variance matrix $v_{t+h} \boldsymbol{W}_{t+h}$, and $v_{t+h}$ identifies the residual variance in forecasting $y_{t+h}$ given past information and the set of agent forecast distributions. It is suggested to customize BPS models specific to the forecast horizon in consideration of the reality that a forecasting model may present completely different forecast performance in different forecast horizons. MCMC methods are required for this posterior inference and dependencies among agents, accordingly, are involved in sequentially updated estimates of the BPS parameters. Their results of forecasting a quarterly series of inflation rate showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA ensemble techniques in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
 
 % \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
 % we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
-
-\subsubsection{Quantile forecast combinations}
-\label{sec:quantile_forecast_combinations}
-
-Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}
-
-inevitably involve a loss of information compared
-with consideration of the `whole' density.
-
-\paragraph{Simple combination heuristics}
-\begin{itemize}
-  \item Six heuristics \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv} proposed for combining intervals.
-  \item Generalize these heuristics to the combination of quantile forecasts.
-  \item Limitations and the selection of heuristics in different forecasting problems.
-\end{itemize}
-
-quantile crossing
-
-%% - (interval)Combining Prediction Intervals in the M4 Competition
-%% - Combining Interval Forecasts.
-%% - (quantile)Combining Probabilistic Load Forecasts
-
 
 \section{Boosting in forecasting}
 \label{sec:boosting}
