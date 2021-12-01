@@ -151,6 +151,20 @@ Blanc, S.~M. \harvardand\ Setzer, T.  \harvardyearleft 2020\harvardyearright ,
   `{Bias--Variance} {Trade-Off} and shrinkage of weights in forecast
   combination', {\em Management Science} {\bf 66}(12),~5720--5737.
 
+\harvarditem[Brooks et~al.]{Brooks, Ray, Bien, Bracher, Rumack, Tibshirani
+  \harvardand\ Reich}{2020}{Brooks2020-sg}
+Brooks, L.~C., Ray, E.~L., Bien, J., Bracher, J., Rumack, A., Tibshirani, R.~J.
+  \harvardand\ Reich, N.~G.  \harvardyearleft 2020\harvardyearright ,
+  `Comparing ensemble approaches for short-term probabilistic {COVID}-19
+  forecasts in the {U.S.}', {\em International Institute of Forecasters} .
+
+\harvarditem[Browell et~al.]{Browell, Gilbert, Tawn \harvardand\
+  May}{2020}{Browell2020-pa}
+Browell, J., Gilbert, C., Tawn, R. \harvardand\ May, L.  \harvardyearleft
+  2020\harvardyearright , Quantile combination for the {EEM20} wind power
+  forecasting competition, {\em in} `2020 17th International Conference on the
+  European Energy Market ({EEM})', ieeexplore.ieee.org, pp.~1--6.
+
 \harvarditem[Brown et~al.]{Brown, Wyatt, Harris \harvardand\
   Yao}{2005}{Brown2005-aa}
 Brown, G., Wyatt, J., Harris, R. \harvardand\ Yao, X.  \harvardyearleft
@@ -1102,6 +1116,11 @@ Smith, J. \harvardand\ Wallis, K.~F.  \harvardyearleft 2009\harvardyearright ,
   `A simple explanation of the forecast combination puzzle', {\em Oxford
   Bulletin of Economics and Statistics} {\bf 71}(3),~331--355.
 
+\harvarditem{Smyl \harvardand\ Hua}{2019}{Smyl2019-av}
+Smyl, S. \harvardand\ Hua, N.~G.  \harvardyearleft 2019\harvardyearright ,
+  `Machine learning methods for {GEFCom2017} probabilistic load orecasting',
+  {\em International Journal of Forecasting} {\bf 35}(4),~1424--1431.
+
 \harvarditem{Stock \harvardand\ Watson}{1998}{Stock1998-np}
 Stock, J.~H. \harvardand\ Watson, M.~W.  \harvardyearleft 1998\harvardyearright
   , A comparison of linear and nonlinear univariate models for forecasting
@@ -1185,6 +1204,11 @@ Vannitsem, S., Bremnes, J.~B., Demaeyer, J., Evans, G.~R., Flowerdew, J.,
   weather forecasts: Review, challenges, and avenues in a big data world', {\em
   Bulletin of the American Meteorological Society} {\bf 102}(3),~E681--E699.
 
+\harvarditem{Vincent}{1912}{vincent1912-fu}
+Vincent, S.~B.  \harvardyearleft 1912\harvardyearright , `The functions of the
+  vibrissae in the behavior of the white rat', {\em Behavioral Monographs} {\bf
+  1}.
+
 \harvarditem{Wallis}{2005}{Wallis2005-yf}
 Wallis, K.~F.  \harvardyearleft 2005\harvardyearright , `Combining density and
   interval forecasts: A modest proposal', {\em Oxford Bulletin of Economics and
@@ -1258,6 +1282,13 @@ Yang, Y.  \harvardyearleft 2005\harvardyearright , `Can the strengths of aic
 Yao, X. \harvardand\ Islam, M.~M.  \harvardyearleft 2008\harvardyearright ,
   `Evolving artificial neural network ensembles', {\em IEEE Computational
   Intelligence Magazine} {\bf 3}(1),~31--42.
+
+\harvarditem[Zhang et~al.]{Zhang, Wang, Zhang, Wang \harvardand\
+  Zhang}{2020}{Zhang2020-dm}
+Zhang, S., Wang, Y., Zhang, Y., Wang, D. \harvardand\ Zhang, N.
+  \harvardyearleft 2020\harvardyearright , `Load probability density
+  forecasting by transforming and combining quantile forecasts', {\em Applied
+  Energy} {\bf 277},~115600.
 
 \harvarditem{Zhao \harvardand\ Feng}{2020}{Zhao2020-ep}
 Zhao, S. \harvardand\ Feng, Y.  \harvardyearleft 2020\harvardyearright ,

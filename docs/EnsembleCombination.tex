@@ -194,16 +194,14 @@ The outstanding performance of weighted combinations based on information criter
 Some effort has been directed toward the use of Bayesian approaches to updating forecast combination weights in face of new information from various sources. Recall that obtaining reliable estimates of the covariance matrix $\boldsymbol{\Sigma}$ (the time and horizon subscripts are dropped for simplicity) of forecast errors with the correlation being ignored or not, is a major challenge in the general case. With this in mind, \cite{Bunn1975-vz} suggested the idea of a Bayesian combination on the basis of the probability of respective forecasting model performing the best on any given occasion. Considering the beta and the Dirichlet distributions arising as the conjugate priors for the binomial and multinomial processes respectively, the suggested non-parametric method performs well when there is relatively little past data by means of attaching prior subjective probabilities to individual forecasts \citep{Bunn1985-vo,De_Menezes2000-vd}. \cite{Oller1978-wx} presented another approach to involving subjective probability in a Bayesian updating scheme based on the self-scoring weights proportional to the evaluation of the expert's forecasting ability.
 
 A different theme of research has also advocated the incorporation of prior information into the estimation of combination weights, but with the weights being shrunk toward some prior mean under a regression-based combination framework \citep{Newbold2002-wa}. Assuming that the vector of forecast errors was normally distributed, \cite{Clemen1986-pd} developed a Bayesian approach with the conjugate prior for $\boldsymbol{\Sigma}$, represented by an inverted Wishart distribution with covariance matrix $\boldsymbol{\Sigma}_{0}$ and scalar degrees of freedom $\nu_{0}$. Again we drop time and horizon subscripts for simplicity. If the last $n$ observations are used to estimate $\boldsymbol{\Sigma}$, the combination weights derived from the posterior distribution for $\boldsymbol{\Sigma}$ are
-\begin{align}
-\nonumber
+\begin{align*}
 \boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*-1}\mathbf{1}}{\mathbf{1}^{\prime} \boldsymbol{\Sigma}^{*-1} \mathbf{1}},
-\end{align}
+\end{align*}
 where $\boldsymbol{\Sigma}^{*}=\left[\left(\nu_{0} \boldsymbol{\Sigma}_{0}^{-1}+n \hat{\boldsymbol{\Sigma}}^{-1}\right) /(\nu_{0}+n)\right]^{-1}$ and $\hat{\boldsymbol{\Sigma}}$ is the sample covariance matrix.
 Compared to estimating $\boldsymbol{\Sigma}$ using past data or treating it as a diagonal matrix, the proposed approach yields superiority, in the sense of providing a relatively stable estimation and allowing for correlations by specifying the prior estimate $\boldsymbol{\Sigma}_{0}$. The subsequent work by \cite{Diebold1990-fk} allowed the incorporation of the standard normal-gamma conjugate prior by considering a normal regression-based combination
-\begin{align}
-\nonumber
+\begin{align*}
 \mathbf{y}=\hat{\mathbf{Y}} \boldsymbol{w}+\boldsymbol{\varepsilon}, \quad \boldsymbol{\varepsilon} \sim N\left(\mathbf{0}, \boldsymbol{\sigma}^{2} \mathbf{I}\right),
-\end{align}
+\end{align*}
 where $\mathbf{y}$ and $\boldsymbol{\varepsilon}$ are $T$-dimensional vectors, and $\hat{\mathbf{Y}}$ is the $T \times N$ matrix of constituent forecasts. The approach results in estimated combination weights which can be viewed as a matrix weighted average of those for the two polar cases, least squares and prior weights. It can provide a rational transition between subjective and data-based estimation of the combination weights. In light of the fact that Bayesian approaches have been mostly employed to construct combinations of probability forecasts, we will elaborate on other newly developed methods of determining combination weights in a Bayesian context in the following Section \ref{sec:probabilistic_forecasts}.
 
 \subsubsection{Nonlinear combinations}
@@ -225,10 +223,9 @@ where $\bar{y}_{t+h|t}$ and $\hat{\sigma}_{y t+h|t}$ were the in-sample mean and
 However, these empirical evidence for the gains from incorporating nonlinear combinations was given based on less than ten time series (mainly economic or financial data), and thus was not statistically significant and probably produced by the dodgy selection of data. Besides, these nonlinear combination methods suffered from other drawbacks, including the neglect of correlation in forecast errors, the instability of parameter estimation, and the multicollinearity issue caused by the overlap in the information sets used to produce the individual forecasts. The superiority of nonlinear combinations over linear combining schemes, thus, need to be further investigated.
 
 Other researchers sought to construct nonlinear combinations via including a nonlinear term to cope with the case where the forecast errors from constituent models were correlated. This combination mechanism can be generalized to the following form
-\begin{align}
-\nonumber
+\begin{align*}
 \tilde{y}_{t+h|t} =\beta_{0}+\sum_{j=1}^{N} \beta_{j} \hat{y}_{t+h|t, j}+\sum_{i,j=1 \atop i<j}^{N}\pi_{ij}v_{i j}.
-\end{align}
+\end{align*}
 By this way, the usual framework for linear combinations is extended. The involved nonlinear terms take various definitions. For example, \cite{Freitas2006-fn} intuitively defined $v_{i j}$ as the product of individual forecasts from different models, $\hat{y}_{t+h|t, i} \cdot \hat{y}_{t+h|t, j}$, while \cite{Adhikari2012-ur} took into account the linear correlations among the forecast pairs by including the term, $(\hat{y}_{t+h|t, i}-\bar{y}_{i})(\hat{y}_{t+h|t, j}-\bar{y}_{j})/(\sigma_{i}\sigma_{j})^2$, where $\bar{y}_{i}$ and $\sigma_{i}$ were the mean and standard deviation of the $i$th model. Moreover, \cite{Adhikari2015-bb} defined the nonlinear term using $\left(\hat{z}_{i}-m_{i j} \hat{z}_{j}\right)\left(\hat{z}_{j}-m_{j i} \hat{z}_{i}\right)$, where the term $m_{i j}$ was the degree of mutual dependency between the $i$th and $j$th forecasting model, and $\hat{z}_{i}$ was the standardized individual forecasts using the mean $\bar{y}_{i}$ and standard deviation $\sigma_{i}$. Five correlation measures were investigated for measuring the mutual associations between two different forecasts.
 
 Clearly, the area of considering non-linearities in forecast combinations requires further research.
@@ -337,15 +334,15 @@ Equation~\eqref{eq:variance_linear_pooling} decomposes the variance of the ensem
 
 On the other hand, \cite{Hora2004-fz} demonstrated, both from theoretical and empirical aspects, that linear pooling might work to provide better calibrated forecast than the individual distributions when individual forecasts tended to be overconfident. Their empirical results based on expert judgement suggested increasing the number of experts to five or six to achieve the improvement in calibration. This finding helps to account for the success of the linear pooling in applications. Interestingly, \cite{Jose2014-uh} highlighted that if the experts were overconfident and had a low diversity, the linear pooling might remain overconfident. \cite{Lichtendahl2013-rt} identified three factors that manipulate the calibration of the probability forecast derived from linear pooling: (i) the number of constituent forecasts, (ii) the degree to which the constituent forecasts are overconfident, and (iii) the degree of the constituents disagreement on the location (e.g., mean) of quantities one is interested in.
 
-In principle, probability forecasts can be recalibrated before or after the pooling to correct for miscalibration \citep{Turner2014-za}. However, it is challenging to appraise the degree of miscalibration, which may vary considerably among different forecasts and over time, and therefore to recalibrate accordingly. Some effort has been directed toward the development of alternative ensemble methods to address the calibration issue. For example, \cite{Jose2014-uh} suggested the `trimmed opinion pool', which intended to trim away some individual forecasts from a linear opinion pool before the mixture of the component forecasts. Specifically, exterior trimming that trims away forecasts with low or high means or cdf values serves as a way to address underconfidence by decreasing the variance. Conversely, interior trimming that trims away forecasts with moderate means or cdf values is suggested to mitigate overconfidence via increasing the variance. The improvement on forecasting performance offered by trimming was confirmed by \cite{Grushka-Cockayne2017-dj} at a more foundational level. Some researchers prefer to nonlinear alternatives, including generalized linear pool, the spread-adjusted linear pool, and the beta-transformed linear pool, in terms of delivering better calibrated ensemble probability forecasts; these are discussed in Section \ref{sec:nonlinear_pooling}. Instead of mixing probability forecasts mentioned above, \cite{Lichtendahl2013-rt} recommended to average quantile forecasts (see Section \ref{sec:quantile_forecast_combinations}) based on the supportive results both theoretically and empirically.
+In principle, probability forecasts can be recalibrated before or after the pooling to correct for miscalibration \citep{Turner2014-za}. However, it is challenging to appraise the degree of miscalibration, which may vary considerably among different forecasts and over time, and therefore to recalibrate accordingly. Some effort has been directed toward the development of alternative ensemble methods to address the calibration issue. For example, \cite{Jose2014-uh} suggested the `trimmed opinion pool', which intended to trim away some individual forecasts from a linear opinion pool before the mixture of the component forecasts. Specifically, exterior trimming that trims away forecasts with low or high means or cdf values serves as a way to address underconfidence by decreasing the variance. Conversely, interior trimming that trims away forecasts with moderate means or cdf values is suggested to mitigate overconfidence via increasing the variance. The improvement on forecasting performance offered by trimming was confirmed by \cite{Grushka-Cockayne2017-dj} at a more foundational level. Some researchers prefer to nonlinear alternatives, including generalized linear pool, the spread-adjusted linear pool, and the beta-transformed linear pool, in terms of delivering better calibrated ensemble probability forecasts; these are discussed in Section \ref{sec:nonlinear_pooling}. Instead of mixing probability forecasts mentioned above, \cite{Lichtendahl2013-rt} recommended to average quantile forecasts (see Section \ref{sec:quantile_forecast_ensembles}) based on the supportive results both theoretically and empirically.
 
 The key practical issue determining the success (or failure) of a linear pooling is how the weights for the individual probability forecasts in the finite mixture should be estimated. Most simply, equal weights are worthy of consideration, while determining optimal weights is particularly challenging in the case of probability forecasts with little historical data available. Linear pooling with equal weights is easy to understand and implement, commonly yielding robust and stable outcomes. For reviews, see, e.g., \cite{Wallis2005-yf} and \cite{OHagan2006-jk}. A leading example is the Survey of Professional Forecasters (SPF) in the US, which publishes the mixed probability forecasts (in the form of histograms) for inflation and GDP growth using equal weights. As experience of combining point forecasts has taught us, the equally weighted approach often turns out to be hard to beat. An important reason is that it avoids parameter estimation error that often existed in weighted approaches; see Section \ref{sec:forecast_combination_puzzle} for more details and illustrations.
 
 Motivated by the optimal weights in combining point forecasts in the sense of minimizing the MSE loss, \cite{Hall2007-lh} proposed a practical way to achieve the most `optimal' ensemble of probability forecasts. Specifically, \cite{Hall2007-lh} identified the set of optimal weights by minimizing the Kullback–Leibler Information Criterion (KLIC) distance between the ensemble probability forecast $\tilde{p}(y_{\tau+h}|I_{\tau})$ and the true (but unknown) probability distribution $f(y_{\tau+h})$ ($\tau=1,\ldots,t$). The KLIC distance is defined as
-\begin{align}
-\mathrm{KLIC} &= \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{p}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} \nonumber \\
-&=E\left[\log f(y_{\tau+h})-\log \tilde{p}(y_{\tau+h}|I_{\tau})\right]. \nonumber
-\end{align}
+\begin{align*}
+\mathrm{KLIC} &= \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{p}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} \\
+&=E\left[\log f(y_{\tau+h})-\log \tilde{p}(y_{\tau+h}|I_{\tau})\right].
+\end{align*}
 
 Under the asymptotic theory that the number of time periods $t$ grows to infinity, the problem of minimizing the KLIC distance reduces to the maximization of the average logarithmic score of the ensemble probability forecast. Thus, the optimal weight vector $\boldsymbol{w}_{t+h|t}$ is given by
 \begin{align}
@@ -397,10 +394,10 @@ Motivated by the seminal work by \cite{Dawid1995-jj}, \cite{Gneiting2013-hl} dev
 where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights that sum to one, and $g$ denotes a continuous and strictly monotone function with the inverse $g^{-1}$. The linear, harmonic and logarithmic (geometric) pools become special cases of Equation~\eqref{eq:glp} for $g(x)=x$, $g(x)=1/x$ and $g(x)=\log(x)$, respectively. However, \cite{Gneiting2013-hl} highlighted that the generalized pooling strategy might fail to be flexibly disperse for calibration.
 
 \cite{Gneiting2013-hl} proposed the Spread-adjusted Linear Pool (SLP) to allow one to address the calibration problem. Define $P_{i}^{0}$ and $p_{i}^{0}$ via $P_{i}(y_{t+h}|I_{t})=P_{i}^{0}(y_{t+h}-\eta_{i}|I_{t})$ and $p_{i}(y_{t+h}|I_{t})=p_{i}^{0}(y_{t+h}-\eta_{i}|I_{t})$, where $\eta_{i}$ is the unique median of $P_{i}(y_{t+h}|I_{t})$. Then the SLP has the ensemble cdf and the corresponding density,
-\begin{align}
-&\tilde{P}(y_{t+h}|I_{t})=\sum_{i=1}^{N} w_{t+h|t,i} P_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right) \quad \text { and } \nonumber\\
-&\tilde{p}(y_{t+h}|I_{t})=\frac{1}{c} \sum_{i=1}^{N} w_{t+h|t,i} p_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right), \nonumber
-\end{align}
+\begin{align*}
+&\tilde{P}(y_{t+h}|I_{t})=\sum_{i=1}^{N} w_{t+h|t,i} P_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right) \quad \text { and }\\
+&\tilde{p}(y_{t+h}|I_{t})=\frac{1}{c} \sum_{i=1}^{N} w_{t+h|t,i} p_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right),
+\end{align*}
 respectively, where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights with $\sum_{i=1}^{N}w_{t+h|t,i}=1$, and $c$ is a strictly positive spread adjustment parameter. The traditional linear pool arises as a special case for $c = 1$. A value of $c < 1$ is suggested for neutrally confident or underconfident component forecasts, while a value $c \geq 1$ is suggested for overconfident components. Moreover, one can introduce spread adjustment parameters varying with the components in case that the degrees of miscalibration of the components differ to a high extent.
 
 The cumulative beta distribution is widely employed for recalibration purpose because of the flexibility of its shape \citep[see, e.g.,][]{Graham1996-qc}. \cite{Ranjan2010-jl} introduced a Beta-transformed Linear Pool (BLP) that merged the traditional linear pool with a beta transform to achieve calibration. The BLP takes the form
@@ -419,22 +416,33 @@ where $\omega_{1}, \ldots, \omega_{K}$ denote beta mixture weights. The proposed
 
 The essence of aforementioned nonlinear pooling methods is to perform ingenious transformations that may be nonlinear to either the component forecasts or the linearly pooled forecasts in order to restore calibration and sharpness. While \cite{Kapetanios2015-bb} generalized the literature by incorporating the dependence of the mixture weights on the variable one is trying to forecast, allowing the weights themselves to introduce the nonlinearities and thus leading to outcome-dependent density pooling. Clearly, the forecast performances of nonlinear pooling approaches largely depend on diverse factors, including the features of the target data, mixture component models, and training periods, thereby deserve further research. This is in agreement with \cite{Baran2018-nm} who investigated the performances of state of the art forecast ensemble methods through case studies and found no substantial differences in forecast performance between the simple linear pool and the theoretically superior but cumbersome nonlinear pooling approaches.
 
-\subsubsection{Meteorological ensembles}
-\label{sec:meteorological_ensembles}
+\subsubsection{Quantile forecast ensembles}
+\label{sec:quantile_forecast_ensembles}
 
-`Ensemble' has been developed originally in the meteorological literature in a disparate way from other forecasting activities. Instead of mixing the individual forecast densities from multiple models as some aggregation, such as linear pooling in Section \ref{sec:linear_pooling}, an ensemble weather forecast is constructed from a set of point forecasts of the same weather quantity of interest, based on perturbed initial atmospheric states \citep[e.g.,][]{Maqsood2004-pe,Gneiting2005-yn} and/or different model formulation \citep[e.g.,][]{Buizza1999-st,Buizza2005-wf}. In this light, two major sources of forecast uncertainty, initial condition uncertainty resulting from the chaotic nature of atmosphere and model uncertainty arising from definitely imperfect numerical models, are addressed \citep{Lorenz1963-yn,Weigel2008-vy,Baran2014-tm}. This enables a measure of uncertainty to be attached and makes an ensemble weather forecast more valuable than a single `deterministic' forecast, providing an inherently probabilistic assessment.
+% quantile aggregation
+In addition to probability forecasts, forecasts of the uncertain quantity of interest can be elicited in the form of quantiles, which are the inverse of the corresponding probability forecasts characterized by the cumulative distribution functions (cdfs). In this case, aggregating quantile forecasts from multiple models to yield improved forecast skill would be quite meaningful. Quantile aggregation, also known as Vincentization \citep{vincent1912-fu}, involves averaging the individuals' quantile functions rather than their inverse as in linear pooling. This indicates that quantile averaging entails horizontal averaging of the individuals' cdfs while linear pooling entails vertical averaging \citep{Lichtendahl2013-rt}.
 
-Nonetheless, it has been demonstrated that the raw ensemble forecasts typically present systematic errors regarding bias \citep{Atger2003-lx,Mass2003-bc} and dispersion \citep{Buizza2005-wf,Sloughter2010-ae}, with a tendency for the truth frequently falling outside of the range of the ensemble. Various statistical postprocessing methods have been introduced accordingly, with the aim of improving the forecast quality, to correct these errors by estimating representable relationships between the response variable of interest and predictors. Most postprocessing methods can be categorized into two groups: parametric approaches with distribution-based assumptions, such as ensemble model output statistics \citep[EMOS,][]{Gneiting2005-ua} models and BMA \citep{Raftery2005-xi}, and nonparametric approaches with distribution-free assumptions, such as the analog-based method \citep[e.g.,][]{Delle_Monache2013-os} and the quantile regression forest \citep{Taillardat2019-ni}. See \cite{Vannitsem2021-bg} for a recent review of statistical postprocessing methods as well as their potentials and challenges.
+% general formula
+For $i=1,\ldots,N$, let $P_{i}(y_{t+h}|I_{t})$ denote the individual cdf with corresponding probability density function (pdf) given by $p_{i}(y_{t+h}|I_{t})$, let $Q_{t+h|t,i}(\tau) = P_{t+h|t,i}^{-1}(\tau)$ denote the corresponding quantile function. The standard way to build ensembles of quantile functions is then given by
 
-Recently, the community of weather forecasting is starting to explore the potentials of machine learning techniques, especially in the context of ensemble forecasting, in the sense of including arbitrary predictors and accounting for nonlinear dynamics of the Earth system that are not captured by numerical models \citep{Dueben2021-fe}. One use of machine learning techniques is to complement ensemble NWP \citep[numerical weather prediction, see, e.g.,][for a summary of its revolution]{Bauer2015-dg,Benjamin2019-zp} forecasts using an additive postprocessing step for correction of ensemble bias and spread \citep{Rasp2018-zu,Scher2018-dm,Gronquist2021-no}. Machine learning techniques, such as neural networks, have also been used as data-driven forecast tools, alternative to NWP models which are based on the physical laws governing the atmosphere, to generate base forecasts, leading to gains in computational efficiency regarding creating ensemble forecasts with much large ensemble sizes than the ones available today \citep{Dueben2018-ln,Scher2018-of,Rasp2021-az,Scher2021-ee}.
 
-\subsubsection{Quantile forecast combinations}
-\label{sec:quantile_forecast_combinations}
+
+
+
+exposit conceptual differences between averaging in the space of quantiles versus probabilities. Throughout this section, when we use the term average, we actually refer (more broadly) to a weighted linear combination with weights $w_{j}\geq 0$ that sum to 1.
+
+
+----------\-
+
+Quantile aggregation has also received some attention, with a macroeconomic application illustrating its utility provided by Busetti (2017); quantile aggregation involves taking a (perhaps weighted) linear combination of the i = 1, ..., N quantile functions rather than their inverse as in the linear opinion pool.
+Interestingly, unlike (2), quantile aggregation means that the combined density $p(yt|I)$ belongs to the same family as the individual densities p(yt|Ii) assuming these are all from the same location-scale (e.g. Gaussian) family.
+
+----------\-
 
 Quantile averaging (Vincentization): the general form (inverse)
 \begin{itemize}
   \item Definition and formula. Averaging quantile functions of the individual forecast distributions. Assume the whole cdfs are known and need to compute the entire quantile function.
-  \item Differences between quantile averaging and linear pooling.
+  \item Conceptual differences between quantile averaging and linear pooling.
   \begin{itemize}
     \item Horizontal averaging rather than vertical averaging.
     \item Under location-scale family \citep[properties,][]{Ratcliff1979-cb,Thomas1980-lp}
@@ -446,6 +454,7 @@ Quantile averaging (Vincentization): the general form (inverse)
     \end{itemize}
     \item When not available in closed form, the distribution derived from quantile averaging can be obtained by numerical approximation as the derivative of the inverse of the quantile function.
     \item Recent studies (two).
+    % we consider the implications of choosing equal weights, as this approach tends to be frequently used in practice.
     \begin{itemize}
       \item \cite{Lichtendahl2013-rt} focus on simple averaging and quantile averaging is overall preferable. Because shoulders, shape and tail. Even when the linear pooling forecast is overconfident, the shape of the average quantile forecast still offers the possibility of a better forecast. Other three recommendations. This study suggests that a generalized-average
       quantile forecast, with its additional flexibility, may offer further improvements.
@@ -460,13 +469,15 @@ Quantile averaging (Vincentization): the general form (inverse)
 
 % find ... useful for aggregation purposes.
 
-Discrete set of quantiles: special case. Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA is also quantile averaging.
+Quantiles over a discrete set of quantile levels: special case (with a limited number of quantiles). Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA \citep[e.g.,][]{Smyl2019-av,Brooks2020-sg} is also quantile averaging.
 
 Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though.
 
-Level-dependent weights. The importance of allowing for level-dependent weights in a linear combination of quantiles. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models)
+Level-dependent weights. The importance of allowing for level-dependent weights \citep{Brooks2020-sg,Browell2020-pa} in a linear combination of quantiles. Properly trained, the ensemble should accounting for the strengths/weaknesses of each constituent model, and hence be superior in accuracy to any of the base models. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models). Optimal ensemble estimate. Assess the benefits of increasingly flexible aggregators.
+% A decision maker may wish to tailor the weighting function to reflect the relative impor-tance of certain reported quantiles, or to match certain business payoffs
 
-Transformation prior to combination. They assume that the continuous distribution function was smooth.
+
+Transformation prior to combination \citep{Zhang2020-dm}. They assume that the continuous distribution function was smooth.
 
 Quantile crossing issue
 \begin{itemize}
@@ -477,6 +488,7 @@ Quantile crossing issue
 
 Interval combinations. Intervals are usually constructed from two quantiles. Not always, but they usually are.
 \begin{itemize}
+  \item Applying equal weights to interval forecasts will not ensure the nominal coverage rate, because the mixing of distributions is governed by different rules (Wallis, 2005).
   \item Combining Prediction Intervals in the M4 Competition.
   \item Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}.
   \item Simple combination heuristics.
@@ -486,6 +498,15 @@ Interval combinations. Intervals are usually constructed from two quantiles. Not
     \item Limitations and the selection of heuristics in different forecasting problems.
   \end{itemize}
 \end{itemize}
+
+\subsubsection{Meteorological ensembles}
+\label{sec:meteorological_ensembles}
+
+`Ensemble' has been developed originally in the meteorological literature in a disparate way from other forecasting activities. Instead of mixing the individual forecast densities from multiple models as some aggregation, such as linear pooling in Section \ref{sec:linear_pooling}, an ensemble weather forecast is constructed from a set of point forecasts of the same weather quantity of interest, based on perturbed initial atmospheric states \citep[e.g.,][]{Maqsood2004-pe,Gneiting2005-yn} and/or different model formulation \citep[e.g.,][]{Buizza1999-st,Buizza2005-wf}. In this light, two major sources of forecast uncertainty, initial condition uncertainty resulting from the chaotic nature of atmosphere and model uncertainty arising from definitely imperfect numerical models, are addressed \citep{Lorenz1963-yn,Weigel2008-vy,Baran2014-tm}. This enables a measure of uncertainty to be attached and makes an ensemble weather forecast more valuable than a single `deterministic' forecast, providing an inherently probabilistic assessment.
+
+Nonetheless, it has been demonstrated that the raw ensemble forecasts typically present systematic errors regarding bias \citep{Atger2003-lx,Mass2003-bc} and dispersion \citep{Buizza2005-wf,Sloughter2010-ae}, with a tendency for the truth frequently falling outside of the range of the ensemble. Various statistical postprocessing methods have been introduced accordingly, with the aim of improving the forecast quality, to correct these errors by estimating representable relationships between the response variable of interest and predictors. Most postprocessing methods can be categorized into two groups: parametric approaches with distribution-based assumptions, such as ensemble model output statistics \citep[EMOS,][]{Gneiting2005-ua} models and BMA \citep{Raftery2005-xi}, and nonparametric approaches with distribution-free assumptions, such as the analog-based method \citep[e.g.,][]{Delle_Monache2013-os} and the quantile regression forest \citep{Taillardat2019-ni}. See \cite{Vannitsem2021-bg} for a recent review of statistical postprocessing methods as well as their potentials and challenges.
+
+Recently, the community of weather forecasting is starting to explore the potentials of machine learning techniques, especially in the context of ensemble forecasting, in the sense of including arbitrary predictors and accounting for nonlinear dynamics of the Earth system that are not captured by numerical models \citep{Dueben2021-fe}. One use of machine learning techniques is to complement ensemble NWP \citep[numerical weather prediction, see, e.g.,][for a summary of its revolution]{Bauer2015-dg,Benjamin2019-zp} forecasts using an additive postprocessing step for correction of ensemble bias and spread \citep{Rasp2018-zu,Scher2018-dm,Gronquist2021-no}. Machine learning techniques, such as neural networks, have also been used as data-driven forecast tools, alternative to NWP models which are based on the physical laws governing the atmosphere, to generate base forecasts, leading to gains in computational efficiency regarding creating ensemble forecasts with much large ensemble sizes than the ones available today \citep{Dueben2018-ln,Scher2018-of,Rasp2021-az,Scher2021-ee}.
 
 \subsection{Probabilistic forecast combinations}
 \label{sec:probabilistic_forecast_combinations}
@@ -520,20 +541,20 @@ One line of research has considered specifying the likelihood as a joint distrib
 \paragraph{Combinations constructed via integration}
 
 A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize especially in a setting where biases and miscalibration of individual distributions and, critically, dependencies among them are time-varying. In this light, the state-of-the-art probability forecast combination method of \cite{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to sequential forecasting in time series. In the dynamic extension of BPS model, the posterior probability forecast takes the form
-\begin{align}
-\tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{1: t+h}\right) = \int_{\boldsymbol{x}_{t+h}} \alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right) \prod_{i=1: N} p_{i}\left(x_{t+h,i}|I_{t}\right) d \boldsymbol{x}_{t+h}, \nonumber
-\end{align}
+\begin{align*}
+\tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{1: t+h}\right) = \int_{\boldsymbol{x}_{t+h}} \alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right) \prod_{i=1: N} p_{i}\left(x_{t+h,i}|I_{t}\right) d \boldsymbol{x}_{t+h},
+\end{align*}
 where, to use our earlier notation, $\mathcal{H}_{1: t+h}$ denotes the full set of individual probability forecasts available for the decision maker up to forecast origin $t$, $\boldsymbol{x}_{t+h} = x_{t+h, 1:N}$ is a $N$-vector of latent variables at time $t+h$, and $\alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)$ is a conditional distribution for $y_{t+h}$ given $\boldsymbol{x}_{t+h}$ defining the synthesis function.
 
 Instead of constructing Bayesian combinations by multiplying a likelihood by a prior, the dynamic BPS method follows a subclass of Bayesian updating rules, i.e. updating by integration, in the form of latent factor models. Information about biases, miscalibration, and dependencies among the individual distributions then can be incorporated directly through specification of synthesis function. Specifically, \cite{McAlinn2019-kn} developed a time-varying (non-convex/nonlinear) combination of probability forecasts by defining a normally distributed synthesis function
-\begin{align}
-\alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)=N\left(y_{t+h} | \boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}, v_{t+h}\right) \nonumber
-\end{align}
+\begin{align*}
+\alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)=N\left(y_{t+h} | \boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}, v_{t+h}\right)
+\end{align*}
 with $\boldsymbol{F}_{t+h}=\left(1, \boldsymbol{x}_{t+h}^{\prime}\right)^{\prime}$ and $\boldsymbol{\theta}_{t+h}=\left(\theta_{t+h, 0}, \theta_{t+h, 1}, \ldots, \theta_{t+h, N}\right)^{\prime}$. A dynamic linear model is built to model time evolution of these parameter processes, which is defined as
-\begin{align}
-&y_{t+h}=\boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}+\nu_{t+h}, \quad \nu_{t+h} \sim N\left(0, v_{t+h}\right), \nonumber \\
-&\boldsymbol{\theta}_{t+h}=\boldsymbol{\theta}_{t+h-1}+\boldsymbol{\omega}_{t+h}, \quad \boldsymbol{\omega}_{t+h} \sim N\left(\boldsymbol{0}, v_{t+h} \boldsymbol{W}_{t+h}\right) \nonumber
-\end{align}
+\begin{align*}
+&y_{t+h}=\boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}+\nu_{t+h}, \quad \nu_{t+h} \sim N\left(0, v_{t+h}\right), \\
+&\boldsymbol{\theta}_{t+h}=\boldsymbol{\theta}_{t+h-1}+\boldsymbol{\omega}_{t+h}, \quad \boldsymbol{\omega}_{t+h} \sim N\left(\boldsymbol{0}, v_{t+h} \boldsymbol{W}_{t+h}\right)
+\end{align*}
 where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random walk with innovations variance matrix $v_{t+h} \boldsymbol{W}_{t+h}$, and $v_{t+h}$ identifies the residual variance in forecasting $y_{t+h}$ given past information and the set of agent forecast distributions. It is suggested to customize BPS models specific to the forecast horizon in consideration of the reality that a forecasting model may present completely different forecast performance in different forecast horizons. MCMC methods are required for this posterior inference and dependencies among agents, accordingly, are involved in sequentially updated estimates of the BPS parameters. Their results of forecasting a quarterly series of inflation rate showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA ensemble techniques in Section \ref{sec:probabilistic_forecast_ensembles}, which holds true in a multivariate extension studied by \cite{McAlinn2020-qq}. \cite{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing ensemble methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
 
 % \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
