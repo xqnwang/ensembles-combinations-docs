@@ -448,18 +448,14 @@ An independent line of research has looked at simple ensemble heuristics, which 
 % quantile crossing
 \textit{Remark:} Quantile crossing is a well-known but still not well-addressed issue which arises when different ensemble weights or simple operations, such as median, are utilized for each quantile level. Quantile crossing can be avoided by (i) integrating the aggregation problems for individual models into one optimization problem subject to more non-crossing constraints \citep[e.g.,][]{Kim2021-wa}, and (ii) conducting na\"{i}ve rearrangement after all the ensemble quantiles are obtained \citep[e.g.,][]{Wang2019-lx}.
 
+$\cdots\cdots\cdots$
 
 Interval combinations. Intervals are usually constructed from two quantiles. Not always, but they usually are.
 \begin{itemize}
   \item Applying equal weights to interval forecasts will not ensure the nominal coverage rate, because the mixing of distributions is governed by different rules (Wallis, 2005).
-  \item Combining Prediction Intervals in the M4 Competition.
-  \item Include the literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}.
-  \item Simple combination heuristics.
-  \begin{itemize}
-    \item Six heuristics \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv} proposed for combining intervals.
-    \item Generalize these heuristics to the combination of quantile forecasts.
-    \item Limitations and the selection of heuristics in different forecasting problems.
-  \end{itemize}
+  \item Example literatures on combining intervals \citep[e.g.,][]{Wallis2005-yf,Lichtendahl2013-rt,Park2015-zn,Gaba2017-om,Grushka-Cockayne2017-dj,Grushka-Cockayne2020-qv}.
+  \item Simple combination heuristics. Limitations and the selection of heuristics in different forecasting problems.
+  \item Feature-based combinations.
 \end{itemize}
 
 \subsubsection{Meteorological ensembles}
