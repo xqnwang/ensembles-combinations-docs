@@ -151,6 +151,12 @@ Blanc, S.~M. \harvardand\ Setzer, T.  \harvardyearleft 2020\harvardyearright ,
   `{Bias--Variance} {Trade-Off} and shrinkage of weights in forecast
   combination', {\em Management Science} {\bf 66}(12),~5720--5737.
 
+\harvarditem[Bracher et~al.]{Bracher, Ray, Gneiting \harvardand\
+  Reich}{2021}{Bracher2021-hx}
+Bracher, J., Ray, E.~L., Gneiting, T. \harvardand\ Reich, N.~G.
+  \harvardyearleft 2021\harvardyearright , `Evaluating epidemic forecasts in an
+  interval format', {\em PLoS Computational Biology} {\bf 17}(2),~e1008618.
+
 \harvarditem[Brooks et~al.]{Brooks, Ray, Bien, Bracher, Rumack, Tibshirani
   \harvardand\ Reich}{2020}{Brooks2020-sg}
 Brooks, L.~C., Ray, E.~L., Bien, J., Bracher, J., Rumack, A., Tibshirani, R.~J.

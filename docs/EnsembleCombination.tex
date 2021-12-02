@@ -434,16 +434,21 @@ where the weight $w_{t+h|t,i}$ is non-negative such that $\sum_{i=1}^{N}w_{t+h|t
 Is it better to average quantiles as in quantile averaging or average probabilities as in linear pooling? By restricting themselves to simple average, \cite{Lichtendahl2013-rt} and \cite{Busetti2017-ox} theoretically and empirically compared the properties of these two aggregation strategies and suggested that quantile averaging seems overall preferable and serves as a viable alternative. \cite{Lichtendahl2013-rt} attributed this, in part, to the fact that the average probability forecast is in general underconfident and the average quantile forecast is always sharper. Even when individual forecasts agree on the location and the average probability forecast is overconfident, the more overconfident average quantile forecast still offers the possibility of forecast improvements due to its shape properties, specifically a higher density in the shoulders and a lower density in the tails. \cite{Busetti2017-ox} reconfirmed the argument and demonstrated that quantile averaging performs particularly better than both linear pooling and logarithmic pooling in case of aggregating individual forecast distributions with large biases. Taken together, it may be useful to incorporate quantile averaging and probability averaging so that additional insight may be provided. Accordingly, three simple ways were suggested by \cite{Lichtendahl2013-rt} to blend these two aggregation strategies.
 
 % quantile averaging over a discrete set of quantile levels
-Rather than assuming that a collection of the `whole' individual quantile functions is given, one is often provided with a collection of quantiles with respect to a discrete set of quantile levels $\mathcal{T} \subseteq [0,1]$, thus inevitably involving a loss of information compared with consideration of the whole density. For instance, the $0.05, 0.25, 0.50, 0.75$ and $0.95$ quantiles are often elicited in practice. Quantile aggregation in this case turns out to be a special case of the general aggregation rule in Equation~\eqref{eq:quantile_avg}. For each quantile level, equally weighing quantiles across all individual models, the most common aggregation strategy, is simple and quite robust, yielding improved forecast skill relative to individual models the ensemble builds on and competitive performance relative to a variety of more sophisticated ensemble strategies \citep[e.g.,][]{Busetti2017-ox,Smyl2019-av,Brooks2020-sg,Ray2020-qg}. In cases where sufficient past data is available, some effort has been directed toward the determination of ensemble weights via cross-validation to reflect the past performance of the different models and improve the skill of the ensemble. Scoring rules for quantile evaluation can be harnessed for weight construction \citep{Gneiting2007-ij,Grushka-Cockayne2017-eg}. Moreover, \cite{Wang2019-lx} formulated the weight optimization problem, in which the weights of each individual model for all the quantiles are identical, as a linear programming problem with the objective of minimizing the pinball loss.
+Rather than assuming that a collection of the `whole' individual quantile functions is given, one is often provided with a collection of quantiles with respect to a discrete set of quantile levels $\mathcal{T} \subseteq [0,1]$, thus inevitably involving a loss of information compared with consideration of the whole density. For instance, the $0.05, 0.25, 0.50, 0.75$ and $0.95$ quantiles are often elicited in practice. Quantile aggregation in this case turns out to be a special case of the general aggregation rule in Equation~\eqref{eq:quantile_avg}. For each quantile level, equally weighing quantiles across all individual models, the most common aggregation strategy, is simple and quite robust, yielding improved forecast skill relative to individual models the ensemble builds on and competitive performance relative to a variety of more sophisticated ensemble strategies \citep[e.g.,][]{Busetti2017-ox,Smyl2019-av,Brooks2020-sg,Ray2020-qg}. In cases where sufficient past data is available, some effort has been directed toward the determination of ensemble weights via cross-validation to reflect the past performance of the different models and improve the skill of the ensemble. Scoring rules for quantile evaluation can be harnessed for weight construction \citep{Gneiting2007-ij,Grushka-Cockayne2017-eg}. For example, individual quantiles can be weighted by reciprocal of the value of the pinball loss function \citep{Wang2019-lx,Zhang2020-dm}. Moreover, \cite{Wang2019-lx} formulated the weight optimization problem, in which the weights of each individual model for all the quantiles are identical, as a linear programming (LP) problem with the objective of minimizing the pinball loss.
 
-% flexible aggregation strategies 2 paragraph
+% flexible aggregation strategies
+One line of research has looked at \textit{tailoring individuals' weights for different quantile levels}, i.e., a separate weight is allocated for each individual model and each quantile level. This flexible aggregation strategy enables the ensemble to accommodate the fact that individual forecasting models may have varying performance at different quantile levels. For example, \cite{Wang2019-lx} and \cite{Browell2020-pa} strived to elicit the solution of the optimal weights by minimizing the pinball loss for each quantile level based on cross-validation framework. Specifically, \cite{Browell2020-pa} only considered aggregation of two component models and used a grid search to pick the weights, while \cite{Wang2019-lx} presented a general problem formulation and adopted an LP technique to compute the optimal solution. \cite{Bracher2021-hx} expanded on this line of work by considering optimizing WIS \citep[an average of pinball losses for all quantile levels,][]{Bracher2021-hx} of the ensemble for each quantile level. The trained weighted mean approach, however, fails to empirically demonstrate the utility of weighing different quantiles separately. More recently, \cite{Kim2021-wa} proposed an aggregation strategy of greater flexibility than previously introduced, where separate weights are allocated for not only different individual models, but also (pairs of) quantile levels and the input features of individual models. Instead of using LP technique, stochastic gradient descent (SGD) algorithm with a monotonizer operator is implemented to solve the optimization problem defined by minimizing the pinball loss across quantile levels and to obviate the need of on-crossing constraints. The flexible aggregation outperforms individual models and existing ensemble strategies over $40$ quantile regression datasets.
+
+
+
+
 
 % simple heuristics
 
 % transformation
 
 % quantile crossing
-
+\textit{Remark:}
 
 
 ----------\-
@@ -452,42 +457,10 @@ weighted linear combination with weights $w_{j}\geq 0$ that sum to 1.
 
 ----------\-
 
-Quantile averaging (Vincentization): the general form (inverse)
-\begin{itemize}
-  \item Definition and formula. Averaging quantile functions of the individual forecast distributions. Assume the whole cdfs are known and need to compute the entire quantile function.
-  \item Conceptual differences between quantile averaging and linear pooling.
-  \begin{itemize}
-    \item Horizontal averaging rather than vertical averaging.
-    \item Under location-scale family \citep[properties,][]{Ratcliff1979-cb,Thomas1980-lp}
-    \begin{itemize}
-      \item Theorem about parameters (mean and variance): given simply by averaging the parameters of the individual distributions (such as normal, Logistic, Cauchy, etc).
-      \item Disagree on the location, Shape-preserving \citep[only family,][]{Kim2021-wa}, Sharpness.
-      \item Give a normal example and comparison (modal). Sometimes, it seems desirable for the ensemble model to retain normality.
-      \item This can be seen as either a pro or a con.
-    \end{itemize}
-    \item When not available in closed form, the distribution derived from quantile averaging can be obtained by numerical approximation as the derivative of the inverse of the quantile function.
-    \item Recent studies (two).
-    % we consider the implications of choosing equal weights, as this approach tends to be frequently used in practice.
-    \begin{itemize}
-      \item \cite{Lichtendahl2013-rt} focus on simple averaging and quantile averaging is overall preferable. Because shoulders, shape and tail. Even when the linear pooling forecast is overconfident, the shape of the average quantile forecast still offers the possibility of a better forecast. Other three recommendations. This study suggests that a generalized-average
-      quantile forecast, with its additional flexibility, may offer further improvements.
-      \item \cite{Busetti2017-ox} mainly focuses on equal weights in simulations and empirical application. Equal weights and log score weights are considered under Gaussianity of the individual distributions, focusing on biases and the choice of weights. Quantile averaging is particularly useful for combining forecast distributions with large differences in location.
-      \item Empirical evidence suggests it performs well in practice.
-      \item \cite{Grushka-Cockayne2017-eg} tailor weights to reflect the relative importance of certain reported quantiles.
-      %(Grushka-Cockayne et al. (2017b) extend the notion of bracketing to probability forecasts and demonstrate how the recommended aggregation mechanism is impacted by the existence of bracketing among the forecasters’ quantiles. Grushka-Cockayne et al. (2017b) encourage the use of quantile scoring rules. Focusing on evaluating the performance of the aggregate forecast, they suggest that the score of a crowd’s combined quantile should be better than that of a randomly selected forecaster’s quantile only when the forecasters’ quantiles bracket the realization. If a score satisfies this condition, we say it is sensitive to bracketing. Grushka-Cockayne et al. (2017b) link quantile scoring rules to business profit-sharing situations. For forecasting continuous quantities, forecasts could be elicited by asking for an expert’s quantile (or fractile) forecast rather than a probability forecast (FTP P91).)
-    \end{itemize}
-  \end{itemize}
-  \item Ways of choosing weights that give us some optimal properties???
-\end{itemize}
-
-% find ... useful for aggregation purposes.
-
-Quantiles over a discrete set of quantile levels: special case (with a limited number of quantiles). Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA \citep[e.g.,][]{Smyl2019-av,Brooks2020-sg,Ray2020-qg} is also quantile averaging. Optimal weights \cite{Wang2019-lx}
+Level-dependent weights. The importance of allowing for level-dependent weights \citep{Brooks2020-sg,Browell2020-pa,Wang2019-lx} in a linear combination of quantiles. Properly trained, the ensemble should accounting for the strengths/weaknesses of each constituent model, and hence be superior in accuracy to any of the base models. Assess the benefits of increasingly flexible aggregators.
+% A decision maker may wish to tailor the weighting function to reflect the relative importance of certain reported quantiles, or to match certain business payoffs
 
 Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though. mean \citep{Smyl2019-av,Brooks2020-sg,Ray2020-qg} and median \citep{Smyl2019-av,Brooks2020-sg}
-
-Level-dependent weights. The importance of allowing for level-dependent weights \citep{Brooks2020-sg,Browell2020-pa,Wang2019-lx} in a linear combination of quantiles. Properly trained, the ensemble should accounting for the strengths/weaknesses of each constituent model, and hence be superior in accuracy to any of the base models. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models). Optimal ensemble estimate. Assess the benefits of increasingly flexible aggregators.
-% A decision maker may wish to tailor the weighting function to reflect the relative importance of certain reported quantiles, or to match certain business payoffs
 
 Transformation prior to combination \citep{Zhang2020-dm}. They assume that the continuous distribution function was smooth.
 
