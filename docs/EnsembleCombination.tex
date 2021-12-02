@@ -443,7 +443,7 @@ One line of research has looked at \textit{tailoring individuals' weights for di
 An independent line of research has looked at simple ensemble heuristics, which provide an alternative way of aggregating quantiles and frequently serve as benchmarks to measure the effectiveness of the newly developed ensemble strategies. For example, \cite{Wang2019-lx} considered the na\"{i}ve sorting method and the median value based sorting method, in which a total $N \times Q$ quantiles are stacked and sorted by ascending order to pick the first and median value respectively in each block of length $N$, where $N$ denotes the number of individual models and $M$ denotes the number of quantile levels. Numerous ensemble heuristics have been developed in the context of aggregating interval forecasts \citep{Park2015-zn,Gaba2017-om,Grushka-Cockayne2020-qv}, which involves aggregating individual quantiles in several ways for each quantile level. These simple heuristics have a less computational burden and have been shown to be robust in many empirical studies \citep{Smyl2019-av,Brooks2020-sg,Petropoulos2020-fp}. They can be directly extended to address the ensembles of quantiles.
 
 % transformation prior to combinations
-
+\cite{Zhang2020-dm} proposed an indirect way to construct ensembles of quantile forecasts: performing a quantile-distribution transformation prior to quantile aggregation. Specifically, kernel density estimation (KDE) serves as a bridge between quantile forecasts and probability forecasts and a perturbation search algorithm is developed to determine the optimal weights for different individual models.
 
 % quantile crossing
 \textit{Remark:}
