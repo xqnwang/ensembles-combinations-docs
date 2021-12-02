@@ -420,22 +420,37 @@ The essence of aforementioned nonlinear pooling methods is to perform ingenious 
 \label{sec:quantile_forecast_ensembles}
 
 % quantile aggregation
-In addition to probability forecasts, forecasts of the uncertain quantity of interest can be elicited in the form of quantiles, which are the inverse of the corresponding probability forecasts characterized by the cumulative distribution functions (cdfs). In this case, aggregating quantile forecasts from multiple models to yield improved forecast skill would be quite meaningful. Quantile aggregation, also known as Vincentization \citep{vincent1912-fu}, involves averaging the individuals' quantile functions rather than their inverse as in linear pooling. This indicates that quantile averaging entails horizontal averaging of the individuals' cdfs while linear pooling entails vertical averaging \citep{Lichtendahl2013-rt}.
+In addition to probability forecasts, forecasts of the uncertain quantity of interest can be elicited in the form of quantiles, which are the inverse of the corresponding probability forecasts characterized by the cumulative distribution functions (cdfs). In this case, aggregating quantile forecasts from multiple models to yield improved forecast skill would be quite meaningful. Quantile aggregation involves averaging the individuals' quantile functions rather than their inverse as in linear pooling. This indicates that quantile averaging entails horizontally averaging of the individuals' cdfs while linear pooling entails vertically averaging \citep{Lichtendahl2013-rt}.
 
-% general formula
-For $i=1,\ldots,N$, let $P_{i}(y_{t+h}|I_{t})$ denote the individual cdf with corresponding probability density function (pdf) given by $p_{i}(y_{t+h}|I_{t})$, let $Q_{t+h|t,i}(\tau) = P_{t+h|t,i}^{-1}(\tau)$ denote the corresponding quantile function. The standard way to build ensembles of quantile functions is then given by
+% quantile averaging formula
+For $i=1,\ldots,N$, let $P_{i}(y_{t+h}|I_{t})$ denote the individual cdf with corresponding probability density function (pdf) given by $p_{i}(y_{t+h}|I_{t})$, let $Q_{t+h|t,i}(\tau) = P_{t+h|t,i}^{-1}(\tau)$ denote the corresponding quantile function. Quantile averaging, the simple and standard way to build ensembles of quantile functions, is then given by
+\begin{align}
+\label{eq:quantile_avg}
+\tilde{Q}_{t+h|t}(\tau) = \tilde{P}_{t+h|t}^{-1}(\tau) = \sum_{i=1}^{N} w_{t+h|t,i} P_{t+h|t,i}^{-1}(\tau), \quad 0 < \tau \leq 1,
+\end{align}
+where the weight $w_{t+h|t,i}$ is non-negative such that $\sum_{i=1}^{N}w_{t+h|t,i}=1$. For each individual model, the weights allocated over all quantile levels are identical. This aggregation strategy is also referred to as Vincentization \citep{vincent1912-fu}. Interestingly, unlike linear pooling in Equation~\eqref{eq:linear_pool}, given individual distributions belonging to the same location-scale family (such as normal, Logistic, Cauchy, etc), quantile averaging yields the ensemble distribution from the same family as that of the individuals, with parameters given simply by weighted averages of the individuals' parameters \citep{Ratcliff1979-cb,Thomas1980-lp}. It is shape-preserving in a location-scale family and a simple example can go a long way to illustrate the property: quantile averaging of normal distributions is always uni-modal, while linear pooling in general may be multi-modal. It is sometimes desirable for the ensemble operator to retain normality. Moreover, quantile averaging and linear pooling share the same mean, while quantile averaging tends to be more sharper and less underconfident due to the additional spread driven by the disagreement on the mean in linear pooling.
 
+% quantile averaging vs. linear pooling
+Is it better to average quantiles as in quantile averaging or average probabilities as in linear pooling? By restricting themselves to simple average, \cite{Lichtendahl2013-rt} and \cite{Busetti2017-ox} theoretically and empirically compared the properties of these two aggregation strategies and suggested that quantile averaging seems overall preferable and serves as a viable alternative. \cite{Lichtendahl2013-rt} attributed this, in part, to the fact that the average probability forecast is in general underconfident and the average quantile forecast is always sharper. Even when individual forecasts agree on the location and the average probability forecast is overconfident, the more overconfident average quantile forecast still offers the possibility of forecast improvements due to its shape properties, specifically a higher density in the shoulders and a lower density in the tails. \cite{Busetti2017-ox} reconfirmed the argument and demonstrated that quantile averaging performs particularly better than both linear pooling and logarithmic pooling in case of aggregating individual forecast distributions with large biases. Taken together, it may be useful to incorporate quantile averaging and probability averaging so that additional insight may be provided. Accordingly, three simple ways were suggested by \cite{Lichtendahl2013-rt} to blend these two aggregation strategies.
 
+% quantiles over a discrete set of quantile levels
+%% equal weights
+%% optimal weights
+%% the weights should reflect the past performance of the different models and be time-varying
 
+% flexible aggregation strategies 2 paragraph
 
+% simple heuristics
 
-exposit conceptual differences between averaging in the space of quantiles versus probabilities. Throughout this section, when we use the term average, we actually refer (more broadly) to a weighted linear combination with weights $w_{j}\geq 0$ that sum to 1.
+% transformation
+
+% quantile crossing
+
 
 
 ----------\-
 
-Quantile aggregation has also received some attention, with a macroeconomic application illustrating its utility provided by Busetti (2017); quantile aggregation involves taking a (perhaps weighted) linear combination of the i = 1, ..., N quantile functions rather than their inverse as in the linear opinion pool.
-Interestingly, unlike (2), quantile aggregation means that the combined density $p(yt|I)$ belongs to the same family as the individual densities p(yt|Ii) assuming these are all from the same location-scale (e.g. Gaussian) family.
+weighted linear combination with weights $w_{j}\geq 0$ that sum to 1.
 
 ----------\-
 
@@ -469,13 +484,12 @@ Quantile averaging (Vincentization): the general form (inverse)
 
 % find ... useful for aggregation purposes.
 
-Quantiles over a discrete set of quantile levels: special case (with a limited number of quantiles). Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA \citep[e.g.,][]{Smyl2019-av,Brooks2020-sg} is also quantile averaging.
+Quantiles over a discrete set of quantile levels: special case (with a limited number of quantiles). Do not necessarily need to compute the entire quantile function, we can compute it only for some specific quantiles. Inevitably involve a loss of information compared with consideration of the `whole' density. Find out methods that can be covered by the general form, e.g., SA \citep[e.g.,][]{Smyl2019-av,Brooks2020-sg,Ray2020-qg} is also quantile averaging. Optimal weights \cite{Wang2019-lx}
 
-Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though.
+Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though. mean \citep{Smyl2019-av,Brooks2020-sg,Ray2020-qg} and median \citep{Smyl2019-av,Brooks2020-sg}
 
-Level-dependent weights. The importance of allowing for level-dependent weights \citep{Brooks2020-sg,Browell2020-pa} in a linear combination of quantiles. Properly trained, the ensemble should accounting for the strengths/weaknesses of each constituent model, and hence be superior in accuracy to any of the base models. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models). Optimal ensemble estimate. Assess the benefits of increasingly flexible aggregators.
-% A decision maker may wish to tailor the weighting function to reflect the relative impor-tance of certain reported quantiles, or to match certain business payoffs
-
+Level-dependent weights. The importance of allowing for level-dependent weights \citep{Brooks2020-sg,Browell2020-pa,Wang2019-lx} in a linear combination of quantiles. Properly trained, the ensemble should accounting for the strengths/weaknesses of each constituent model, and hence be superior in accuracy to any of the base models. For applications in which there is considerable uncertainty about extreme events (especially ones in which there is disagreement in the degree of uncertainty between individual base models). Optimal ensemble estimate. Assess the benefits of increasingly flexible aggregators.
+% A decision maker may wish to tailor the weighting function to reflect the relative importance of certain reported quantiles, or to match certain business payoffs
 
 Transformation prior to combination \citep{Zhang2020-dm}. They assume that the continuous distribution function was smooth.
 

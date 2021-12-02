@@ -1046,6 +1046,23 @@ Ratcliff, R.  \harvardyearleft 1979\harvardyearright , `Group reaction time
   distributions and an analysis of distribution statistics', {\em Psychological
   Bulletin} {\bf 86}(3),~446--461.
 
+\harvarditem[Ray et~al.]{Ray, Wattanachit, Niemi, Kanji, House, Cramer,
+  Bracher, Zheng, Yamana, Xiong, Woody, Wang, Wang, Walraven, Tomar, Sherratt,
+  Sheldon, Reiner, Prakash, Osthus, Li, Lee, Koyluoglu, Keskinocak, Gu, Gu,
+  George, Espa{\~n}a, Corsetti, Chhatwal, Cavany, Biegel, Ben-Nun, Walker,
+  Slayton, Lopez, Biggerstaff, Johansson, Reich \harvardand\ on~behalf of~the
+  COVID-19 Forecast Hub~Consortium}{2020}{Ray2020-qg}
+Ray, E.~L., Wattanachit, N., Niemi, J., Kanji, A.~H., House, K., Cramer, E.~Y.,
+  Bracher, J., Zheng, A., Yamana, T.~K., Xiong, X., Woody, S., Wang, Y., Wang,
+  L., Walraven, R.~L., Tomar, V., Sherratt, K., Sheldon, D., Reiner, R.~C.,
+  Prakash, B.~A., Osthus, D., Li, M.~L., Lee, E.~C., Koyluoglu, U., Keskinocak,
+  P., Gu, Y., Gu, Q., George, G.~E., Espa{\~n}a, G., Corsetti, S., Chhatwal,
+  J., Cavany, S., Biegel, H., Ben-Nun, M., Walker, J., Slayton, R., Lopez, V.,
+  Biggerstaff, M., Johansson, M.~A., Reich, N.~G. \harvardand\ on~behalf of~the
+  COVID-19 Forecast Hub~Consortium  \harvardyearleft 2020\harvardyearright ,
+  Ensemble forecasts of {Coronavirus Disease} 2019 ({COVID}-19) in the {U.S.}
+\newline\harvardurl{https://www.medrxiv.org/content/early/2020/08/22/2020.08.19.20177493}
+
 \harvarditem[Ribeiro et~al.]{Ribeiro, Mariani \harvardand\
   Coelho}{2019}{Ribeiro2019-wk}
 Ribeiro, G.~T., Mariani, V.~C. \harvardand\ Coelho, L. d.~S.  \harvardyearleft
@@ -1226,6 +1243,12 @@ Wang, X., Smith-Miles, K. \harvardand\ Hyndman, R.~J.  \harvardyearleft
   2009\harvardyearright , `Rule induction for forecasting method selection:
   Meta-learning the characteristics of univariate time series', {\em
   Neurocomputing} {\bf 72}(10),~2581--2594.
+
+\harvarditem[Wang et~al.]{Wang, Zhang, Tan, Hong, Kirschen \harvardand\
+  Kang}{2019}{Wang2019-lx}
+Wang, Y., Zhang, N., Tan, Y., Hong, T., Kirschen, D.~S. \harvardand\ Kang, C.
+  \harvardyearleft 2019\harvardyearright , `Combining probabilistic load
+  forecasts', {\em IEEE Transactions on Smart Grid} {\bf 10}(4),~3664--3674.
 
 \harvarditem[Weigel et~al.]{Weigel, Liniger \harvardand\
   Appenzeller}{2008}{Weigel2008-vy}
