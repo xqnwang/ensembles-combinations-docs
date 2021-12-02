@@ -1,5 +1,5 @@
 ---
-title: "Quantile Forecast Combinations"
+title: "Quantile Forecast Ensembles"
 date: "`r Sys.Date()`"
 author: Xiaoqian Wang
 output:

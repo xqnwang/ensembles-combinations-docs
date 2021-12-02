@@ -446,18 +446,8 @@ An independent line of research has looked at simple ensemble heuristics, which 
 \cite{Zhang2020-dm} proposed an indirect way to construct ensembles of quantile forecasts: performing a quantile-distribution transformation prior to quantile aggregation. Specifically, kernel density estimation (KDE) serves as a bridge between quantile forecasts and probability forecasts and a perturbation search algorithm is developed to determine the optimal weights for different individual models.
 
 % quantile crossing
-\textit{Remark:}
+\textit{Remark:} Quantile crossing is a well-known but still not well-addressed issue which arises when different ensemble weights or simple operations, such as median, are utilized for each quantile level. Quantile crossing can be avoided by (i) integrating the aggregation problems for individual models into one optimization problem subject to more non-crossing constraints \citep[e.g.,][]{Kim2021-wa}, and (ii) conducting na\"{i}ve rearrangement after all the ensemble quantiles are obtained \citep[e.g.,][]{Wang2019-lx}.
 
-Other simple heuristics. An alternative way of combining quantiles to estimate the quantiles overall. It stacks all of the quantile estimates in a big vector and it won't allow us to use weights though. mean \citep{Smyl2019-av,Brooks2020-sg,Ray2020-qg} and median \citep{Smyl2019-av,Brooks2020-sg}
-
-Transformation prior to combination \citep{Zhang2020-dm}. They assume that the continuous distribution function was smooth.
-
-Quantile crossing issue
-\begin{itemize}
-  \item will not happen when consider quantile averaging given full distribution or constant weights.
-  \item when will happen? for example we have different weights attached to different quantiles.
-  \item only need a paragraph about when it was going to happen or when it's not going to happen. When it happens, just a sentence or two and what people do.
-\end{itemize}
 
 Interval combinations. Intervals are usually constructed from two quantiles. Not always, but they usually are.
 \begin{itemize}
