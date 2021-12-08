@@ -616,6 +616,11 @@ Jose, V. R.~R. \harvardand\ Winkler, R.~L.  \harvardyearleft
   2008\harvardyearright , `Simple robust averages of forecasts: Some empirical
   results', {\em International Journal of Forecasting} {\bf 24}(1),~163--169.
 
+\harvarditem{Jose \harvardand\ Winkler}{2009}{Jose2009-lh}
+Jose, V. R.~R. \harvardand\ Winkler, R.~L.  \harvardyearleft
+  2009\harvardyearright , `Evaluating quantile assessments', {\em Operations
+  Research} {\bf 57}(5),~1287--1297.
+
 \harvarditem{Jouini \harvardand\ Clemen}{1996}{Jouini1996-fe}
 Jouini, M.~N. \harvardand\ Clemen, R.~T.  \harvardyearleft
   1996\harvardyearright , `Copula models for aggregating expert opinions', {\em
@@ -836,7 +841,7 @@ McNees, S.~K.  \harvardyearleft 1992\harvardyearright , `The uses and abuses of
 \harvarditem[Montero-Manso et~al.]{Montero-Manso, Athanasopoulos, Hyndman
   \harvardand\ Talagala}{2020}{Montero-Manso2020-tq}
 Montero-Manso, P., Athanasopoulos, G., Hyndman, R.~J. \harvardand\ Talagala,
-  T.~S.  \harvardyearleft 2020\harvardyearright , `{FFORMA}: Feature-based
+  T.~S.  \harvardyearleft 2020\harvardyearright , `{FFORMA}: {Feature}-based
   forecast model averaging', {\em International Journal of Forecasting} {\bf
   36}(1),~86--92.
 
