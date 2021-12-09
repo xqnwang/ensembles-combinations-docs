@@ -445,16 +445,16 @@ An independent line of research has looked at model-free ensemble heuristics, wh
 % transformation prior to combinations
 %\cite{Zhang2020-dm} proposed an indirect way to construct ensembles of quantile forecasts: performing a quantile-distribution transformation prior to quantile aggregation. Specifically, kernel density estimation (KDE) serves as a bridge between quantile forecasts and probability forecasts and a perturbation search algorithm is developed to determine the optimal weights for different individual models.
 
+% comments on theoretical and empirical developments
+Looking back, though aggregating quantiles tightly connects with aggregating probability distributions, there has been little theoretical work in this area compared to ensembles of probability forecasts with considerable theoretical advances. One exception is \cite{Lichtendahl2013-rt} who looked at the statistical properties of the simple average of probability forecasts and the ability to benefit from averaging. The choice of the ensemble weights has only been explored empirically, mainly in the context of energy forecasting \citep[e.g.,][]{Wang2019-lx,Browell2020-pa} and epidemiological forecasting \citep[e.g.,][]{Brooks2020-sg,Ray2020-qg}. Some of them are practical and beneficial, while some of them seem like ineffective and worthless. Large datasets should be applied to further investigate their utility.
+
 % quantile crossing
-Quantile crossing is a well-known but still not well-addressed issue of lack of monotonicity in quantile estimates, which may arise when different ensemble weights are utilized for different quantile levels. Obviously, some model-free heuristics, such as median, are also included in such cases. Quantile crossing can be avoided by (i) integrating the aggregation problems for individual models into one optimization problem subject to more non-crossing constraints \citep[e.g.,][]{Kim2021-wa}, and (ii) conducting na\"{i}ve rearrangement after all the ensemble quantiles are obtained \citep[e.g.,][]{Chernozhukov2010-zz}.
+Quantile crossing is a well-known but still not well-addressed issue of lack of monotonicity in quantile estimates, which may arise when different ensemble weights are utilized for different quantile levels. Obviously, some model-free heuristics, such as median, are also included in such cases. Quantile crossing can be avoided by, for example, (i) integrating the aggregation problems for individual models into one optimization problem subject to more non-crossing constraints \citep[e.g.,][]{Kim2021-wa}, and (ii) conducting na\"{i}ve rearrangement after all the ensemble quantiles are obtained \citep[e.g.,][]{Chernozhukov2010-zz}.
 
 % interval forecast ensembles
-Interval forecasts form a crucial special case of quantile forecasts, which makes the preceding ensemble approaches for quantile forecasts naturally adapt to interval forecasts. When forming ensembles of interval forecasts, more attention should be paid to the fact that the ensemble interval forecasts are not guaranteed to provide target coverage rates \cite{Wallis2005-yf,Timmermann2006-en,Grushka-Cockayne2020-qv}. As a result, for evaluating the ensemble interval forecasts, proper score approaches, which take into account both width and coverage, are appealing and can serve as objective functions to determine ensemble weights; see, e.g., \cite{Gneiting2007-ij} and \cite{Jose2009-lh}.
+Interval forecasts form a crucial special case of quantile forecasts, which makes the preceding ensemble approaches for quantile forecasts naturally adapt to interval forecasts. When forming ensembles of interval forecasts, more attention should be paid to the fact that the ensemble interval forecasts are not guaranteed to provide target coverage rates \citep{Wallis2005-yf,Timmermann2006-en,Grushka-Cockayne2020-qv}. As a result, for evaluating the ensemble interval forecasts, proper score approaches, which take into account both width and coverage, are appealing and can serve as objective functions to determine ensemble weights; see, e.g., \cite{Gneiting2007-ij} and \cite{Jose2009-lh}.
 
-Determining ensemble weights for interval forecasts is evidently easier to implement than quantiles, since one only has to concern with two quantiles. The fact makes it possible to develop ensemble approaches of greater flexibility in which time series features can be incorporated for deriving the ensemble interval forecasts. For example, by assuming the intervals to be symmetric around the point forecast, \cite{Montero-Manso2020-tq} used the combined point forecast produced by a feature-based meta-learner as the center of the ensemble interval and generated the radius as a linear combination of the radii with the goal of minimizing the MSIS \citep[mean scaled interval score,][]{Gneiting2007-ij} of the interval. The approach achieved second position in the M4 competition with $100,000$ time series involved. A subsequent work by \cite{Wang2021-un} introduced a feature-based weight determination approach to directly aggregating lower and upper bounds of individual interval forecasts, leading to significant performance improvements compared to individual forecasts and the simple average.
-
-% comments on theoretical and empirical developments
-
+Determining ensemble weights for interval forecasts is evidently easier to implement than quantile forecasts, since one only has to concern with two quantiles. The fact renders it possible to design ensemble algorithms of greater flexibility in which time series features can be incorporated for deriving the ensemble interval forecasts. For example, by assuming the intervals to be symmetric around the point forecast, \cite{Montero-Manso2020-tq} used the combined point forecast produced by a feature-based meta-learner as the center of the ensemble interval and generated the radius as a linear combination of the radii with the goal of minimizing the MSIS \citep[mean scaled interval score,][]{Gneiting2007-ij} of the interval. The approach achieved second position in the M4 competition with $100,000$ time series involved. A subsequent work by \cite{Wang2021-un} introduced a feature-based weight determination approach to directly aggregating lower and upper bounds of individual interval forecasts, leading to significant performance improvements compared to individual forecasts and the simple average.
 
 \subsubsection{Meteorological ensembles}
 \label{sec:meteorological_ensembles}
@@ -517,15 +517,12 @@ where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random w
 % \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
 % we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
 
-\section{Boosting in forecasting}
-\label{sec:boosting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Boosting in forecasting}
 % Hybrid systems \citep{Zhang2003-go,Pai2005-ea,Yu2005-px,De_Mattos_Neto2017-iz,Chen2021-lx}
 % refer to "The ensemble approach to forecasting: A review and synthesis"
-\section{Bagging in forecasting}
-\label{sec:bagging}
+%\section{Bagging in forecasting}
 % refer to "The ensemble approach to forecasting: A review and synthesis"
-%\section{Stacking in forecasting}
-%\label{sec:stacking}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
