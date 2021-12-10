@@ -49,49 +49,41 @@
 \begin{document}
 
 \def\spacingset#1{\renewcommand{\baselinestretch}%
-{#1}\small\normalsize} \spacingset{1}
+{#1}\small\normalsize} \spacingset{1.5}
 
-\begin{center}
-{\bf\Large Ensembles and combinations: \\using multiple models to improve forecasts}
-\end{center}
+\title{\bf Ensembles and combinations: \\using multiple models to improve forecasts}
 
+%\author{}
+\maketitle
 
 \bigskip
+\begin{abstract}
 
+\end{abstract}
+
+\noindent%
+{\it Keywords:}
+\vfill
+
+\bigskip
 
 % \newpage
 \spacingset{1.5}
 
-Remark. We take the forecasts to be combined essentially as given, and do not discuss in detail important issues around how the individual or component forecasts themselves should be produced.
+\section{Introduction}
+\label{sec:introduction}
 
-An increasing size of the toolbox of forecasting methods is available for decision makers. These methods, including statistical and econometric models, machine learning algorithms, and even judgemental forecasting \citep[see an encyclopedic overview by][]{Petropoulos2020-ft}, have their own specialties and are developed under different model specifications with assumptions on the Data Generation Process (DGP) or the associated error distributions. Given a pool of forecasting methods, how to best exploit information in the individual forecasts obtained from these methods?
+%Remark. We take the forecasts to be combined essentially as given, and do not discuss in detail important issues around how the individual or component forecasts themselves should be produced.
 
-Numerous studies in the forecasting literature are devoted to identifying a single `best model' for a given time series. Given a family of models, information criteria, such as the Akaike Information Criterion \citep[AIC,][]{Akaike1974-ya} and the Bayesian Information Criterion \citep[BIC,][]{Schwarz1978-cz}, are commonly implemented for model selection \citep[e.g.,][]{qi2001investigation,billah2005empirical,yang2005can}. More generally, cross-validation, in its various forms, such as the hold-out approach and the out-of-sample rolling scheme, has been used successfully to select the best forecast when multiple model families or model-free forecasts are considered \citep[e.g.,][]{Kohavi1995-zv,poler2011forecasting,fildes2015simple,inoue2017rolling,talagala2018meta}. However, different criteria may lead to different results of forecast selections. \cite{Kourentzes2019-na} argued that model selection was a challenging task for two reasons: the sample, parameter and model uncertainty associated with identifying a single best forecast, and the ill-defined best forecast.
+%An increasing size of the toolbox of forecasting methods is available for decision makers. These methods, including statistical and econometric models, machine learning algorithms, and even judgemental forecasting \citep[see an encyclopedic overview by][]{Petropoulos2020-ft}, have their own specialties and are developed under different model specifications with assumptions on the Data Generation Process (DGP) or the associated error distributions. Given a pool of forecasting methods, how to best exploit information in the individual forecasts obtained from these methods?
 
-{\color{red} (Modified to use multiple models instead of combination $\downarrow$.)}
-% refer to paper (ON COMBINING FORECASTS: SOME EXTENSIONS AND RESULTS; Pooling of forecasts; Kolassa2011-ai) for three reasons that could lead someone to using multiple models.
+%Numerous studies in the forecasting literature are devoted to identifying a single `best model' for a given time series. Given a family of models, information criteria, such as the Akaike Information Criterion \citep[AIC,][]{Akaike1974-ya} and the Bayesian Information Criterion \citep[BIC,][]{Schwarz1978-cz}, are commonly implemented for model selection \citep[e.g.,][]{qi2001investigation,billah2005empirical,yang2005can}. More generally, cross-validation, in its various forms, such as the hold-out approach and the out-of-sample rolling scheme, has been used successfully to select the best forecast when multiple model families or model-free forecasts are considered \citep[e.g.,][]{Kohavi1995-zv,poler2011forecasting,fildes2015simple,inoue2017rolling,talagala2018meta}. However, different criteria may lead to different results of forecast selections. \cite{Kourentzes2019-na} argued that model selection was a challenging task for two reasons: the sample, parameter and model uncertainty associated with identifying a single best forecast, and the ill-defined best forecast.
 
-Given these challenges, alternatively \cite{Bates1969-yj} have suggested combining multiple forecasts. The idea of combining forecasts is derived from the simple portfolio diversification argument \citep{Timmermann2006-en}, which is a risk management strategy with an obvious intuition: do not put all eggs into one basket. Even though slightly earlier articles have provided empirical justification of the superiority of forecast combinations over individual forecasts \citep[e.g.,][]{Barnard1963-xa,crane1967two}, the work by \cite{Bates1969-yj} is often considered to be the seminal article on forecast combinations as they developed a general analysis and further explored more possibilities for forecast combinations by extending a simple average to a weighted combination. Furthermore, the idea of combining forecasts is also widely used in machine learning, referred to as forecast ensembles. Similar to combination, the ensemble is a machine learning paradigm using multiple models to solve the same problem. It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting \cite[see an overview by][]{Leutbecher2008-mc}, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research.
+%% refer to paper (ON COMBINING FORECASTS: SOME EXTENSIONS AND RESULTS; Pooling of forecasts; Kolassa2011-ai) for three reasons that could lead someone to using multiple models.
 
-There are nearly five decades of empirical and theoretical investigations support that combining multiple forecasts often achieves improved forecasting performance on average than selecting a single individual forecast. Important early contributions in this area were summarized by \cite{Granger1989-gv}, \cite{Clemen1989-fb}, \cite{Palm1992-im}, and \cite{Timmermann2006-en}. \cite{Clemen1989-fb} surveyed over two hundred statistical literature on forecast combinations and provided a primary conclusion that forecasting accuracy could be substantially improved by combining multiple forecasts. \cite{Timmermann2006-en} attributed the superiority of forecast combinations over a single model to the fact that individual forecasts obtained based on heterogeneous information sets, may be very differently affected by structural breaks and subject to misspecification bias of unknown form. They further concluded that forecast combinations were beneficial due to diversification gains. More recently, \cite{Atiya2020-ge} illustrated graphically why forecast combinations were superior.
+%Given these challenges, alternatively \cite{Bates1969-yj} have suggested combining multiple forecasts. The idea of combining forecasts is derived from the simple portfolio diversification argument \citep{Timmermann2006-en}, which is a risk management strategy with an obvious intuition: do not put all eggs into one basket. Even though slightly earlier articles have provided empirical justification of the superiority of forecast combinations over individual forecasts \citep[e.g.,][]{Barnard1963-xa,crane1967two}, the work by \cite{Bates1969-yj} is often considered to be the seminal article on forecast combinations as they developed a general analysis and further explored more possibilities for forecast combinations by extending a simple average to a weighted combination. Furthermore, the idea of combining forecasts is also widely used in machine learning, referred to as forecast ensembles. Similar to combination, the ensemble is a machine learning paradigm using multiple models to solve the same problem. It is difficult to trace the beginning of the history of ensemble forecasting. However, it is clear that ensemble techniques have become a hot topic in various fields, especially weather forecasting \cite[see an overview by][]{Leutbecher2008-mc}, since the 1990s. \cite{Lewis2005-hu} provided a genealogy to depict the scientific roots of ensemble forecasting from several fundamental lines of research.
 
-\section{Ways of using multiple models}
-\begin{itemize}
-\item \textbf{Combinations}: A (usually linear) combination of forecasts from multiple models are used for one series. This includes combining point forecasts, quantile forecasts or full distributional forecasts. It covers simple averaging, weighted averaging, and sometimes combinations based on ML algorithms. e.g., FFORMA and related methods.
-\item \textbf{Ensembles}: Although ``ensembles" has been used in different ways in different literatures, we will use ``ensemble" to mean a mixture of the forecast distributions from multiple models. In many ways this is simpler than combinations as the relationship between the methods can be ignored. Need to discuss when they are equivalent.
-\item \textbf{Boosting}: Multiple models used for one series in sequence. Equivalent to hybrid forecasting where residuals from one method are modelled using a different method.
-\item \textbf{Bagging}: One or more models applied to multiple similar series, and then a combination or ensemble is taken. Bagging requires a method for generating multiple series. Some possibilities are STL-ETS and GRATIS.
-\item \textbf{Stacking}. {\color{red} missing here.}
-\end{itemize}
-
-Simple example to illustrate differences. Suppose we have one series and two methods: an ARIMA model and a CNN.
-
-\begin{itemize}
-\item A combination would apply both to the same series and average the results. Unless we are only interested in point forecasting, the averaging would need to take account of the correlation between the forecast errors.
-\item An ensemble would apply both to the same series and generate forecast distributions from each. These would then be mixed (possibly with weighting) to form the final forecast distribution.
-\item Boosting would apply the ARIMA model to the series, and then apply the CNN to the residuals. The final forecasts would be the forecasts from the ARIMA model plus the forecasts from the CNN.
-\item Bagging would generate multiple series like the series of interest, and apply one of the methods to all the generated series. These could then be combined, or ensembled.
-\end{itemize}
+%There are nearly five decades of empirical and theoretical investigations support that combining multiple forecasts often achieves improved forecasting performance on average than selecting a single individual forecast. Important early contributions in this area were summarized by \cite{Granger1989-gv}, \cite{Clemen1989-fb}, \cite{Palm1992-im}, and \cite{Timmermann2006-en}. \cite{Clemen1989-fb} surveyed over two hundred statistical literature on forecast combinations and provided a primary conclusion that forecasting accuracy could be substantially improved by combining multiple forecasts. \cite{Timmermann2006-en} attributed the superiority of forecast combinations over a single model to the fact that individual forecasts obtained based on heterogeneous information sets, may be very differently affected by structural breaks and subject to misspecification bias of unknown form. They further concluded that forecast combinations were beneficial due to diversification gains. More recently, \cite{Atiya2020-ge} illustrated graphically why forecast combinations were superior.
 
 \section{Point forecasts}
 \label{sec:point_forecasts}
@@ -297,7 +289,7 @@ It is well established that combining multiple models benefits forecasting accur
 
 We identify two different classes of aggregation approaches to using multiple models in the context of time series forecasting, \textit{ensemble} and \textit{combination}, which, nevertheless, are often used interchangeably in the literature. Although `ensemble' has been used in different literatures with different meanings, we will always use `ensemble' to refer to a mixture of the forecast distributions from multiple models, ignoring correlations between distributions. While `combination' will be used in order to refer to a more sophisticated way of using multiple models to generate the final forecast in the general forecasting community. It involves averaging the forecast distributions, taking account of correlations between individual distributions. The characteristics of the mixed and averaged forecasts with the same weights assigned are different, with the exception of the means. Therefore, the produced point forecast from an ensemble is equal to that from a combination when the point forecast is interpreted as the mean of the forecast distribution (as is commonly assumed). This is why we do not distinguish between ensembles and combinations of point forecasts in Section \ref{sec:point_forecasts}.
 
-This section is organized as follows. Section \ref{sec:principles_of_probabilistic_forecasts} poses pivotal issues such as calibration and sharpness when assessing the quality of aggregated forecasts, providing guidance for the selection of strategies for using multiple models. The history and evolution of ensemble and combination methods for probabilistic forecasts, together with their potential and benefits, are illustrated in Sections \ref{sec:probabilistic_forecast_ensembles} and \ref{sec:probabilistic_forecast_combinations} respectively.
+This section is organized as follows. Section \ref{sec:principles_of_probabilistic_forecasts} poses pivotal issues such as calibration and sharpness when assessing the quality of aggregated forecasts, providing guidance for the selection of strategies for using multiple models. The history and evolution of ensemble and combination methods for probabilistic forecasts, together with their potential and benefits, are illustrated in Sections \ref{sec:probabilistic_forecast_ensembles} and \ref{sec:probability_forecast_combinations} respectively.
 
 \subsection{Principles of probabilistic forecasts}
 \label{sec:principles_of_probabilistic_forecasts}
@@ -306,7 +298,7 @@ Decision makers mainly focus on the accuracy of combined point forecasts, while 
 
 According to \cite{Gneiting2007-fr}, the intent of probabilistic forecasting is to \textit{maximize the sharpness of forecast distributions subject to calibration} based on the available information set. In this light, scoring rules that reward both calibration and sharpness are appealing in the sense of providing summary measures for the quality of probabilistic forecasts, with a higher score indicating a better forecast. Considering a probabilistic forecast $F$, a scoring rule is proper if it satisfies the condition that the expected score for an observation drawn from $G$ is maximized when $F=G$. It is strictly proper if the maximum is unique. \cite{Gneiting2007-ij} provided excellent review and discussion on a diverse collection of proper scoring rules for probabilistic forecasts in the form of probability forecasts, as well as quantile and interval forecasts.
 
-As we elaborate in Sections \ref{sec:probabilistic_forecast_ensembles} and \ref{sec:probabilistic_forecast_combinations} below, the schemes for aggregating multiple probabilistic forecasts have evolved from a simple distribution mixture to more sophisticated combinations covering correlations between distributions. Which type of strategy one might choose to use depends largely on the overall performance of the aggregated forecasts with regard to accuracy, calibration, and sharpness, making it appreciably different from the selection of point forecast combination schemes. Some issues arise when combining point forecasts, but may be more complex and less understood when dealing with probabilistic forecasts. For example, diversity among individual forecasts benefits the combined point forecasts, while it may harm the mixed probability forecasts when considering linear pooling; see \cite{Ranjan2010-jl} for a theoretical illustration and simulation study. Simply put, as the diversity among individual probability forecasts increases, the mixed forecast becomes underconfident and lacks sharpness because of the spread driven by the disagreement on the mean of individual probability forecasts \citep{Hora2004-fz,Wallis2005-yf,Ranjan2010-jl}. To address this, averaging quantile forecasts rather than mixing probability forecasts \citep{Lichtendahl2013-rt}, or nonlinear pooling that applies a transformation before or after the distribution mixture \citep{Ranjan2010-jl,Gneiting2013-hl} is preferable to linear pooling in terms of offering better calibrated probability forecasts.
+As we elaborate in Sections \ref{sec:probabilistic_forecast_ensembles} and \ref{sec:probability_forecast_combinations} below, the schemes for aggregating multiple probabilistic forecasts have evolved from a simple distribution mixture to more sophisticated combinations covering correlations between distributions. Which type of strategy one might choose to use depends largely on the overall performance of the aggregated forecasts with regard to accuracy, calibration, and sharpness, making it appreciably different from the selection of point forecast combination schemes. Some issues arise when combining point forecasts, but may be more complex and less understood when dealing with probabilistic forecasts. For example, diversity among individual forecasts benefits the combined point forecasts, while it may harm the mixed probability forecasts when considering linear pooling; see \cite{Ranjan2010-jl} for a theoretical illustration and simulation study. Simply put, as the diversity among individual probability forecasts increases, the mixed forecast becomes underconfident and lacks sharpness because of the spread driven by the disagreement on the mean of individual probability forecasts \citep{Hora2004-fz,Wallis2005-yf,Ranjan2010-jl}. To address this, averaging quantile forecasts rather than mixing probability forecasts \citep{Lichtendahl2013-rt}, or nonlinear pooling that applies a transformation before or after the distribution mixture \citep{Ranjan2010-jl,Gneiting2013-hl} is preferable to linear pooling in terms of offering better calibrated probability forecasts.
 
 \subsection{Probabilistic forecast ensembles}
 \label{sec:probabilistic_forecast_ensembles}
@@ -465,10 +457,7 @@ Nonetheless, it has been demonstrated that the raw ensemble forecasts typically 
 
 Recently, the community of weather forecasting is starting to explore the potentials of machine learning techniques, especially in the context of ensemble forecasting, in the sense of including arbitrary predictors and accounting for nonlinear dynamics of the Earth system that are not captured by numerical models \citep{Dueben2021-fe}. One use of machine learning techniques is to complement ensemble NWP \citep[numerical weather prediction, see, e.g.,][for a summary of its revolution]{Bauer2015-dg,Benjamin2019-zp} forecasts using an additive postprocessing step for correction of ensemble bias and spread \citep{Rasp2018-zu,Scher2018-dm,Gronquist2021-no}. Machine learning techniques, such as neural networks, have also been used as data-driven forecast tools, alternative to NWP models which are based on the physical laws governing the atmosphere, to generate base forecasts, leading to gains in computational efficiency regarding creating ensemble forecasts with much large ensemble sizes than the ones available today \citep{Dueben2018-ln,Scher2018-of,Rasp2021-az,Scher2021-ee}.
 
-\subsection{Probabilistic forecast combinations}
-\label{sec:probabilistic_forecast_combinations}
-
-\subsubsection{Probability forecast combinations}
+\subsection{Probability forecast combinations}
 \label{sec:probability_forecast_combinations}
 % Probability forecasting strives to predict the probability distribution of quantities in interest.
 % Probability forecasts are much more informative than point forecasts because they provide important information about uncertainty. The inclusion of prediction intervals in the M4-competition is also very encouraging
@@ -516,6 +505,9 @@ where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random w
 
 % \cite{Billio2013-sg} using the \proglang{MATLAB} package \pkg{DeCo} \citep{Casarin2015-ql}
 % we apply the MATLAB package DeCo (density combination), developed by Casarin et al. (2015), which provides an efficient implementation of the algorithm in Billio et al. (2013) based on CPU and GPU parallel computing.
+
+\section{Conclusions and a look to the future}
+\label{sec:conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Boosting in forecasting}
