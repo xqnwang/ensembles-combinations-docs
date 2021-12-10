@@ -140,15 +140,14 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
    - The proportion of the forecast combination in forecasting papers/journal.
 4. The success of the approach relies on both the quality of the pool of forecasts being combined and the combination weights.
    - The pool of forecasts: accuracy, diversity, reduce number of forecasts being combined...
-  - Combination weighting schemes vary across studies and range from simple averaging to complex approaches.
-  - Forecast combination puzzle.
-  - Linear VS. nonlinear; static VS. time-varying; correlations among forecasts; features.
+   - Combination weighting schemes vary across studies and range from simple averaging to complex approaches.
+     - Forecast combination puzzle.
+     - Linear VS. nonlinear; static VS. time-varying; correlations among forecasts; features.
 5. Timeline.
    - Initial work on forecast combination focused on the combination of point forecasts.
    - In recent years attention has shifted towards probabilistic forecasts. Shape, sharpness, calibration problem.
 6. The aim and purpose.
    - A review of how various combination strategies have been used in the past**, **the advantages and disadvantages, and how the various ideas have developed in parallel but are related.
-   - 
 7. The scope (we should clarify).
    - Only focus on combinations of multiple forecasts from different models for one series.
    - We take the forecasts to be combined essentially as given, and do not discuss in detail important issues around how the individual or component forecasts themselves should be produced.
@@ -159,9 +158,9 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
 
 ## Conclusions and a look to the future
 
-- A brief summary of the scope and coverage of our review. Other combinations that are not covered: manipulate and transform one series to multiple series and combine generated forecasts
+- A brief summary of the scope and coverage of our review.
 - Now nearly 50 years on from the seminal work of Bates and Granger (1969), **simple averaging** still dominates more refined combinations for both point and probabilistic forecasts.
-- Importance and challenge of the selection of the model pool. Accuracy, diversity, calibration.
+- Importance and challenge of the selection of the model pool. Accuracy, diversity, and calibration of the individual forecasts.
 - Developments mainly focus on linear combinations, while nonlinear combinations need to be further investigated and deserve further attention and development.
 
 - Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
