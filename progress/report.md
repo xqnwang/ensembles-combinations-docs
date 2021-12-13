@@ -103,7 +103,7 @@ $$
   - very simple cross-learning
 - If series was too small (e.g., $<2 H$ ) for reliable calculations:
 
-  - use a simple average (static-equal) weighting matrix
+  - use a simple average (static-equal) matrix
   - simple average
 - Prediction intervals: 
   - use combined point forecasts as the center
@@ -136,7 +136,7 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
    - Different terminologies (combination, ensemble, aggregation, etc.).
    - Forecast combinations improve forecasting accuracy is near unanimous (empirical evidence).
    - Research on why and when combinations improve forecast accuracy.
-   - Wide applications in a variety of areas, e.g., energy, economics and finance, environmental applications.
+   - Wide applications in a variety of areas, e.g., energy, economics, demand and finance, environmental applications.
    - The proportion of the forecast combination in forecasting papers/journal.
 4. The success of the approach relies on both the quality of the pool of forecasts being combined and the combination weights.
    - The pool of forecasts: accuracy, diversity, reduce number of forecasts being combined...
@@ -167,12 +167,21 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
 - Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
 - Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.
 - Pursue computationally effective combination algorithm and explore in depth why various combination algorithms work.
-- Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software.
+- Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software (software implementations).
 - There are other ways that multiple forecasts, multiple models get used in forecasting, such as in theta, bagging, boosting, temporal aggregation, hierarchical aggregation.
 
 
 
-## A little section on software implementations
+## Software implementations
 
-- focus on forecast combinations
+- focus on forecast combinations.
+  - R packages, e.g., fable, ForecastComb, forecastHybrid, opera, profoc.
+  - Mention these packages when introduce paper methods.
+  - Other Python and MATLAB packages.
+
 - open source dataset?
+  - https://forecastingdata.org/ website and related paper.
+    - features and baseline methods maybe can mentioned in other sections.
+
+  - "A brief history of forecasting competitions" by Hyndman (2020).
+
