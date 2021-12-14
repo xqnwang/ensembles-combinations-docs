@@ -271,6 +271,10 @@ Clemen, R.~T. \harvardand\ Winkler, R.~L.  \harvardyearleft
   1999\harvardyearright , `Combining probability distributions from experts in
   risk analysis', {\em Risk Analysis} {\bf 19}(2),~187--203.
 
+\harvarditem{Clements \harvardand\ Hendry}{1998}{Clements1998-bu}
+Clements, M. \harvardand\ Hendry, D.  \harvardyearleft 1998\harvardyearright ,
+  {\em Forecasting Economic Time Series}, Cambridge University Press.
+
 \harvarditem{Collopy \harvardand\ Armstrong}{1992}{Collopy1992-ey}
 Collopy, F. \harvardand\ Armstrong, J.~S.  \harvardyearleft
   1992\harvardyearright , `Rule-based forecasting: {Development} and validation
@@ -673,7 +677,7 @@ Kohavi, R.  \harvardyearleft 1995\harvardyearright , A study of
 
 \harvarditem{Kolassa}{2011}{Kolassa2011-ai}
 Kolassa, S.  \harvardyearleft 2011\harvardyearright , `Combining exponential
-  smoothing forecasts using akaike weights', {\em International Journal of
+  smoothing forecasts using {Akaike} weights', {\em International Journal of
   Forecasting} {\bf 27}(2),~238--251.
 
 \harvarditem{Koop}{2003}{Koop-2003bayesian}
