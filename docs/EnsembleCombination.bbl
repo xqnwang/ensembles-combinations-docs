@@ -79,11 +79,6 @@ Baran, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
   ensemble forecasts', {\em International Journal of Forecasting} {\bf
   34}(3),~477--496.
 
-\harvarditem{Barnard}{1963}{Barnard1963-xa}
-Barnard, G.~A.  \harvardyearleft 1963\harvardyearright , `New methods of
-  quality control', {\em Journal of the Royal Statistical Society. Series A}
-  {\bf 126}(2),~255.
-
 \harvarditem[Bassetti et~al.]{Bassetti, Casarin \harvardand\
   Ravazzolo}{2018}{Bassetti2018-qr}
 Bassetti, F., Casarin, R. \harvardand\ Ravazzolo, F.  \harvardyearleft
@@ -127,12 +122,12 @@ Benjamin, S.~G., Brown, J.~M., Brunet, G., Lynch, P., Saito, K. \harvardand\
   progress in forecasting and {NWP} applications', {\em Meteorological
   Monographs} {\bf 59},~13--1.
 
-\harvarditem[Billah et~al.]{Billah, Hyndman \harvardand\
-  Koehler}{2005}{billah2005empirical}
-Billah, B., Hyndman, R.~J. \harvardand\ Koehler, A.~B.  \harvardyearleft
-  2005\harvardyearright , `Empirical information criteria for time series
-  forecasting model selection', {\em Journal of Statistical Computation and
-  Simulation} {\bf 75}(10),~831--840.
+\harvarditem[Bergmeir et~al.]{Bergmeir, Hyndman \harvardand\
+  Ben{\'\i}tez}{2016}{Bergmeir2016-ae}
+Bergmeir, C., Hyndman, R.~J. \harvardand\ Ben{\'\i}tez, J.~M.  \harvardyearleft
+  2016\harvardyearright , `Bagging exponential smoothing methods using {STL}
+  decomposition and {Box--Cox} transformation', {\em International Journal of
+  Forecasting} {\bf 32}(2),~303--312.
 
 \harvarditem[Billio et~al.]{Billio, Casarin, Ravazzolo \harvardand\ van
   Dijk}{2013}{Billio2013-sg}
@@ -292,11 +287,6 @@ Conflitti, C., De~Mol, C. \harvardand\ Giannone, D.  \harvardyearleft
   2015\harvardyearright , `Optimal combination of survey forecasts', {\em
   International Journal of Forecasting} {\bf 31}(4),~1096--1103.
 
-\harvarditem{Crane \harvardand\ Crotty}{1967}{crane1967two}
-Crane, D.~B. \harvardand\ Crotty, J.~R.  \harvardyearleft 1967\harvardyearright
-  , `A two-stage forecasting model: Exponential smoothing and multiple
-  regression', {\em Management Science} {\bf 13}(8),~B--501.
-
 \harvarditem{Dawid}{1984}{Dawid1984-vp}
 Dawid, A.~P.  \harvardyearleft 1984\harvardyearright , `Present position and
   potential developments: Some personal views: Statistical theory: The
@@ -419,11 +409,6 @@ Fern{\'a}ndez-Villaverde, J. \harvardand\ Francisco Rubio-Ram{\i}rez, J.
   models to data: a {Bayesian} approach', {\em Journal of Econometrics} {\bf
   123}(1),~153--187.
 
-\harvarditem{Fildes \harvardand\ Petropoulos}{2015}{fildes2015simple}
-Fildes, R. \harvardand\ Petropoulos, F.  \harvardyearleft 2015\harvardyearright
-  , `Simple versus complex selection rules for forecasting many time series',
-  {\em Journal of Business Research} {\bf 68}(8),~1692--1701.
-
 \harvarditem{Fischer \harvardand\ Harvey}{1999}{Fischer1999-kz}
 Fischer, I. \harvardand\ Harvey, N.  \harvardyearleft 1999\harvardyearright ,
   `Combining forecasts: What information do judges need to outperform the
@@ -517,11 +502,6 @@ Graham, J.~R.  \harvardyearleft 1996\harvardyearright , `Is a group of
   economists better than one? than none?', {\em Journal of Business} {\bf
   69}(2),~193--232.
 
-\harvarditem{Granger}{1989}{Granger1989-gv}
-Granger, C. W.~J.  \harvardyearleft 1989\harvardyearright , `Invited review
-  combining forecasts---twenty years later', {\em Journal of Forecasting} {\bf
-  8}(3),~167--173.
-
 \harvarditem{Granger \harvardand\ Jeon}{2004}{Granger2004-sw}
 Granger, C. W.~J. \harvardand\ Jeon, Y.  \harvardyearleft 2004\harvardyearright
   , `Thick modeling', {\em Economic Modelling} {\bf 21}(2),~323--343.
@@ -606,13 +586,6 @@ Hyndman, R.~J., Kang, Y., Montero-Manso, P., Talagala, T.~S., Wang, E., Yang,
 \newblock R package version 1.0.1.
 \newline\harvardurl{https://CRAN.R-project.org/package=tsfeatures}
 
-\harvarditem[Inoue et~al.]{Inoue, Jin \harvardand\
-  Rossi}{2017}{inoue2017rolling}
-Inoue, A., Jin, L. \harvardand\ Rossi, B.  \harvardyearleft
-  2017\harvardyearright , `Rolling window selection for out-of-sample
-  forecasting with time-varying parameters', {\em Journal of Econometrics} {\bf
-  196}(1),~55--67.
-
 \harvarditem[Jore et~al.]{Jore, Mitchell \harvardand\ Vahey}{2010}{Jore2010-yi}
 Jore, A.~S., Mitchell, J. \harvardand\ Vahey, S.~P.  \harvardyearleft
   2010\harvardyearright , `Combining forecast densities from {VARs} with
@@ -677,11 +650,6 @@ Kapetanios, G., Mitchell, J., Price, S. \harvardand\ Fawcett, N.
 Kim, T., Fakoor, R., Mueller, J., Tibshirani, R.~J. \harvardand\ Smola, A.~J.
   \harvardyearleft 2021\harvardyearright , `Deep quantile aggregation'.
 
-\harvarditem{Kohavi}{1995}{Kohavi1995-zv}
-Kohavi, R.  \harvardyearleft 1995\harvardyearright , A study of
-  cross-validation and bootstrap for accuracy estimation and model selection,
-  {\em in} `Ijcai', Vol.~14, researchgate.net, pp.~1137--1145.
-
 \harvarditem{Kolassa}{2011}{Kolassa2011-ai}
 Kolassa, S.  \harvardyearleft 2011\harvardyearright , `Combining exponential
   smoothing forecasts using {Akaike} weights', {\em International Journal of
@@ -740,15 +708,6 @@ Leamer, E.~E.  \harvardyearleft 1978\harvardyearright , {\em Specification
 Lemke, C. \harvardand\ Gabrys, B.  \harvardyearleft 2010\harvardyearright ,
   `Meta-learning for time series forecasting and forecast combination', {\em
   Neurocomputing} {\bf 73}(10),~2006--2016.
-
-\harvarditem{Leutbecher \harvardand\ Palmer}{2008}{Leutbecher2008-mc}
-Leutbecher, M. \harvardand\ Palmer, T.~N.  \harvardyearleft
-  2008\harvardyearright , `Ensemble forecasting', {\em Journal of Computational
-  Physics} {\bf 227}(7),~3515--3539.
-
-\harvarditem{Lewis}{2005}{Lewis2005-hu}
-Lewis, J.~M.  \harvardyearleft 2005\harvardyearright , `Roots of ensemble
-  forecasting', {\em Monthly Weather Review} {\bf 133}(7),~1865--1885.
 
 \harvarditem[Li et~al.]{Li, Kang \harvardand\ Li}{2020}{Li2020-od}
 Li, X., Kang, Y. \harvardand\ Li, F.  \harvardyearleft 2020\harvardyearright ,
@@ -1004,23 +963,12 @@ Petropoulos, F. \harvardand\ Svetunkov, I.  \harvardyearleft
   2020\harvardyearright , `A simple combination of univariate models', {\em
   International Journal of Forecasting} {\bf 36}(1),~110--115.
 
-\harvarditem{Poler \harvardand\ Mula}{2011}{poler2011forecasting}
-Poler, R. \harvardand\ Mula, J.  \harvardyearleft 2011\harvardyearright ,
-  `Forecasting model selection through out-of-sample rolling horizon weighted
-  errors', {\em Expert Systems with Applications} {\bf 38}(12),~14778--14785.
-
 \harvarditem[Poncela et~al.]{Poncela, Rodr{\'\i}guez, S{\'a}nchez-Mangas
   \harvardand\ Senra}{2011}{Poncela2011-vz}
 Poncela, P., Rodr{\'\i}guez, J., S{\'a}nchez-Mangas, R. \harvardand\ Senra, E.
   \harvardyearleft 2011\harvardyearright , `Forecast combination through
   dimension reduction techniques', {\em International Journal of Forecasting}
   {\bf 27}(2),~224--237.
-
-\harvarditem{Qi \harvardand\ Zhang}{2001}{qi2001investigation}
-Qi, M. \harvardand\ Zhang, G.~P.  \harvardyearleft 2001\harvardyearright , `An
-  investigation of model selection criteria for neural network time series
-  forecasting', {\em European Journal of Operational Research} {\bf
-  132}(3),~666--680.
 
 \harvarditem[Radchenko et~al.]{Radchenko, Vasnev \harvardand\
   Wang}{2021}{Radchenko2021-cw}
@@ -1337,11 +1285,6 @@ Xie, J. \harvardand\ Hong, T.  \harvardyearleft 2016\harvardyearright ,
   `{GEFCom2014} probabilistic electric load forecasting: An integrated solution
   with forecast combination and residual simulation', {\em International
   Journal of Forecasting} {\bf 32}(3),~1012--1016.
-
-\harvarditem{Yang}{2005}{yang2005can}
-Yang, Y.  \harvardyearleft 2005\harvardyearright , `Can the strengths of aic
-  and bic be shared? a conflict between model indentification and regression
-  estimation', {\em Biometrika} {\bf 92}(4),~937--950.
 
 \harvarditem{Yao \harvardand\ Islam}{2008}{Yao2008-or}
 Yao, X. \harvardand\ Islam, M.~M.  \harvardyearleft 2008\harvardyearright ,

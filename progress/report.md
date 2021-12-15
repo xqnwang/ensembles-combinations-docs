@@ -158,17 +158,17 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
 
 ## Conclusions and a look to the future
 
-- A brief summary of the scope and coverage of our review.
-- Now nearly 50 years on from the seminal work of Bates and Granger (1969), **simple averaging** still dominates more refined combinations for both point and probabilistic forecasts.
-- Importance and challenge of the selection of the model pool. Accuracy, diversity, and calibration of the individual forecasts.
-- Developments mainly focus on linear combinations, while nonlinear combinations need to be further investigated and deserve further attention and development.
+1. A brief summary of the scope and coverage of our review.
+2. Now nearly 50 years on from the seminal work of Bates and Granger (1969), **simple averaging** still dominates more refined combinations for both point and probabilistic forecasts.
+3. Importance and challenge of the selection of the model pool. Accuracy, diversity, and calibration of the individual forecasts.
+4. Developments mainly focus on linear combinations, while nonlinear combinations need to be further investigated and deserve further attention and development.
 
-- Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
-- Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
-- Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.
-- Pursue computationally effective combination algorithm (Keep it simple stupid, Green and Armstrong (2015, JBR)) and explore in depth why various combination algorithms work.
-- Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software (software implementations).
-- There are other ways that multiple forecasts, multiple models get used in forecasting, such as in theta, bagging, boosting, temporal aggregation, hierarchical aggregation.
+5. Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
+6. Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
+7. Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.
+8. Pursue computationally effective combination algorithm (Keep it simple stupid, Green and Armstrong (2015, JBR)) and explore in depth why various combination algorithms work.
+9. Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software (software implementations).
+10. There are other ways that multiple forecasts, multiple models get used in forecasting, such as in theta, bagging, boosting, temporal aggregation, hierarchical aggregation.
 
 
 
