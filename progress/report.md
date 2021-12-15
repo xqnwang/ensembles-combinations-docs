@@ -166,7 +166,7 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
 - Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
 - Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
 - Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.
-- Pursue computationally effective combination algorithm and explore in depth why various combination algorithms work.
+- Pursue computationally effective combination algorithm (Keep it simple stupid, Green and Armstrong (2015, JBR)) and explore in depth why various combination algorithms work.
 - Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software (software implementations).
 - There are other ways that multiple forecasts, multiple models get used in forecasting, such as in theta, bagging, boosting, temporal aggregation, hierarchical aggregation.
 
