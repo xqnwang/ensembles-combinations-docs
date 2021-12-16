@@ -147,7 +147,7 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
    - Initial work on forecast combination focused on the combination of point forecasts.
    - In recent years attention has shifted towards probabilistic forecasts. Shape, sharpness, calibration problem.
 6. The aim and purpose.
-   - A review of how various combination strategies have been used in the past**, **the advantages and disadvantages, and how the various ideas have developed in parallel but are related.
+   - A review of how various combination strategies have been used in the past, the advantages and disadvantages, and how the various ideas have developed in parallel but are related.
 7. The scope (we should clarify).
    - Only focus on combinations of multiple forecasts from different models for one series.
    - We take the forecasts to be combined essentially as given, and do not discuss in detail important issues around how the individual or component forecasts themselves should be produced.
@@ -162,7 +162,6 @@ Title: **Forecast combinations: Using multiple models to improve forecasts**
 2. Now nearly 50 years on from the seminal work of Bates and Granger (1969), **simple averaging** still dominates more refined combinations for both point and probabilistic forecasts.
 3. Importance and challenge of the selection of the model pool. Accuracy, diversity, and calibration of the individual forecasts.
 4. Developments mainly focus on linear combinations, while nonlinear combinations need to be further investigated and deserve further attention and development.
-
 5. Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
 6. Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
 7. Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.

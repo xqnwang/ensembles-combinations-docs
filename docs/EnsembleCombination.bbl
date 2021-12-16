@@ -736,6 +736,11 @@ Ma, S. \harvardand\ Fildes, R.  \harvardyearleft 2021\harvardyearright ,
   `Retail sales forecasting with meta-learning', {\em European Journal of
   Operational Research} {\bf 288}(1),~111--128.
 
+\harvarditem{Makridakis}{1996}{Makridakis1996-cf}
+Makridakis, S.  \harvardyearleft 1996\harvardyearright , `Forecasting: its role
+  and value for planning and strategy', {\em International Journal of
+  Forecasting} {\bf 12}(4),~513--537.
+
 \harvarditem[Makridakis et~al.]{Makridakis, Andersen, Carbone, Fildes, Hibon,
   Lewandowski, Newton, Parzen \harvardand\ Winkler}{1982}{Makridakis1982-hb}
 Makridakis, S., Andersen, A., Carbone, R., Fildes, R., Hibon, M., Lewandowski,
@@ -1147,6 +1152,13 @@ Sugiura, N.  \harvardyearleft 1978\harvardyearright , `Further analysts of the
   data by akaike's information criterion and the finite corrections: Further
   analysts of the data by akaike's', {\em Communications in Statistics-Theory
   and Methods} .
+
+\harvarditem[Syntetos et~al.]{Syntetos, Boylan \harvardand\
+  Disney}{2009}{Syntetos2009-ho}
+Syntetos, A.~A., Boylan, J.~E. \harvardand\ Disney, S.~M.  \harvardyearleft
+  2009\harvardyearright , `Forecasting for inventory planning: a 50-year
+  review', {\em Journal of the Operational Research Society} {\bf
+  60}(1),~S149--S160.
 
 \harvarditem[Taillardat et~al.]{Taillardat, Foug{\`e}res, Naveau \harvardand\
   Mestre}{2019}{Taillardat2019-ni}

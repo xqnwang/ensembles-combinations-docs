@@ -89,9 +89,9 @@ The gains from forecast combinations highly rely on not only the quality of the 
 
 Initial work on forecast combinations focused on dealing with point forecasts since the seminal work of \cite{Bates1969-yj} \citep[see, for example,][]{Clemen1989-fb,Timmermann2006-en}. In recent years considerable attention has moved towards the use of probabilistic forecasts \citep[e.g.,][]{Hall2007-lh,Gneiting2013-hl,Kapetanios2015-bb,Martin2021-yi} as they enable the assessment of forecast uncertainties and provide decision makers with more insights to gain prominence in a variety of applications, ranging from macroeconomics to energy. When working with probabilistic forecasts, issues such as diversity among individual forecasts may be more complex and less understood than combining point forecasts \citep{Ranjan2010-jl} and additional issues such as calibration and sharpness need to be considered to help for an overall assessment and thus the selection of combination schemes \citep{Gneiting2007-fr}. Additionally, combining probabilistic forecasts elicited in different forms (i.e., probability forecasts and quantiles) will result in combined forecasts with completely different properties such as calibration, sharpness, and shape; see \cite{Lichtendahl2013-rt} for further analytical details.
 
-The past five decades have seen growing interests in combining forecasts to achieve gains. This paper intends to present an up-to-date review of the literature on forecast combinations. The review will cover a wide variety of forecast combination methods for both point forecasts and probabilistic forecast, focusing on classifying them and highlight how the various ideas have developed in parallel but are related. Comparisons between the reviewed combination methods in terms of advantages and disadvantages are provided. Furthermore, some important issues concerning the performance of forecast combinations are also surveyed. Finally, we discuss current challenges and potential directions for future work.
+The past five decades have seen growing interests in combining forecasts to achieve gains. This paper intends to present an up-to-date review of the literature on forecast combinations. The review will cover a wide variety of forecast combination methods for both point forecasts and probabilistic forecast, focusing on classifying them and highlighting how the various ideas have developed in parallel but are related. Comparisons between the reviewed combination methods in terms of advantages and disadvantages are also provided. Furthermore, some important issues concerning the competence of forecast combinations are also surveyed. Finally, we discuss current challenges and potential directions for future work.
 
-We should clarify that we take the individual forecasts to be combined essentially as given and do not shed light on how the forecasts themselves are generated. Although the literature involves several other ways in which multiple forecasts or models get used for combinations, we only consider combinations of multiple forecasts directly derived from \textit{separate and non-interfering} models for a given series. For example, we do not cover bootstrap aggregation (bagging), in which the remainder of a given series is bootstrapped to create multiple versions of the series and multiple forecasts are produced thenceforth and aggregated to form the final forecast \citep[see, for example,][]{Bergmeir2016-ae,Petropoulos2018-fw}. The reviewed combination methods in this paper can then serve as various tools to aggregate (combine) the produced multiple forecasts in this particular context. Moreover, the aim of the review is not to judge the superiority of any approaches, as approaches should be tailored to specific forecasting problems, but rather to provide a personal and historical overview of the main developments, even though there may be some important papers we have missed.
+We should clarify that we take the individual forecasts to be combined intrinsically as given and do not shed light on how the forecasts themselves are generated. Although the literature involves several other ways in which multiple forecasts or models get used for combinations, we only consider combinations of multiple forecasts directly derived from \textit{separate} and \textit{non-interfering} models for a given series. For example, we do not cover bootstrap aggregation (bagging), in which the remainder of a given series is bootstrapped to create multiple versions of the given series and multiple forecasts are produced thenceforth and aggregated to form the final forecast \citep[see, for example,][]{Bergmeir2016-ae,Petropoulos2018-fw}. The reviewed combination methods in this paper can then function as various tools to aggregate (combine) the produced multiple forecasts in this particular context. Moreover, the aim of the review is not to judge the superiority of any approaches, as different approaches should be tailored to specific forecasting problems, but rather to contribute a personal and historical overview of the main developments, even though there may be some important papers we have missed.
 
 % Conclude with a brief paragraph that describes the organization of the rest of the paper.
 The rest of this article is organized as follows:
@@ -524,11 +524,41 @@ Determining ensemble weights for interval forecasts is evidently easier to imple
 \section{Conclusions and a look to the future}
 \label{sec:conclusion}
 
+Forecasting plays an indispensable role in decision making of which the success depends heavily on the accuracy of the derived forecasts. Even with a slight increase in accuracy, remarkable gains may be achieved in activities such as management planning and strategy setting \citep{Makridakis1996-cf,Syntetos2009-ho,Petropoulos2021-ft}. In this regard, forecast combinations would go a long way towards enhancing accuracy in the sense of integrating different aspects of information gleaned from multiple forecasts, especially at such an exciting time for the field of forecasting with considerable advanced forecasting approaches available. In this review, our goal is not only to show how forecast combinations evolve over time, but also identify what are the potential and limitations of various methods, and where are the needs for further research. Over time, the research on forecast combinations has shifted its focus from the use of point forecasts to that of probabilistic forecasts, striving to provide an impression of forecast uncertainty. Additionally, forecast combinations can be model-free or model-fitting, linear or nonlinear, static or time-varying, series-specific or cross-learning, and frequentist or Bayesian. The toolbox of combination methods has grown in size and sophistication, and each method offers its own benefits while remaining interrelated. Which combination method to choose is directly bound up with several factors such as the form of forecasts (such as point forecasts versus probabilistic forecasts, probabilities versus quantiles), the quality and size of the model pool, the information gathered, and the specific forecasting problems. Based on this review, we discuss current challenges and potential insights for future research in the following paragraphs.
+
+% 2. Now nearly 50 years on from the seminal work of Bates and Granger (1969), simple averaging still dominates more refined combinations for both point and probabilistic forecasts. set a benchmark
+\textit{Simple combinations}
+
+% 3. Importance and challenge of the selection of the model pool. Accuracy, diversity, and calibration of the individual forecasts.
+\textit{The model pool}
+% Evaluation for selection considering diversity accuracy and robustness?
+
+% 4. Developments mainly focus on linear combinations, while nonlinear combinations need to be further investigated and deserve further attention and development.
+\textit{Nonlinear combinations}
+
+% 5. Combining probability distributions and combining quantile functions represent two different ways of thinking. Further theoretical and empirical development on probabilistic forecast combinations, especially on quantile combinations.
+\textit{Probabilistic forecast combinations}
+
+% 6. Correlation among individual forecasts is rarely considered in probabilistic forecast combinations, mainly developed from a Bayesian perspective.
+\textit{Correlation among individual forecasts}
+
+% 7. Cross-learning. Time series features helps to the weight determination with cross-learning. Feature engineering for different types of data.
+\textit{Cross-learning}
+
+% 8. Pursue computationally effective (computing time and costs) combination algorithm (Keep it simple stupid, Green and Armstrong (2015, JBR)) and explore in depth why various combination algorithms work.
+\textit{}
+% the sensitivity analysis may lead to new insights in the decision problem.
+
+% 9. Large, diverse time series datasets to demonstrate the benefits of forecast combinations and open source software (software implementations).
+\textit{Open-source software and datasets}
+
+% 10. There are other ways that multiple forecasts, multiple models get used in forecasting, such as in theta, bagging, boosting, temporal aggregation, hierarchical aggregation.
+Summary.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Boosting in forecasting}
 % Hybrid systems \citep{Zhang2003-go,Pai2005-ea,Yu2005-px,De_Mattos_Neto2017-iz,Chen2021-lx}
-% refer to "The ensemble approach to forecasting: A review and synthesis"
-%\section{Bagging in forecasting}
 % refer to "The ensemble approach to forecasting: A review and synthesis"
 
 
