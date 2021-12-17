@@ -497,6 +497,21 @@ Gneiting, T. \harvardand\ Ranjan, R.  \harvardyearleft 2013\harvardyearright ,
   `Combining predictive distributions', {\em Electronic Journal of Statistics}
   {\bf 7},~1747--1782.
 
+\harvarditem[Godahewa et~al.]{Godahewa, Bergmeir, Webb, Hyndman \harvardand\
+  Montero-Manso}{2021{\em a}}{Godahewa2021-mo}
+Godahewa, R., Bergmeir, C., Webb, G.~I., Hyndman, R.~J. \harvardand\
+  Montero-Manso, P.  \harvardyearleft 2021{\em a}\harvardyearright , Monash
+  time series forecasting archive, {\em in} `Neural Information Processing
+  Systems Track on Datasets and Benchmarks'.
+\newblock forthcoming.
+
+\harvarditem[Godahewa et~al.]{Godahewa, Bergmeir, Webb, Hyndman \harvardand\
+  Montero-Manso}{2021{\em b}}{Godahewa2021-wb}
+Godahewa, R., Bergmeir, C., Webb, G.~I., Hyndman, R.~J. \harvardand\
+  Montero-Manso, P.  \harvardyearleft 2021{\em b}\harvardyearright , `Monash
+  time series forecasting repository'.
+\newline\harvardurl{https://forecastingdata.org/}
+
 \harvarditem{Graham}{1996}{Graham1996-qc}
 Graham, J.~R.  \harvardyearleft 1996\harvardyearright , `Is a group of
   economists better than one? than none?', {\em Journal of Business} {\bf
@@ -1302,6 +1317,10 @@ Xie, J. \harvardand\ Hong, T.  \harvardyearleft 2016\harvardyearright ,
 Yao, X. \harvardand\ Islam, M.~M.  \harvardyearleft 2008\harvardyearright ,
   `Evolving artificial neural network ensembles', {\em IEEE Computational
   Intelligence Magazine} {\bf 3}(1),~31--42.
+
+\harvarditem{Zellner}{2001}{Zellner2001-si}
+Zellner, A.  \harvardyearleft 2001\harvardyearright , {\em Keep it
+  sophisticatedly simple}, Cambridge: Cambridge University Press.
 
 \harvarditem[Zhang et~al.]{Zhang, Wang, Zhang, Wang \harvardand\
   Zhang}{2020}{Zhang2020-dm}
