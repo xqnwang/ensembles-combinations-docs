@@ -526,6 +526,11 @@ Granger, C. W.~J. \harvardand\ Ramanathan, R.  \harvardyearleft
   1984\harvardyearright , `Improved methods of combining forecasts', {\em
   Journal of Forecasting} {\bf 3}(2),~197--204.
 
+\harvarditem{Green \harvardand\ Armstrong}{2015}{Green2015-mi}
+Green, K.~C. \harvardand\ Armstrong, J.~S.  \harvardyearleft
+  2015\harvardyearright , `Simple versus complex forecasting: The evidence',
+  {\em Journal of Business Research} {\bf 68}(8),~1678--1685.
+
 \harvarditem[Gr{\"o}nquist et~al.]{Gr{\"o}nquist, Yao, Ben-Nun, Dryden, Dueben,
   Li \harvardand\ Hoefler}{2021}{Gronquist2021-no}
 Gr{\"o}nquist, P., Yao, C., Ben-Nun, T., Dryden, N., Dueben, P., Li, S.
@@ -592,6 +597,12 @@ Hora, S.~C.  \harvardyearleft 2004\harvardyearright , `Probability judgments
 Hsiao, C. \harvardand\ Wan, S.~K.  \harvardyearleft 2014\harvardyearright , `Is
   there an optimal forecast combination?', {\em Journal of Econometrics} {\bf
   178},~294--309.
+
+\harvarditem{Hyndman \harvardand\ Athanasopoulos}{2021}{Hyndman2021-tx}
+Hyndman, R.~J. \harvardand\ Athanasopoulos, G.  \harvardyearleft
+  2021\harvardyearright , {\em Forecasting: principles and practice}, 3rd edn,
+  OTexts: Melbourne, Australia.
+\newline\harvardurl{https://otexts.com/fpp3/}
 
 \harvarditem[Hyndman et~al.]{Hyndman, Kang, Montero-Manso, Talagala, Wang, Yang
   \harvardand\ O’Hara-Wild}{2019}{rtsfeatures}
