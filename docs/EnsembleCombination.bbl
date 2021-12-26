@@ -51,6 +51,13 @@ Armstrong, J.~S.  \harvardyearleft 2001\harvardyearright , Combining forecasts,
   {\em in} J.~S. Armstrong, ed., `Principles of Forecasting: A Handbook for
   Researchers and Practitioners', Springer US, Boston, MA, pp.~417--439.
 
+\harvarditem{Assimakopoulos \harvardand\
+  Nikolopoulos}{2000}{Assimakopoulos2000-cc}
+Assimakopoulos, V. \harvardand\ Nikolopoulos, K.  \harvardyearleft
+  2000\harvardyearright , `The theta model: a decomposition approach to
+  forecasting', {\em International Journal of Forecasting} {\bf
+  16}(4),~521--530.
+
 \harvarditem{Atger}{2003}{Atger2003-lx}
 Atger, F.  \harvardyearleft 2003\harvardyearright , `Spatial and interannual
   variability of the reliability of ensemble-based probabilistic forecasts:
@@ -588,6 +595,12 @@ Hoeting, J.~A., Madigan, D., Raftery, A.~E. \harvardand\ Volinsky, C.~T.
   \harvardyearleft 1999\harvardyearright , `Bayesian model averaging: a
   tutorial', {\em Statistical Science} {\bf 14}(4),~382--417.
 
+\harvarditem[Hollyman et~al.]{Hollyman, Petropoulos \harvardand\
+  Tipping}{2021}{Hollyman2021-tn}
+Hollyman, R., Petropoulos, F. \harvardand\ Tipping, M.~E.  \harvardyearleft
+  2021\harvardyearright , `Understanding forecast reconciliation', {\em
+  European Journal of Operational Research} {\bf 294}(1),~149--160.
+
 \harvarditem{Hora}{2004}{Hora2004-fz}
 Hora, S.~C.  \harvardyearleft 2004\harvardyearright , `Probability judgments
   for continuous quantities: Linear combinations and calibration', {\em
@@ -607,6 +620,13 @@ Hyndman, R., Athanasopoulos, G., Bergmeir, C., Caceres, G., Chhay, L.,
   functions for time series and linear models}.
 \newblock R package version 8.15.
 \newline\harvardurl{https://pkg.robjhyndman.com/forecast/}
+
+\harvarditem[Hyndman et~al.]{Hyndman, Ahmed, Athanasopoulos \harvardand\
+  Shang}{2011}{Hyndman2011-sd}
+Hyndman, R.~J., Ahmed, R.~A., Athanasopoulos, G. \harvardand\ Shang, H.~L.
+  \harvardyearleft 2011\harvardyearright , `Optimal combination forecasts for
+  hierarchical time series', {\em Computational Statistics \& Data Analysis}
+  {\bf 55}(9),~2579--2589.
 
 \harvarditem{Hyndman \harvardand\ Athanasopoulos}{2021}{Hyndman2021-tx}
 Hyndman, R.~J. \harvardand\ Athanasopoulos, G.  \harvardyearleft
@@ -709,8 +729,7 @@ Koop, G.~M. \harvardand\ Potter, S.  \harvardyearleft 2003\harvardyearright ,
   `Forecasting in large macroeconomic panels using {Bayesian} model averaging',
   {\em SSRN Electronic Journal} .
 
-\harvarditem[Kourentzes et~al.]{Kourentzes, Barrow \harvardand\
-  Crone}{2014}{Kourentzes2014-hs}
+\harvarditem{Kourentzes, Barrow \harvardand\ Crone}{2014}{Kourentzes2014-hs}
 Kourentzes, N., Barrow, D.~K. \harvardand\ Crone, S.~F.  \harvardyearleft
   2014\harvardyearright , `Neural network ensemble operators for time series
   forecasting', {\em Expert Systems with Applications} {\bf 41}(9),~4235--4244.
@@ -721,6 +740,26 @@ Kourentzes, N., Barrow, D. \harvardand\ Petropoulos, F.  \harvardyearleft
   2019\harvardyearright , `Another look at forecast selection and combination:
   Evidence from forecast pooling', {\em International Journal of Production
   Economics} {\bf 209}(February 2018),~226--235.
+
+\harvarditem{Kourentzes \harvardand\ Petropoulos}{2016}{Kourentzes2016-qq}
+Kourentzes, N. \harvardand\ Petropoulos, F.  \harvardyearleft
+  2016\harvardyearright , `Forecasting with multivariate temporal aggregation:
+  The case of promotional modelling', {\em International Journal of Production
+  Economics} {\bf 181},~145--153.
+
+\harvarditem{Kourentzes, Petropoulos \harvardand\
+  Trapero}{2014}{Kourentzes2014-wz}
+Kourentzes, N., Petropoulos, F. \harvardand\ Trapero, J.~R.  \harvardyearleft
+  2014\harvardyearright , `Improving forecasting by estimating time series
+  structural components across multiple frequencies', {\em International
+  Journal of Forecasting} {\bf 30}(2),~291--302.
+
+\harvarditem[Kourentzes et~al.]{Kourentzes, Rostami-Tabar \harvardand\
+  Barrow}{2017}{Kourentzes2017-xe}
+Kourentzes, N., Rostami-Tabar, B. \harvardand\ Barrow, D.~K.  \harvardyearleft
+  2017\harvardyearright , `Demand forecasting by temporal aggregation: Using
+  optimal or multiple aggregation levels?', {\em Journal of Business Research}
+  {\bf 78},~1--9.
 
 \harvarditem{Krasnopolsky \harvardand\ Lin}{2012}{Krasnopolsky2012-xu}
 Krasnopolsky, V.~M. \harvardand\ Lin, Y.  \harvardyearleft
@@ -1219,6 +1258,13 @@ Syntetos, A.~A., Boylan, J.~E. \harvardand\ Disney, S.~M.  \harvardyearleft
   review', {\em Journal of the Operational Research Society} {\bf
   60}(1),~S149--S160.
 
+\harvarditem[Taieb et~al.]{Taieb, Taylor \harvardand\
+  Hyndman}{2021}{Taieb2021-tc}
+Taieb, S.~B., Taylor, J.~W. \harvardand\ Hyndman, R.~J.  \harvardyearleft
+  2021\harvardyearright , `Hierarchical probabilistic forecasting of
+  electricity demand with smart meter data', {\em Journal of the American
+  Statistical Association} {\bf 116}(533),~27--43.
+
 \harvarditem[Taillardat et~al.]{Taillardat, Foug{\`e}res, Naveau \harvardand\
   Mestre}{2019}{Taillardat2019-ni}
 Taillardat, M., Foug{\`e}res, A.-L., Naveau, P. \harvardand\ Mestre, O.
@@ -1328,6 +1374,13 @@ West, M.  \harvardyearleft 1992\harvardyearright , `Modelling agent forecast
 West, M. \harvardand\ Crosse, J.  \harvardyearleft 1992\harvardyearright ,
   `Modelling probabilistic agent opinion', {\em Journal of the Royal
   Statistical Society: Series B (Methodological)} {\bf 54}(1),~285--299.
+
+\harvarditem[Wickramasuriya et~al.]{Wickramasuriya, Athanasopoulos \harvardand\
+  Hyndman}{2019}{Wickramasuriya2019-fc}
+Wickramasuriya, S.~L., Athanasopoulos, G. \harvardand\ Hyndman, R.~J.
+  \harvardyearleft 2019\harvardyearright , `Optimal forecast reconciliation for
+  hierarchical and grouped time series through trace minimization', {\em
+  Journal of the American Statistical Association} {\bf 114}(526),~804--819.
 
 \harvarditem{Wilson}{2017}{Wilson2017-ct}
 Wilson, K.~J.  \harvardyearleft 2017\harvardyearright , `An investigation of
