@@ -598,18 +598,30 @@ Hsiao, C. \harvardand\ Wan, S.~K.  \harvardyearleft 2014\harvardyearright , `Is
   there an optimal forecast combination?', {\em Journal of Econometrics} {\bf
   178},~294--309.
 
+\harvarditem[Hyndman et~al.]{Hyndman, Athanasopoulos, Bergmeir, Caceres, Chhay,
+  O'Hara-Wild, Petropoulos, Razbash, Wang \harvardand\
+  Yasmeen}{2021}{rforecast}
+Hyndman, R., Athanasopoulos, G., Bergmeir, C., Caceres, G., Chhay, L.,
+  O'Hara-Wild, M., Petropoulos, F., Razbash, S., Wang, E. \harvardand\ Yasmeen,
+  F.  \harvardyearleft 2021\harvardyearright , {\em {forecast}: Forecasting
+  functions for time series and linear models}.
+\newblock R package version 8.15.
+\newline\harvardurl{https://pkg.robjhyndman.com/forecast/}
+
 \harvarditem{Hyndman \harvardand\ Athanasopoulos}{2021}{Hyndman2021-tx}
 Hyndman, R.~J. \harvardand\ Athanasopoulos, G.  \harvardyearleft
   2021\harvardyearright , {\em Forecasting: principles and practice}, 3rd edn,
   OTexts: Melbourne, Australia.
 \newline\harvardurl{https://otexts.com/fpp3/}
 
-\harvarditem[Hyndman et~al.]{Hyndman, Kang, Montero-Manso, Talagala, Wang, Yang
-  \harvardand\ O’Hara-Wild}{2019}{rtsfeatures}
+\harvarditem[Hyndman et~al.]{Hyndman, Kang, Montero-Manso, Talagala, Wang,
+  Yang, O’Hara-Wild, Ben~Taieb, Hanqing, Lake, Laptev \harvardand\
+  Moorman}{2019}{rtsfeatures}
 Hyndman, R.~J., Kang, Y., Montero-Manso, P., Talagala, T.~S., Wang, E., Yang,
-  Y. \harvardand\ O’Hara-Wild, M.  \harvardyearleft 2019\harvardyearright ,
-  {\em tsfeatures: {Time Series Feature Extraction}}.
-\newblock R package version 1.0.1.
+  Y., O’Hara-Wild, M., Ben~Taieb, S., Hanqing, C., Lake, D.~K., Laptev, N.
+  \harvardand\ Moorman, J.~R.  \harvardyearleft 2019\harvardyearright , {\em
+  {tsfeatures}: {Time Series Feature Extraction}}.
+\newblock R package version 1.0.2.
 \newline\harvardurl{https://CRAN.R-project.org/package=tsfeatures}
 
 \harvarditem[Jore et~al.]{Jore, Mitchell \harvardand\ Vahey}{2010}{Jore2010-yi}
@@ -657,6 +669,13 @@ Kang, Y., Hyndman, R.~J. \harvardand\ Smith-Miles, K.  \harvardyearleft
   2017\harvardyearright , `Visualising forecasting algorithm performance using
   time series instance spaces', {\em International Journal of Forecasting} {\bf
   33}(2),~345--358.
+
+\harvarditem{Kang, Li, Hyndman, O'Hara-Wild \harvardand\ Zhao}{2020}{rgratis}
+Kang, Y., Li, F., Hyndman, R.~J., O'Hara-Wild, M. \harvardand\ Zhao, B.
+  \harvardyearleft 2020\harvardyearright , {\em {gratis}: {GeneRAting TIme
+  Series with diverse and controllable characteristics}}.
+\newblock R package version 0.2-1.
+\newline\harvardurl{https://CRAN.R-project.org/package=gratis}
 
 \harvarditem{Kang, Spiliotis, Petropoulos, Athiniotis, Li \harvardand\
   Assimakopoulos}{2020}{Kang2020-sa}
@@ -896,6 +915,14 @@ O'Hagan, A., Buck, C.~E., Daneshkhah, A., Richard~Eiser, J., Garthwaite, P.~H.,
   2006\harvardyearright , {\em Uncertain Judgements: Eliciting Experts'
   Probabilities}, John Wiley \& Sons.
 
+\harvarditem[O'Hara-Wild et~al.]{O'Hara-Wild, Hyndman, Wang, Caceres, Hensel
+  \harvardand\ Hyndman}{2021}{rfable}
+O'Hara-Wild, M., Hyndman, R.~J., Wang, E., Caceres, G., Hensel, T.-G.
+  \harvardand\ Hyndman, T.  \harvardyearleft 2021\harvardyearright , {\em
+  fable: {Forecasting} Models for Tidy Time Series}.
+\newblock R package version 0.3.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=fable}
+
 \harvarditem{{\"O}ller}{1978}{Oller1978-wx}
 {\"O}ller, L.-E.  \harvardyearleft 1978\harvardyearright , `A method for
   pooling forecasts', {\em Journal of the Operational Research Society} {\bf
@@ -1124,6 +1151,12 @@ Shaub, D.  \harvardyearleft 2019\harvardyearright , `Fast and accurate yearly
   time series forecasting with forecast combinations', {\em International
   Journal of Forecasting} .
 
+\harvarditem{Shaub \harvardand\ Ellis}{2018}{rforecastHybrid}
+Shaub, D. \harvardand\ Ellis, P.  \harvardyearleft 2018\harvardyearright , {\em
+  {forecastHybrid}: {Convenient} Functions for Ensemble Time Series Forecasts}.
+\newblock R package version 5.0.19.
+\newline\harvardurl{https://CRAN.R-project.org/package=forecastHybrid}
+
 \harvarditem{Shi \harvardand\ Liu}{1993}{Shanming_Shi1993-uk}
 Shi, S. \harvardand\ Liu, B.  \harvardyearleft 1993\harvardyearright ,
   Nonlinear combination of forecasts with neural networks, {\em in}
@@ -1278,6 +1311,13 @@ Weigel, A.~P., Liniger, M.~A. \harvardand\ Appenzeller, C.  \harvardyearleft
   2008\harvardyearright , `Can multi-model combination really enhance the
   prediction skill of probabilistic ensemble forecasts?', {\em Quarterly
   Journal of the Royal Meteorological Society} {\bf 134}(630),~241--260.
+
+\harvarditem[Weiss et~al.]{Weiss, Roetzer \harvardand\
+  Raviv}{2018}{rForecastComb}
+Weiss, C.~E., Roetzer, G.~R. \harvardand\ Raviv, E.  \harvardyearleft
+  2018\harvardyearright , {\em {ForecastComb}: {Forecast} Combination Methods}.
+\newblock R package version 1.3.1.
+\newline\harvardurl{https://CRAN.R-project.org/package=ForecastComb}
 
 \harvarditem{West}{1992}{West1992-gr}
 West, M.  \harvardyearleft 1992\harvardyearright , `Modelling agent forecast
