@@ -1196,12 +1196,6 @@ Shaub, D. \harvardand\ Ellis, P.  \harvardyearleft 2018\harvardyearright , {\em
 \newblock R package version 5.0.19.
 \newline\harvardurl{https://CRAN.R-project.org/package=forecastHybrid}
 
-\harvarditem{Shi \harvardand\ Liu}{1993}{Shanming_Shi1993-uk}
-Shi, S. \harvardand\ Liu, B.  \harvardyearleft 1993\harvardyearright ,
-  Nonlinear combination of forecasts with neural networks, {\em in}
-  `Proceedings of 1993 International Conference on Neural Networks
-  ({IJCNN-93-Nagoya}, Japan)', Vol.~1, ieeexplore.ieee.org, pp.~959--962 vol.1.
-
 \harvarditem[Shi et~al.]{Shi, Da~Xu \harvardand\ Liu}{1999}{Ming_Shi1999-vs}
 Shi, S.~M., Da~Xu, L. \harvardand\ Liu, B.  \harvardyearleft
   1999\harvardyearright , `Improving the accuracy of nonlinear combined
