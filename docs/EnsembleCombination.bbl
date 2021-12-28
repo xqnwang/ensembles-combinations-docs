@@ -86,6 +86,13 @@ Baran, S. \harvardand\ Lerch, S.  \harvardyearleft 2018\harvardyearright ,
   ensemble forecasts', {\em International Journal of Forecasting} {\bf
   34}(3),~477--496.
 
+\harvarditem[Barandas et~al.]{Barandas, Folgado, Fernandes, Santos, Abreu,
+  Bota, Liu, Schultz \harvardand\ Gamboa}{2020}{Barandas2020-vr}
+Barandas, M., Folgado, D., Fernandes, L., Santos, S., Abreu, M., Bota, P., Liu,
+  H., Schultz, T. \harvardand\ Gamboa, H.  \harvardyearleft
+  2020\harvardyearright , `{TSFEL}: {Time Series Feature Extraction Library}',
+  {\em SoftwareX} {\bf 11},~100456.
+
 \harvarditem[Bassetti et~al.]{Bassetti, Casarin \harvardand\
   Ravazzolo}{2018}{Bassetti2018-qr}
 Bassetti, F., Casarin, R. \harvardand\ Ravazzolo, F.  \harvardyearleft
@@ -240,6 +247,13 @@ Chernozhukov, V., Fern{\'a}ndez‐Val, I. \harvardand\ Galichon, A.
   \harvardyearleft 2010\harvardyearright , `Quantile and probability curves
   without crossing', {\em Econometrica: Journal of the Econometric Society}
   {\bf 78}(3),~1093--1125.
+
+\harvarditem[Christ et~al.]{Christ, Braun, Neuffer \harvardand\
+  Kempa-Liehr}{2018}{Christ2018-vi}
+Christ, M., Braun, N., Neuffer, J. \harvardand\ Kempa-Liehr, A.~W.
+  \harvardyearleft 2018\harvardyearright , `{Time Series Feature Extraction on
+  basis of Scalable Hypothesis tests} (tsfresh -- {A Python package})', {\em
+  Neurocomputing} {\bf 307},~72--77.
 
 \harvarditem[Claeskens et~al.]{Claeskens, Magnus, Vasnev \harvardand\
   Wang}{2016}{Claeskens2016-pv}
@@ -409,6 +423,12 @@ Elliott, G. \harvardand\ Timmermann, A.  \harvardyearleft 2004\harvardyearright
   , `Optimal forecast combinations under general loss functions and forecast
   error distributions', {\em Journal of Econometrics} {\bf 122}(1),~47--79.
 
+\harvarditem{{Facebook's Infrastructure Data Science team}}{2021}{pKats}
+{Facebook's Infrastructure Data Science team}  \harvardyearleft
+  2021\harvardyearright , {\em {Kats}}.
+\newblock Python package version 0.1.0.
+\newline\harvardurl{https://facebookresearch.github.io/Kats/}
+
 \harvarditem{Fern{\'a}ndez-Villaverde \harvardand\ Francisco
   Rubio-Ram{\i}rez}{2004}{Fernandez-Villaverde2004-pz}
 Fern{\'a}ndez-Villaverde, J. \harvardand\ Francisco Rubio-Ram{\i}rez, J.
@@ -426,6 +446,12 @@ Fischer, I. \harvardand\ Harvey, N.  \harvardyearleft 1999\harvardyearright ,
 Freitas, P. S.~A. \harvardand\ Rodrigues, A. J.~L.  \harvardyearleft
   2006\harvardyearright , `Model combination in neural-based forecasting', {\em
   European Journal of Operational Research} {\bf 173}(3),~801--814.
+
+\harvarditem{Fulcher \harvardand\ Jones}{2017}{Fulcher2017-uf}
+Fulcher, B.~D. \harvardand\ Jones, N.~S.  \harvardyearleft
+  2017\harvardyearright , `hctsa: A computational framework for automated
+  time-series phenotyping using massive feature extraction', {\em Cell systems}
+  {\bf 5}(5),~527--531.e3.
 
 \harvarditem[Gaba et~al.]{Gaba, Tsetlin \harvardand\
   Winkler}{2017}{Gaba2017-om}
@@ -586,7 +612,7 @@ Harrald, P.~G. \harvardand\ Kamstra, M.  \harvardyearleft 1997\harvardyearright
 
 \harvarditem{Henderson \harvardand\ Fulcher}{2021}{Henderson2021-gl}
 Henderson, T. \harvardand\ Fulcher, B.~D.  \harvardyearleft
-  2021\harvardyearright , `An empirical evaluation of {Time-Series} feature
+  2021\harvardyearright , `An empirical evaluation of time-series feature
   sets', {\em arXiv [cs.LG]} .
 
 \harvarditem[Hoeting et~al.]{Hoeting, Madigan, Raftery \harvardand\
@@ -815,6 +841,13 @@ Lorenz, E.~N.  \harvardyearleft 1963\harvardyearright , `Deterministic
   nonperiodic flow', {\em Journal of Atmospheric Sciences} {\bf
   20}(2),~130--141.
 
+\harvarditem[Lubba et~al.]{Lubba, Sethi, Knaute, Schultz, Fulcher \harvardand\
+  Jones}{2019}{Lubba2019-ds}
+Lubba, C.~H., Sethi, S.~S., Knaute, P., Schultz, S.~R., Fulcher, B.~D.
+  \harvardand\ Jones, N.~S.  \harvardyearleft 2019\harvardyearright , `catch22:
+  {CAnonical Time-series CHaracteristics}', {\em Data Mining and Knowledge
+  Discovery} {\bf 33}(6),~1821--1852.
+
 \harvarditem{Ma \harvardand\ Fildes}{2021}{Ma2021-np}
 Ma, S. \harvardand\ Fildes, R.  \harvardyearleft 2021\harvardyearright ,
   `Retail sales forecasting with meta-learning', {\em European Journal of
@@ -972,6 +1005,14 @@ O'Hara-Wild, M., Hyndman, R.~J., Wang, E., Caceres, G., Hensel, T.-G.
 Opschoor, A., van Dijk, D. \harvardand\ van~der Wel, M.  \harvardyearleft
   2017\harvardyearright , `Combining density forecasts using focused scoring
   rules', {\em Journal of Applied Economics} {\bf 32}(7),~1298--1313.
+
+\harvarditem[O’Hara-Wild et~al.]{O’Hara-Wild, Hyndman, Wang, Cook, Talagala
+  \harvardand\ Chhay}{2021}{rfeasts}
+O’Hara-Wild, M., Hyndman, R.~J., Wang, E., Cook, D., Talagala, T.~S.
+  \harvardand\ Chhay, L.  \harvardyearleft 2021\harvardyearright , {\em
+  {feasts}: {Feature Extraction and Statistics for Time Series}}.
+\newblock R package version 0.2.2.
+\newline\harvardurl{https://CRAN.R-project.org/package=feasts}
 
 \harvarditem{Palm \harvardand\ Zellner}{1992}{Palm1992-im}
 Palm, F.~C. \harvardand\ Zellner, A.  \harvardyearleft 1992\harvardyearright ,
