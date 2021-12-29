@@ -615,6 +615,12 @@ Henderson, T. \harvardand\ Fulcher, B.~D.  \harvardyearleft
   2021\harvardyearright , `An empirical evaluation of time-series feature
   sets', {\em arXiv [cs.LG]} .
 
+\harvarditem{Hibon \harvardand\ Evgeniou}{2005}{Hibon2005-ok}
+Hibon, M. \harvardand\ Evgeniou, T.  \harvardyearleft 2005\harvardyearright ,
+  `To combine or not to combine: selecting among forecasts and their
+  combinations', {\em International Journal of Forecasting} {\bf
+  21}(1),~15--24.
+
 \harvarditem[Hoeting et~al.]{Hoeting, Madigan, Raftery \harvardand\
   Volinsky}{1999}{Hoeting1999-qn}
 Hoeting, J.~A., Madigan, D., Raftery, A.~E. \harvardand\ Volinsky, C.~T.
@@ -696,6 +702,10 @@ Jose, V. R.~R. \harvardand\ Winkler, R.~L.  \harvardyearleft
 Jouini, M.~N. \harvardand\ Clemen, R.~T.  \harvardyearleft
   1996\harvardyearright , `Copula models for aggregating expert opinions', {\em
   Operations Research} {\bf 44}(3),~444--457.
+
+\harvarditem{Kang}{1986}{Kang1986-kq}
+Kang, H.  \harvardyearleft 1986\harvardyearright , `Unstable weights in the
+  combination of forecasts', {\em Management Science} {\bf 32}(6),~683--695.
 
 \harvarditem[Kang et~al.]{Kang, Cao, Petropoulos \harvardand\
   Li}{2021}{Kang2021-ol}
@@ -1184,6 +1194,13 @@ Ray, E.~L., Wattanachit, N., Niemi, J., Kanji, A.~H., House, K., Cramer, E.~Y.,
   {U.S.}', {\em MedRxiv} .
 \newline\harvardurl{https://www.medrxiv.org/content/early/2020/08/22/2020.08.19.20177493}
 
+\harvarditem{Rendon-Sanchez \harvardand\
+  De~Menezes}{2019}{Rendon-Sanchez2019-qm}
+Rendon-Sanchez, J.~F. \harvardand\ De~Menezes, L.~M.  \harvardyearleft
+  2019\harvardyearright , `Structural combination of seasonal exponential
+  smoothing forecasts applied to load forecasting', {\em European Journal of
+  Operational Research} {\bf 275}(3),~916--924.
+
 \harvarditem[Ribeiro et~al.]{Ribeiro, Mariani \harvardand\
   Coelho}{2019}{Ribeiro2019-wk}
 Ribeiro, G.~T., Mariani, V.~C. \harvardand\ Coelho, L. d.~S.  \harvardyearleft
@@ -1336,6 +1353,13 @@ Timmermann, A.  \harvardyearleft 2006\harvardyearright , Chapter 4 forecast
   combinations, {\em in} G.~Elliott, C.~W.~J. Granger \harvardand\
   A.~Timmermann, eds, `Handbook of Economic Forecasting', Vol.~1, Elsevier,
   pp.~135--196.
+
+\harvarditem[Trapero et~al.]{Trapero, Card{\'o}s \harvardand\
+  Kourentzes}{2019}{Trapero2019-uh}
+Trapero, J.~R., Card{\'o}s, M. \harvardand\ Kourentzes, N.  \harvardyearleft
+  2019\harvardyearright , `Quantile forecast optimal combination to enhance
+  safety stock estimation', {\em International Journal of Forecasting} {\bf
+  35}(1),~239--250.
 
 \harvarditem[Turner et~al.]{Turner, Steyvers, Merkle, Budescu \harvardand\
   Wallsten}{2014}{Turner2014-za}
