@@ -819,6 +819,10 @@ Lemke, C. \harvardand\ Gabrys, B.  \harvardyearleft 2010\harvardyearright ,
   `Meta-learning for time series forecasting and forecast combination', {\em
   Neurocomputing} {\bf 73}(10),~2006--2016.
 
+\harvarditem[Li et~al.]{Li, Kang \harvardand\ Li}{2021}{Li2021-gk}
+Li, L., Kang, Y. \harvardand\ Li, F.  \harvardyearleft 2021\harvardyearright ,
+  `Bayesian forecast combination using time-varying features'.
+
 \harvarditem[Li et~al.]{Li, Kang \harvardand\ Li}{2020}{Li2020-od}
 Li, X., Kang, Y. \harvardand\ Li, F.  \harvardyearleft 2020\harvardyearright ,
   `Forecasting with time series imaging', {\em Expert Systems with
