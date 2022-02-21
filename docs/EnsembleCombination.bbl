@@ -11584,23 +11584,23 @@
       \verb 2001.04601
       \endverb
     \endentry
-    \entry{Zhou2012-cy}{article}{}
+    \entry{Zhou2012-cy}{book}{}
       \name{author}{1}{}{%
-        {{hash=6b1a37e820a730061851a81dcca2d154}{%
+        {{hash=f8c8fede1cd8ec6a5da15fea50b3feca}{%
            family={Zhou},
            familyi={Z\bibinitperiod},
-           given={Zhi-Hua},
-           giveni={Z\bibinithyphendelim H\bibinitperiod}}}%
+           given={Zhihua},
+           giveni={Z\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {CRC press}%
       }
-      \strng{namehash}{6b1a37e820a730061851a81dcca2d154}
-      \strng{fullhash}{6b1a37e820a730061851a81dcca2d154}
-      \strng{bibnamehash}{6b1a37e820a730061851a81dcca2d154}
-      \strng{authorbibnamehash}{6b1a37e820a730061851a81dcca2d154}
-      \strng{authornamehash}{6b1a37e820a730061851a81dcca2d154}
-      \strng{authorfullhash}{6b1a37e820a730061851a81dcca2d154}
+      \strng{namehash}{f8c8fede1cd8ec6a5da15fea50b3feca}
+      \strng{fullhash}{f8c8fede1cd8ec6a5da15fea50b3feca}
+      \strng{bibnamehash}{f8c8fede1cd8ec6a5da15fea50b3feca}
+      \strng{authorbibnamehash}{f8c8fede1cd8ec6a5da15fea50b3feca}
+      \strng{authornamehash}{f8c8fede1cd8ec6a5da15fea50b3feca}
+      \strng{authorfullhash}{f8c8fede1cd8ec6a5da15fea50b3feca}
       \field{sortinit}{Z}
       \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
       \field{extradatescope}{labelyear}
@@ -11612,11 +11612,11 @@
     \endentry
     \entry{Zhou2002-cg}{article}{}
       \name{author}{3}{}{%
-        {{hash=6b1a37e820a730061851a81dcca2d154}{%
+        {{hash=f8c8fede1cd8ec6a5da15fea50b3feca}{%
            family={Zhou},
            familyi={Z\bibinitperiod},
-           given={Zhi-Hua},
-           giveni={Z\bibinithyphendelim H\bibinitperiod}}}%
+           given={Zhihua},
+           giveni={Z\bibinitperiod}}}%
         {{hash=5859faec0505aedcd37cd60aab5ac500}{%
            family={Wu},
            familyi={W\bibinitperiod},
@@ -11628,12 +11628,12 @@
            given={Wei},
            giveni={W\bibinitperiod}}}%
       }
-      \strng{namehash}{f983d63cead37fbb928f76b24578d29b}
-      \strng{fullhash}{f24fc27b058905b55f3aac2cd096ecf0}
-      \strng{bibnamehash}{f24fc27b058905b55f3aac2cd096ecf0}
-      \strng{authorbibnamehash}{f24fc27b058905b55f3aac2cd096ecf0}
-      \strng{authornamehash}{f983d63cead37fbb928f76b24578d29b}
-      \strng{authorfullhash}{f24fc27b058905b55f3aac2cd096ecf0}
+      \strng{namehash}{3e9cd5fbc440b60b22c853aaadd729f3}
+      \strng{fullhash}{2344b15071536a4f3d6edb2fc601d030}
+      \strng{bibnamehash}{2344b15071536a4f3d6edb2fc601d030}
+      \strng{authorbibnamehash}{2344b15071536a4f3d6edb2fc601d030}
+      \strng{authornamehash}{3e9cd5fbc440b60b22c853aaadd729f3}
+      \strng{authorfullhash}{2344b15071536a4f3d6edb2fc601d030}
       \field{sortinit}{Z}
       \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
       \field{extradatescope}{labelyear}
