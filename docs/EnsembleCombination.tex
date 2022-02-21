@@ -67,13 +67,7 @@ uniquelist=false, uniquename=false, date=year]{biblatex}
 \title{\bf
 %Forecast combinations: \\Using multiple models to improve forecasts
 %\\
-%Forecast combinations: \\Using multiple forecasts to improve accuracy
-%\\
-%Combining multiple forecasts: \\a review
-%\\
-%Forecast combinations: \\ a 50-year review
-%\\
-Forecast combinations: \\Using multiple forecasts to achieve benefits
+Forecast combinations: a 50-year review
 }
 
 \author{Xiaoqian Wang\footnote{School of Economics and Management, Beihang University,
@@ -145,7 +139,7 @@ Despite the fact that simple combination schemes can be intuitively implemented,
 \section{Weighted point forecast combinations}
 \label{sec:weighted_comb}
 
-Though the combined forecasts formed by simple combination rules (see Section \ref{sec:simple_comb}) are acceptable for illustrative and concise purposes, the accumulated evidence of the forecasting literature suggests assigning greater weights to individual forecasts which contain lower errors. The issue that need to be addressed is how to best weigh component forecasts to be combined. The general problem of point forecast combinations can be defined as seeking a one-dimensional aggregator that integrates an $N$-vector of $h$-step-ahead forecasts involving the information up to time $t$, $\hat{\boldsymbol{y}}_{t+h|t}=\left(\hat{y}_{t+h|t, 1}, \hat{y}_{t+h|t, 2}, \ldots, \hat{y}_{t+h|t, N}\right)^{\prime}$, into a single combined $h$-step-ahead forecast $\tilde{y}_{t+h|t}=C\left(\hat{\boldsymbol{y}}_{t+h|t} ; \boldsymbol{w}_{t+h|t}\right)$, where $\boldsymbol{w}_{t+h|t}$ is an $N$-vector of combination weights. The general class of combination methods represented by the mapping, $C$, comprises linear and nonlinear combinations, as well as series-specific and cross-learning combinations. Additionally, the combination weights can be static or time-varying along the forecasting horizon. Below we discuss in detail the use of various weighting approaches to determining combination weights associated with each individual forecast.
+Though the combined forecasts formed by simple combination rules (see Section \ref{sec:simple_comb}) are acceptable for illustrative and concise purposes, the accumulated evidence of the forecasting literature suggests assigning greater weights to individual forecasts which contain lower errors. The issue that need to be addressed is how to best weight component forecasts to be combined. The general problem of point forecast combinations can be defined as seeking a one-dimensional aggregator that integrates an $N$-vector of $h$-step-ahead forecasts involving the information up to time $t$, $\hat{\boldsymbol{y}}_{t+h|t}=\left(\hat{y}_{t+h|t, 1}, \hat{y}_{t+h|t, 2}, \ldots, \hat{y}_{t+h|t, N}\right)^{\prime}$, into a single combined $h$-step-ahead forecast $\tilde{y}_{t+h|t}=C\left(\hat{\boldsymbol{y}}_{t+h|t} ; \boldsymbol{w}_{t+h|t}\right)$, where $\boldsymbol{w}_{t+h|t}$ is an $N$-vector of combining weights. The general class of combination methods represented by the mapping, $C$, comprises linear and nonlinear combinations, as well as series-specific and cross-learning combinations. Additionally, the combination weights can be static or time-varying along the forecasting horizon. Below we discuss in detail the use of various weighting approaches to determining combination weights associated with each individual forecast.
 
 \subsection{Linear combinations}
 \label{sec:linear_comb}
