@@ -2898,10 +2898,16 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0277-6693}
       \field{journaltitle}{Journal of Forecasting}
+      \field{number}{1}
       \field{title}{Forecast combining with neural networks}
+      \field{volume}{15}
       \field{year}{1996}
+      \field{pages}{49\bibrangedash 61}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1002/(SICI)1099-131X(199601)15:1<49::AID-FOR604>3.0.CO;2-2
+      \endverb
     \endentry
     \entry{Donate2013-lq}{article}{}
       \name{author}{4}{}{%
@@ -4012,7 +4018,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Neural Information Processing Systems Track on Datasets and Benchmarks}
-      \field{note}{forthcoming}
+      \field{note}{Forthcoming}
       \field{title}{Monash Time Series Forecasting Archive}
       \field{year}{2021}
     \endentry
@@ -4427,6 +4433,9 @@
       \field{year}{2017}
       \field{pages}{712\bibrangedash 728}
       \range{pages}{17}
+      \verb{doi}
+      \verb 10.1287/opre.2017.1588
+      \endverb
     \endentry
     \entry{Gunter1992-go}{article}{}
       \name{author}{1}{}{%
@@ -6061,6 +6070,9 @@
       \field{title}{A neural network nonlinear multimodel ensemble to improve precipitation forecasts over continental {US}}
       \field{volume}{2012}
       \field{year}{2012}
+      \verb{doi}
+      \verb 10.1155/2012/649450
+      \endverb
     \endentry
     \entry{Kullback1951-hl}{article}{}
       \name{author}{2}{}{%
@@ -6091,7 +6103,9 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annals of Mathematical Statistics}
+      \field{number}{1}
       \field{title}{On information and sufficiency}
+      \field{volume}{22}
       \field{year}{1951}
     \endentry
     \entry{Lahiri2015-qq}{article}{}
@@ -6656,9 +6670,6 @@
            given={V},
            giveni={V\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {researchgate.net}%
-      }
       \strng{namehash}{2a5ae41dfa07a582ce828e2a01bb9ecb}
       \strng{fullhash}{a884410bae8b8f3a1f304bac04a4cde8}
       \strng{bibnamehash}{a884410bae8b8f3a1f304bac04a4cde8}
@@ -6673,10 +6684,12 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0169-2070}
       \field{journaltitle}{International Journal of Forecasting}
       \field{title}{The {M5} accuracy competition: Results, findings and conclusions}
       \field{year}{2020}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2021.11.013
+      \endverb
     \endentry
     \entry{Makridakis2020-lz}{article}{}
       \name{author}{7}{}{%
@@ -6716,9 +6729,6 @@
            given={RL},
            giveni={R\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {researchgate.net}%
-      }
       \strng{namehash}{2a5ae41dfa07a582ce828e2a01bb9ecb}
       \strng{fullhash}{2cb13fbf8a8fe8d69866bdb963e18fef}
       \strng{bibnamehash}{2cb13fbf8a8fe8d69866bdb963e18fef}
@@ -6738,6 +6748,9 @@
       \field{year}{2020}
       \field{pages}{1\bibrangedash 24}
       \range{pages}{24}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2021.10.009
+      \endverb
     \endentry
     \entry{Makridakis1996-cf}{article}{}
       \name{author}{1}{}{%
@@ -7380,10 +7393,14 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0025-1909}
       \field{journaltitle}{Management Science}
+      \field{number}{9}
       \field{title}{Decision analysis expert use}
+      \field{volume}{20}
       \field{year}{1974}
+      \verb{doi}
+      \verb 10.1287/mnsc.20.9.1233
+      \endverb
     \endentry
     \entry{Morris1977-xl}{article}{}
       \name{author}{1}{}{%
@@ -7409,10 +7426,14 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0025-1909}
       \field{journaltitle}{Management Science}
+      \field{number}{7}
       \field{title}{Combining expert judgments: A Bayesian approach}
+      \field{volume}{23}
       \field{year}{1977}
+      \verb{doi}
+      \verb Combining expert judgments: A Bayesian approach
+      \endverb
     \endentry
     \entry{Newbold1974-lp}{article}{}
       \name{author}{2}{}{%
@@ -7454,7 +7475,7 @@
       \verb 10.2307/2344546
       \endverb
     \endentry
-    \entry{Newbold2002-wa}{article}{}
+    \entry{Newbold2002-wa}{incollection}{}
       \name{author}{2}{}{%
         {{hash=8a44589c31c4b0c4a1d017520d17fb5f}{%
            family={Newbold},
@@ -7467,8 +7488,20 @@
            given={D\bibnamedelima I},
            giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
       }
+      \name{editor}{2}{}{%
+        {{hash=d9533c66e03d04b19fc3ef9219534882}{%
+           family={Clements},
+           familyi={C\bibinitperiod},
+           given={M\bibnamedelima P},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=a46dff1bf6eb66feacdf0b474c36122a}{%
+           family={Hendry},
+           familyi={H\bibinitperiod},
+           given={D\bibnamedelima F},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
       \list{publisher}{1}{%
-        {Wiley Online Library}%
+        {Blackwell Publishing}%
       }
       \strng{namehash}{7ee9274324086d1caeceadac003b173c}
       \strng{fullhash}{7ee9274324086d1caeceadac003b173c}
@@ -7476,13 +7509,17 @@
       \strng{authorbibnamehash}{7ee9274324086d1caeceadac003b173c}
       \strng{authornamehash}{7ee9274324086d1caeceadac003b173c}
       \strng{authorfullhash}{7ee9274324086d1caeceadac003b173c}
+      \strng{editorbibnamehash}{5f9fb96d5ea7d0ef21ef4bc0a5fe7ac9}
+      \strng{editornamehash}{5f9fb96d5ea7d0ef21ef4bc0a5fe7ac9}
+      \strng{editorfullhash}{5f9fb96d5ea7d0ef21ef4bc0a5fe7ac9}
       \field{sortinit}{N}
       \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{A companion to economic forecasting}
+      \field{booktitle}{A companion to economic forecasting}
+      \field{chapter}{12}
       \field{title}{Forecast combination and encompassing}
       \field{year}{2002}
     \endentry
@@ -9686,8 +9723,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Forecasting}
+      \field{number}{3}
       \field{title}{Investigating the accuracy of cross-learning time series forecasting methods}
+      \field{volume}{37}
       \field{year}{2020}
+      \field{pages}{1072\bibrangedash 1084}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2020.11.009
+      \endverb
     \endentry
     \entry{Shaub2019-on}{article}{}
       \name{author}{1}{}{%
@@ -9843,6 +9887,9 @@
       \field{year}{2010}
       \field{pages}{25\bibrangedash 35}
       \range{pages}{11}
+      \verb{doi}
+      \verb 10.1198/jasa.2009.ap08615
+      \endverb
     \endentry
     \entry{Smith2009-wd}{article}{}
       \name{author}{2}{}{%
@@ -10845,6 +10892,9 @@
       \field{month}{1}
       \field{title}{The uncertainty estimation of feature-based forecast combinations}
       \field{year}{2021}
+      \verb{doi}
+      \verb 10.1080/01605682.2021.1880297
+      \endverb
     \endentry
     \entry{Wang2009-hs}{article}{}
       \name{author}{3}{}{%
