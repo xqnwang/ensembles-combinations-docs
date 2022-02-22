@@ -2309,6 +2309,43 @@
       \verb 10.1016/j.ijforecast.2015.03.009
       \endverb
     \endentry
+    \entry{COSTANTINI2010725}{article}{}
+      \name{author}{2}{}{%
+        {{hash=863d2e0a0cb9b8847a84bbaca1c52fde}{%
+           family={Costantini},
+           familyi={C\bibinitperiod},
+           given={Mauro},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f83c0ec3373a6b91732b53eddd958b57}{%
+           family={Pappalardo},
+           familyi={P\bibinitperiod},
+           given={Carmine},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e54fa7022921a8147302ae2e6138428a}
+      \strng{fullhash}{e54fa7022921a8147302ae2e6138428a}
+      \strng{bibnamehash}{e54fa7022921a8147302ae2e6138428a}
+      \strng{authorbibnamehash}{e54fa7022921a8147302ae2e6138428a}
+      \strng{authornamehash}{e54fa7022921a8147302ae2e6138428a}
+      \strng{authorfullhash}{e54fa7022921a8147302ae2e6138428a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0169-2070}
+      \field{journaltitle}{International Journal of Forecasting}
+      \field{number}{4}
+      \field{title}{A hierarchical procedure for the combination of forecasts}
+      \field{volume}{26}
+      \field{year}{2010}
+      \field{pages}{725\bibrangedash 743}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2009.09.006
+      \endverb
+    \endentry
     \entry{Dawid1984-vp}{article}{}
       \name{author}{1}{}{%
         {{hash=4016275a6a7dc086e196dd10c2f7520d}{%
@@ -5707,6 +5744,38 @@
       \verb{eprint}
       \verb 2103.00083
       \endverb
+    \endentry
+    \entry{encompassing2010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=8e76873df05c7b83f48f76c75b5e9a96}{%
+           family={Kışınbay},
+           familyi={K\bibinitperiod},
+           given={Turgut},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \strng{fullhash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \strng{bibnamehash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \strng{authorbibnamehash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \strng{authornamehash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \strng{authorfullhash}{8e76873df05c7b83f48f76c75b5e9a96}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Forecasting}
+      \field{number}{8}
+      \field{title}{The use of encompassing tests for forecast combinations}
+      \field{volume}{29}
+      \field{year}{2010}
+      \field{pages}{715\bibrangedash 727}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1002/for.1170
+      \endverb
+      \keyw{forecast combination,forecast encompassing,thick-modeling}
     \endentry
     \entry{Kolassa2011-ai}{article}{}
       \name{author}{1}{}{%
