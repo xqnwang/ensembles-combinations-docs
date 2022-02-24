@@ -73,21 +73,21 @@
     \endentry
     \entry{Adhikari2015-bb}{article}{}
       \name{author}{1}{}{%
-        {{hash=581cc3378047a7bd2be1e6de949dca8b}{%
+        {{hash=b776deefae2f83e7a8eb3812a49e6a88}{%
            family={Adhikari},
            familyi={A\bibinitperiod},
-           given={R},
+           given={Ratnadip},
            giveni={R\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{581cc3378047a7bd2be1e6de949dca8b}
-      \strng{fullhash}{581cc3378047a7bd2be1e6de949dca8b}
-      \strng{bibnamehash}{581cc3378047a7bd2be1e6de949dca8b}
-      \strng{authorbibnamehash}{581cc3378047a7bd2be1e6de949dca8b}
-      \strng{authornamehash}{581cc3378047a7bd2be1e6de949dca8b}
-      \strng{authorfullhash}{581cc3378047a7bd2be1e6de949dca8b}
+      \strng{namehash}{b776deefae2f83e7a8eb3812a49e6a88}
+      \strng{fullhash}{b776deefae2f83e7a8eb3812a49e6a88}
+      \strng{bibnamehash}{b776deefae2f83e7a8eb3812a49e6a88}
+      \strng{authorbibnamehash}{b776deefae2f83e7a8eb3812a49e6a88}
+      \strng{authornamehash}{b776deefae2f83e7a8eb3812a49e6a88}
+      \strng{authorfullhash}{b776deefae2f83e7a8eb3812a49e6a88}
       \field{sortinit}{A}
       \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
       \field{extradatescope}{labelyear}
@@ -95,8 +95,15 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Applied Intelligence}
+      \field{number}{2}
       \field{title}{A mutual association based nonlinear ensemble mechanism for time series forecasting}
+      \field{volume}{43}
       \field{year}{2015}
+      \field{pages}{233\bibrangedash 250}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1007/s10489-014-0641-y
+      \endverb
     \endentry
     \entry{Adhikari2012-ur}{inproceedings}{}
       \name{author}{2}{}{%
@@ -515,8 +522,12 @@
       \field{labeltitlesource}{title}
       \field{issn}{0377-7332}
       \field{journaltitle}{Empirical Economics}
+      \field{number}{4}
       \field{title}{Evaluating the combined forecasts of the dynamic factor model and the artificial neural network model using linear and nonlinear combining methods}
+      \field{volume}{51}
       \field{year}{2016}
+      \field{pages}{1541\bibrangedash 1556}
+      \range{pages}{16}
     \endentry
     \entry{Baran2014-tm}{article}{}
       \name{author}{1}{}{%
@@ -1232,7 +1243,7 @@
       \verb 10.1371/journal.pcbi.1008618
       \endverb
     \endentry
-    \entry{Brooks2020-sg}{article}{}
+    \entry{Brooks2020-sg}{online}{}
       \name{author}{7}{}{%
         {{hash=6b1a8f7abdcdc797b42ee7a224170893}{%
            family={Brooks},
@@ -1288,6 +1299,13 @@
       \field{journaltitle}{International Institute of Forecasters}
       \field{title}{Comparing ensemble approaches for short-term probabilistic {COVID}-19 forecasts in the {U.S.}}
       \field{year}{2020}
+      \verb{urlraw}
+      \verb \url{https://forecasters.org/blog/2020/10/28/comparing-ensemble-approaches-for-short-term-probabilistic-covid-19-forecasts-in-the-u-s/}
+      \endverb
+      \verb{url}
+      \verb %5Curl%7Bhttps://forecasters.org/blog/2020/10/28/comparing-ensemble-approaches-for-short-term-probabilistic-covid-19-forecasts-in-the-u-s/%7D
+      \endverb
+      \warn{\item Entry 'Brooks2020-sg' (references.bib): Invalid format 'Accessed: 2022-02-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Browell2020-pa}{inproceedings}{}
       \name{author}{4}{}{%
