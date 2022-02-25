@@ -29,10 +29,10 @@ colnames(dat_prop) <- c("Year", "Proportion")
 ggplot(data = dat_prop, aes(x = Year, y = Proportion))+
   geom_line() +
   scale_y_continuous(limits = c(0, 15),breaks = seq(0, 15, 5)) +
+  scale_x_continuous(limits = c(1969, 2021), breaks = c(1969, seq(1975, 2015, 5), 2021)) +
   theme_classic() +
   ylab("Proportion (%)") +
   xlab("Publication year") +
-  scale_x_continuous(limits = c(1969, 2021), breaks = seq(1969, 2021, 4)) +
   theme(axis.text.x = element_text(angle=45, hjust=1, vjust=1, face="bold", size=12)) + 
   theme(axis.title.x = element_text(face="bold", size = 13)) +
   theme(axis.text.y = element_text(face="bold", size=12, angle = 0, hjust = 1)) + 
