@@ -49,7 +49,6 @@ uniquelist=false, uniquename=false, date=year, doi=false, isbn=false, eprint=fal
 \renewbibmacro{in:}{}
 \addbibresource{references.bib}
 
-
 \baselineskip = 7 mm
 \parskip = 2.5 mm
 
@@ -157,7 +156,7 @@ Typically, the combined forecast is constructed as a linear combination of the i
 \end{align*}
 where $\boldsymbol{w}_{t+h|t}=\left(w_{t+h|t, 1}, \ldots, w_{t+h|t, N}\right)^{\prime}$ is an $N$-dimensional vector of linear combination weights assigned to $N$ individual forecasts.
 
-\paragraph{Optimal weights}
+\subsubsection{Optimal weights}
 
 The seminal work of \citet{Bates1969-yj} proposed a method to find the so-called ``optimal'' weights by minimizing the variance of the combined forecast error, and discussed only combinations of pairs of forecasts. \citet{Newbold1974-lp} then extended the method to combinations of more than two forecasts. Specifically, assuming that individual forecasts are unbiased and their variances of errors are consistent over time, the combined forecast obtained by a linear combination will also be unbiased. Differentiating with respect to $\boldsymbol{w}_{t+h|t}$ and solving the first order condition, the variance of the combined forecast error is minimized by taking
 \begin{align}
@@ -170,7 +169,7 @@ It follows that if $\boldsymbol{w}_{t+h|t}$ is determined by Equation~\eqref{eq:
 
 The loss assumed in \citet{Bates1969-yj} and \citet{Newbold1974-lp} is quadratic and symmetric in the produced forecast error from linear combinations. \citet{Elliott2004-dz} examined forecast combinations under more general loss functions accounting for asymmetries as well as forecast error distributions with skew. They demonstrated that the optimal combination weights in a combination strongly depend on the degree of asymmetry in the loss function and skew in the underlying forecast error distributions. Subsequently, \citet{Patton2007-zo} demonstrated that the properties of optimal forecasts established under MSE loss are not generally robust under more general assumptions about the loss function. In addition, the properties of optimal forecasts were generalized to consider asymmetric loss and nonlinear DGP.
 
-\paragraph{Regression-based weights}
+\subsubsection{Regression-based weights}
 
 The seminal work by \citet{Granger1984-jc} provided an important impetus for approximating the ``optimal'' weights under a linear regression framework. They recommended the strategy that the combination weights can be estimated by ordinary least squares (OLS) in regression models having the vector of past observations as the response variable and the matrix of past individual forecasts as the explanatory variables. Three alternative approaches imposing various possible restrictions are considered
 \begin{align}
@@ -186,7 +185,7 @@ Forecast combinations using changing weights have been developed in the relevant
 
 Researchers also have worked on involving a large number of forecasts in the regression framework to take advantages of many different models. \citet{Chan1999-io} examined a wide range of combination methods in a Monte Carlo experiment and a real-world dataset. Their results investigated the poor performance of OLS combinations when the number of forecasts to be combined is large and suggested alternative weight estimation methods, such as ridge regression and principal component regression (PCR). \citet{Stock2004-rq} offered the details of principal component forecast combinations, which entail forming a regression having the actual value as the response variable and the first few principal components reduced from original forecasts as the explanatory variables. This method reduced the number of weights that must be estimated in a regression framework and frequently served as a way to solve the multicollinearity problem which is likely to perform unstable behavior in the estimated weights. The superiority of PCR involving dimension reduction techniques over OLS combinations was also supported by \citet{Rapach2008-jh} and \citet{Poncela2011-vz}. Alternatively, \citet{Aiolfi2006-rh} argued in favour of an additional step that clusters individual forecasts using the $k$-means clustering algorithm based on their historical performance. For each cluster, a pooled (average) forecast was computed, which preceded the estimation of combination weights for the constructed cluster. Both the clustering strategy and PCR have good merits such as allowing for a large number of individual forecasts to be combined, improving computational efficiency, and reducing estimation errors of parameters.
 
-\paragraph{Performance-based weights}
+\subsubsection{Performance-based weights}
 
 Estimation errors in the ``optimal'' weights as well as a diverse set of regression-based weights tend to be particularly large due to difficulties in properly estimating the entire covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$, especially in situations with a large number of forecasts at hand. Instead, \citet{Bates1969-yj} suggested weighing the constituent forecasts in inverse proportion to their historical performance, ignoring mutual dependence. In follow-up studies, \citet{Newbold1974-lp} and \citet{Winkler1983-ra} generalized this issue in the sense of considering more time series, more individual forecasts, and multiple forecast horizons. Their extensive results demonstrated that combinations ignoring correlations are more successful than those attempting to take account of correlations, and consequently reconfirmed \citeapos{Bates1969-yj} argument that correlations can be poorly estimated in practice and should be ignored when calculating combination weights.
 
@@ -204,7 +203,7 @@ A broader set of combination weights based on the relative performance of indivi
 
 Compared to constructing the weights directly using historical forecast errors, a new form of combinations that is more robust and less sensitive to outliers was introduced based on the ``ranking'' of individual forecasts. Again this kind of combinations ignore correlations among forecast errors. The simplest and most commonly used method in the class is to use the median forecast as the output. \citet{Aiolfi2006-rh} constructed the weights proportional to the inverse of performance ranks (sorted according to increasing order of forecast errors), which were later employed by \citet{Andrawis2011-kb} for tourism demand forecasting. The \proglang{R} package \pkg{ForecastComb} provides tools for the rank-based combinations. Another weighting scheme that attaches a weight proportional to $\exp(\beta(N+1-i))$ to the $i$th ordered constituent forecast was adopted in \citet{Yao2008-or} and \citet{Donate2013-lq} to combine forecasts obtained from artificial neural networks (ANNs), where $\beta$ is a scaling factor. However, as mentioned by \citet{Andrawis2011-kb}, this class of combination methods still comes with the drawback of the discrete nature because it limits the weights to only a few possible levels.
 
-\paragraph{Criteria-based weights}
+\subsubsection{Criteria-based weights}
 
 Information criteria, such as the Akaike information criterion \citep[AIC,][]{Akaike1974-ya}, the corrected Akaike information criterion \citep[AICc,][]{Sugiura1978-xm}, and the Bayesian information criterion \citep[BIC,][]{Schwarz1978-cz}, are often advised to deal with model selection in forecasting. However, choosing a single model out of the candidate model pool may be misleading because of the information loss gleaned from alternative models. An alternative way proposed by \citet{Burnham2002-us} is to combine multiple models based on information criteria to mitigate the risk of selecting a single model.
 
@@ -217,7 +216,7 @@ Akaike weights calculated in this manner can be interpreted as the probability t
 
 The outstanding performance of weighted combinations based on information criteria has been supported in some studies. For instance, \citet{Kolassa2011-ai} used weights derived from AIC, AICc and BIC to combine exponential smoothing forecasts, and resulted in superior accuracy over selection using these information criteria. A similar strategy was adopted by \citet{Petropoulos2018-fw} to separately explore the benefits of bagging for time series forecasting. Additionally, an empirical study by \citet{Petropoulos2018-ad} showed that a weighted combination based on AIC improves the performance of the statistical benchmark they used.
 
-\paragraph{Bayesian weights}
+\subsubsection{Bayesian weights}
 
 Some effort has been directed toward the use of Bayesian approaches to updating forecast combination weights in face of new information gleaned from various sources. Recall that obtaining reliable estimates of the covariance matrix $\boldsymbol{\Sigma}$ (the time and horizon subscripts are dropped for simplicity) of forecast errors is a major challenge in practice regardless of whether correlations among forecast errors are ignored or not. With this in mind, \citet{Bunn1975-vz} suggested the idea of Bayesian combinations on the basis of the probability of respective forecasting model performing the best on any given occasion. Considering the beta and the Dirichlet distributions arising as the conjugate priors for the binomial and multinomial processes respectively, the suggested non-parametric method performs well when there is relatively little past data by means of attaching prior subjective probabilities to individual forecasts \citep{Bunn1985-vo,De_Menezes2000-vd}. \citet{Oller1978-wx} presented another approach to involving subjective probability in a Bayesian updating scheme based on the self-scoring weights proportional to the evaluation of the expert's forecasting ability.
 
@@ -463,7 +462,7 @@ Pooling approaches, elaborated in Section \ref{sec:pooling}, pool/mix multiple p
 
 The extensive literature on probability forecast combinations considering correlations among individuals has, for the most part, been driven from a foundational Bayesian perspective and originated in agent opinion analysis theory free from the time series context, dating back at least to the pioneering work of \citet{Winkler1968-uw}. We remark that, in pooling techniques (see Section \ref{sec:pooling}), the contribution of each individual probability forecast to the final aggregated probability forecast is measured explicitly via weights, whereas it is not specified by a specific form in Bayesian combination techniques we focus on in this section.
 
-\paragraph{Combinations constructed via Bayes' Theorem}
+\subsection{Combinations constructed via Bayes' Theorem}
 
 Early work in the Bayesian vein focused on a Bayesian paradigm developed by \citet{Morris1974-yh,Morris1977-xl} in which a decision maker views available probability forecasts from various sources simply as data and updates his/her prior distribution by means of Bayes' Theorem. At time $t$, the decision maker aims to forecast $y_{t+h}$ and receives current $h$-step-ahead probability forecasts $\mathcal{H}_{t+h} = \left\{p_{1}(y_{t+h}|I_{t}), \ldots, p_{N}(y_{t+h}|I_{t})\right\}$ from the set of models. The posterior probability forecast of $y_{t+h}$ is then
 \begin{align}
@@ -478,7 +477,7 @@ One line of research has considered specifying the likelihood as a joint distrib
 
 \citet{Jouini1996-fe} took a different perspective and looked at the likelihood function derived from a copula-based joint distribution, in which dependence among individual distributions is encoded into the copula. The procedure is appealing in the sense of being able to deal with individual forecasts with arbitrary distributions. A recent study by \citet{Wilson2017-ct} gave an expert judgment study to assess the practical significance of the individuals' dependency by comparing the Bayesian combination methods, developed by \citet{Winkler1981-bn} and \citet{Jouini1996-fe}, and common pooling methods.
 
-\paragraph{Combinations constructed via integration}
+\subsection{Combinations constructed via integration}
 
 A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize especially in a setting where biases and miscalibration of individual distributions and, critically, dependencies among them are time-varying. In this light, the state-of-the-art probability forecast combination method of \citet{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to sequential forecasting in time series. In the dynamic extension of BPS model, the posterior probability forecast takes the form
 \begin{align*}
