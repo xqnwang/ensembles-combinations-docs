@@ -276,7 +276,7 @@ In addition to the time series features extracted from the historical data, it i
 
 As expected, the implementations of stacking in a cross-learning manner also come with their own limitations. The first limitation is the requirement for a large, diverse time series dataset to enable meaningful training outcomes. This issue can be addressed by simulating series on the basis of the assumed DGPs \citep{talagala2018meta} \citep[implemented using the \proglang{R} package \pkg{forecast},][]{rforecast}, which may be exponential smoothing models or ARIMA models, and by generating time series with diverse and controllable characteristics \citep{Kang2020-rl} \citep[implemented in the \proglang{R} package \pkg{gratis},][]{rgratis}. Moreover, given considerable literature on feature identification and feature engineering \citep[e.g.,][]{Wang2009-hs,Kang2017-wt,Lemke2010-wn,Montero-Manso2020-tq,Li2020-od}, the feature-based forecast combination methods naturally raise the concern about how to design an appropriate feature pool in order to achieve the best out of such methods. Other major limitations lie with the design of the loss function for the meta-model and the requirement of significant training time.
 
-\section{Special topics in point forecast combination}
+\section{Special topics in point forecast combinations}
 
 \subsection{Which forecasts should be combined?}
 \label{sec:forecasts}
