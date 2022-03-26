@@ -61,34 +61,34 @@ uniquelist=false, uniquename=false, date=year, doi=false, isbn=false, eprint=fal
 \begin{document}
 
 \def\spacingset#1{\renewcommand{\baselinestretch}%
-{#1}\small\normalsize} \spacingset{1.2}
+  {#1}\small\normalsize} \spacingset{1.2}
 
 \title{\bf
-% Forecast combinations: \\Using multiple models to improve forecasts
-Forecast combinations: an over 50-year review
-%Forecast combinations: \\Using multiple forecasts to improve accuracy
-%\\
-%Combining multiple forecasts: \\a review
-%\\
-%Forecast combinations: \\ a 50-year review
-%\\
-%Forecast combinations: \\Using multiple forecasts to achieve benefits
+  % Forecast combinations: \\Using multiple models to improve forecasts
+  Forecast combinations: an over 50-year review
+  %Forecast combinations: \\Using multiple forecasts to improve accuracy
+  %\\
+  %Combining multiple forecasts: \\a review
+  %\\
+  %Forecast combinations: \\ a 50-year review
+  %\\
+  %Forecast combinations: \\Using multiple forecasts to achieve benefits
 }
 
 \author{Xiaoqian Wang\footnote{School of Economics and Management, Beihang University,
-          Beijing 100191, China. E-mail: xiaoqianwang@buaa.edu.cn.}, 
-        Rob J Hyndman\footnote{Department of Econometrics \& Business Statistics, Monash University,
-          Clayton VIC 3800, Australia. E-mail: rob.hyndman@monash.edu.}, 
-        Feng Li\footnote{School of Statistics and Mathematics, Central University of Finance and Economics, 
-          Beijing 102206, China. E-mail: feng.li@cufe.edu.cn.}, 
-        Yanfei Kang\footnote{Author for correspondence. School of Economics and Management, Beihang University, 
-          Beijing 100191, China. E-mail: yanfeikang@buaa.edu.cn}}
+    Beijing 100191, China. E-mail: xiaoqianwang@buaa.edu.cn.},
+  Rob J Hyndman\footnote{Department of Econometrics \& Business Statistics, Monash University,
+    Clayton VIC 3800, Australia. E-mail: rob.hyndman@monash.edu.},
+  Feng Li\footnote{School of Statistics and Mathematics, Central University of Finance and Economics,
+    Beijing 102206, China. E-mail: feng.li@cufe.edu.cn.},
+  Yanfei Kang\footnote{Author for correspondence. School of Economics and Management, Beihang University,
+    Beijing 100191, China. E-mail: yanfeikang@buaa.edu.cn}}
 
 \maketitle
 
 \bigskip
 \begin{abstract}
-Forecast combinations have flourished remarkably in the forecasting community and, in recent years, have become part of the mainstream of forecasting research and activities. A unanimous conclusion is that combining multiple forecasts is a successful strategy to improve accuracy through the integration of information gleaned from different sources, thereby mitigating the risk of identifying a single ``best'' forecast. Combination schemes have evolved from simple combination methods without estimation to sophisticated methods involving time-varying weights, nonlinear combinations, correlations among components, and cross-learning. Additionally, considerable attention has been paid to the use of probabilistic forecasts with an assessment of forecast uncertainties. This paper provides an up-to-date review of the extensive literature on forecast combinations, together with reference to available open-source software implementations. We discuss the potential and limitations of various methods and highlight how these ideas have developed over time. Some important issues concerning the utility of forecast combinations are also surveyed. Finally, we conclude with current research gaps and potential insights for future research.
+  Forecast combinations have flourished remarkably in the forecasting community and, in recent years, have become part of the mainstream of forecasting research and activities. A unanimous conclusion is that combining multiple forecasts is a successful strategy to improve accuracy through the integration of information gleaned from different sources, thereby mitigating the risk of identifying a single ``best'' forecast. Combination schemes have evolved from simple combination methods without estimation to sophisticated methods involving time-varying weights, nonlinear combinations, correlations among components, and cross-learning. Additionally, considerable attention has been paid to the use of probabilistic forecasts with an assessment of forecast uncertainties. This paper provides an up-to-date review of the extensive literature on forecast combinations, together with reference to available open-source software implementations. We discuss the potential and limitations of various methods and highlight how these ideas have developed over time. Some important issues concerning the utility of forecast combinations are also surveyed. Finally, we conclude with current research gaps and potential insights for future research.
 \end{abstract}
 
 \noindent%
@@ -151,7 +151,7 @@ Though the combined forecasts formed by simple combination rules (see Section \r
 
 Typically, the combined forecast is constructed as a linear combination of the individual forecasts, which can be written as
 \begin{align*}
-\tilde{y}_{t+h|t}=\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t},
+  \tilde{y}_{t+h|t}=\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t},
 \end{align*}
 where $\boldsymbol{w}_{t+h|t}=\left(w_{t+h|t, 1}, \ldots, w_{t+h|t, N}\right)^{\prime}$ is an $N$-dimensional vector of linear combination weights assigned to $N$ individual forecasts.
 
@@ -159,8 +159,8 @@ where $\boldsymbol{w}_{t+h|t}=\left(w_{t+h|t, 1}, \ldots, w_{t+h|t, N}\right)^{\
 
 The seminal work of \citet{Bates1969-yj} proposed a method to find the so-called ``optimal'' weights by minimizing the variance of the combined forecast error, and discussed only combinations of pairs of forecasts. \citet{Newbold1974-lp} then extended the method to combinations of more than two forecasts. Specifically, assuming that individual forecasts are unbiased and their variances of errors are consistent over time, the combined forecast obtained by a linear combination will also be unbiased. Differentiating with respect to $\boldsymbol{w}_{t+h|t}$ and solving the first order condition, the variance of the combined forecast error is minimized by taking
 \begin{align}
-\label{eq:weight_opt}
-\boldsymbol{w}_{t+h|t}^{\text{opt}}=\frac{\boldsymbol{\Sigma}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}_{t+h|t}^{-1} \boldsymbol{1}},
+  \label{eq:weight_opt}
+  \boldsymbol{w}_{t+h|t}^{\text{opt}}=\frac{\boldsymbol{\Sigma}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}_{t+h|t}^{-1} \boldsymbol{1}},
 \end{align}
 where $\boldsymbol{\Sigma}_{t+h|t}$ is the $N \times N$ covariance matrix of the lead $h$ forecast errors and $\boldsymbol{1}$ is an $N$-dimensional unit vector. Its implementation is available in the \proglang{R} package \pkg{ForecastComb}. Unfortunately, in practice, the elements of the covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$ are usually unknown and required to be properly estimated.
 
@@ -172,9 +172,9 @@ The loss assumed in \citet{Bates1969-yj} and \citet{Newbold1974-lp} is quadratic
 
 The seminal work by \citet{Granger1984-jc} provided an important impetus for approximating the ``optimal'' weights under a linear regression framework. They recommended the strategy that the combination weights can be estimated by ordinary least squares (OLS) in regression models having the vector of past observations as the response variable and the matrix of past individual forecasts as the explanatory variables. Three alternative approaches imposing various possible restrictions are considered
 \begin{align}
-&y_{t+h}=\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}, \quad s.t. \quad \boldsymbol{w}^{\prime}\boldsymbol{1}=1, \label{eq:weight_gr1}\\
-&y_{t+h}=\boldsymbol{w}^{\prime}_{t+h|t} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}, \nonumber\\
-&y_{t+h}=w_{t+h|t, 0}+\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}. \label{eq:weight_gr3}
+   & y_{t+h}=\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}, \quad s.t. \quad \boldsymbol{w}^{\prime}\boldsymbol{1}=1, \label{eq:weight_gr1} \\
+   & y_{t+h}=\boldsymbol{w}^{\prime}_{t+h|t} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}, \nonumber                                                                       \\
+   & y_{t+h}=w_{t+h|t, 0}+\boldsymbol{w}_{t+h|t}^{\prime} \hat{\boldsymbol{y}}_{t+h|t}+\varepsilon_{t+h}. \label{eq:weight_gr3}
 \end{align}
 The \proglang{R} package \pkg{ForecastComb} provides the corresponding implementations. The constrained OLS estimation of the regression in Equation~\eqref{eq:weight_gr1}, in which the constant is omitted and the weights are constrained to sum to one, yields results identical to the ``optimal'' weights proposed by \citet{Bates1969-yj}. Furthermore, \citet{Granger1984-jc} suggested that the unrestricted OLS regression in Equation~\eqref{eq:weight_gr3}, which allows for a constant term and do not impose the weights sum to one, is superior to the popular ``optimal'' method regardless of whether the constituent forecasts are biased. However, \citet{De_Menezes2000-vd} put forward some consideration required when using the unrestricted regression, including the stationarity of the series being forecast, the possible presence of serial correlation in forecast errors \citep[see also][]{Diebold1988-sx,Edward_Coulson1993-db}, and the issue of multicollinearity.
 
@@ -190,11 +190,11 @@ Estimation errors in the ``optimal'' weights as well as a diverse set of regress
 
 Let $\boldsymbol{e}_{t+h|t}=\boldsymbol{1} y_{t+h}-\hat{\boldsymbol{y}}_{t+h|t}$ be the $N$-dimensional vector of $h$-period forecast errors computed from the individual forecasts, the five procedures suggested in \citet{Bates1969-yj} for estimating the combination weights when $\boldsymbol{\Sigma}_{t+h|t}$ is unknown, are extended to the general case as follows:
 \begin{align}
-&w_{t+h|t, i}^{\text{bg1}}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}; \label{eq:weight_bg1}\\
-&\boldsymbol{w}_{t+h|t}^{\text{bg2}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \boldsymbol{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\nu^{-1} \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}; \nonumber\\
-&w_{t+h|t, i}^{\text{bg3}}=\alpha \hat{w}_{t+h-1|t-1, i} + (1-\alpha) \frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \text{where} \quad 0<\alpha<1; \nonumber\\
-&w_{t+h|t, i}^{\text{bg4}}=\frac{\left( \sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \text{where} \quad \gamma \geq 1; \label{eq:weight_bg4}\\
-&\boldsymbol{w}_{t+h|t}^{\text{bg5}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \boldsymbol{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\frac{\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}}{\sum_{\tau=1}^{t} \gamma^{\tau}} \quad \text{and} \quad \gamma \geq 1. \nonumber
+   & w_{t+h|t, i}^{\text{bg1}}=\frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}; \label{eq:weight_bg1}                                                                                                                                                                                                        \\
+   & \boldsymbol{w}_{t+h|t}^{\text{bg2}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \boldsymbol{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\nu^{-1} \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}; \nonumber                                                                             \\
+   & w_{t+h|t, i}^{\text{bg3}}=\alpha \hat{w}_{t+h-1|t-1, i} + (1-\alpha) \frac{\left( \sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=t-\nu+1}^{t} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \text{where} \quad 0<\alpha<1; \nonumber                                                                                                                                    \\
+   & w_{t+h|t, i}^{\text{bg4}}=\frac{\left( \sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i}^{2} \right)^{-1}}{\sum_{j=1}^{N}\left(\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, j}^{2}\right)^{-1}}, \quad \text{where} \quad \gamma \geq 1; \label{eq:weight_bg4}                                                                                                                                                \\
+   & \boldsymbol{w}_{t+h|t}^{\text{bg5}}=\frac{\hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \hat{\boldsymbol{\Sigma}}_{t+h|t}^{-1} \boldsymbol{1}}, \quad \text{where} \quad (\hat{\boldsymbol{\Sigma}}_{t+h|t})_{i, j}=\frac{\sum_{\tau=1}^{t} \gamma^{\tau} e_{\tau|\tau-h, i} e_{\tau|\tau-h, j}}{\sum_{\tau=1}^{t} \gamma^{\tau}} \quad \text{and} \quad \gamma \geq 1. \nonumber
 \end{align}
 These weighting schemes differ in the factors, as well as the choice of the parameters, $\nu$, $\alpha$, and $\gamma$. Correlations across forecast errors are either ignored by treating the covariance matrix $\boldsymbol{\Sigma}_{t+h|t}$ as a diagonal matrix or estimated by using sample data points which, however, may lead to quite unstable estimates of $\boldsymbol{\Sigma}_{t+h|t}$ given highly correlated forecast errors. Some estimation schemes suggest computing or updating the relative performance of individual forecasts over rolling windows of the most recent $\nu$ observations, while others base the weights on exponential discounting with higher values of $\gamma$ giving larger weights to more recent observations. In consequence, these weighting schemes are well adapted to allow the non-stationary relationship between the individual forecasting procedures over time \citep{Newbold1974-lp}, which, however, tends to increase the variance of the parameter estimates and works quite poorly provided that the DGP is truly covariance stationary \citep{Timmermann2006-en}.
 
@@ -208,8 +208,8 @@ Information criteria, such as the Akaike information criterion \citep[AIC,][]{Ak
 
 One such common approach is using Akaike weights. Specifically, in light of the fact that AIC estimates the Kullback-Leibler distance \citep{Kullback1951-hl} between a model and the true DGP, differences in the AIC can be used to weigh different models, providing a measure of the evidence for supporting a given model relative to other constituent models. Given $N$ individual models, the Akaike weight of model $i$ can be derived by the following steps:
 \begin{align*}
-&w_{t+h|t, i}^{\text{aic}}=\frac{\exp (-0.5 \Delta \mathrm{AIC}_{i})}{\sum_{k=1}^{N} \exp \left(-0.5 \Delta \mathrm{AIC}_{k}\right)}, \\
-&\Delta \mathrm{AIC}_{i}=\mathrm{AIC}_{i}-\min _{k \in \{1,2,\cdots,N\}} \mathrm{AIC}(k).
+   & w_{t+h|t, i}^{\text{aic}}=\frac{\exp (-0.5 \Delta \mathrm{AIC}_{i})}{\sum_{k=1}^{N} \exp \left(-0.5 \Delta \mathrm{AIC}_{k}\right)}, \\
+   & \Delta \mathrm{AIC}_{i}=\mathrm{AIC}_{i}-\min _{k \in \{1,2,\cdots,N\}} \mathrm{AIC}(k).
 \end{align*}
 Akaike weights calculated in this manner can be interpreted as the probability that a given model performs best at approximating the unknown DGP, given the model set available and historical data \citep{Kolassa2011-ai}. Similar weights from AICc, BIC, and other variants with different penalties, can be derived analogously.
 
@@ -221,12 +221,12 @@ Some effort has been directed toward the use of Bayesian approaches to updating 
 
 A different theme of research has also advocated the incorporation of prior information into the estimation of combination weights, but with the weights being shrunk toward some prior mean under a regression-based combination framework \citep{Newbold2002-wa}. Assuming that the vector of forecast errors is normally distributed, \citet{Clemen1986-pd} developed a Bayesian approach with the conjugate prior for $\boldsymbol{\Sigma}$, represented by an inverted Wishart distribution with covariance matrix $\boldsymbol{\Sigma}_{0}$ and scalar degrees of freedom $\nu_{0}$. Again we drop time and horizon subscripts for simplicity. If the last $n$ observations are used to estimate $\boldsymbol{\Sigma}$, the combination weights derived from the posterior distribution for $\boldsymbol{\Sigma}$ are
 \begin{align*}
-\boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}^{*-1} \boldsymbol{1}},
+  \boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}^{*-1} \boldsymbol{1}},
 \end{align*}
 where $\boldsymbol{\Sigma}^{*}=\left[\left(\nu_{0} \boldsymbol{\Sigma}_{0}^{-1}+n \hat{\boldsymbol{\Sigma}}^{-1}\right) /(\nu_{0}+n)\right]^{-1}$ and $\hat{\boldsymbol{\Sigma}}$ is the sample covariance matrix.
 Compared to estimating $\boldsymbol{\Sigma}$ using past data or treating it as a diagonal matrix, the proposed approach yields superiority in the sense of providing a relatively stable estimation and allowing for correlations by specifying the prior estimate $\boldsymbol{\Sigma}_{0}$. The subsequent work by \citet{Diebold1990-fk} allowed the incorporation of the standard normal-gamma conjugate prior by considering a normal regression-based combination
 \begin{align*}
-\boldsymbol{y}=\hat{\boldsymbol{Y}} \boldsymbol{w}+\boldsymbol{\varepsilon}, \quad \boldsymbol{\varepsilon} \sim N\left(\boldsymbol{0}, \boldsymbol{\sigma}^{2} \boldsymbol{I}\right),
+  \boldsymbol{y}=\hat{\boldsymbol{Y}} \boldsymbol{w}+\boldsymbol{\varepsilon}, \quad \boldsymbol{\varepsilon} \sim N\left(\boldsymbol{0}, \boldsymbol{\sigma}^{2} \boldsymbol{I}\right),
 \end{align*}
 where $\boldsymbol{y}$ and $\boldsymbol{\varepsilon}$ are $t$-dimensional vectors of historical data and residuals, respectively, and $\hat{\boldsymbol{Y}}$ is the $t \times N$ matrix of constituent forecasts. The approach results in estimated combination weights which can be viewed as a matrix weighted average of those for the two polar cases, least squares and prior weights. It can provide a rational transition between subjective and data-based estimation of the combination weights. In light of the fact that Bayesian approaches have been mostly employed to construct combinations of probability forecasts, we will elaborate on other newly developed methods of determining combination weights from a foundational Bayesian perspective in Section \ref{sec:bayesian_comb}.
 
@@ -239,16 +239,16 @@ As \citet{Timmermann2006-en} identified, two types of nonlinearities can be inco
 
 \citet{Donaldson1996-um} used ANNs to obtain the combined forecasts $\tilde{y}_{t+h|t}$ by the following form
 \begin{align}
-\tilde{y}_{t+h|t} &=\beta_{0}+\sum_{j=1}^{k} \beta_{j} \hat{y}_{t+h|t, j}+\sum_{i=1}^{p} \delta_{i} g\left(\boldsymbol{z}_{t+h|t} \boldsymbol{\gamma}_{i}\right), \label{eq:nonlinear_sl}\\
-g\left(\boldsymbol{z}_{t+h|t} \boldsymbol{\gamma}_{i}\right) &=\left(1+\exp \left\{-\left(\gamma_{0, i}+\sum_{j=1}^{N} \gamma_{1, j} z_{t+h|t, j}\right)\right\}\right)^{-1}, \nonumber \\
-z_{t+h|t, j} &=\left(\hat{y}_{t+h|t, j}-\bar{y}\right) / \hat{\sigma}, \nonumber \\
-k & \in \{0,N\} \quad p \in \{0,1,2,3\}, \nonumber
+  \tilde{y}_{t+h|t}                                            & =\beta_{0}+\sum_{j=1}^{k} \beta_{j} \hat{y}_{t+h|t, j}+\sum_{i=1}^{p} \delta_{i} g\left(\boldsymbol{z}_{t+h|t} \boldsymbol{\gamma}_{i}\right), \label{eq:nonlinear_sl} \\
+  g\left(\boldsymbol{z}_{t+h|t} \boldsymbol{\gamma}_{i}\right) & =\left(1+\exp \left\{-\left(\gamma_{0, i}+\sum_{j=1}^{N} \gamma_{1, j} z_{t+h|t, j}\right)\right\}\right)^{-1}, \nonumber                                              \\
+  z_{t+h|t, j}                                                 & =\left(\hat{y}_{t+h|t, j}-\bar{y}\right) / \hat{\sigma}, \nonumber                                                                                                     \\
+  k                                                            & \in \{0,N\} \quad p \in \{0,1,2,3\}, \nonumber
 \end{align}
 where $\bar{y}$ and $\hat{\sigma}$ denote the in-sample mean and in-sample standard deviation, respectively. This approach permits special cases of both purely linear combinations ($k=N$ and $p=0$) and nonlinear combinations ($k=0$ and $p\neq 0$). Following them came an extension work by \citet{Harrald1997-gd} to evolve ANNs and demonstrate its utility when only forecasts to be combined are available. \citet{Krasnopolsky2012-xu} and \citet{Babikir2016-xz} employed neural network approaches with various activation functions to approximate the nonlinear dependence of individual forecasts and achieve nonlinear mapping, which are essentially variants of Equation~\eqref{eq:nonlinear_sl}. The empirical results of nonlinear combinations from these studies offered forecasts which generally dominate that from traditional linear combination strategies, such as simple average, OLS weights, and performance-based weights. However, the empirical evidence about the benefits of nonlinear mapping was given based on fewer than ten time series. They may not be trustworthy and were probably derived from a dodgy selection of data. Additionally, these nonlinear combination methods suffer from other drawbacks including the neglect of correlations among forecast errors, the instability of parameter estimation, and the multicollinearity issue caused by the overlap in the information sets used to produce individual forecasts. The superiority of nonlinear combinations over linear combinations, thus, need to be further investigated.
 
 Some researchers sought to construct nonlinear combinations via including an additional nonlinear term to cope with the case where the individual forecast errors are correlated. The combination mechanism can be generalized to the following form
 \begin{align*}
-\tilde{y}_{t+h|t} =\beta_{0}+\sum_{j=1}^{N} \beta_{j} \hat{y}_{t+h|t, j}+\sum_{i,j=1 \atop i<j}^{N}\pi_{ij}v_{i j}.
+  \tilde{y}_{t+h|t} =\beta_{0}+\sum_{j=1}^{N} \beta_{j} \hat{y}_{t+h|t, j}+\sum_{i,j=1 \atop i<j}^{N}\pi_{ij}v_{i j}.
 \end{align*}
 In this way, the general framework for linear combinations is extended to deal with nonlinearities. The involved nonlinear term can take various definitions. For example, \citet{Freitas2006-fn} intuitively defined $v_{i j}$ as the product of individual forecasts from different models, $\hat{y}_{t+h|t, i} \cdot \hat{y}_{t+h|t, j}$, while \citet{Adhikari2012-ur} took into account the linear correlations among the forecast pairs by including the term, $(\hat{y}_{t+h|t, i}-\bar{y}_{i})(\hat{y}_{t+h|t, j}-\bar{y}_{j})/(\sigma_{i}\sigma_{j})^2$, where $\bar{y}_{i}$ and $\sigma_{i}$ are the mean and standard deviation of the $i$th model, respectively. Moreover, \citet{Adhikari2015-bb} defined the nonlinear term using $\left(\hat{z}_{i}-m_{i j} \hat{z}_{j}\right)\left(\hat{z}_{j}-m_{j i} \hat{z}_{i}\right)$, where $\hat{z}_{i}$ denotes the standardized $i$th individual forecast using the mean $\bar{y}_{i}$ and standard deviation $\sigma_{i}$, and the term $m_{i j}$ denotes the degree of mutual dependency between the $i$th and $j$th individual forecasts. Five correlation measures were investigated there for measuring the mutual associations between pairs of forecasts.
 
@@ -356,15 +356,15 @@ As we elaborate in Sections \ref{sec:pooling} and \ref{sec:bayesian_comb} below,
 
 Probability forecasts, as the most complete form of probabilistic forecasts, strive to predict the probability distribution of quantities or events of interest. In line with the notations in previous sections, here we consider $N$ individual probability forecasts of a random variable $Y$ to be forecast at time $t+h$, denoted $p_{i}(y_{t+h}|I_{t})$, $i=1,\ldots,N$, using the information available up to time $t$, $I_{t}$. One popular approach is to directly take a linear pooling of these $N$ individual probability forecasts with estimated weights, neglecting correlations between these individual components. This approach is commonly referred to as the ``linear opinion pool'' in the literature on combining experts' subjective probability distributions, dating back at least to \citet{Stone1961-zd}. The linear pool of probability forecasts is defined as the finite mixture
 \begin{align}
-\label{eq:linear_pool}
-\tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} w_{t+h|t,i} p_{i}(y_{t+h}|I_{t}),
+  \label{eq:linear_pool}
+  \tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} w_{t+h|t,i} p_{i}(y_{t+h}|I_{t}),
 \end{align}
 where $w_{t+h|t,i}$ is the weight assigned to the $i$th probability forecast. These weights are often set to be non-negative and sum to one to guarantee that the pooled forecast preserves properties of both non-negativity and integrating to one. The pooled probability forecast satisfies numerous properties such as the \textit{unanimity} property (if all individual forecasters agree on a probability then the pooled forecast agrees also); see \citet{Clemen1999-mh} for more details.
 
 Define $\mu_{i}$ and $\sigma_{i}^{2}$ as the mean and variance of the $i$th component forecast distribution and drop the time and horizon subscripts for simplicity. Then the linear combined probability forecast has the mean and variance,
 \begin{align}
-& \tilde{\mu} = \sum_{i=1}^{N} w_{i} \mu_{i}, \label{eq:mean_linear_pooling} \\
-& \tilde{\sigma}^{2} = \sum_{i=1}^{N} w_{i} \sigma_{i}^{2} + \sum_{i=1}^{N} w_{i} \left(\mu_{i}-\tilde{\mu}\right)^{2}, \label{eq:variance_linear_pooling}
+   & \tilde{\mu} = \sum_{i=1}^{N} w_{i} \mu_{i}, \label{eq:mean_linear_pooling}                                                                               \\
+   & \tilde{\sigma}^{2} = \sum_{i=1}^{N} w_{i} \sigma_{i}^{2} + \sum_{i=1}^{N} w_{i} \left(\mu_{i}-\tilde{\mu}\right)^{2}, \label{eq:variance_linear_pooling}
 \end{align}
 holding characteristics quite distinct from those of the individuals. These relations highlight the potential of linear pooling of probability forecasts to accommodate skewness and kurtosis (fat tails), and also multi-modality, even under normal distributions of individual forecasts; see \citet{Wallis2005-yf} and \citet{Hall2007-lh} for further discussion on this point. If the true (population) distribution is non-normal, the potential enables the mixture distribution in Equation~\eqref{eq:linear_pool} to mitigate misspecification of the individual probability forecasts that are normally distributed, while pooling using Equation~\eqref{eq:linear_pool} will not be a good strategy if the true distribution is normal.
 
@@ -380,14 +380,14 @@ The key practical issue determining the success (or failure) of a linear pooling
 
 Motivated by the ``optimal'' weights in combining point forecasts in the sense of minimizing the MSE loss (see Section \ref{sec:linear_comb}), \citet{Hall2007-lh} proposed a practical way to achieve the most optimal combination of probability forecasts. Specifically, \citet{Hall2007-lh} identified the set of optimal weights by minimizing the Kullback-Leibler information criterion (KLIC) distance between the combined probability forecast $\tilde{p}(y_{\tau+h}|I_{\tau})$ and the true (but unknown) probability distribution $f(y_{\tau+h})$, $\tau=1,\ldots,t$. The KLIC distance is defined as
 \begin{align*}
-\mathrm{KLIC} &= \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{p}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} \\
-&=E\left[\log f(y_{\tau+h})-\log \tilde{p}(y_{\tau+h}|I_{\tau})\right].
+  \mathrm{KLIC} & = \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{p}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} \\
+                & =E\left[\log f(y_{\tau+h})-\log \tilde{p}(y_{\tau+h}|I_{\tau})\right].
 \end{align*}
 
 Under the asymptotic theory that the number of time periods $t$ grows to infinity, the problem of minimizing the KLIC distance reduces to the maximization of the average logarithmic score of the combined probability forecast. Therefore, the optimal weight vector $\boldsymbol{w}_{t+h|t}$ is given by
 \begin{align}
-\label{eq:weight_klic}
-\boldsymbol{w}_{t+h|t} = \underset{\boldsymbol{w}}{\operatorname{argmax}} \frac{1}{t-h} \sum_{\tau=1}^{t-h} \log \tilde{p}(y_{\tau+h}|I_{\tau}),
+  \label{eq:weight_klic}
+  \boldsymbol{w}_{t+h|t} = \underset{\boldsymbol{w}}{\operatorname{argmax}} \frac{1}{t-h} \sum_{\tau=1}^{t-h} \log \tilde{p}(y_{\tau+h}|I_{\tau}),
 \end{align}
 where $\boldsymbol{w}_{t+h|t}=\left(w_{t+h|t, 1}, \ldots, w_{t+h|t, N}\right)^{\prime}$. The use of the logarithmic scoring rule eliminates the need to estimate the unknown true probability distribution, and therefore simplifies the weight estimation for the component forecasts. This was followed by \citet{Pauwels2016-ci} documenting the properties of the optimal weights in Equation~\eqref{eq:weight_klic}, centering on the asymptotic theory used by \citet{Hall2007-lh}. Their simulations and empirical results indicated that the combination with the optimal weights is inferior for short time periods $t$, while it is valid in minimizing the KLIC distance when $t$ is sufficiently large. Therefore, a sufficient training sample is recommended when solving the optimization problem.
 
@@ -400,18 +400,18 @@ Furthermore, some special treatments were given to accommodate probability forec
 
 Bayesian model averaging (BMA) provides an alternative means of mixing individual probability forecasts with respect to their posterior model probabilities. BMA offers a conceptually elegant and logically coherent solution to the issue of accounting for model uncertainty \citep[see, e.g.,][]{Leamer1978-sp,Draper1995-cd,Raftery1997-ij,Garratt2003-kh}. Under this approach, the posterior probability forecast is computed by mixing a set of individual probability forecasts, $p_{i}(y_{t+h}|I_{t})=p(y_{t+h}|I_{t},M_{i})$, from model $M_{i}$, and can be given as
 \begin{align}
-\label{eq:BMA}
-\tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} P(M_{i}|I_{t})p(y_{t+h}|I_{t},M_{i}),
+  \label{eq:BMA}
+  \tilde{p}(y_{t+h}|I_{t}) = \sum_{i=1}^{N} P(M_{i}|I_{t})p(y_{t+h}|I_{t},M_{i}),
 \end{align}
 where $P(M_{i}|I_{t})$ is the posterior probability of model $M_{i}$. The decision makers update the prior probability of model $M_{i}$ being the true model, $P(M_{i})$, via Bayes' Theorem to compute the posterior probability
 \begin{align}
-\label{eq:post_prob}
-P(M_{i}|I_{t}) & = \frac{P(M_{i})P(I_{t}|M_{i})}{\sum_{i=1}^{N} P(M_{i})P(I_{t}|M_{i})},
+  \label{eq:post_prob}
+  P(M_{i}|I_{t}) & = \frac{P(M_{i})P(I_{t}|M_{i})}{\sum_{i=1}^{N} P(M_{i})P(I_{t}|M_{i})},
 \end{align}
 where
 \begin{align}
-\label{eq:marginal_likelihood}
-P(I_{t}|M_{i}) = \int_{\boldsymbol{\theta}_{i}} P\left(\boldsymbol{\theta}_{i} | M_{i}\right) P\left(I_{t} | M_{i}, \boldsymbol{\theta}_{i}\right) d \boldsymbol{\theta}_{i}
+  \label{eq:marginal_likelihood}
+  P(I_{t}|M_{i}) = \int_{\boldsymbol{\theta}_{i}} P\left(\boldsymbol{\theta}_{i} | M_{i}\right) P\left(I_{t} | M_{i}, \boldsymbol{\theta}_{i}\right) d \boldsymbol{\theta}_{i}
 \end{align}
 is the marginal likelihood of model $M_{i}$, $P\left(\boldsymbol{\theta}_{i} | M_{i}\right)$ is the prior on the unknown parameters $\boldsymbol{\theta}_{i}$ conditional on model $M_{i}$, and $P\left(I_{t} | M_{i}, \boldsymbol{\theta}_{i}\right)$ is the likelihood function of model $M_{i}$. See, e.g., \citet{Koop-2003bayesian} for textbook illustrations of BMA.
 
@@ -428,26 +428,26 @@ Despite their simplicity and popularity, the classical linear pooling methods ha
 
 Motivated by the seminal work of \citet{Dawid1995-jj}, \citet{Gneiting2013-hl} developed the generalized linear pool (GLP) to incorporate a parametric family of combination formulas. Let $P_{i}(y_{t+h}|I_{t})$ denote the cdf of the probability forecast $p_{i}(y_{t+h}|I_{t})$ ($i=1,\ldots,N$), and $\tilde{P}(y_{t+h}|I_{t})$ denote the cdf of the combined forecast $\tilde{p}(y_{t+h}|I_{t})$. The generalized pooling scheme takes the following form
 \begin{align*}
-\tilde{P}(y_{t+h}|I_{t}) = g^{-1}\left(\sum_{i=1}^{N} w_{t+h|t,i} g\left(P_{i}(y_{t+h}|I_{t})\right)\right),
+  \tilde{P}(y_{t+h}|I_{t}) = g^{-1}\left(\sum_{i=1}^{N} w_{t+h|t,i} g\left(P_{i}(y_{t+h}|I_{t})\right)\right),
 \end{align*}
 where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights that sum to one, and $g$ denotes a continuous and strictly monotone function with the inverse $g^{-1}$. The linear, harmonic and logarithmic (geometric) pools become special cases of the BLP for $g(x)=x$, $g(x)=1/x$ and $g(x)=\log(x)$, respectively. However, \citet{Gneiting2013-hl} highlighted that the generalized pooling strategy may fail to be flexibly disperse for calibration.
 
 \citet{Gneiting2013-hl} proposed the spread-adjusted linear pool (SLP) to allow one to address the calibration problem. Define $P_{i}^{0}$ and $p_{i}^{0}$ via $P_{i}(y_{t+h}|I_{t})=P_{i}^{0}(y_{t+h}-\eta_{i}|I_{t})$ and $p_{i}(y_{t+h}|I_{t})=p_{i}^{0}(y_{t+h}-\eta_{i}|I_{t})$, where $\eta_{i}$ is the unique median of $P_{i}(y_{t+h}|I_{t})$. Then the SLP has the combined cdf and the corresponding density,
 \begin{align*}
-&\tilde{P}(y_{t+h}|I_{t})=\sum_{i=1}^{N} w_{t+h|t,i} P_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right) \quad \text { and }\\
-&\tilde{p}(y_{t+h}|I_{t})=\frac{1}{c} \sum_{i=1}^{N} w_{t+h|t,i} p_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right),
+   & \tilde{P}(y_{t+h}|I_{t})=\sum_{i=1}^{N} w_{t+h|t,i} P_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right) \quad \text { and } \\
+   & \tilde{p}(y_{t+h}|I_{t})=\frac{1}{c} \sum_{i=1}^{N} w_{t+h|t,i} p_{i}^{0}\left(\frac{y_{t+h}-\eta_{i}}{c}\bigg|I_{t}\right),
 \end{align*}
 respectively, where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights with $\sum_{i=1}^{N}w_{t+h|t,i}=1$, and $c$ is a strictly positive spread adjustment parameter. The traditional linear pool arises as a special case for $c = 1$. A value of $c < 1$ is suggested for neutrally confident or underconfident component forecasts, while a value $c \geq 1$ is suggested for overconfident components. Moreover, one can introduce spread adjustment parameters varying with the components in case that the degrees of miscalibration of the components differ to a high extent.
 
 The cumulative beta distribution is widely employed for recalibration purpose because of the flexibility of its shape \citep[see, e.g.,][]{Graham1996-qc}. \citet{Ranjan2010-jl} introduced a beta-transformed linear pool (BLP) that merges the traditional linear pool with a beta transform to achieve calibration. The BLP takes the form
 \begin{align*}
-\tilde{P}(y_{t+h}|I_{t}) = B_{\alpha, \beta}\left(\sum_{i=1}^{N} w_{t+h|t,i} P_{i}(y_{t+h}|I_{t})\right),
+  \tilde{P}(y_{t+h}|I_{t}) = B_{\alpha, \beta}\left(\sum_{i=1}^{N} w_{t+h|t,i} P_{i}(y_{t+h}|I_{t})\right),
 \end{align*}
 where $w_{t+h|t,1},\ldots,w_{t+h|t,N}$ are nonnegative weights that sum to one, and $B_{\alpha, \beta}$ is the cdf of the beta distribution with the shape parameters $\alpha > 0$ and $\beta > 0$. Full generality of the BLP enables an asymmetric beta-transformation on the basis of the linear pooling of probability forecasts. In its most simplistic case, the BLP approach nests the traditional linear pool, giving the restriction $\alpha = \beta = 1$. The beta-transformation tunes up a linear pooled probability forecast if it is larger than $0.5$ and tunes it down otherwise when imposing the constraint $\alpha = \beta \geq 1$. The approach can be used to aggregate probability forecasts from both calibrated and uncalibrated sources. The estimates of the beta-transformation along with the mixture weights for linear pooling can be obtained by maximum likelihood, as suggested by \citet{Ranjan2010-jl}. A recent work of \citet{Lahiri2015-qq} demonstrated the superiority of the BLP approach, based on the valuable individual forecasts identified by a Welch-type test, over the equally weighted approach with respect to calibration and sharpness.
 
 To achieve improved calibration properties, \citet{Bassetti2018-qr} proposed a Bayesian nonparametric approach, which is based on Gibbs and slice sampling, to realize the calibration and combination of probability forecasts by introducing an additional beta mixture in the BLP method. The resulting predictive cdf is
 \begin{align*}
-\tilde{P}(y_{t+h}|I_{t}) = \sum_{k=1}^{K} \omega_{k} B_{\alpha_{k}, \beta_{k}}\left(\sum_{i=1}^{N} w_{t+h|t,ki} P_{i}(y_{t+h}|I_{t})\right),
+  \tilde{P}(y_{t+h}|I_{t}) = \sum_{k=1}^{K} \omega_{k} B_{\alpha_{k}, \beta_{k}}\left(\sum_{i=1}^{N} w_{t+h|t,ki} P_{i}(y_{t+h}|I_{t})\right),
 \end{align*}
 where $\omega_{1}, \ldots, \omega_{K}$ denote beta mixture weights. The proposed approach enables one to treat the parameter $K$ as bounded or unbounded and it reduces to the BLP for $K=1$. The Bayesian inference approach achieved a compromise between parsimony and flexibility and produced well calibrated and accurate forecasts in their simulations and the empirical examples, outperforming the linear pool substantially.
 
@@ -465,8 +465,8 @@ The extensive literature on probability forecast combinations considering correl
 
 Early work in the Bayesian vein focused on a Bayesian paradigm developed by \citet{Morris1974-yh,Morris1977-xl} in which a decision maker views available probability forecasts from various sources simply as data and updates his/her prior distribution by means of Bayes' Theorem. At time $t$, the decision maker aims to forecast $y_{t+h}$ and receives current $h$-step-ahead probability forecasts $\mathcal{H}_{t+h} = \left\{p_{1}(y_{t+h}|I_{t}), \ldots, p_{N}(y_{t+h}|I_{t})\right\}$ from the set of models. The posterior probability forecast of $y_{t+h}$ is then
 \begin{align}
-\label{eq:bayes_theorem}
-\tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{t+h}\right) \propto p\left(y_{t+h} | I_{t}\right) f_{N}\left(\mathcal{H}_{t+h} | y_{t+h}, I_{t}\right),
+  \label{eq:bayes_theorem}
+  \tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{t+h}\right) \propto p\left(y_{t+h} | I_{t}\right) f_{N}\left(\mathcal{H}_{t+h} | y_{t+h}, I_{t}\right),
 \end{align}
 where $p\left(y_{t+h} | I_{t}\right)$ denotes the decision maker's prior probability for $y_{t+h}$ given the available information $I_{t}$, and $f_{N}\left(\mathcal{H}_{t+h} | y_{t+h}, I_{t}\right)$ denotes the joint likelihood function derived from the individual distributions.
 
@@ -480,18 +480,18 @@ One line of research has considered specifying the likelihood as a joint distrib
 
 A fully specified Bayesian model, on which the aforementioned early works in Bayesian combinations are established, is difficult to conceptualize especially in a setting where biases and miscalibration of individual distributions and, critically, dependencies among them are time-varying. In this light, the state-of-the-art probability forecast combination method of \citet{McAlinn2019-kn} adapted and extended the basic Bayesian predictive synthesis (BPS) framework developed in agent opinion analysis \citep[see, e.g.,][]{Genest1985-bu,West1992-qy,West1992-gr} to sequential forecasting in time series. In the dynamic extension of BPS model, the posterior probability forecast takes the form
 \begin{align*}
-\tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{1: t+h}\right) = \int_{\boldsymbol{x}_{t+h}} \alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right) \prod_{i=1: N} p_{i}\left(x_{t+h,i}|I_{t}\right) d \boldsymbol{x}_{t+h},
+  \tilde{p}\left(y_{t+h} | I_{t}, \mathcal{H}_{1: t+h}\right) = \int_{\boldsymbol{x}_{t+h}} \alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right) \prod_{i=1: N} p_{i}\left(x_{t+h,i}|I_{t}\right) d \boldsymbol{x}_{t+h},
 \end{align*}
 where, to use our earlier notation, $\mathcal{H}_{1: t+h}$ denotes the full set of individual probability forecasts available for the decision maker up to forecast origin $t$, $\boldsymbol{x}_{t+h} = x_{t+h, 1:N}$ is a $N$-dimensional vector of latent variables at time $t+h$, and $\alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)$ is a conditional distribution for $y_{t+h}$ given $\boldsymbol{x}_{t+h}$ defining the synthesis function.
 
 Instead of constructing Bayesian combinations by multiplying a likelihood by a prior, the dynamic BPS method follows a subclass of Bayesian updating rules, i.e. updating by integration, in the form of latent factor models. Information about biases, miscalibration, and dependencies among the individual distributions then can be incorporated directly through specification of synthesis function. Specifically, \citet{McAlinn2019-kn} developed a time-varying (non-convex/nonlinear) combination of probability forecasts by defining a normally distributed synthesis function
 \begin{align*}
-\alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)=N\left(y_{t+h} | \boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}, v_{t+h}\right)
+  \alpha\left(y_{t+h} | \boldsymbol{x}_{t+h}\right)=N\left(y_{t+h} | \boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}, v_{t+h}\right)
 \end{align*}
 with $\boldsymbol{F}_{t+h}=\left(1, \boldsymbol{x}_{t+h}^{\prime}\right)^{\prime}$ and $\boldsymbol{\theta}_{t+h}=\left(\theta_{t+h, 0}, \theta_{t+h, 1}, \ldots, \theta_{t+h, N}\right)^{\prime}$. A dynamic linear model is built to model time evolution of these parameter processes, which is defined as
 \begin{align*}
-&y_{t+h}=\boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}+\nu_{t+h}, \quad \nu_{t+h} \sim N\left(0, v_{t+h}\right), \\
-&\boldsymbol{\theta}_{t+h}=\boldsymbol{\theta}_{t+h-1}+\boldsymbol{\omega}_{t+h}, \quad \boldsymbol{\omega}_{t+h} \sim N\left(\boldsymbol{0}, v_{t+h} \boldsymbol{W}_{t+h}\right),
+   & y_{t+h}=\boldsymbol{F}_{t+h}^{\prime} \boldsymbol{\theta}_{t+h}+\nu_{t+h}, \quad \nu_{t+h} \sim N\left(0, v_{t+h}\right),                                                         \\
+   & \boldsymbol{\theta}_{t+h}=\boldsymbol{\theta}_{t+h-1}+\boldsymbol{\omega}_{t+h}, \quad \boldsymbol{\omega}_{t+h} \sim N\left(\boldsymbol{0}, v_{t+h} \boldsymbol{W}_{t+h}\right),
 \end{align*}
 where $\boldsymbol{\theta}_{t+h}$ evolves in time according to a normal random walk with innovations variance matrix $v_{t+h} \boldsymbol{W}_{t+h}$, and $v_{t+h}$ identifies the residual variance in forecasting $y_{t+h}$ given past information and the set of agent forecast distributions. It is suggested to customize BPS models specific to the forecast horizon in consideration of the reality that a forecasting model may present completely different forecast performance in different forecast horizons. MCMC methods are required for this posterior inference and dependencies among agents, accordingly, are involved in sequentially updated estimates of the BPS parameters. Their results of forecasting a quarterly series of inflation rate showed that the proposed dynamic BPS model significantly outperforms benchmark methods, such as pooling and BMA combination techniques in Sections \ref{sec:linear_pooling} and \ref{sec:bma}, which holds true in a multivariate extension studied by \citet{McAlinn2020-qq}. \citet{McAlinn2019-kn} also showed that the dynamic BPS framework encompasses many existing combination methods, including linear pooling and BMA methods, by specifying different forms of the BPS synthesis function.
 
@@ -502,8 +502,8 @@ In addition to probability forecasts, forecasts of the uncertain quantity of int
 
 The standard aggregation strategy for quantiles is to \textit{allocate identical weights over all quantile levels for each individual model}. For $i=1,\ldots,N$, let $P_{i}(y_{t+h}|I_{t})$ denote the individual cdf with corresponding probability density function given by $p_{i}(y_{t+h}|I_{t})$, let $Q_{t+h|t,i}(\tau) = P_{t+h|t,i}^{-1}(\tau)$ denote the corresponding quantile function. Quantile averaging, the simple and standard way to build combinations of quantile functions, is then given by
 \begin{align}
-\label{eq:quantile_avg}
-\tilde{Q}_{t+h|t}(\tau) = \tilde{P}_{t+h|t}^{-1}(\tau) = \sum_{i=1}^{N} w_{t+h|t,i} P_{t+h|t,i}^{-1}(\tau), \quad 0 < \tau \leq 1,
+  \label{eq:quantile_avg}
+  \tilde{Q}_{t+h|t}(\tau) = \tilde{P}_{t+h|t}^{-1}(\tau) = \sum_{i=1}^{N} w_{t+h|t,i} P_{t+h|t,i}^{-1}(\tau), \quad 0 < \tau \leq 1,
 \end{align}
 where the weight $w_{t+h|t,i}$ is non-negative such that $\sum_{i=1}^{N}w_{t+h|t,i}=1$. This aggregation strategy is also referred to as Vincentization \citep{vincent1912-fu}. Interestingly, unlike linear pooling in Equation~\eqref{eq:linear_pool}, given individual distributions belonging to the same location-scale family (such as normal, Logistic, Cauchy, etc.), quantile averaging yields the combined distribution from the same family as that of the individuals, with parameters given simply by weighted averages of the individuals' parameters \citep{Ratcliff1979-cb,Thomas1980-lp}. It is shape-preserving in a location-scale family and a simple example can go a long way to illustrate the property: quantile averaging of normal distributions is always uni-modal, while linear pooling in general may be multi-modal. It is sometimes desirable for the combination operator to retain normality. Moreover, quantile averaging and linear pooling share the same mean, while quantile averaging tends to be more sharper and less underconfident due to the additional spread driven by the disagreement on the mean in linear pooling.
 
