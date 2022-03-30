@@ -244,9 +244,9 @@ Some effort has been directed toward the use of Bayesian approaches to updating 
 
 A different theme of research has also advocated the incorporation of prior information into the estimation of combination weights, but with the weights being shrunk toward some prior mean under a regression-based combination framework \citep{Newbold2002-wa}. Assuming that the vector of forecast errors is normally distributed, \citet{Clemen1986-pd} developed a Bayesian approach with the conjugate prior for $\boldsymbol{\Sigma}$, represented by an inverted Wishart distribution with covariance matrix $\boldsymbol{\Sigma}_{0}$ and scalar degrees of freedom $\nu_{0}$. Again we drop time and horizon subscripts for simplicity. If the last $n$ observations are used to estimate $\boldsymbol{\Sigma}$, the combination weights derived from the posterior distribution for $\boldsymbol{\Sigma}$ are
 \begin{align*}
-  \boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*-1}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}^{*-1} \boldsymbol{1}},
+  \boldsymbol{w}^{\text{cw}}=\frac{\boldsymbol{\Sigma}^{*}\boldsymbol{1}}{\boldsymbol{1}^{\prime} \boldsymbol{\Sigma}^{*} \boldsymbol{1}},
 \end{align*}
-where $\boldsymbol{\Sigma}^{*}=\left[\left(\nu_{0} \boldsymbol{\Sigma}_{0}^{-1}+n \hat{\boldsymbol{\Sigma}}^{-1}\right) /(\nu_{0}+n)\right]^{-1}$ and $\hat{\boldsymbol{\Sigma}}$ is the sample covariance matrix.
+where $\boldsymbol{\Sigma}^{*}=\left(\nu_{0} \boldsymbol{\Sigma}_{0}^{-1}+n \hat{\boldsymbol{\Sigma}}^{-1}\right) /(\nu_{0}+n)$ is the precision matrix and $\hat{\boldsymbol{\Sigma}}$ is the sample covariance matrix.
 Compared to estimating $\boldsymbol{\Sigma}$ using past data or treating it as a diagonal matrix, the proposed approach yields superiority in the sense of providing a relatively stable estimation and allowing for correlations by specifying the prior estimate $\boldsymbol{\Sigma}_{0}$. The subsequent work by \citet{Diebold1990-fk} allowed the incorporation of the standard normal-gamma conjugate prior by considering a normal regression-based combination
 \begin{align*}
   \boldsymbol{y}=\hat{\boldsymbol{Y}} \boldsymbol{w}+\boldsymbol{\varepsilon}, \quad \boldsymbol{\varepsilon} \sim N\left(\boldsymbol{0}, \boldsymbol{\sigma}^{2} \boldsymbol{I}\right),
