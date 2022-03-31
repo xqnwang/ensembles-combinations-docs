@@ -42,13 +42,31 @@
 
 %\DeclareUnicodeCharacter{0301}{*************************************} % solve a Unicode char' (U+301) error
 
-\usepackage[backend=biber, style=authoryear, %bibstyle=numeric, %dashed=none,
-maxcitenames=2, maxbibnames=99, giveninits=true, hyperref=true, natbib=true,
-uniquelist=false, uniquename=false, date=year, doi=true, isbn=false, eprint=false, ]{biblatex}
+\usepackage[backend=biber, style=authoryear, bibencoding=utf8,minnames=1,maxnames=3, maxcitenames=2, maxbibnames=99, giveninits=true, terseinits=true,firstinits=true,uniquename=false, hyperref=true, natbib=true,dashed=false, uniquelist=false, uniquename=false, date=year, doi=true, isbn=false, eprint=false, ]{biblatex}
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[book]{url}{}
+\DeclareFieldFormat[inbook]{url}{}
+\DeclareFieldFormat[incollection]{url}{}
+\DeclareFieldFormat[inproceedings]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
 \DeclareNameAlias{sortname}{family-given}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+% Remove In: for an article.
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{%
   \printtext{\bibstring{in}\intitlepunct}}}
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
 \addbibresource{references.bib}
 
 \baselineskip = 7 mm
