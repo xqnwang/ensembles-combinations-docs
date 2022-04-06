@@ -380,10 +380,10 @@ The schemes for combining multiple probabilistic forecasts have evolved from a s
 \subsection{Linear pooling}
 \label{sec:linear_pooling}
 
-Probability forecasts strive to predict the probability distribution of quantities or events of interest. In line with the notations in previous sections, here we consider $N$ individual forecasts specified as cumulative probability distributions of a random variable $Y$ at time $T+h$, denoted $p_{i}(y_{T+h}|I_{T})$, $i=1,\ldots,N$, using the information available up to time $T$, $I_{T}$. One popular approach is to directly take a mixture distribution of these $N$ individual probability forecasts with estimated weights, neglecting correlations between these individual components. This approach is commonly referred to as the ``linear opinion pool'' in the literature on combining experts' subjective probability distributions, dating back at least to \citet{Stone1961-zd}. The linear pool of probability forecasts is defined as the finite mixture
+Probability forecasts strive to predict the probability distribution of quantities or events of interest. In line with the notations in previous sections, here we consider $N$ individual forecasts specified as cumulative probability distributions of a random variable $Y$ at time $T+h$, denoted $F_{i}(y_{T+h}|I_{T})$, $i=1,\ldots,N$, using the information available up to time $T$, $I_{T}$. One popular approach is to directly take a mixture distribution of these $N$ individual probability forecasts with estimated weights, neglecting correlations between these individual components. This approach is commonly referred to as the ``linear opinion pool'' in the literature on combining experts' subjective probability distributions, dating back at least to \citet{Stone1961-zd}. The linear pool of probability forecasts is defined as the finite mixture
 \begin{align}
   \label{eq:linear_pool}
-  \tilde{p}(y_{T+h}|I_{T}) = \sum_{i=1}^{N} w_{T+h|T,i} p_{i}(y_{T+h}|I_{T}),
+  \tilde{F}(y_{T+h}|I_{T}) = \sum_{i=1}^{N} w_{T+h|T,i} F_{i}(y_{T+h}|I_{T}),
 \end{align}
 where $w_{T+h|T,i}$ is the weight assigned to the $i$th probability forecast. These weights are often set to be non-negative and sum to one to guarantee that the pooled forecast preserves properties of both non-negativity and integrating to one. The pooled probability forecast satisfies numerous properties such as the \textit{unanimity} property (if all individual forecasters agree on a probability then the pooled forecast agrees also); see \citet{Clemen1999-mh} for more details.
 
@@ -411,16 +411,16 @@ The key practical issue determining the success (or failure) of linear pooling i
 
 Linear pooling with equal weights is easy to understand and implement, commonly yielding robust and stable outcomes. For reviews, see, e.g., \citet{Wallis2005-yf} and \citet{OHagan2006-jk}. A leading example is the survey of professional forecasters (SPF) in the US, which publishes the mixed probability forecasts (in the form of histograms) for inflation and GDP growth using equal weights. As experience of combining point forecasts has taught us, the equally weighted approach often turns out to be hard to beat. An important reason is that it avoids parameter estimation error that often exists in weighted approaches; see Section~\ref{sec:puzzle} for more details and illustrations.
 
-Motivated by the ``optimal'' weights obtained in point forecast combinations by minimizing the MSE loss (see Section~\ref{sec:linear_comb}), \citet{Hall2007-lh} proposed obtaining the set of weights by minimizing the Kullback-Leibler information criterion (KLIC) distance between the combined probability forecast $\tilde{p}(y_{\tau+h}|I_{\tau})$ and the true (but unknown) probability distribution $f(y_{\tau+h})$, $\tau=1,\ldots,T$. The KLIC distance is defined as
+Motivated by the ``optimal'' weights obtained in point forecast combinations by minimizing the MSE loss (see Section~\ref{sec:linear_comb}), \citet{Hall2007-lh} proposed obtaining the set of weights by minimizing the Kullback-Leibler information criterion (KLIC) distance between the combined probability forecast density $\tilde{f}(y_{\tau+h}|I_{\tau})$ and the true (but unknown) probability density $f(y_{\tau+h})$, $\tau=1,\ldots,T$. The KLIC distance is defined as
 \begin{align*}
-  \mathrm{KLIC}  = \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{p}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} 
-                 =E\left[\log f(y_{\tau+h})-\log \tilde{p}(y_{\tau+h}|I_{\tau})\right].
+  \mathrm{KLIC}  = \int f(y_{\tau+h}) \log \left\{\frac{f(y_{\tau+h})}{\tilde{f}(y_{\tau+h}|I_{\tau})}\right\} \mathrm{d} y_{\tau+h} 
+                 =E\left[\log f(y_{\tau+h})-\log \tilde{f}(y_{\tau+h}|I_{\tau})\right].
 \end{align*}
 
 Under the asymptotic theory that the number of observations $T$ grows to infinity, the problem of minimizing the KLIC distance reduces to the maximization of the average logarithmic score of the combined probability forecast. Therefore, the optimal weight vector $\bm{w}_{T+h|T}$ is given by
 \begin{align}
   \label{eq:weight_klic}
-  \bm{w}_{T+h|T} = \underset{\bm{w}}{\operatorname{argmax}} \frac{1}{T-h} \sum_{t=1}^{T-h} \log \tilde{p}(y_{t+h}|I_{t}),
+  \bm{w}_{T+h|T} = \underset{\bm{w}}{\operatorname{argmax}} \frac{1}{T-h} \sum_{t=1}^{T-h} \log \tilde{f}(y_{t+h}|I_{t}),
 \end{align}
 where $\bm{w}_{T+h|T}=\left(w_{T+h|T, 1}, \ldots, w_{T+h|T, N}\right)^{\prime}$. The use of the logarithmic scoring rule eliminates the need to estimate the unknown true probability distribution, and therefore simplifies the weight estimation for the component forecasts. This was followed by \citet{Pauwels2016-ci} documenting the properties of the optimal weights in Equation~\eqref{eq:weight_klic}, centering on the asymptotic theory used by \citet{Hall2007-lh}. Their simulations and empirical results indicated that the combination with optimal weights is inferior for small $T$, while it is valid in minimizing the KLIC distance when $T$ is sufficiently large. Therefore, a sufficient training sample is recommended when solving the optimization problem.
 
@@ -431,10 +431,10 @@ Furthermore, some special treatments were given to accommodate probability forec
 \subsection{Bayesian model averaging}
 \label{sec:bma}
 
-Bayesian model averaging (BMA) provides an alternative means of mixing individual probability forecasts with respect to their posterior model probabilities. BMA offers a conceptually elegant and logically coherent solution to the issue of accounting for model uncertainty \citep[see, e.g.,][]{Leamer1978-sp,Draper1995-cd,Raftery1997-ij,Garratt2003-kh}. Under this approach, the posterior probability forecast is computed by mixing a set of individual probability forecasts, $p_{i}(y_{T+h}|I_{T})=p(y_{T+h}|I_{T},M_{i})$, from model $M_{i}$, and can be given as
+Bayesian model averaging (BMA) provides an alternative means of mixing individual probability forecasts with respect to their posterior model probabilities. BMA offers a conceptually elegant and logically coherent solution to the issue of accounting for model uncertainty \citep[see, e.g.,][]{Leamer1978-sp,Draper1995-cd,Raftery1997-ij,Garratt2003-kh}. Under this approach, the posterior probability forecast is computed by mixing a set of individual probability forecasts distributions, $F_{i}(y_{T+h}|I_{T})=F(y_{T+h}|I_{T},M_{i})$, from model $M_{i}$, and can be given as
 \begin{align}
   \label{eq:BMA}
-  \tilde{p}(y_{T+h}|I_{T}) = \sum_{i=1}^{N} P(M_{i}|I_{T})p(y_{T+h}|I_{T},M_{i}),
+  \tilde{F}(y_{T+h}|I_{T}) = \sum_{i=1}^{N} P(M_{i}|I_{T})F(y_{T+h}|I_{T},M_{i}),
 \end{align}
 where $P(M_{i}|I_{T})$ is the posterior probability of model $M_{i}$. The decision makers update the prior probability of model $M_{i}$ being the true model, $P(M_{i})$, via Bayes' Theorem to compute the posterior probability
 \begin{align}
