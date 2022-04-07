@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[margin=2cm]{geometry}
 \usepackage{array}
 \usepackage{booktabs}
@@ -70,7 +70,7 @@
 \addbibresource{references.bib}
 
 \baselineskip = 7 mm
-\parskip = 2.5 mm
+\parskip = 2 mm
 \sloppy
 \clubpenalty = 10000
 \widowpenalty = 10000
@@ -132,11 +132,6 @@
   Probabilistic forecasts;
   Quantile forecasts.
 \vfill
-
-\newpage
-
-% Temporary table of contents to be removed later
-\tableofcontents
 
 \newpage
 
@@ -287,7 +282,7 @@ As \citet{Timmermann2006-en} identified, two types of nonlinearities can be inco
   g(\bm{z}_{T+h|T} \bm{\gamma}_{i}) & =
     \left(1+\exp \bigg\{-\Big(\gamma_{0, i}+\sum_{j=1}^{N} \gamma_{1, j} z_{T+h|T, j}\Big)\bigg\}\right)^{-1}, 
 \end{align}
-where $z_{T+h|T, j} = (\hat{y}_{T+h|T, j}-\bar{y}) / \hat{\sigma}$, $\bar{y}$ and $\hat{\sigma}$ denote the in-sample mean and in-sample standard deviation respectively, $k \in \{0,N\}$, and $p \in \{0,1,2,3\}$. This approach permits special cases of both purely linear combinations ($k=N$ and $p=0$) and nonlinear combinations ($k=0$ and $p\neq 0$). Building on this, \citet{Harrald1997-gd} proposed to evolve ANNs and demonstrated their utility when only forecasts to be combined are available.\todo{What does this mean?} \citet{Krasnopolsky2012-xu} and \citet{Babikir2016-xz} employed neural network approaches with various activation functions to approximate the nonlinear dependence of individual forecasts and achieve nonlinear mapping, resulting in variants of Equation~\eqref{eq:nonlinear_sl}. The empirical results of nonlinear combinations from these studies generally dominate those from traditional linear combination strategies, such as simple average, OLS weights, and performance-based weights. However, the empirical evidence provided is based on fewer than ten time series, possibly hand-picked to lead to this result. Additionally, these nonlinear combination methods suffer from other drawbacks including the neglect of correlations among forecast errors, the instability of parameter estimation, and the multicollinearity caused by the overlap in the information sets used to produce individual forecasts. Thus, the performance of nonlinear combinations relative to linear combinations needs further investigation.
+where $z_{T+h|T, j} = (\hat{y}_{T+h|T, j}-\bar{y}) / \hat{\sigma}$, $\bar{y}$ and $\hat{\sigma}$ denote the in-sample mean and in-sample standard deviation respectively, $k \in \{0,N\}$, and $p \in \{0,1,2,3\}$. This approach permits special cases of both purely linear combinations ($k=N$ and $p=0$) and nonlinear combinations ($k=0$ and $p\neq 0$). Building on this, \citet{Harrald1997-gd} proposed to evolve ANNs and demonstrated their utility, but only using a single time series. \citet{Krasnopolsky2012-xu} and \citet{Babikir2016-xz} employed neural network approaches with various activation functions to approximate the nonlinear dependence of individual forecasts and achieve nonlinear mapping, resulting in variants of Equation~\eqref{eq:nonlinear_sl}. The empirical results of nonlinear combinations from these studies generally dominate those from traditional linear combination strategies, such as simple average, OLS weights, and performance-based weights. However, the empirical evidence provided is based on fewer than ten time series, possibly hand-picked to lead to this result. Additionally, these nonlinear combination methods suffer from other drawbacks including the neglect of correlations among forecast errors, the instability of parameter estimation, and the multicollinearity caused by the overlap in the information sets used to produce individual forecasts. Thus, the performance of nonlinear combinations relative to linear combinations needs further investigation.
 
 Some researchers have sought to construct nonlinear combinations via the inclusion of an additional nonlinear term to cope with the case where the individual forecast errors are correlated. The combination mechanism can be generalized to the following form
 \begin{align*}
@@ -595,12 +590,11 @@ In this review, our goal has been to show not only how forecast combinations hav
 
 \textbf{\textit{Encouraging researchers to contribute open-source software and datasets.}} In this paper, we list some open-source packages linking to the developed approaches for forecast combinations (e.g., \pkg{fable}, \pkg{ForecastComb}, and \pkg{forecastHybrid} packages for \proglang{R}), time series features (e.g., \pkg{feasts} and \pkg{tsfeatures} packages for \proglang{R} and \pkg{tsfresh} and \pkg{Kats} packages for \proglang{Python}), and time series generations (e.g., \pkg{forecast} and \pkg{gratis} packages for \proglang{R}). We emphasize that open-source research software is a pathway to impact. Recent decades have witnessed a dramatically accelerating pace in the advancements in computing. As a consequence, it is time to promote the idea of researchers producing open-source software that provides evidence and support behind all the statements that are made. Publicly releasing new software benefits researchers and end users. It reduces research costs, allows for quick implementation, helps people modify the existing software and adapts it to other research ideas. We also encourage researchers to contribute open-source datasets because of the benefits in investigating and comparing the performance of newly developed methods; see, e.g., \citet{Godahewa2021-mo,Godahewa2021-wb} for a time series forecasting archive containing $20$ publicly available time series datasets from different domains.
 
-In this paper, we take the multiple forecasts to be combined essentially as given and limit ourselves to combinations of forecasts derived from separate models for a given series. These separate models can be identified with different model forms and/or the same model form but different parameters. However, we highlight that there are other types of forecast combinations in the forecasting literature. For example, one type of approaches involve constructing replicas of the original time series through various manipulations of local curvatures, frequency transformation or bootstrapping, and subsequently multiple forecasts are produced to form the final combined forecasts, leading to a wide variety of approaches such as the theta method \citep{Assimakopoulos2000-cc}, temporal aggregation \citep[e.g.,][]{Kourentzes2014-wz,Kourentzes2016-qq,Kourentzes2017-xe}, bagging \citep[e.g.,][]{Bergmeir2016-ae,Petropoulos2018-fw}, and structural combination \citep[e.g.,][]{Rendon-Sanchez2019-qm}. Another approach involves forming a hierarchical structure using multiple time series that are structurally connected based on geographic or logical reasons and reconciling multiple forecasts across the hierarchy, leading to various hierarchical aggregation methods \citep[e.g.,][]{Hyndman2011-sd,Wickramasuriya2019-fc,Taieb2021-tc,Hollyman2021-tn}. There are also some other types of forecast combinations summarized in the review of \citet{Petropoulos2021-ft}.
+In this paper, we take the multiple forecasts to be combined essentially as given and limit ourselves to combinations of forecasts derived from separate models for a given series. These separate models can be identified with different model forms and/or the same model form but different parameters. However, we highlight that there are other types of forecast combinations in the forecasting literature. For example, one type of approaches involve constructing replicas of the original time series through various manipulations of local curvatures, frequency transformation or bootstrapping, and subsequently multiple forecasts are produced to form the final combined forecasts, leading to a wide variety of approaches such as the theta method \citep{Assimakopoulos2000-cc}, temporal aggregation \citep[e.g.,][]{Kourentzes2014-wz,Kourentzes2016-qq,Kourentzes2017-xe}, bagging \citep[e.g.,][]{Bergmeir2016-ae,Petropoulos2018-fw}, and structural combination \citep[e.g.,][]{Rendon-Sanchez2019-qm}. Another approach involves forming a hierarchical structure using multiple time series that are structurally connected based on geographic or logical reasons and reconciling multiple forecasts across the hierarchy, leading to various hierarchical aggregation methods \citep[e.g.,][]{Hyndman2011-sd,Wickramasuriya2019-fc,Taieb2021-tc,Hollyman2021-tn}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% References %%%%%%%%%%%%%%
-% \bibliographystyle{agsm}
-% \bibliography{references.bib}
+\newpage
 \printbibliography
 
 \end{document}
