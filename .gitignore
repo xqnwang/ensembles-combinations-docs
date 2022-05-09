@@ -1,6 +1,9 @@
 ## Diff file
 diff.tex
 
+## Cover letter
+coverletter.tex
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
