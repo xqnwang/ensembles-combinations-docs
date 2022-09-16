@@ -114,7 +114,7 @@
 
 \noindent%
 \textit{Keywords:}
-  Combinations;
+  Forecast combination;
   Cross learning;
   Forecast combination puzzle;
   Forecast ensembles;
@@ -233,7 +233,7 @@ Compared to constructing the weights directly using historical forecast errors, 
 
 \subsubsection*{Criteria-based weights}
 
-Information criteria, such as Akaike's information criterion \citep[AIC,][]{Akaike1974-ya}, the corrected Akaike information criterion \citep[AICc,][]{Sugiura1978-xm}, and the Bayesian information criterion \citep[BIC,][]{Schwarz1978-cz}, are often used for model selection in forecasting. However, choosing a single model out of the candidate model pool may be misleading because of the information loss from the alternative models. An alternative approach proposed by \citet{Burnham2002-us} is to combine multiple models based on information criteria to mitigate the risk of selecting a single model.
+Information criteria, such as Akaike's information criterion \citep[AIC,][]{Akaike1974-ya}, the corrected Akaike information criterion \citep[AICc,][]{Sugiura1978-xm}, and the Bayesian information criterion \citep[BIC,][]{Schwarz1978-cz}, are often used for model selection in forecasting. However, choosing a single model out of the candidate model pool may be misleading because of the information loss from the alternative models. An alternative approach proposed by \citet{Burnham2002-us} is to combine multiple models based on information criteria to mitigate the risk of selecting a single model. It is also worth mentioning that the \proglang{R} packages \pkg{MuMIn} \citep{rMuMIn} and \pkg{mmSAR} \citep{rmmSAR} have been developed to perform model selection and multimodel averaging based on the use of information-theoretic approaches introduced by \citet{Burnham2002-us}.
 
 One such common approach is using Akaike weights. Specifically, in light of the fact that AIC estimates the Kullback-Leibler distance \citep{Kullback1951-hl} between a model and the true data generating process, differences in the AIC can be used to weight different models, providing a measure of the evidence for supporting a given model relative to other constituent models. Given $N$ individual models, the Akaike weight of model $i$ can be derived as:
 \begin{align*}
