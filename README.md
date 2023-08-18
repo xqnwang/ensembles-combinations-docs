@@ -7,4 +7,4 @@ An up-to-date review of the literature on forecast combinations over the past fi
 References
 ----------
 
-- [Xiaoqian Wang](https://xqnwang.rbind.io/),  [Rob J Hyndman](https://robjhyndman.com/), [Feng Li](https://feng.li/), [Yanfei Kang](https://yanfei.site/) (2022): Forecast combinations: an over 50-year review, [Working paper](https://arxiv.org/abs/2205.04216).
+- [Xiaoqian Wang](https://xqnwang.rbind.io/),  [Rob J Hyndman](https://robjhyndman.com/), [Feng Li](https://feng.li/), [Yanfei Kang](https://yanfei.site/) (2022). Forecast combinations: an over 50-year review. International Journal of Forecasting. [DOI: 10.1016/j.ijforecast.2022.11.005](https://doi.org/10.1016/j.ijforecast.2022.11.005).
